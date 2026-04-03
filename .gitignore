@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Keep empty directories
+!inbox/.gitkeep
+!sources/.gitkeep
+!wiki/.gitkeep
+!output/.gitkeep

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "generated_at": "2026-04-03T15:13:47.757765+00:00",
+  "article_count": 1,
+  "articles": [
+    {
+      "id": "llm-knowledge-base-pattern",
+      "path": "wiki\\llm-knowledge-base-pattern.md",
+      "title": "LLM-Driven Knowledge Base Pattern",
+      "summary": "Andrej Karpathy's approach to using LLMs as knowledge base compilers. Raw sources are ingested into a directory, LLMs compile them into a wiki of interlinked markdown articles, and the same LLMs perform Q&A against the wiki. Outputs feed back into the wiki, creating a self-reinforcing knowledge loop.",
+      "topics": [
+        "llm-workflows",
+        "knowledge-management",
+        "personal-tools"
+      ],
+      "source_ids": [
+        "16c0425f47df"
+      ],
+      "created_at": "2026-04-04",
+      "updated_at": "2026-04-04"
+    }
+  ]
+}
