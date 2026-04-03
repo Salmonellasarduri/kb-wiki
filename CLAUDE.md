@@ -1,43 +1,68 @@
 # Knowledge Base - LLM Operation Rules
 
-This is an LLM-driven markdown knowledge base. The LLM writes articles; the CLI handles hashing, indexing, and validation.
+This is an LLM-driven markdown knowledge base. The LLM writes articles; the CLI handles hashing, indexing, compilation, and validation.
 
 ## Directory Structure
 
 ```
 knowledge-base/
-├── inbox/           # Drop zone. Put anything here.
-├── sources/         # Immutable archive (CLI-managed, DO NOT modify)
-├── wiki/            # Compiled articles (LLM writes these)
-├── output/          # Generated artifacts (Q&A results, slides, etc.)
-├── _manifest.json   # Source tracking (CLI-managed, DO NOT modify)
-├── _index.json      # Article index (CLI-managed, DO NOT modify)
-└── tools/kb.py      # CLI tool
+├── inbox/              # Drop zone. Put anything here.
+├── sources/            # Immutable archive (CLI-managed, DO NOT modify)
+├── wiki/               # Compiled articles (LLM writes these)
+├── output/             # Generated artifacts (Q&A results, slides, etc.)
+├── _manifest.json      # Source tracking (CLI-managed, DO NOT modify)
+├── _index.json         # Article index (CLI-managed, DO NOT modify)
+├── clipper-template.json  # Obsidian Web Clipper template (import this)
+└── tools/kb.py         # CLI tool
 ```
 
 ## Ownership Rules
 
 | Path | Owner | LLM may |
 |------|-------|---------|
-| `inbox/` | Human | Read only (don't delete or move) |
+| `inbox/` | Human / Web Clipper | Read only (don't delete or move) |
 | `sources/` | CLI (`kb ingest`) | Read only |
-| `wiki/` | **LLM** | Read and Write |
+| `wiki/` | **LLM** (via `kb compile` or manual) | Read and Write |
 | `output/` | **LLM** | Read and Write |
-| `_manifest.json` | CLI (`kb ingest`, `kb index`) | **Read only** |
-| `_index.json` | CLI (`kb index`) | **Read only** |
+| `_manifest.json` | CLI | **Read only** |
+| `_index.json` | CLI | **Read only** |
 
 ## Workflow
 
-### Ingest + Compile (when user says "organize" / "compile" / "sync")
+### One-Shot Sync (primary workflow)
 
-1. Run `python tools/kb.py ingest` to process inbox/ files
-2. Run `python tools/kb.py stats` to see pending sources
-3. Read `_manifest.json` and find items with `"status": "pending"`
-4. For each pending source: read the source file, generate or update a wiki article
-5. Run `python tools/kb.py index` to rebuild the index and reconcile manifest
-6. Run `python tools/kb.py health` to verify integrity
+```bash
+kb sync    # = ingest + compile + index in one shot
+```
 
-### Writing Wiki Articles
+This is the default workflow. It:
+1. Processes all inbox/ files into sources/ (hash, dedup)
+2. Auto-compiles pending sources into wiki articles (Claude API)
+3. Rebuilds _index.json and reconciles manifest
+
+### Watch Mode (hands-free)
+
+```bash
+kb watch   # Monitor inbox/ and auto-sync on new files
+```
+
+Runs `kb sync` automatically when new files appear in inbox/.
+Ideal for use with Obsidian Web Clipper.
+
+### Individual Commands
+
+```bash
+kb ingest   # Process inbox/ -> sources/ only
+kb compile  # Compile pending sources -> wiki/ only
+kb index    # Rebuild _index.json only
+kb search <query>  # Search wiki/ articles
+kb stats    # Show KB statistics + stale detection
+kb health   # Run integrity checks
+```
+
+### Manual Article Writing
+
+If you need to write or edit a wiki article manually (not via `kb compile`):
 
 Create articles in `wiki/` with this exact frontmatter format:
 
@@ -67,8 +92,7 @@ Article body in markdown...
 - `article_id` must be unique across all articles
 - `source_ids` must reference valid IDs from `_manifest.json`
 - `topics` use kebab-case, lowercase (e.g., `machine-learning`, not `Machine Learning`)
-- `summary` is critical for retrieval quality. Include key entities, terminology, and conclusions
-- Multiple sources can feed into one article; one source can feed into multiple articles
+- `summary` is critical for retrieval quality
 - When updating an article, always update `updated_at`
 
 ### Q&A (when user asks a question about KB content)
@@ -76,15 +100,23 @@ Article body in markdown...
 1. Read `_index.json` to find relevant articles by scanning summaries and topics
 2. Read the relevant wiki articles
 3. Answer the question based on the article content
-4. Optionally save the answer to `output/` if it's worth preserving
+4. Optionally save the answer to `output/`
 
 ### Health Check
 
-Run `python tools/kb.py health` periodically to catch:
+Run `kb health` periodically to catch:
 - Missing source files
 - Invalid frontmatter
 - Index/wiki desync
 - Orphaned files
+
+## Obsidian Web Clipper Setup
+
+1. Open `E:\Project\knowledge-base` as an Obsidian vault
+2. Install Obsidian Web Clipper browser extension
+3. Import `clipper-template.json` as a template in Web Clipper settings
+4. Clip articles from Chrome -> they land in `inbox/`
+5. Run `kb watch` to auto-process, or `kb sync` manually
 
 ## Cross-Project Access
 

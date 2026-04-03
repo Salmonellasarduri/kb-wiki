@@ -5,11 +5,14 @@ Deterministic tooling for an LLM-operated markdown knowledge base.
 The LLM writes wiki articles; this CLI handles hashing, indexing, and validation.
 
 Commands:
-    ingest  - Process inbox/ files into sources/ with dedup
-    index   - Rebuild _index.json from wiki/ and reconcile manifest
-    search  - Search wiki/ articles (ripgrep or fallback)
-    stats   - Show knowledge base statistics
-    health  - Run integrity checks
+    ingest   - Process inbox/ files into sources/ with dedup
+    compile  - Auto-generate wiki articles from pending sources via Claude API
+    index    - Rebuild _index.json from wiki/ and reconcile manifest
+    sync     - Run ingest + compile + index in one shot
+    watch    - Monitor inbox/ for new files and auto-sync
+    search   - Search wiki/ articles (ripgrep or fallback)
+    stats    - Show knowledge base statistics
+    health   - Run integrity checks
 """
 from __future__ import annotations
 
@@ -23,7 +26,10 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 from pathlib import Path
+
+import yaml
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -41,7 +47,8 @@ HASH_DISPLAY_LEN = 12  # chars used in filenames
 MANIFEST_VERSION = 1
 INDEX_VERSION = 1
 
-FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)
+# Frontmatter: must start at very beginning of file
+FRONTMATTER_RE = re.compile(r"\A---[ \t]*\n(.*?)\n---[ \t]*\n", re.DOTALL)
 
 # Required frontmatter fields and their types
 FRONTMATTER_SCHEMA = {
@@ -53,6 +60,10 @@ FRONTMATTER_SCHEMA = {
     "created_at": str,
     "updated_at": str,
 }
+
+COMPILE_MODEL = "claude-sonnet-4-20250514"
+WATCH_DEBOUNCE_SEC = 3.0
+MAX_SOURCE_BYTES = 200_000  # ~200KB, well within Claude's context window
 
 
 # ---------------------------------------------------------------------------
@@ -89,14 +100,18 @@ def load_json(path: Path) -> dict:
         return {}
 
 
+def to_posix(path: Path, base: Path) -> str:
+    """Convert a path to POSIX-style relative string for JSON storage."""
+    return path.relative_to(base).as_posix()
+
+
 # ---------------------------------------------------------------------------
-# Frontmatter parsing (no PyYAML dependency)
+# Frontmatter parsing (PyYAML)
 # ---------------------------------------------------------------------------
 
 def parse_frontmatter(text: str) -> dict | None:
-    """Parse YAML-like frontmatter from markdown text.
+    """Parse YAML frontmatter from markdown text.
 
-    Handles simple key: value, key: [list], and multi-line summary (>).
     Returns None if no frontmatter found.
     """
     m = FRONTMATTER_RE.match(text)
@@ -104,74 +119,23 @@ def parse_frontmatter(text: str) -> dict | None:
         return None
 
     raw = m.group(1)
-    result = {}
-    current_key = None
-    multiline_buf = []
+    try:
+        result = yaml.safe_load(raw)
+    except yaml.YAMLError:
+        return None
 
-    for line in raw.split("\n"):
-        # Continuation of multi-line value
-        if current_key and (line.startswith("  ") or line.startswith("\t")):
-            multiline_buf.append(line.strip())
-            continue
+    if not isinstance(result, dict):
+        return None
 
-        # Flush previous multi-line
-        if current_key and multiline_buf:
-            result[current_key] = " ".join(multiline_buf)
-            current_key = None
-            multiline_buf = []
+    # Ensure list fields are lists (YAML may parse single-item as string)
+    for key in ("source_ids", "topics"):
+        if key in result and isinstance(result[key], str):
+            result[key] = [result[key]]
 
-        # Skip empty / comment lines
-        stripped = line.strip()
-        if not stripped or stripped.startswith("#"):
-            continue
-
-        # key: value
-        colon_idx = stripped.find(":")
-        if colon_idx < 0:
-            continue
-
-        key = stripped[:colon_idx].strip()
-        val = stripped[colon_idx + 1:].strip()
-
-        # Inline list: [a, b, c]
-        if val.startswith("[") and val.endswith("]"):
-            items = [v.strip().strip("'\"") for v in val[1:-1].split(",") if v.strip()]
-            result[key] = items
-        # Multi-line indicator
-        elif val == ">" or val == "|":
-            current_key = key
-            multiline_buf = []
-        # List item start (next lines are - items)
-        elif val == "":
-            result[key] = val
-        else:
-            # Strip quotes
-            result[key] = val.strip("'\"")
-
-    # Flush final multi-line
-    if current_key and multiline_buf:
-        result[current_key] = " ".join(multiline_buf)
-
-    # Handle YAML list items (- value) that follow a key with empty value
-    # Re-parse for list detection
-    lines = raw.split("\n")
-    i = 0
-    while i < len(lines):
-        stripped = lines[i].strip()
-        colon_idx = stripped.find(":")
-        if colon_idx >= 0:
-            key = stripped[:colon_idx].strip()
-            val = stripped[colon_idx + 1:].strip()
-            if val == "" and i + 1 < len(lines) and lines[i + 1].strip().startswith("- "):
-                items = []
-                j = i + 1
-                while j < len(lines) and lines[j].strip().startswith("- "):
-                    items.append(lines[j].strip()[2:].strip().strip("'\""))
-                    j += 1
-                result[key] = items
-                i = j
-                continue
-        i += 1
+    # Ensure string fields are strings (YAML may parse dates as date objects)
+    for key in ("created_at", "updated_at", "article_id", "title", "summary"):
+        if key in result and not isinstance(result[key], str):
+            result[key] = str(result[key])
 
     return result
 
@@ -187,7 +151,6 @@ def validate_frontmatter(fm: dict, path: Path) -> list[str]:
                 f"{path.name}: field '{field}' expected {expected_type.__name__}, "
                 f"got {type(fm[field]).__name__}"
             )
-    # Check article_id uniqueness is done at index level
     return errors
 
 
@@ -206,9 +169,7 @@ def file_hash(path: Path) -> str:
 
 def sanitize_filename(name: str) -> str:
     """Sanitize a filename for safe filesystem use."""
-    # Remove path separators and problematic chars
     name = re.sub(r'[<>:"/\\|?*]', "_", name)
-    # Truncate to reasonable length
     if len(name) > 80:
         stem, ext = os.path.splitext(name)
         name = stem[:80] + ext
@@ -240,7 +201,7 @@ def cmd_ingest(_args: argparse.Namespace) -> int:
     ingested = 0
     skipped_dup = 0
     errors = 0
-    to_delete: list[Path] = []  # defer inbox deletion until after manifest write
+    to_delete: list[Path] = []
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
 
     for fpath in sorted(inbox_files):
@@ -251,7 +212,6 @@ def cmd_ingest(_args: argparse.Namespace) -> int:
             errors += 1
             continue
 
-        # Dedup check via hash index
         if fhash in hash_index:
             existing_id = hash_index[fhash]
             print(f"SKIP (duplicate): {fpath.name} -> existing {existing_id}")
@@ -259,18 +219,23 @@ def cmd_ingest(_args: argparse.Namespace) -> int:
             to_delete.append(fpath)
             continue
 
-        # Generate source ID from hash
         source_id = fhash[:HASH_DISPLAY_LEN]
-        # Handle rare collision in display ID
         while source_id in items and items[source_id]["hash"] != fhash:
+            if len(source_id) >= len(fhash):
+                print(f"ERROR: hash collision or corrupt manifest for {fpath.name}")
+                errors += 1
+                break
             source_id = fhash[:len(source_id) + 1]
+        else:
+            pass  # no collision, proceed
+        if len(source_id) >= len(fhash) and source_id in items:
+            continue
 
         safe_name = sanitize_filename(fpath.name)
         dest_name = f"{source_id}_{safe_name}"
         dest_path = SOURCES_DIR / dest_name
         meta_path = SOURCES_DIR / f"{source_id}_meta.json"
 
-        # Copy to sources/
         try:
             shutil.copy2(fpath, dest_path)
         except OSError as e:
@@ -278,7 +243,6 @@ def cmd_ingest(_args: argparse.Namespace) -> int:
             errors += 1
             continue
 
-        # Write sidecar metadata
         meta = {
             "source_id": source_id,
             "hash": fhash,
@@ -287,13 +251,12 @@ def cmd_ingest(_args: argparse.Namespace) -> int:
         }
         atomic_write_json(meta_path, meta)
 
-        # Update manifest in memory
         hash_index[fhash] = source_id
         items[source_id] = {
             "hash": fhash,
             "original_name": fpath.name,
-            "source_path": str(dest_path.relative_to(KB_ROOT)),
-            "meta_path": str(meta_path.relative_to(KB_ROOT)),
+            "source_path": to_posix(dest_path, KB_ROOT),
+            "meta_path": to_posix(meta_path, KB_ROOT),
             "status": "pending",
             "ingested_at": now,
             "compiled_at": None,
@@ -305,24 +268,217 @@ def cmd_ingest(_args: argparse.Namespace) -> int:
         ingested += 1
         print(f"INGESTED: {fpath.name} -> {source_id}")
 
-    # Write manifest FIRST, then delete inbox files (transaction safety)
     atomic_write_json(MANIFEST_PATH, manifest)
 
     for fpath in to_delete:
         try:
             fpath.unlink()
         except OSError:
-            pass  # non-fatal: will be deduped on next ingest
+            pass
 
     print(f"\nDone: {ingested} ingested, {skipped_dup} duplicates skipped, {errors} errors")
     return 2 if errors else 0
+
+
+def cmd_compile(_args: argparse.Namespace) -> int:
+    """Compile pending sources into wiki articles using Claude API."""
+    try:
+        import anthropic
+    except ImportError:
+        print("ERROR: anthropic package not installed. Run: pip install anthropic")
+        return 2
+
+    manifest = load_json(MANIFEST_PATH)
+    if not manifest or "items" not in manifest:
+        print("No manifest found. Run 'kb ingest' first.")
+        return 1
+
+    items = manifest["items"]
+    index = load_json(INDEX_PATH)
+
+    # Find pending or failed sources
+    pending = {
+        sid: item for sid, item in items.items()
+        if item.get("status") in ("pending", "failed", "compiling")
+    }
+
+    if not pending:
+        print("No pending sources to compile.")
+        return 0
+
+    # Build existing articles context
+    existing_articles = index.get("articles", [])
+    existing_ctx = "\n".join(
+        f"- {a['title']} (topics: {', '.join(a['topics'])}): {a['summary']}"
+        for a in existing_articles
+    ) or "(none yet)"
+
+    client = anthropic.Anthropic()
+    today = datetime.date.today().isoformat()
+    compiled = 0
+    failed = 0
+
+    for sid, item in pending.items():
+        source_path = KB_ROOT / item["source_path"]
+        if not source_path.resolve().is_relative_to(KB_ROOT.resolve()):
+            print(f"ERROR: source_path escapes KB root: {item['source_path']}")
+            item["status"] = "failed"
+            item["error"] = "path traversal in source_path"
+            failed += 1
+            continue
+        if not source_path.exists():
+            print(f"ERROR: source file missing: {item['source_path']}")
+            item["status"] = "failed"
+            item["error"] = "source file missing"
+            failed += 1
+            continue
+
+        # Guard against oversized sources
+        source_size = source_path.stat().st_size
+        if source_size > MAX_SOURCE_BYTES:
+            print(f"ERROR: source too large ({source_size} bytes): {source_path.name}")
+            item["status"] = "failed"
+            item["error"] = f"source too large: {source_size} bytes"
+            failed += 1
+            continue
+
+        try:
+            source_text = source_path.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError) as e:
+            print(f"ERROR: cannot read {source_path.name}: {e}")
+            item["status"] = "failed"
+            item["error"] = str(e)
+            failed += 1
+            continue
+
+        # Mark as compiling
+        item["status"] = "compiling"
+        atomic_write_json(MANIFEST_PATH, manifest)
+
+        print(f"COMPILING: {item['original_name']} ({sid})...")
+
+        prompt = f"""Read this source document and compile it into a wiki article.
+
+Source document (source_id: {sid}):
+---
+{source_text}
+---
+
+Existing articles in the wiki (avoid duplication, add cross-references where relevant):
+{existing_ctx}
+
+Write a complete wiki article in markdown with this EXACT frontmatter format at the very beginning:
+---
+article_id: unique-kebab-case-slug
+title: Human Readable Title
+source_ids:
+  - {sid}
+topics:
+  - relevant-topic-kebab-case
+summary: >
+  2-3 sentence summary of the key concepts and conclusions.
+  Be specific about entities, terminology, and actionable insights.
+created_at: "{today}"
+updated_at: "{today}"
+---
+
+Rules:
+- article_id must be unique, descriptive, kebab-case
+- topics must be kebab-case, lowercase
+- summary is critical for retrieval quality
+- Include a "## Related Articles" section at the end with [[article-id]] links if relevant
+- Write in the language of the source document
+- Focus on extracting key concepts, patterns, and actionable knowledge"""
+
+        article_text = None
+        fm: dict | None = None
+        for attempt in range(2):
+            try:
+                response = client.messages.create(
+                    model=COMPILE_MODEL,
+                    max_tokens=4096,
+                    messages=[{"role": "user", "content": prompt}],
+                )
+                candidate = response.content[0].text  # type: ignore[union-attr]
+
+                # Strip markdown code fences if the model wrapped the output
+                candidate = re.sub(r"\A\s*```(?:markdown|md)?\s*\n", "", candidate)
+                candidate = re.sub(r"\n```\s*\Z", "", candidate)
+
+                fm = parse_frontmatter(candidate)
+                if fm is None:
+                    if attempt == 0:
+                        prompt += "\n\nIMPORTANT: Your previous response did not have valid YAML frontmatter. The article MUST start with --- on the very first line, followed by YAML fields, then --- to close."
+                        print(f"  Retry (invalid frontmatter)...")
+                        continue
+                    else:
+                        raise ValueError("No valid frontmatter after retry")
+
+                errors = validate_frontmatter(fm, Path(fm.get("article_id", "unknown")))
+                if errors:
+                    if attempt == 0:
+                        prompt += f"\n\nIMPORTANT: Frontmatter validation failed: {'; '.join(errors)}. Fix these issues."
+                        print(f"  Retry (validation: {errors[0]})...")
+                        continue
+                    else:
+                        raise ValueError(f"Frontmatter validation failed: {'; '.join(errors)}")
+
+                article_text = candidate
+                break
+
+            except Exception as e:
+                if attempt == 0 and "frontmatter" in str(e).lower():
+                    continue
+                print(f"  ERROR: {e}")
+                item["status"] = "failed"
+                item["error"] = str(e)[:200]
+                failed += 1
+                break
+
+        if article_text is None or fm is None:
+            if item["status"] != "failed":
+                item["status"] = "failed"
+                item["error"] = "compile failed after retries"
+                failed += 1
+            continue
+
+        # Write wiki article (with path traversal guard)
+        article_id: str = fm["article_id"]
+        if "/" in article_id or "\\" in article_id or ".." in article_id:
+            print(f"  ERROR: article_id contains invalid characters: {article_id!r}")
+            item["status"] = "failed"
+            item["error"] = f"unsafe article_id: {article_id!r}"
+            failed += 1
+            continue
+        wiki_path = WIKI_DIR / f"{article_id}.md"
+        if not wiki_path.resolve().is_relative_to(WIKI_DIR.resolve()):
+            print(f"  ERROR: article_id resolves outside wiki/: {article_id!r}")
+            item["status"] = "failed"
+            item["error"] = f"path traversal in article_id: {article_id!r}"
+            failed += 1
+            continue
+        wiki_path.write_text(article_text, encoding="utf-8")
+
+        item["status"] = "compiled"
+        item["compiled_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+        item["article_ids"] = [article_id]
+        item["error"] = None
+        compiled += 1
+
+        print(f"  -> wiki/{article_id}.md")
+
+        # Update existing context for next source
+        existing_ctx += f"\n- {fm['title']} (topics: {', '.join(fm.get('topics', []))}): {fm.get('summary', '')}"
+
+    atomic_write_json(MANIFEST_PATH, manifest)
+    print(f"\nDone: {compiled} compiled, {failed} failed")
+    return 2 if failed else 0
 
 
 def cmd_index(_args: argparse.Namespace) -> int:
     """Rebuild _index.json from wiki/ and reconcile manifest status."""
     wiki_files = sorted(WIKI_DIR.glob("*.md"))
     if not wiki_files:
-        # Write empty index
         index_data = {
             "version": INDEX_VERSION,
             "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
@@ -366,7 +522,7 @@ def cmd_index(_args: argparse.Namespace) -> int:
 
         article_entry = {
             "id": aid,
-            "path": str(wf.relative_to(KB_ROOT)),
+            "path": to_posix(wf, KB_ROOT),
             "title": fm["title"],
             "summary": fm["summary"],
             "topics": fm["topics"],
@@ -376,7 +532,6 @@ def cmd_index(_args: argparse.Namespace) -> int:
         }
         articles.append(article_entry)
 
-        # Track source->article mapping for manifest reconciliation
         for sid in fm["source_ids"]:
             source_to_articles.setdefault(sid, []).append(aid)
 
@@ -389,7 +544,7 @@ def cmd_index(_args: argparse.Namespace) -> int:
     }
     atomic_write_json(INDEX_PATH, index_data)
 
-    # Reconcile manifest: update status and article_ids based on wiki source_ids
+    # Reconcile manifest
     manifest = load_json(MANIFEST_PATH)
     if manifest and "items" in manifest:
         changed = False
@@ -407,7 +562,6 @@ def cmd_index(_args: argparse.Namespace) -> int:
                     item["article_ids"] = source_to_articles[sid]
                     changed = True
             elif item.get("article_ids"):
-                # Source no longer referenced by any article
                 item["article_ids"] = []
                 changed = True
         if changed:
@@ -415,7 +569,6 @@ def cmd_index(_args: argparse.Namespace) -> int:
         if reconciled:
             print(f"Manifest reconciled: {reconciled} sources marked compiled")
 
-    # Report
     topics = set()
     for a in articles:
         topics.update(a["topics"])
@@ -430,11 +583,93 @@ def cmd_index(_args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_sync(_args: argparse.Namespace) -> int:
+    """Run ingest + compile + index in one shot."""
+    print("=== INGEST ===")
+    rc = cmd_ingest(_args)
+    if rc == 2:
+        print("\nIngest had errors. Continuing anyway...")
+
+    print("\n=== COMPILE ===")
+    rc_compile = cmd_compile(_args)
+
+    print("\n=== INDEX ===")
+    rc_index = cmd_index(_args)
+
+    # Quick health summary
+    print("\n=== HEALTH ===")
+    # Inline minimal health check
+    manifest = load_json(MANIFEST_PATH)
+    items = manifest.get("items", {})
+    pending = sum(1 for v in items.values() if v.get("status") == "pending")
+    failed_count = sum(1 for v in items.values() if v.get("status") == "failed")
+    compiled = sum(1 for v in items.values() if v.get("status") == "compiled")
+    print(f"Sources: {compiled} compiled, {pending} pending, {failed_count} failed")
+
+    index = load_json(INDEX_PATH)
+    print(f"Articles: {index.get('article_count', 0)}")
+
+    if rc_compile == 2 or rc_index == 2:
+        return 2
+    if rc_compile == 1 or rc_index == 1:
+        return 1
+    return 0
+
+
+def cmd_watch(args: argparse.Namespace) -> int:
+    """Watch inbox/ for new files and auto-sync on changes."""
+    try:
+        from watchdog.observers import Observer
+        from watchdog.events import FileSystemEventHandler
+    except ImportError:
+        print("ERROR: watchdog package not installed. Run: pip install watchdog")
+        return 2
+
+    class InboxHandler(FileSystemEventHandler):
+        def __init__(self):
+            self.pending = False
+            self.last_event = 0.0
+
+        def on_created(self, event):
+            if not event.is_directory and not event.src_path.endswith(".gitkeep"):
+                self.pending = True
+                self.last_event = time.time()
+                print(f"  Detected: {Path(event.src_path).name}")
+
+        def on_modified(self, event):
+            if not event.is_directory and not event.src_path.endswith(".gitkeep"):
+                self.pending = True
+                self.last_event = time.time()
+
+    handler = InboxHandler()
+    observer = Observer()
+    observer.schedule(handler, str(INBOX_DIR), recursive=False)
+    observer.start()
+
+    print(f"Watching {INBOX_DIR} for new files... (Ctrl+C to stop)")
+    print(f"Debounce: {WATCH_DEBOUNCE_SEC}s after last file event")
+
+    try:
+        while True:
+            time.sleep(0.5)
+            if handler.pending and (time.time() - handler.last_event) >= WATCH_DEBOUNCE_SEC:
+                handler.pending = False
+                print(f"\n{'='*50}")
+                print(f"New files detected. Running sync...")
+                print(f"{'='*50}\n")
+                cmd_sync(args)
+                print(f"\nWatching {INBOX_DIR}... (Ctrl+C to stop)")
+    except KeyboardInterrupt:
+        print("\nStopping watcher...")
+        observer.stop()
+    observer.join()
+    return 0
+
+
 def cmd_search(args: argparse.Namespace) -> int:
     """Search wiki/ articles using ripgrep or Python fallback."""
     query = args.query
 
-    # Try ripgrep first
     rg = shutil.which("rg")
     if rg:
         cmd = [
@@ -455,7 +690,6 @@ def cmd_search(args: argparse.Namespace) -> int:
             print(f"rg error: {result.stderr}")
             return 2
     else:
-        # Python fallback
         pattern = re.compile(re.escape(query), re.IGNORECASE)
         found = False
         for wf in sorted(WIKI_DIR.glob("*.md")):
@@ -473,7 +707,7 @@ def cmd_search(args: argparse.Namespace) -> int:
 
 
 def cmd_stats(args: argparse.Namespace) -> int:
-    """Show knowledge base statistics."""
+    """Show knowledge base statistics including stale article detection."""
     manifest = load_json(MANIFEST_PATH)
     index = load_json(INDEX_PATH)
 
@@ -489,12 +723,44 @@ def cmd_stats(args: argparse.Namespace) -> int:
     articles = index.get("articles", [])
     topics = sorted(set(t for a in articles for t in a.get("topics", [])))
 
+    # Stale article detection: check if wiki file mtime > updated_at
+    stale_articles = []
+    for a in articles:
+        wiki_path = KB_ROOT / a["path"]
+        if wiki_path.exists():
+            mtime = datetime.datetime.fromtimestamp(
+                wiki_path.stat().st_mtime, tz=datetime.timezone.utc
+            )
+            try:
+                updated = datetime.datetime.fromisoformat(a["updated_at"])
+                if not updated.tzinfo:
+                    updated = updated.replace(tzinfo=datetime.timezone.utc)
+            except (ValueError, TypeError):
+                continue
+            # If file was modified more than 1 day after updated_at, it's stale
+            if mtime > updated + datetime.timedelta(days=1):
+                stale_articles.append(a["title"])
+
+    # Also check for sources that were re-ingested after article was compiled
+    recompile_needed = []
+    for sid, item in items.items():
+        if item.get("status") == "compiled" and item.get("compiled_at") and item.get("ingested_at"):
+            try:
+                ingested = datetime.datetime.fromisoformat(item["ingested_at"])
+                compiled_dt = datetime.datetime.fromisoformat(item["compiled_at"])
+                if ingested > compiled_dt:
+                    recompile_needed.append(item.get("original_name", sid))
+            except (ValueError, TypeError):
+                continue
+
     data = {
         "inbox": inbox_count,
         "sources": {"total": source_count, "pending": pending, "compiled": compiled, "failed": failed},
         "articles": article_count,
         "topics": topics,
         "last_indexed": last_indexed,
+        "stale_articles": stale_articles,
+        "recompile_needed": recompile_needed,
     }
 
     if args.json:
@@ -508,6 +774,14 @@ def cmd_stats(args: argparse.Namespace) -> int:
         if topics:
             print(f"             {', '.join(topics)}")
         print(f"Last index:  {last_indexed}")
+        if stale_articles:
+            print(f"\nStale articles ({len(stale_articles)}):")
+            for t in stale_articles:
+                print(f"  - {t}")
+        if recompile_needed:
+            print(f"\nRecompile needed ({len(recompile_needed)}):")
+            for n in recompile_needed:
+                print(f"  - {n}")
 
     return 0
 
@@ -558,26 +832,25 @@ def cmd_health(args: argparse.Namespace) -> int:
             if aid in seen_ids:
                 issues.append(("ERROR", f"duplicate article_id '{aid}': {wf.name} and {seen_ids[aid]}"))
             seen_ids[aid] = wf.name
-            # Check source_ids exist in manifest
             for sid in fm.get("source_ids", []):
                 if sid not in items:
                     issues.append(("WARN", f"wiki/{wf.name}: source_id '{sid}' not in manifest"))
 
     # 4. Check index matches wiki
     indexed_paths = {a["path"] for a in index.get("articles", [])}
-    actual_paths = {str(wf.relative_to(KB_ROOT)) for wf in wiki_files}
+    actual_paths = {to_posix(wf, KB_ROOT) for wf in wiki_files}
     for missing in actual_paths - indexed_paths:
         issues.append(("WARN", f"wiki article not in index: {missing}"))
     for stale in indexed_paths - actual_paths:
         issues.append(("WARN", f"index references missing article: {stale}"))
 
-    # 5. Check for orphaned source files (including _meta.json)
+    # 5. Check for orphaned source files
     manifest_sources = {item.get("source_path", "") for item in items.values()}
     manifest_metas = {item.get("meta_path", "") for item in items.values()}
     for sf in SOURCES_DIR.iterdir():
         if sf.name == ".gitkeep":
             continue
-        rel = str(sf.relative_to(KB_ROOT))
+        rel = to_posix(sf, KB_ROOT)
         if rel not in manifest_sources and rel not in manifest_metas:
             issues.append(("WARN", f"orphaned file in sources/: {sf.name}"))
 
@@ -617,8 +890,17 @@ def main() -> int:
     # ingest
     sub.add_parser("ingest", help="Process inbox/ into sources/")
 
+    # compile
+    sub.add_parser("compile", help="Auto-generate wiki articles from pending sources")
+
     # index
     sub.add_parser("index", help="Rebuild _index.json from wiki/")
+
+    # sync
+    sub.add_parser("sync", help="Run ingest + compile + index")
+
+    # watch
+    sub.add_parser("watch", help="Monitor inbox/ and auto-sync on new files")
 
     # search
     p_search = sub.add_parser("search", help="Search wiki/ articles")
@@ -640,7 +922,10 @@ def main() -> int:
 
     commands = {
         "ingest": cmd_ingest,
+        "compile": cmd_compile,
         "index": cmd_index,
+        "sync": cmd_sync,
+        "watch": cmd_watch,
         "search": cmd_search,
         "stats": cmd_stats,
         "health": cmd_health,

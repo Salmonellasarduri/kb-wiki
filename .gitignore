@@ -13,6 +13,12 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Obsidian vault internals
+.obsidian/
+
+# uv
+uv.lock
+
 # Keep empty directories
 !inbox/.gitkeep
 !sources/.gitkeep

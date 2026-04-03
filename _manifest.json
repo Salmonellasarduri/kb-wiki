@@ -1,19 +1,33 @@
 {
   "version": 1,
   "_hash_index": {
-    "16c0425f47df1ef74b0a79c3d9a9f30cdb47029d618139f7c1412d59b8211afa": "16c0425f47df"
+    "16c0425f47df1ef74b0a79c3d9a9f30cdb47029d618139f7c1412d59b8211afa": "16c0425f47df",
+    "f75138abebf3accdd634c4f02128a1f69894949b429c59ae0ed16d8f2e814e47": "f75138abebf3"
   },
   "items": {
     "16c0425f47df": {
       "hash": "16c0425f47df1ef74b0a79c3d9a9f30cdb47029d618139f7c1412d59b8211afa",
       "original_name": "karpathy-llm-knowledge-bases.md",
-      "source_path": "sources\\16c0425f47df_karpathy-llm-knowledge-bases.md",
-      "meta_path": "sources\\16c0425f47df_meta.json",
+      "source_path": "sources/16c0425f47df_karpathy-llm-knowledge-bases.md",
+      "meta_path": "sources/16c0425f47df_meta.json",
       "status": "compiled",
       "ingested_at": "2026-04-03T15:13:14.468948+00:00",
       "compiled_at": "2026-04-03T15:13:47.761382+00:00",
       "article_ids": [
         "llm-knowledge-base-pattern"
+      ],
+      "error": null
+    },
+    "f75138abebf3": {
+      "hash": "f75138abebf3accdd634c4f02128a1f69894949b429c59ae0ed16d8f2e814e47",
+      "original_name": "test-article-prompt-caching.md",
+      "source_path": "sources/f75138abebf3_test-article-prompt-caching.md",
+      "meta_path": "sources/f75138abebf3_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-03T15:46:35.376553+00:00",
+      "compiled_at": "2026-04-03T15:46:50.234542+00:00",
+      "article_ids": [
+        "prompt-caching-llm-apis"
       ],
       "error": null
     }

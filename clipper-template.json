@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "0.1.0",
+  "name": "Knowledge Base",
+  "behavior": "create",
+  "noteNameFormat": "{{title|safe_name}}",
+  "path": "inbox",
+  "properties": [
+    {
+      "name": "source_url",
+      "value": "{{url}}",
+      "type": "text"
+    },
+    {
+      "name": "author",
+      "value": "{{author}}",
+      "type": "text"
+    },
+    {
+      "name": "clipped_at",
+      "value": "{{time}}",
+      "type": "datetime"
+    }
+  ],
+  "triggers": [],
+  "noteContentFormat": "{{content}}"
+}
