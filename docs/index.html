@@ -596,6 +596,7 @@ function showArticle(a) {
   renderList();
   contentEl.classList.remove('empty');
   document.body.classList.add('show-article');
+  history.pushState({ article: a.id }, '', '#' + a.id);
   contentEl.replaceChildren();
 
   // Title
@@ -661,28 +662,24 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// --- Back button (mobile) ---
+// --- Back to list (mobile) ---
 function goBackToList() {
   document.body.classList.remove('show-article');
+  activeArticleId = null;
 }
-document.getElementById('backBtn').addEventListener('click', goBackToList);
+document.getElementById('backBtn').addEventListener('click', () => {
+  history.back();
+});
 
-// --- Swipe right to go back (mobile) ---
-let touchStartX = 0;
-let touchStartY = 0;
-document.addEventListener('touchstart', (e) => {
-  touchStartX = e.touches[0].clientX;
-  touchStartY = e.touches[0].clientY;
-}, { passive: true });
-document.addEventListener('touchend', (e) => {
-  if (!document.body.classList.contains('show-article')) return;
-  const dx = e.changedTouches[0].clientX - touchStartX;
-  const dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
-  // Right swipe: >80px horizontal, not too vertical, started from left 40% of screen
-  if (dx > 80 && dy < dx * 0.5 && touchStartX < window.innerWidth * 0.4) {
-    goBackToList();
+// Browser back/forward (swipe or button) → return to list
+window.addEventListener('popstate', (e) => {
+  if (e.state && e.state.article) {
+    // Navigating to a different article via forward
+    const a = ARTICLES.find(x => x.id === e.state.article);
+    if (a) { showArticle(a); return; }
   }
-}, { passive: true });
+  goBackToList();
+});
 
 // --- Read controls ---
 document.getElementById('markAllRead').addEventListener('click', () => {
