@@ -8,7 +8,8 @@ Commands:
     ingest     - Process inbox/ files into sources/ with dedup
     compile    - Auto-generate wiki articles from pending sources via Claude API
     index      - Rebuild _index.json and index.md from wiki/
-    sync       - Run ingest + compile + index in one shot
+    sync       - Run ingest + repair + compile + index in one shot
+    repair     - Re-fetch failed/legacy sources and rebuild .md files
     watch      - Monitor inbox/ for new files and auto-sync
     search     - Search wiki/ articles (ripgrep or fallback)
     stats      - Show knowledge base statistics
@@ -34,7 +35,7 @@ import tempfile
 import threading
 import time
 from pathlib import Path
-from urllib.parse import urlparse, urlencode, parse_qs, urlunparse
+from urllib.parse import urlparse, urlencode, parse_qs, urlunparse, unquote
 from zoneinfo import ZoneInfo
 
 import yaml
@@ -161,6 +162,11 @@ def _jst_now() -> datetime.datetime:
     return datetime.datetime.now(_JST)
 
 
+def _jst_stamp() -> str:
+    """Return 'YYYY-MM-DD HH:MM' in JST for frontmatter timestamps."""
+    return _jst_now().strftime("%Y-%m-%d %H:%M")
+
+
 def _append_log(action: str, details: str) -> None:
     """Append a parseable entry to log.md.
 
@@ -244,6 +250,37 @@ def content_hash(text: str) -> str:
 # ---------------------------------------------------------------------------
 # URL utilities
 # ---------------------------------------------------------------------------
+
+def _sanitize_extracted_url(url: str) -> str:
+    """Strip trailing incomplete percent-encoding from a URL extracted from free text.
+
+    Telegram and other apps sometimes truncate long URLs mid-character,
+    leaving incomplete UTF-8 percent-encoded sequences (e.g. ``%E3%82``
+    instead of ``%E3%82%B7``).  This function detects that and trims back
+    to the last decodable boundary.
+    """
+    url = url.rstrip(".,;:!?)]\\'\"")
+    # Fast path: if it decodes cleanly, nothing to fix
+    try:
+        unquote(url, errors="strict")
+        return url
+    except (ValueError, UnicodeDecodeError):
+        pass
+    # Strip back one %XX at a time (max 4 attempts = worst case 4-byte UTF-8)
+    for _ in range(4):
+        m = re.search(r'%[0-9A-Fa-f]{0,2}$', url)
+        if not m:
+            break
+        url = url[:m.start()]
+        try:
+            unquote(url, errors="strict")
+            if url:
+                print(f"  URL_REPAIRED: truncated percent-encoding removed")
+                return url
+        except (ValueError, UnicodeDecodeError):
+            continue
+    return url
+
 
 def normalize_url(url: str) -> str:
     """Normalize URL for dedup: lowercase scheme/host, strip tracking params + fragment."""
@@ -471,7 +508,7 @@ def parse_clip_file(path: Path) -> dict | None:
         comment = data.get("user_comment") or ""
         m = re.search(r'https?://\S+', comment)
         if m:
-            data["url"] = m.group(0)
+            data["url"] = _sanitize_extracted_url(m.group(0))
         else:
             print(f"ERROR: .clip {path.name}: invalid url")
             return None
@@ -949,7 +986,7 @@ def cmd_compile(_args: argparse.Namespace) -> int:
     ) or "(none yet)"
 
     client = anthropic.Anthropic()
-    today = datetime.date.today().isoformat()
+    today = _jst_stamp()
     compiled = 0
     failed = 0
 
@@ -985,6 +1022,35 @@ def cmd_compile(_args: argparse.Namespace) -> int:
             item["error"] = str(e)
             failed += 1
             continue
+
+        # --- Compile input contract ---
+        # Raw .clip files must be repaired first (kb repair)
+        if source_path.suffix == ".clip":
+            print(f"SKIP (raw .clip — run 'kb repair' first): {source_path.name}")
+            item["status"] = "blocked"
+            item["error"] = "raw .clip source: run kb repair"
+            failed += 1
+            continue
+
+        # fetch_failed / extraction_failed sources must be repaired first
+        _meta_path_str = item.get("meta_path", "")
+        if _meta_path_str:
+            _meta_path = KB_ROOT / _meta_path_str
+            if _meta_path.exists():
+                _meta = load_json(_meta_path)
+                if _meta and _meta.get("fetch_status") in (
+                    "fetch_failed", "extraction_failed",
+                ):
+                    print(
+                        f"SKIP ({_meta['fetch_status']} — run 'kb repair' first): "
+                        f"{source_path.name}"
+                    )
+                    item["status"] = "blocked"
+                    item["error"] = (
+                        f"source has {_meta['fetch_status']}: run kb repair"
+                    )
+                    failed += 1
+                    continue
 
         # Reject garbage sources (error pages, placeholders, trivial content)
         garbage_reason = _is_source_garbage(source_text)
@@ -1152,6 +1218,7 @@ summary: >
   Be specific about entities, terminology, and actionable insights.
 created_at: "{today}"
 updated_at: "{today}"
+(Note: created_at/updated_at use "YYYY-MM-DD HH:MM" format)
 ---
 
 Rules:
@@ -1336,7 +1403,7 @@ def _build_source_url_map() -> dict[str, str]:
                     comment = data.get("user_comment") or ""
                     m = re.search(r'https?://\S+', comment)
                     if m:
-                        url_map[sid] = m.group(0)
+                        url_map[sid] = _sanitize_extracted_url(m.group(0))
             except json.JSONDecodeError:
                 pass
         elif f.suffix == ".md":
@@ -1615,11 +1682,15 @@ def cmd_index(_args: argparse.Namespace) -> int:
 
 
 def cmd_sync(_args: argparse.Namespace) -> int:
-    """Run ingest + compile + index (+ optional reduce) in one shot."""
+    """Run ingest + repair + compile + index (+ optional reduce) in one shot."""
     print("=== INGEST ===")
     rc = cmd_ingest(_args)
     if rc == 2:
         print("\nIngest had errors. Continuing anyway...")
+
+    if not getattr(_args, "no_repair", False):
+        print("\n=== REPAIR ===")
+        cmd_repair(_args)
 
     print("\n=== COMPILE ===")
     rc_compile = cmd_compile(_args)
@@ -1641,8 +1712,12 @@ def cmd_sync(_args: argparse.Namespace) -> int:
     items = manifest.get("items", {})
     pending = sum(1 for v in items.values() if v.get("status") == "pending")
     failed_count = sum(1 for v in items.values() if v.get("status") == "failed")
+    blocked_count = sum(1 for v in items.values() if v.get("status") == "blocked")
     compiled = sum(1 for v in items.values() if v.get("status") == "compiled")
-    print(f"Sources: {compiled} compiled, {pending} pending, {failed_count} failed")
+    parts = [f"{compiled} compiled", f"{pending} pending", f"{failed_count} failed"]
+    if blocked_count:
+        parts.append(f"{blocked_count} blocked")
+    print(f"Sources: {', '.join(parts)}")
 
     index = load_json(INDEX_PATH)
     print(f"Articles: {index.get('article_count', 0)}")
@@ -1957,6 +2032,62 @@ def cmd_stats(args: argparse.Namespace) -> int:
     return 0
 
 
+CITATIONS_PATH = KB_ROOT / "_citations.jsonl"
+SEARCH_HITS_PATH = KB_ROOT / "_search_hits.jsonl"
+
+
+def _load_utilization(articles: list[dict]) -> dict[str, dict[str, int]]:
+    """Load citation + search hit counts per article.
+
+    Returns {article_id: {"citations": N, "search_hits": N}}.
+    Tolerates missing or malformed files.
+    """
+    # Build url -> article_id map from index source_urls
+    url_to_aid: dict[str, str] = {}
+    for a in articles:
+        aid = a.get("id", "")
+        for u in a.get("source_urls", []):
+            url_to_aid[u] = aid
+
+    result: dict[str, dict[str, int]] = {
+        a.get("id", ""): {"citations": 0, "search_hits": 0}
+        for a in articles if a.get("id")
+    }
+
+    # Count citations (stream line-by-line to avoid full-file memory load)
+    if CITATIONS_PATH.exists():
+        try:
+            with open(CITATIONS_PATH, encoding="utf-8") as f:
+                for line in f:
+                    try:
+                        entry = json.loads(line)
+                    except (json.JSONDecodeError, ValueError):
+                        continue
+                    url = entry.get("url", "")
+                    aid = url_to_aid.get(url, "")
+                    if aid and aid in result:
+                        result[aid]["citations"] += 1
+        except OSError:
+            pass
+
+    # Count search hits (stream line-by-line)
+    if SEARCH_HITS_PATH.exists():
+        try:
+            with open(SEARCH_HITS_PATH, encoding="utf-8") as f:
+                for line in f:
+                    try:
+                        entry = json.loads(line)
+                    except (json.JSONDecodeError, ValueError):
+                        continue
+                    for aid in entry.get("aids", []):
+                        if aid in result:
+                            result[aid]["search_hits"] += 1
+        except OSError:
+            pass
+
+    return result
+
+
 def cmd_health(args: argparse.Namespace) -> int:
     """Run integrity checks on the knowledge base."""
     manifest = load_json(MANIFEST_PATH)
@@ -2025,12 +2156,46 @@ def cmd_health(args: argparse.Namespace) -> int:
         if rel not in manifest_sources and rel not in manifest_metas:
             issues.append(("WARN", f"orphaned file in sources/: {sf.name}"))
 
+    # --- Utilization & maintenance info ---
+    info_items: list[str] = []
+    articles = index.get("articles", [])
+    utilization = _load_utilization(articles)
+    today = _jst_now().date()
+
+    for a in articles:
+        aid = a.get("id", "")
+        title = a.get("title", "")[:50]
+        atype = a.get("type", "source")
+        usage = utilization.get(aid, {"citations": 0, "search_hits": 0})
+        cites = usage["citations"]
+        hits = usage["search_hits"]
+
+        # Unused articles
+        if cites == 0 and hits == 0:
+            info_items.append(f"unused: {aid} -- {title} (0 citations, 0 search hits)")
+
+        # High-usage articles
+        if cites >= 3:
+            info_items.append(f"high-usage: {aid} -- {title} ({cites} citations, {hits} search hits)")
+
+        # Archive candidates: stale + zero usage (synthesis excluded)
+        if atype != "synthesis":
+            try:
+                updated = datetime.date.fromisoformat(a.get("updated_at", "")[:10])
+                age = (today - updated).days
+            except (ValueError, TypeError):
+                age = -1
+            if age > 30 and cites == 0 and hits == 0:
+                info_items.append(
+                    f"archive candidate: {aid} -- {title} (age: {age}d, {cites} citations, {hits} search hits)"
+                )
+
     # Report
     error_list = [i for i in issues if i[0] == "ERROR"]
     warn_list = [i for i in issues if i[0] == "WARN"]
-    _append_log("health", f"{len(error_list)} errors, {len(warn_list)} warnings")
+    _append_log("health", f"{len(error_list)} errors, {len(warn_list)} warnings, {len(info_items)} info")
 
-    if not issues:
+    if not issues and not info_items:
         print("Health check passed. No issues found.")
         return 0
 
@@ -2038,12 +2203,18 @@ def cmd_health(args: argparse.Namespace) -> int:
         print(json.dumps({
             "errors": len(error_list),
             "warnings": len(warn_list),
+            "info_count": len(info_items),
             "issues": [{"severity": s, "message": m} for s, m in issues],
+            "info": info_items,
         }, indent=2, ensure_ascii=False))
     else:
-        print(f"Health check: {len(error_list)} errors, {len(warn_list)} warnings\n")
+        print(f"Health check: {len(error_list)} errors, {len(warn_list)} warnings, {len(info_items)} info\n")
         for severity, msg in issues:
             print(f"  [{severity}] {msg}")
+        if info_items:
+            print("\n--- Utilization & Maintenance ---")
+            for item in info_items:
+                print(f"  [INFO] {item}")
 
     return 1 if error_list else 0
 
@@ -2098,6 +2269,208 @@ def _generate_index_md(articles: list[dict]) -> None:
 
     lines.append("")
     INDEX_MD_PATH.write_text("\n".join(lines), encoding="utf-8")
+
+
+# ---------------------------------------------------------------------------
+# Repair (re-fetch broken / legacy sources)
+# ---------------------------------------------------------------------------
+
+
+def _repair_source(
+    sid: str, item: dict, manifest: dict,
+) -> tuple[bool, str]:
+    """Attempt to re-fetch and rebuild .md for a broken source.
+
+    Returns (success, message).
+    """
+    source_path = KB_ROOT / item["source_path"]
+    meta_path_str = item.get("meta_path", "")
+    meta_path = KB_ROOT / meta_path_str if meta_path_str else None
+    meta: dict = {}
+    if meta_path and meta_path.exists():
+        meta = load_json(meta_path) or {}
+
+    # Determine URL to fetch
+    url: str | None = None
+
+    # 1. From meta.json
+    url = meta.get("fetch_url") or meta.get("normalized_url") or None
+
+    # 2. From .clip file
+    if not url and source_path.suffix == ".clip" and source_path.exists():
+        clip = parse_clip_file(source_path)
+        if clip:
+            url = clip.get("url")
+
+    # 3. From user_comment in meta
+    if not url:
+        comment = meta.get("user_comment") or ""
+        m = re.search(r'https?://\S+', comment)
+        if m:
+            url = _sanitize_extracted_url(m.group(0))
+
+    if not url or not url.startswith(("http://", "https://")):
+        return False, "no fetchable URL found"
+
+    # Sanitize URL
+    url = _sanitize_extracted_url(url)
+
+    # Fetch
+    try:
+        html, final_url, fetched_title = safe_fetch(url)
+        article_text = extract_article_text(html)
+        if not article_text:
+            return False, f"extraction returned empty (URL: {url[:80]})"
+    except RuntimeError as e:
+        return False, f"fetch failed: {e}"
+
+    # Build .md source
+    user_comment = meta.get("user_comment")
+    if not user_comment and source_path.suffix == ".clip" and source_path.exists():
+        try:
+            clip_data = json.loads(source_path.read_text(encoding="utf-8"))
+            user_comment = clip_data.get("user_comment")
+        except (json.JSONDecodeError, OSError):
+            pass
+    shared_title = meta.get("shared_title")
+
+    md = build_source_markdown(
+        url=url,
+        title=fetched_title,
+        article_text=article_text,
+        user_comment=user_comment,
+        shared_title=shared_title,
+        fetch_status="ok",
+    )
+
+    # Write new .md file
+    slug_base = (fetched_title or shared_title or "clip")[:40]
+    slug = sanitize_filename(slug_base).strip("_") or "clip"
+    new_path = SOURCES_DIR / f"{sid}_{slug}.md"
+    try:
+        new_path.write_text(md, encoding="utf-8")
+    except OSError as e:
+        return False, f"write failed: {e}"
+
+    # Update manifest
+    item["source_path"] = to_posix(new_path, KB_ROOT)
+    item["status"] = "pending"
+    item["error"] = None
+
+    # Update meta.json
+    if meta_path:
+        meta["fetch_status"] = "ok"
+        meta["fetch_final_url"] = final_url
+        meta["fetched_title"] = fetched_title
+        meta["repaired_at"] = _jst_now().isoformat()
+        meta["repair_count"] = meta.get("repair_count", 0) + 1
+        atomic_write_json(meta_path, meta)
+
+    return True, f"repaired -> {new_path.name} ({len(article_text)} chars)"
+
+
+def _is_repair_candidate(sid: str, item: dict) -> str | None:
+    """Check if a source needs repair. Returns reason string or None."""
+    source_path = KB_ROOT / item["source_path"]
+
+    # 1. Raw .clip file (legacy ingest)
+    if source_path.suffix == ".clip":
+        return "raw .clip source (legacy ingest)"
+
+    # 2. fetch_status check via meta.json
+    meta_path_str = item.get("meta_path", "")
+    if meta_path_str:
+        meta_path = KB_ROOT / meta_path_str
+        if meta_path.exists():
+            meta = load_json(meta_path) or {}
+            fs = meta.get("fetch_status")
+            if fs in ("fetch_failed", "extraction_failed"):
+                return f"fetch_status: {fs}"
+            # Old meta without fetch_status (legacy)
+            if "fetch_status" not in meta and meta.get("clip_source"):
+                return "legacy meta: missing fetch_status"
+        else:
+            # meta.json expected but missing
+            if item.get("original_name", "").endswith(".clip"):
+                return "meta.json missing for .clip source"
+
+    # 3. .md source with fetch_failed marker or too-short body
+    if source_path.suffix == ".md" and source_path.exists():
+        try:
+            text = source_path.read_text(encoding="utf-8")
+            if "Fetch status: fetch_failed" in text:
+                return "source .md contains fetch_failed marker"
+            if "Fetch status: extraction_failed" in text:
+                return "source .md contains extraction_failed marker"
+            body = re.sub(
+                r"\A---.*?\n---[ \t]*\n", "", text, count=1, flags=re.DOTALL,
+            ).strip()
+            if len(body) < MIN_SOURCE_BODY_CHARS:
+                return f"source body too short ({len(body)} chars)"
+        except (OSError, UnicodeDecodeError):
+            pass
+
+    return None
+
+
+def cmd_repair(args: argparse.Namespace) -> int:
+    """Re-fetch broken or legacy sources and rebuild .md files."""
+    manifest = load_json(MANIFEST_PATH)
+    if not manifest:
+        print("No manifest found. Run 'kb ingest' first.")
+        return 1
+
+    items = manifest.get("items", {})
+    dry_run = getattr(args, "dry_run", False)
+    target_sid = getattr(args, "sid", None)
+
+    candidates: list[tuple[str, dict, str]] = []  # (sid, item, reason)
+    for sid, item in items.items():
+        if target_sid and sid != target_sid:
+            continue
+        reason = _is_repair_candidate(sid, item)
+        if reason:
+            candidates.append((sid, item, reason))
+
+    if not candidates:
+        print("No sources need repair.")
+        return 0
+
+    print(f"Found {len(candidates)} repair candidate(s):")
+    for sid, item, reason in candidates:
+        print(f"  {sid}: {reason}")
+
+    if dry_run:
+        return 0
+
+    repaired = 0
+    blocked = 0
+    for sid, item, reason in candidates:
+        print(f"\nRepairing {sid} ({reason})...")
+        ok, msg = _repair_source(sid, item, manifest)
+        if ok:
+            print(f"  OK: {msg}")
+            repaired += 1
+        else:
+            print(f"  BLOCKED: {msg}")
+            item["status"] = "blocked"
+            item["error"] = f"repair failed: {msg}"
+            # Update repair_count in meta
+            meta_path_str = item.get("meta_path", "")
+            if meta_path_str:
+                meta_path = KB_ROOT / meta_path_str
+                if meta_path.exists():
+                    meta = load_json(meta_path) or {}
+                    meta["repair_count"] = meta.get("repair_count", 0) + 1
+                    meta["last_repair_error"] = msg
+                    atomic_write_json(meta_path, meta)
+            blocked += 1
+
+    # Save manifest
+    atomic_write_json(MANIFEST_PATH, manifest)
+
+    print(f"\nRepair complete: {repaired} repaired, {blocked} blocked (manual review)")
+    return 0 if blocked == 0 else 2
 
 
 # ---------------------------------------------------------------------------
@@ -2167,7 +2540,7 @@ def cmd_lint(args: argparse.Namespace) -> int:
 
     for a in articles:
         try:
-            updated = datetime.date.fromisoformat(a["updated_at"])
+            updated = datetime.date.fromisoformat(a["updated_at"][:10])
         except (ValueError, TypeError):
             continue
         age = (today - updated).days
@@ -2437,7 +2810,7 @@ def cmd_synthesize(args: argparse.Namespace) -> int:
     print(f"Synthesizing {len(matching)} articles on topic '{topic}'...")
 
     client = anthropic.Anthropic()
-    today = datetime.date.today().isoformat()
+    today = _jst_stamp()
     result = _synthesize_topic(topic, matching, client, today)
 
     if result:
@@ -2575,7 +2948,7 @@ def cmd_reduce(args: argparse.Namespace) -> int:
 
     # Process candidates
     client = anthropic.Anthropic()
-    today = datetime.date.today().isoformat()
+    today = _jst_stamp()
     synthesized = 0
     failed = 0
 
@@ -2832,10 +3205,14 @@ def main() -> int:
     sub.add_parser("index", help="Rebuild _index.json from wiki/")
 
     # sync
-    p_sync = sub.add_parser("sync", help="Run ingest + compile + index")
+    p_sync = sub.add_parser("sync", help="Run ingest + repair + compile + index")
     p_sync.add_argument(
         "--reduce", action="store_true",
         help="Also run reduce step (auto-synthesize topics with 3+ articles)",
+    )
+    p_sync.add_argument(
+        "--no-repair", action="store_true",
+        help="Skip repair step (do not re-fetch broken sources)",
     )
 
     # watch
@@ -2857,6 +3234,11 @@ def main() -> int:
     # stats
     p_stats = sub.add_parser("stats", help="Show KB statistics")
     p_stats.add_argument("--json", action="store_true", help="Machine-readable output")
+
+    # repair
+    p_repair = sub.add_parser("repair", help="Re-fetch failed/legacy sources and rebuild .md files")
+    p_repair.add_argument("--dry-run", action="store_true", help="Show candidates without fetching")
+    p_repair.add_argument("--sid", help="Repair a specific source ID")
 
     # health
     p_health = sub.add_parser("health", help="Run integrity checks")
@@ -2888,6 +3270,7 @@ def main() -> int:
         "compile": cmd_compile,
         "index": cmd_index,
         "sync": cmd_sync,
+        "repair": cmd_repair,
         "watch": cmd_watch,
         "bot": cmd_bot,
         "search": cmd_search,
