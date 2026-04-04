@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-04-04T21:08:27.713953+00:00",
+  "generated_at": "2026-04-04T21:36:42.345410+00:00",
   "article_count": 13,
   "articles": [
     {
@@ -25,30 +25,41 @@
       "source_ids": [
         "afc2dce259a1"
       ],
+      "source_urls": [
+        "https://gigazine.net/news/20260404-ai-data-center-delayed-canceled"
+      ],
+      "published_at": "",
       "created_at": "2026-04-05",
       "updated_at": "2026-04-05"
     },
     {
-      "id": "aramco-world-magazine-hybrid-publishing",
-      "path": "wiki/aramco-world-magazine-hybrid-publishing.md",
-      "title": "「The World of Aramco」- 年鑑と総合誌の融合による独特な印刷メディア",
+      "id": "aramco-world-publication-analysis",
+      "path": "wiki/aramco-world-publication-analysis.md",
+      "title": "「The World of Aramco」出版物の特異性分析",
       "type": "source",
-      "summary": "「The World of Aramco」は年鑑的な難解さとLife誌風の総合誌スタイルを組み合わせた独特な印刷メディアとして評価されている。 この出版物は「魅力的でやや奇妙な印刷メディアの飛び地」として進化し、愛情と距離感を同時に持つ複雑な性格を持っている。\n",
+      "summary": "「The World of Aramco」は年鑑的な難解雑学とLife誌風の総合誌スタイルを組み合わせた、魅力的でありながら奇妙な印刷メディアの飛び地として評価されている。 この特異な出版物は企業出版の新たな形態を示している。\n",
       "topics": [
-        "print-media",
         "corporate-publishing",
-        "magazine-design",
-        "cultural-publications"
+        "print-media",
+        "cultural-documentation"
       ],
       "aliases_ja": [
-        "プリントメディア",
-        "企業出版物",
-        "雑誌デザイン",
-        "文化出版物"
+        "アラムコ・ワールド",
+        "企業出版",
+        "印刷メディア",
+        "総合誌スタイル",
+        "年鑑",
+        "Life誌",
+        "文化記録",
+        "企業広報誌"
       ],
       "source_ids": [
         "1880dd1f04f0"
       ],
+      "source_urls": [
+        "https://www.theparisreview.org/blog/2026/04/03/the-world-of-aramco"
+      ],
+      "published_at": "2026-04-03",
       "created_at": "2026-04-05",
       "updated_at": "2026-04-05"
     },
@@ -75,57 +86,44 @@
       "source_ids": [
         "79391f1124d3"
       ],
+      "source_urls": [
+        "https://dev.classmethod.jp/articles/claudememo-20260403/"
+      ],
+      "published_at": "",
       "created_at": "2026-04-05",
       "updated_at": "2026-04-05"
     },
     {
-      "id": "dali-nuclear-mysticism-critique",
-      "path": "wiki/dali-nuclear-mysticism-critique.md",
-      "title": "ダリの「核の神秘主義」への転向とその芸術的限界",
+      "id": "dali-nuclear-mysticism-late-period",
+      "path": "wiki/dali-nuclear-mysticism-late-period.md",
+      "title": "ダリの晩年「Nuclear Mysticism」への転換と芸術的乾燥化",
       "type": "source",
-      "summary": "サルバドール・ダリは晩年「Nuclear Mysticism（核の神秘主義）」に傾倒し、世俗的テーマを放棄して宗教的・形而上学的主題のみを追求するようになった。しかし批評家は、この転換が「経験の豊かさを形而上学の乾燥さと引き換えにした」として批判的に評価している。\n",
+      "summary": "サルバドール・ダリは晩年「Nuclear Mysticism（核の神秘主義）」に傾倒し、世俗的なテーマを放棄して形而上学的・宗教的な主題のみを描くようになった。 この転換は「経験の豊かさを形而上学の乾燥さと引き換えにした」として批判されている。\n",
       "topics": [
-        "nuclear-mysticism",
         "salvador-dali",
+        "nuclear-mysticism",
         "religious-art",
-        "artistic-evolution",
-        "surrealism-decline"
+        "late-period-art",
+        "metaphysical-art"
       ],
       "aliases_ja": [
+        "ダリ",
         "サルバドール・ダリ",
         "核の神秘主義",
+        "Nuclear Mysticism",
+        "晩年のダリ",
         "宗教的絵画",
-        "シュルレアリスム"
+        "形而上学的絵画",
+        "芸術の乾燥化",
+        "世俗的テーマの放棄"
       ],
       "source_ids": [
         "10a681adaf13"
       ],
-      "created_at": "2026-04-05",
-      "updated_at": "2026-04-05"
-    },
-    {
-      "id": "dali-sublime-faith-metropolitan-exhibition",
-      "path": "wiki/dali-sublime-faith-metropolitan-exhibition.md",
-      "title": "ダリの「崇高な信仰」とその矛盾性 - メトロポリタン美術館展覧会における考察",
-      "type": "source",
-      "summary": "メトロポリタン美術館のラファエロ展覧会に関連して展示されたサルバドール・ダリの信仰をテーマとした作品について、「崇高な信仰」という概念の矛盾性を考察。通常自明とされる信仰の崇高性に対して、ダリ特有の「奇形の影」が持ち込まれることによる複雑性が指摘されている。\n",
-      "topics": [
-        "salvador-dali",
-        "religious-art",
-        "metropolitan-museum",
-        "faith-and-surrealism",
-        "art-criticism"
+      "source_urls": [
+        "https://hyperallergic.com/salvador-dalis-frustrating-vision-of-the-divine"
       ],
-      "aliases_ja": [
-        "サルバドール・ダリ",
-        "宗教芸術",
-        "メトロポリタン美術館",
-        "信仰とシュルレアリスム",
-        "美術批評"
-      ],
-      "source_ids": [
-        "95b83f92c2f9"
-      ],
+      "published_at": "",
       "created_at": "2026-04-05",
       "updated_at": "2026-04-05"
     },
@@ -153,183 +151,273 @@
       "source_ids": [
         "d2ea6a180078"
       ],
+      "source_urls": [
+        "https://www.soccer-king.jp/news/world/ita/20260404/2144780.html"
+      ],
+      "published_at": "",
       "created_at": "2026-04-05",
       "updated_at": "2026-04-05"
     },
     {
-      "id": "karpathy-llm-knowledge-base-workflow",
-      "path": "wiki/karpathy-llm-knowledge-base-workflow.md",
-      "title": "Andrej Karpathyによる個人用知識ベース構築のLLMワークフロー",
+      "id": "henry-defends-cherki-selfie-celebration-arsenal-provocation",
+      "path": "wiki/henry-defends-cherki-selfie-celebration-arsenal-provocation.md",
+      "title": "ティエリ・アンリ、シェルキのアーセナル挑発セレブレーションを擁護",
       "type": "source",
-      "summary": "Andrej Karpathyが提案するLLMを活用した個人用知識ベース構築手法。生データをraw/ディレクトリに収集し、LLMがマークダウンwikiに「コンパイル」して運用する。 400K語規模のwikiに対して複雑なQ&Aが可能で、出力結果をwikiに還元することで知識が自己強化される仕組み。\n",
+      "summary": "アーセナルのレジェンド、ティエリ・アンリがマンチェスター・シティのライアン・シェルキによるカラバオ・カップでの挑発的な自撮りセレブレーションを擁護。 シェルキがアーセナル戦後に行った「桁外れ」のパフォーマンスについて、アンリは「好きなだけ自撮りをすればいい」と発言し、若手選手の表現を支持する姿勢を示した。\n",
       "topics": [
-        "llm-workflows",
-        "knowledge-management",
-        "personal-tools",
-        "markdown-wiki",
-        "obsidian-integration"
+        "football-celebrations",
+        "arsenal-manchester-city",
+        "carabao-cup",
+        "player-controversies"
       ],
       "aliases_ja": [
-        "アンドレイ・カルパシー",
-        "知識ベース",
-        "ワークフロー",
-        "マークダウンウィキ",
-        "オブシディアン"
+        "ティエリ・アンリ",
+        "ライアン・シェルキ",
+        "カラバオ・カップ",
+        "マンチェスター・シティ",
+        "アーセナル",
+        "自撮りセレブレーション",
+        "挑発的なゴールパフォーマンス",
+        "フットボール論争",
+        "セレブレーション擁護",
+        "サッカー挑発行為"
       ],
       "source_ids": [
-        "16c0425f47df"
+        "66cb1f76b9ff"
       ],
+      "source_urls": [
+        "Goal.com"
+      ],
+      "published_at": "",
       "created_at": "2026-04-05",
       "updated_at": "2026-04-05"
     },
     {
-      "id": "llm-api-prompt-caching-optimization",
-      "path": "wiki/llm-api-prompt-caching-optimization.md",
-      "title": "LLM APIにおけるプロンプトキャッシング最適化技術",
+      "id": "llm-api-prompt-caching-techniques",
+      "path": "wiki/llm-api-prompt-caching-techniques.md",
+      "title": "LLM APIにおけるプロンプトキャッシュ技術",
       "type": "source",
-      "summary": "LLM APIプロバイダーが提供するプロンプトキャッシング技術により、同一のプレフィックスを持つリクエストで50-90%のコスト削減と大幅な遅延短縮を実現。 Anthropic、OpenAI、Googleなどの主要プロバイダーが異なる価格モデルとTTL設定で自動キャッシングを実装している。\n",
+      "summary": "LLM APIプロバイダーが提供するプロンプトキャッシュ機能により、同一プレフィックスの再利用で50-90%のコスト削減とレイテンシ改善が可能。 静的コンテンツを先頭に配置し、動的コンテンツを末尾に置く設計パターンが効果的。\n",
       "topics": [
-        "llm-optimization",
-        "api-efficiency",
-        "cost-reduction",
-        "prompt-engineering"
+        "llm-api-optimization",
+        "prompt-caching",
+        "ai-cost-optimization",
+        "knowledge-base-design"
       ],
       "aliases_ja": [
-        "プロンプトキャッシング",
-        "LLM最適化",
-        "API効率化",
-        "コスト削減"
+        "プロンプトキャッシュ",
+        "LLMキャッシュ",
+        "APIコスト削減",
+        "レイテンシ最適化",
+        "Anthropic",
+        "OpenAI",
+        "Google Gemini",
+        "プロンプト設計"
       ],
       "source_ids": [
         "f75138abebf3"
       ],
+      "source_urls": [],
+      "published_at": "",
       "created_at": "2026-04-05",
       "updated_at": "2026-04-05"
     },
     {
-      "id": "nii-llm-jp-4-japanese-language-model-release",
-      "path": "wiki/nii-llm-jp-4-japanese-language-model-release.md",
-      "title": "国立情報学研究所、日本語特化LLM「LLM-jp-4」をオープンソース公開",
+      "id": "llm-knowledge-base-workflow-karpathy",
+      "path": "wiki/llm-knowledge-base-workflow-karpathy.md",
+      "title": "Andrej KarpathyのLLM活用ナレッジベース構築ワークフロー",
       "type": "source",
-      "summary": "国立情報学研究所が日本語に特化したLLM「LLM-jp-4」（8Bおよび32B-A3B）をオープンソースで公開し、 OpenAIのgpt-oss-20bを超える日本語性能を実現したと発表。 日本語を母語とするAI開発の新たな進展として注目される。\n",
+      "summary": "Andrej Karpathyが開発したLLMを活用した個人ナレッジベース構築手法。生データからLLMが自動的に.mdウィキを編纂し、Obsidianで可視化・運用する統合ワークフローを実現している。 約100記事・40万語規模でも高度なRAG手法なしに効果的なQ&Aが可能で、出力結果をウィキに還元することで知識ベースが継続的に成長する仕組みを構築している。\n",
+      "topics": [
+        "llm-workflows",
+        "knowledge-management",
+        "obsidian-integration",
+        "ai-productivity",
+        "markdown-automation"
+      ],
+      "aliases_ja": [
+        "LLMワークフロー",
+        "ナレッジベース構築",
+        "オブシディアン連携",
+        "AIプロダクティビティ",
+        "マークダウン自動化",
+        "アンドレイ・カルパシー",
+        "知識管理システム",
+        "RAG手法",
+        "ウィキ自動生成",
+        "データ整理術"
+      ],
+      "source_ids": [
+        "16c0425f47df"
+      ],
+      "source_urls": [],
+      "published_at": "",
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "nii-llm-jp-4-japanese-language-model",
+      "path": "wiki/nii-llm-jp-4-japanese-language-model.md",
+      "title": "国立情報学研究所がLLM-jp-4を公開 - 日本語特化型大規模言語モデル",
+      "type": "source",
+      "summary": "国立情報学研究所（NII）がオープンソースの日本語特化型大規模言語モデル「LLM-jp-4」（8Bおよび32B-A3B）を公開。 既存のgpt-oss-20bを上回る日本語性能を実現したと発表されている。\n",
       "topics": [
         "japanese-llm",
         "open-source-ai",
-        "national-ai-research",
-        "language-model-performance"
+        "nlp-research",
+        "domestic-ai-development"
       ],
       "aliases_ja": [
-        "国立情報学研究所",
         "日本語LLM",
+        "国産大規模言語モデル",
+        "国立情報学研究所",
+        "LLM-jp-4",
+        "gpt-oss-20b",
         "オープンソースAI",
-        "言語モデル性能"
+        "日本語AI",
+        "国産AI",
+        "NII",
+        "大規模言語モデル"
       ],
       "source_ids": [
         "2c8b2800779b"
       ],
+      "source_urls": [
+        "https://www.itmedia.co.jp/aiplus/articles/2604/03/news092.html"
+      ],
+      "published_at": "2026-04-03",
       "created_at": "2026-04-05",
       "updated_at": "2026-04-05"
     },
     {
-      "id": "quantum-cryptography-breakthrough-2026",
-      "path": "wiki/quantum-cryptography-breakthrough-2026.md",
-      "title": "量子コンピュータによる暗号解読の大幅効率化と時代の転換点",
+      "id": "quantum-computing-breakthrough-cryptography-threat-2026",
+      "path": "wiki/quantum-computing-breakthrough-cryptography-threat-2026.md",
+      "title": "量子コンピュータによる暗号解読能力の大幅向上 - 必要qubit数と時間の劇的削減",
       "type": "source",
-      "summary": "2つの研究グループが量子コンピュータによるオンライン暗号解読に必要なqubit数と所要時間を大幅に削減する技術的突破を達成した。 この進歩により現在の暗号インフラが脆弱化する時期が大幅に前倒しされ、量子コンピュータ時代の本格的な到来が現実味を帯びてきた。\n",
+      "summary": "2つの研究グループが量子コンピュータによる一般的なオンライン暗号解読に必要なqubit数と所要時間を大幅に削減することに成功。 この技術的ブレークスルーにより、量子コンピュータ時代の到来が従来予想よりも大幅に早まる可能性が示された。\n",
       "topics": [
         "quantum-computing",
         "cryptography",
         "cybersecurity",
-        "technological-disruption"
+        "computational-breakthrough"
       ],
       "aliases_ja": [
         "量子コンピュータ",
         "暗号解読",
-        "qubit",
-        "クビット",
-        "サイバーセキュリティ"
+        "qubit数削減",
+        "オンライン暗号",
+        "量子コンピュータ時代",
+        "サイバーセキュリティ",
+        "暗号インフラ",
+        "計算能力の向上"
       ],
       "source_ids": [
         "3bb354b8df07"
       ],
+      "source_urls": [
+        "https://www.quantamagazine.org/new-advances-bring-the-era-of-quantum-computers-closer-than-ever-20260403"
+      ],
+      "published_at": "2026-04-03",
       "created_at": "2026-04-05",
       "updated_at": "2026-04-05"
     },
     {
-      "id": "sefton-asylum-horror-game-care-responsibility",
-      "path": "wiki/sefton-asylum-horror-game-care-responsibility.md",
-      "title": "『Sefton Asylum』- ケア責任と恐怖が融合したクトゥルフ神話ホラーゲーム",
+      "id": "salvador-dali-sublime-faith-metropolitan-exhibition",
+      "path": "wiki/salvador-dali-sublime-faith-metropolitan-exhibition.md",
+      "title": "サルバドール・ダリの崇高な信仰 - メトロポリタン美術館ラファエロ展での考察",
       "type": "source",
-      "summary": "Clever Trickster Productionsが発表した『Sefton Asylum』は、夜勤看護師として精神病院を探索するクトゥルフ神話ホラーゲーム。 「ケアが間に合わなかった患者が脅威として蘇る」という設定により、職業的責任と恐怖を同一の体験として統合している。\n",
+      "summary": "メトロポリタン美術館のラファエロ展でサルバドール・ダリの信仰をテーマにした作品が取り上げられている。 ダリの「崇高な信仰」という概念について、通常の信仰の崇高性に対してダリが持ち込む「奇形の影」という独特な要素が考察されている。\n",
       "topics": [
-        "horror-games",
-        "cthulhu-mythos",
-        "healthcare-horror",
-        "responsibility-fear",
-        "indie-games"
+        "salvador-dali",
+        "religious-art",
+        "surrealism",
+        "metropolitan-museum",
+        "art-exhibition"
       ],
       "aliases_ja": [
-        "セフトンアサイラム",
+        "サルバドール・ダリ",
+        "ダリの信仰",
+        "崇高な信仰",
+        "メトロポリタン美術館",
+        "ラファエロ展",
+        "シュルレアリスム",
+        "宗教芸術",
+        "奇形の影"
+      ],
+      "source_ids": [
+        "95b83f92c2f9"
+      ],
+      "source_urls": [
+        "https://hyperallergic.com/salvador-dalis-sublime-faith"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "sefton-asylum-cthulhu-horror-game",
+      "path": "wiki/sefton-asylum-cthulhu-horror-game.md",
+      "title": "Sefton Asylum - クトゥルフ神話精神病院探索ホラーゲーム",
+      "type": "source",
+      "summary": "Clever Trickster Productionsが発表した『Sefton Asylum』は、夜勤看護師として精神病院で働くクトゥルフ神話テーマのホラーゲーム。 ケアが間に合わなかった患者が脅威として蘇るという設定で、責任と恐怖を同時に描く作品として注目される。\n",
+      "topics": [
+        "cthulhu-mythos",
+        "horror-games",
+        "psychological-horror",
+        "indie-game-development",
+        "healthcare-themes"
+      ],
+      "aliases_ja": [
         "クトゥルフ神話",
-        "ホラーゲーム",
-        "精神病院",
-        "看護師"
+        "精神病院ホラー",
+        "夜勤看護師",
+        "セフトン・アサイラム",
+        "クレバー・トリックスター・プロダクションズ",
+        "ワンオペ勤務",
+        "探索ホラー",
+        "患者が脅威として蘇る"
       ],
       "source_ids": [
         "c6913490e3c6"
       ],
+      "source_urls": [
+        "https://automaton-media.com/articles/newsjp/20260404-434672"
+      ],
+      "published_at": "2026-04-04",
       "created_at": "2026-04-05",
       "updated_at": "2026-04-05"
     },
     {
-      "id": "sofia-ai-memory-system-event-driven-personality",
-      "path": "wiki/sofia-ai-memory-system-event-driven-personality.md",
-      "title": "ソフィアAI記憶システム - イベント駆動による人格変化の実装アーキテクチャ",
+      "id": "tokyoko-media-transformation-youth-refuge",
+      "path": "wiki/tokyoko-media-transformation-youth-refuge.md",
+      "title": "トー横の「メディア化」と居場所の変容 - 秋葉恋×佐々木チワワ対談分析",
       "type": "source",
-      "summary": "AIキャラクター「ソフィア」は従来の会話ログ保存に代わり「イベント駆動認知ループ」による記憶システムを実装。 MemoryEventによる体験の評価・選別・圧縮を通じて、人間の記憶特性（新しさ・感情・社会的重要性）を模倣し、体験による人格変化を実現する。\n",
+      "summary": "新宿歌舞伎町の「トー横界隈」が2019年頃から若者の居場所として機能してきたが、近年のメディア化により変容を遂げている。 映画監督と社会学者の対談を通じて、居場所がメディアに「発見」されることによる影響と変化を分析している。\n",
       "topics": [
-        "ai-character-development",
-        "memory-systems",
-        "event-driven-architecture",
-        "cognitive-modeling",
-        "personality-simulation"
-      ],
-      "aliases_ja": [
-        "ソフィアちゃん",
-        "メモリーイベント",
-        "認知ループ",
-        "記憶システム",
-        "イベント駆動"
-      ],
-      "source_ids": [
-        "6b49f210bcc5"
-      ],
-      "created_at": "2026-04-05",
-      "updated_at": "2026-04-05"
-    },
-    {
-      "id": "tokyoko-mediatization-effects-youth-spaces",
-      "path": "wiki/tokyoko-mediatization-effects-youth-spaces.md",
-      "title": "トー横のメディア化による若者の居場所変容に関する対談分析",
-      "type": "source",
-      "summary": "新宿歌舞伎町の「トー横界隈」が2019年頃から若者の居場所として機能してきたが、近年のメディア露出により本質的な変容を遂げている。映画監督・秋葉恋と社会学者・佐々木チワワによる対談『東京逃避行』では、居場所がメディアに「発見」された瞬間の不可逆的変化について論じられている。\n",
-      "topics": [
-        "youth-culture",
-        "media-effects",
-        "urban-spaces",
-        "social-issues",
-        "mediatization"
+        "youth-social-issues",
+        "media-representation",
+        "urban-sociology",
+        "social-refuge-spaces",
+        "tokyo-subculture"
       ],
       "aliases_ja": [
         "トー横",
         "歌舞伎町",
+        "若者の居場所",
         "メディア化",
-        "若者文化",
-        "都市空間"
+        "秋葉恋",
+        "佐々木チワワ",
+        "東京逃避行",
+        "社会問題",
+        "新宿"
       ],
       "source_ids": [
         "c0f8def6e3ef"
       ],
+      "source_urls": [
+        "https://kai-you.net/article/95023"
+      ],
+      "published_at": "",
       "created_at": "2026-04-05",
       "updated_at": "2026-04-05"
     }

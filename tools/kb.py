@@ -15,6 +15,7 @@ Commands:
     health     - Run integrity checks
     lint       - Run structural quality checks on wiki content
     synthesize - Generate synthesis page from articles on a topic
+    reduce     - Auto-synthesize topics with 3+ source articles
 """
 from __future__ import annotations
 
@@ -1134,6 +1135,9 @@ topics:
   - relevant-topic-kebab-case
 aliases_ja:
   - (想起ワード: 最低5個。会話で使われそうな日本語表現を含む)
+published_at: "YYYY-MM-DD"
+source_urls:
+  - https://original-source-url
 summary: >
   2-3 sentence summary of the key concepts and conclusions.
   Be specific about entities, terminology, and actionable insights.
@@ -1149,6 +1153,8 @@ Rules:
   2. 記事中の人名・団体名のカタカナ（例: Paul Graham → ポール・グレアム）
   3. 会話で言及されそうな口語的表現（例: 「量子コンピュータ」「暴号解読」「デブライネ」）
   空リストは禁止。英語記事でも必ず日本語エイリアスを付ける
+- published_at: the ORIGINAL publication date of the source article (not today). Extract from HTML meta tags, OGP, date in URL, or article body. Use YYYY-MM-DD format. If truly unknown, use empty string ""
+- source_urls: list of original source URLs found in the document. Extract from "Source:" lines or URL references at the top. If no URL is found, use empty list []
 - summary is critical for retrieval quality
 - Include a "## Related Articles" section at the end with [[article-id]] links if relevant
 - Always write the article body in Japanese, regardless of the source language. Translate and summarize naturally — do not produce a literal translation
@@ -1285,8 +1291,59 @@ Rules:
     return 2 if failed else 0
 
 
+_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def _build_source_url_map() -> dict[str, str]:
+    """Build source_id -> URL map from _meta.json and source markdown files."""
+    url_map: dict[str, str] = {}
+    for f in SOURCES_DIR.glob("*"):
+        parts = f.name.split("_", 1)
+        if len(parts) < 2:
+            continue
+        sid = parts[0]
+        if sid in url_map:
+            continue
+        try:
+            content = f.read_text(encoding="utf-8")
+        except (UnicodeDecodeError, OSError):
+            continue
+        if f.suffix == ".json" and f.name.endswith("_meta.json"):
+            try:
+                data = json.loads(content)
+                url = data.get("fetch_url") or data.get("normalized_url") or ""
+                if url:
+                    url_map[sid] = url
+            except json.JSONDecodeError:
+                pass
+        elif f.suffix == ".clip":
+            try:
+                data = json.loads(content)
+                if url := data.get("url"):
+                    url_map[sid] = url
+            except json.JSONDecodeError:
+                pass
+        elif f.suffix == ".md":
+            fm_match = FRONTMATTER_RE.match(content)
+            if fm_match:
+                for line in fm_match.group(1).split("\n"):
+                    line = line.strip()
+                    if line.startswith("source_url:"):
+                        val = line[len("source_url:"):].strip().strip('"').strip("'")
+                        if val:
+                            url_map.setdefault(sid, val)
+                            break
+            for line in content.split("\n")[:10]:
+                m = re.match(r"^Source:\s*(https?://\S+)", line.strip())
+                if m:
+                    url_map.setdefault(sid, m.group(1))
+                    break
+    return url_map
+
+
 def cmd_index(_args: argparse.Namespace) -> int:
     """Rebuild _index.json from wiki/ and reconcile manifest status."""
+    source_url_map = _build_source_url_map()
     wiki_files = sorted(WIKI_DIR.glob("*.md"))
     if not wiki_files:
         index_data = {
@@ -1330,6 +1387,25 @@ def cmd_index(_args: argparse.Namespace) -> int:
             continue
         seen_ids[aid] = wf.name
 
+        # --- Deterministic source_urls from ingest metadata ---
+        _source_urls_set: list[str] = []
+        for sid in fm["source_ids"]:
+            if sid in source_url_map:
+                _u = source_url_map[sid]
+                if _u not in _source_urls_set:
+                    _source_urls_set.append(_u)
+        # Also include LLM-extracted source_urls as fallback
+        for _u in fm.get("source_urls", []):
+            if isinstance(_u, str) and _u.startswith("http") and _u not in _source_urls_set:
+                _source_urls_set.append(_u)
+
+        # --- published_at validation ---
+        _pub_at = fm.get("published_at", "")
+        if isinstance(_pub_at, str) and _DATE_RE.match(_pub_at):
+            published_at = _pub_at
+        else:
+            published_at = ""
+
         article_entry = {
             "id": aid,
             "path": to_posix(wf, KB_ROOT),
@@ -1339,6 +1415,8 @@ def cmd_index(_args: argparse.Namespace) -> int:
             "topics": fm["topics"],
             "aliases_ja": fm.get("aliases_ja", []),
             "source_ids": fm["source_ids"],
+            "source_urls": _source_urls_set,
+            "published_at": published_at,
             "created_at": fm["created_at"],
             "updated_at": fm["updated_at"],
         }
@@ -1399,7 +1477,7 @@ def cmd_index(_args: argparse.Namespace) -> int:
 
 
 def cmd_sync(_args: argparse.Namespace) -> int:
-    """Run ingest + compile + index in one shot."""
+    """Run ingest + compile + index (+ optional reduce) in one shot."""
     print("=== INGEST ===")
     rc = cmd_ingest(_args)
     if rc == 2:
@@ -1411,9 +1489,16 @@ def cmd_sync(_args: argparse.Namespace) -> int:
     print("\n=== INDEX ===")
     rc_index = cmd_index(_args)
 
+    # Optional reduce step
+    if getattr(_args, "reduce", False):
+        print("\n=== REDUCE ===")
+        cmd_reduce(_args)
+        # Re-index to pick up newly created synthesis pages
+        print("\n=== RE-INDEX ===")
+        cmd_index(_args)
+
     # Quick health summary
     print("\n=== HEALTH ===")
-    # Inline minimal health check
     manifest = load_json(MANIFEST_PATH)
     items = manifest.get("items", {})
     pending = sum(1 for v in items.values() if v.get("status") == "pending")
@@ -2071,48 +2156,36 @@ def cmd_lint(args: argparse.Namespace) -> int:
 # Synthesize
 # ---------------------------------------------------------------------------
 
-def cmd_synthesize(args: argparse.Namespace) -> int:
-    """Generate a synthesis page from multiple articles on a topic."""
-    try:
-        import anthropic
-    except ImportError:
-        print("ERROR: anthropic package not installed. Run: pip install anthropic")
-        return 2
+def _synthesize_topic(
+    topic: str, source_articles: list[dict], client, today: str,
+) -> str | None:
+    """Generate/update a synthesis page for a topic.
 
-    topic = args.topic
-    index = load_json(INDEX_PATH)
-    articles = index.get("articles", [])
+    Args:
+        topic: kebab-case topic name
+        source_articles: list of article dicts (type != synthesis) matching this topic
+        client: anthropic.Anthropic instance
+        today: ISO date string
 
-    # Find articles matching the topic
-    matching = [a for a in articles if topic in a.get("topics", [])]
-    if not matching:
-        print(f"No articles found with topic '{topic}'.")
-        print(f"Available topics: {', '.join(sorted({t for a in articles for t in a.get('topics', [])}))}")
-        return 1
-
-    if len(matching) < 2:
-        print(f"Only 1 article with topic '{topic}'. Need at least 2 for synthesis.")
-        return 1
-
-    print(f"Synthesizing {len(matching)} articles on topic '{topic}'...")
-
+    Returns:
+        article_id on success, None on failure.
+    """
     # Read article bodies
     bodies = []
     all_source_ids: list[str] = []
-    for a in matching:
+    for a in source_articles:
         body = _read_wiki_body(a["id"])
         if body:
             bodies.append(f"### {a['title']}\n{body}")
             all_source_ids.extend(a.get("source_ids", []))
 
     if not bodies:
-        print("ERROR: could not read any article bodies")
-        return 2
+        print(f"  ERROR: could not read any article bodies for '{topic}'")
+        return None
 
-    today = datetime.date.today().isoformat()
     article_id = f"{topic}-overview"
 
-    # Check if synthesis page already exists
+    # Backup if exists
     existing_synth = WIKI_DIR / f"{article_id}.md"
     if existing_synth.exists():
         _backup_article(existing_synth)
@@ -2121,8 +2194,17 @@ def cmd_synthesize(args: argparse.Namespace) -> int:
     source_ids_yaml = "\n".join(f"  - {s}" for s in sorted(set(all_source_ids)))
     articles_text = "\n\n".join(bodies)
 
-    client = anthropic.Anthropic()
-    prompt = f"""Create a synthesis page that integrates knowledge from {len(matching)} articles on the topic "{topic}".
+    # Build reduced_from provenance metadata
+    reduced_from = sorted(
+        [{"id": a["id"], "updated_at": a.get("updated_at", "")} for a in source_articles],
+        key=lambda x: x["id"],
+    )
+    reduced_yaml = "\n".join(
+        f"  - {{id: {r['id']}, updated_at: \"{r['updated_at']}\"}}"
+        for r in reduced_from
+    )
+
+    prompt = f"""Create a synthesis page that integrates knowledge from {len(source_articles)} articles on the topic "{topic}".
 
 Source articles:
 ---
@@ -2138,9 +2220,11 @@ source_ids:
 {source_ids_yaml}
 topics:
   - {topic}
+reduced_from:
+{reduced_yaml}
 aliases_ja: []
 summary: >
-  Synthesis of {len(matching)} articles on {topic}. Key themes, patterns, and connections.
+  Synthesis of {len(source_articles)} articles on {topic}. Key themes, patterns, and connections.
 created_at: "{today}"
 updated_at: "{today}"
 ---
@@ -2166,24 +2250,206 @@ Rules:
 
         fm = parse_frontmatter(article_text)
         if fm is None:
-            print("ERROR: LLM response has no valid frontmatter")
-            return 2
+            print(f"  ERROR: LLM response has no valid frontmatter for '{topic}'")
+            return None
 
         errors = validate_frontmatter(fm, Path(article_id))
         if errors:
-            print(f"ERROR: frontmatter validation failed: {'; '.join(errors)}")
-            return 2
+            print(f"  ERROR: frontmatter validation failed for '{topic}': {'; '.join(errors)}")
+            return None
 
         wiki_path = WIKI_DIR / f"{article_id}.md"
         wiki_path.write_text(article_text, encoding="utf-8")
         print(f"  -> wiki/{article_id}.md (synthesis)")
-
-        _append_log("synthesize", f"{article_id} from {len(matching)} articles on '{topic}'")
-        return 0
+        return article_id
 
     except Exception as e:
-        print(f"ERROR: synthesis failed: {e}")
+        print(f"  ERROR: synthesis failed for '{topic}': {e}")
+        return None
+
+
+def cmd_synthesize(args: argparse.Namespace) -> int:
+    """Generate a synthesis page from multiple articles on a topic."""
+    try:
+        import anthropic
+    except ImportError:
+        print("ERROR: anthropic package not installed. Run: pip install anthropic")
         return 2
+
+    topic = args.topic
+    index = load_json(INDEX_PATH)
+    articles = index.get("articles", [])
+
+    # Find source articles matching the topic (exclude synthesis)
+    matching = [
+        a for a in articles
+        if topic in a.get("topics", []) and a.get("type", "source") != "synthesis"
+    ]
+    if not matching:
+        print(f"No source articles found with topic '{topic}'.")
+        print(f"Available topics: {', '.join(sorted({t for a in articles for t in a.get('topics', [])}))}")
+        return 1
+
+    if len(matching) < 2:
+        print(f"Only {len(matching)} source article(s) with topic '{topic}'. Need at least 2.")
+        return 1
+
+    print(f"Synthesizing {len(matching)} articles on topic '{topic}'...")
+
+    client = anthropic.Anthropic()
+    today = datetime.date.today().isoformat()
+    result = _synthesize_topic(topic, matching, client, today)
+
+    if result:
+        _append_log("synthesize", f"{result} from {len(matching)} articles on '{topic}'")
+        # Re-index to pick up the new synthesis page
+        cmd_index(args)
+        return 0
+    return 2
+
+
+# ---------------------------------------------------------------------------
+# Reduce (auto-synthesis)
+# ---------------------------------------------------------------------------
+
+MIN_REDUCE_ARTICLES = 3  # minimum source articles to trigger auto-synthesis
+
+
+def _reduce_needs_update(
+    topic: str, source_articles: list[dict],
+) -> tuple[bool, str]:
+    """Check if a synthesis page needs (re)generation.
+
+    Returns (needs_update, reason).
+    """
+    overview_path = WIKI_DIR / f"{topic}-overview.md"
+    if not overview_path.exists():
+        return True, "no synthesis page exists"
+
+    try:
+        text = overview_path.read_text(encoding="utf-8")
+    except OSError:
+        return True, "cannot read existing synthesis"
+
+    fm = parse_frontmatter(text)
+    if fm is None:
+        return True, "no frontmatter in existing synthesis"
+
+    reduced_from = fm.get("reduced_from")
+    if not reduced_from or not isinstance(reduced_from, list):
+        return True, "no reduced_from metadata (legacy)"
+
+    # Build current source snapshot (sorted by id)
+    current = sorted(
+        [{"id": a["id"], "updated_at": a.get("updated_at", "")} for a in source_articles],
+        key=lambda x: x["id"],
+    )
+    # Normalize existing reduced_from
+    existing = sorted(
+        [{"id": r.get("id", ""), "updated_at": r.get("updated_at", "")} for r in reduced_from],
+        key=lambda x: x["id"],
+    )
+
+    if current == existing:
+        return False, "up to date"
+
+    # Find what changed
+    current_ids = {r["id"] for r in current}
+    existing_ids = {r["id"] for r in existing}
+    added = current_ids - existing_ids
+    removed = existing_ids - current_ids
+    updated = {
+        r["id"] for r in current
+        if r["id"] in existing_ids
+        and r["updated_at"] != next(
+            (e["updated_at"] for e in existing if e["id"] == r["id"]), ""
+        )
+    }
+
+    parts = []
+    if added:
+        parts.append(f"+{len(added)} new")
+    if removed:
+        parts.append(f"-{len(removed)} removed")
+    if updated:
+        parts.append(f"~{len(updated)} updated")
+    return True, ", ".join(parts) or "content changed"
+
+
+def cmd_reduce(args: argparse.Namespace) -> int:
+    """Auto-synthesize topics with enough source articles."""
+    try:
+        import anthropic
+    except ImportError:
+        print("ERROR: anthropic package not installed. Run: pip install anthropic")
+        return 2
+
+    index = load_json(INDEX_PATH)
+    articles = index.get("articles", [])
+    if not articles:
+        print("No articles in index. Run 'kb index' first.")
+        return 1
+
+    dry_run = getattr(args, "dry_run", False)
+    limit = getattr(args, "limit", 5)
+    force_topic = getattr(args, "force", None)
+
+    # Collect source articles (exclude synthesis) grouped by topic
+    source_articles = [a for a in articles if a.get("type", "source") != "synthesis"]
+    topic_groups: dict[str, list[dict]] = {}
+    for a in source_articles:
+        for t in a.get("topics", []):
+            topic_groups.setdefault(t, []).append(a)
+
+    # Filter candidates
+    candidates: list[tuple[str, list[dict], str]] = []  # (topic, articles, reason)
+    for topic, group in sorted(topic_groups.items()):
+        if force_topic and topic != force_topic:
+            continue
+        if not force_topic and len(group) < MIN_REDUCE_ARTICLES:
+            continue
+        if len(group) < 2:
+            continue  # absolute minimum even for --force
+
+        if force_topic:
+            candidates.append((topic, group, "forced"))
+        else:
+            needs_update, reason = _reduce_needs_update(topic, group)
+            if needs_update:
+                candidates.append((topic, group, reason))
+            elif dry_run:
+                print(f"  SKIP: {topic} ({len(group)} articles) -- {reason}")
+
+    if not candidates:
+        print("No topics need synthesis.")
+        _append_log("reduce", "0 candidates found")
+        return 0
+
+    if dry_run:
+        print(f"\nReduce candidates ({len(candidates)}):")
+        for topic, group, reason in candidates[:limit]:
+            print(f"  {topic}: {len(group)} articles -- {reason}")
+        if len(candidates) > limit:
+            print(f"  ... and {len(candidates) - limit} more (--limit {limit})")
+        return 0
+
+    # Process candidates
+    client = anthropic.Anthropic()
+    today = datetime.date.today().isoformat()
+    synthesized = 0
+    failed = 0
+
+    for topic, group, reason in candidates[:limit]:
+        print(f"\nREDUCE: {topic} ({len(group)} articles, {reason})")
+        result = _synthesize_topic(topic, group, client, today)
+        if result:
+            synthesized += 1
+        else:
+            failed += 1
+
+    print(f"\nDone: {synthesized} synthesized, {failed} failed")
+    _append_log("reduce", f"{synthesized} synthesized, {failed} failed, {len(candidates)} candidates")
+    return 2 if failed and not synthesized else 0
 
 
 # ---------------------------------------------------------------------------
@@ -2422,7 +2688,11 @@ def main() -> int:
     sub.add_parser("index", help="Rebuild _index.json from wiki/")
 
     # sync
-    sub.add_parser("sync", help="Run ingest + compile + index")
+    p_sync = sub.add_parser("sync", help="Run ingest + compile + index")
+    p_sync.add_argument(
+        "--reduce", action="store_true",
+        help="Also run reduce step (auto-synthesize topics with 3+ articles)",
+    )
 
     # watch
     p_watch = sub.add_parser("watch", help="Monitor inbox/ and auto-sync on new files")
@@ -2457,6 +2727,12 @@ def main() -> int:
     p_synth = sub.add_parser("synthesize", help="Generate synthesis page from articles on a topic")
     p_synth.add_argument("topic", help="Topic to synthesize (kebab-case)")
 
+    # reduce
+    p_reduce = sub.add_parser("reduce", help="Auto-synthesize topics with 3+ source articles")
+    p_reduce.add_argument("--dry-run", action="store_true", help="Show candidates without generating")
+    p_reduce.add_argument("--limit", type=int, default=5, help="Max topics to process (default: 5)")
+    p_reduce.add_argument("--force", metavar="TOPIC", help="Force re-synthesis of a specific topic")
+
     args = parser.parse_args()
 
     # Ensure directories exist
@@ -2475,6 +2751,7 @@ def main() -> int:
         "health": cmd_health,
         "lint": cmd_lint,
         "synthesize": cmd_synthesize,
+        "reduce": cmd_reduce,
     }
 
     return commands[args.command](args)
