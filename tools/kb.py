@@ -1723,6 +1723,57 @@ def cmd_index(_args: argparse.Namespace) -> int:
     return 0
 
 
+def _rebuild_viewer() -> None:
+    """Rebuild wiki/viewer.html and docs/index.html."""
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            "build_viewer", KB_ROOT / "tools" / "build_viewer.py"
+        )
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        mod.main()
+    except Exception as e:
+        print(f"Viewer build failed: {e}")
+
+
+def _push_pages() -> None:
+    """Auto-commit docs/ changes and push to GitHub Pages."""
+    import subprocess
+    docs_dir = KB_ROOT / "docs"
+    if not docs_dir.exists():
+        return
+    try:
+        # Check if there are changes in docs/
+        result = subprocess.run(
+            ["git", "diff", "--quiet", "docs/"],
+            cwd=KB_ROOT, capture_output=True,
+        )
+        if result.returncode == 0:
+            # Also check untracked
+            result2 = subprocess.run(
+                ["git", "ls-files", "--others", "--exclude-standard", "docs/"],
+                cwd=KB_ROOT, capture_output=True, text=True,
+            )
+            if not result2.stdout.strip():
+                print("Pages: no changes")
+                return
+        subprocess.run(["git", "add", "docs/"], cwd=KB_ROOT, check=True)
+        subprocess.run(
+            ["git", "commit", "-m", "update wiki viewer"],
+            cwd=KB_ROOT, check=True, capture_output=True,
+        )
+        subprocess.run(
+            ["git", "push", "origin", "master"],
+            cwd=KB_ROOT, check=True, capture_output=True,
+        )
+        print("Pages: pushed to GitHub")
+    except subprocess.CalledProcessError as e:
+        print(f"Pages push failed: {e}")
+    except FileNotFoundError:
+        print("Pages: git not found, skipping push")
+
+
 def cmd_sync(_args: argparse.Namespace) -> int:
     """Run ingest + repair + compile + index (+ optional reduce) in one shot."""
     print("=== INGEST ===")
@@ -1748,6 +1799,10 @@ def cmd_sync(_args: argparse.Namespace) -> int:
         print("\n=== RE-INDEX ===")
         cmd_index(_args)
 
+    # Build viewer (local + GitHub Pages)
+    print("\n=== VIEWER ===")
+    _rebuild_viewer()
+
     # Quick health summary
     print("\n=== HEALTH ===")
     manifest = load_json(MANIFEST_PATH)
@@ -1763,6 +1818,9 @@ def cmd_sync(_args: argparse.Namespace) -> int:
 
     index = load_json(INDEX_PATH)
     print(f"Articles: {index.get('article_count', 0)}")
+
+    # Auto-push to GitHub Pages
+    _push_pages()
 
     if rc_compile == 2 or rc_index == 2:
         return 2

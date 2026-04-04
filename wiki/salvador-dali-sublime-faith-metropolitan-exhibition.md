@@ -54,8 +54,6 @@ updated_at: "2026-04-05"
 この視点は、現代の美術館がどのように古典と現代を対話させ、来館者に新たな思考の機会を提供しているかを示す好例でもある。
 
 <!-- AUTO:Related Articles -->
-
-<!-- AUTO:Related Articles -->
 ## Related Articles
 
 - [[salvador-dali-nuclear-mysticism-critique]]

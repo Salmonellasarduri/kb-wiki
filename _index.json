@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-04-04T22:15:44.924198+00:00",
-  "article_count": 14,
+  "generated_at": "2026-04-04T22:32:30.886334+00:00",
+  "article_count": 16,
   "articles": [
     {
       "id": "ai-datacenter-construction-delays-transformer-battery-shortage",
@@ -429,7 +429,7 @@
         "66cb1f76b9ff"
       ],
       "source_urls": [
-        "https://www.goal.com/jp/%E3%83%AA%E3%82%B9%E3%83%88/%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%9F%E3%82%99%E3%81%91%E8%87%AA%E6%92%AE%E3%82%8A%E3%82%92%E3%81%99%E3%82%8C%E3%81%AF%E3%82%99%E3%81%84%E3%81%84-%E3%83%86%E3%82%A3%E3%82%A8%E3%83%AA-%E3%82%A2%E3%83%B3%E3%83%AA-%E3%83%9E%E3%83%B3%E3%83%81%E3%82%A7%E3%82%B9%E3%82%BF%E3%83%BC-%E3%82%B7%E3%83%86%E3%82%A3%E3%81%AE%E3%82%AB%E3%83%A9%E3%83%8F%E3%82%99%E3%82%AA-%E3%82",
+        "Goal.com",
         "https://www.goal.com/en/lists/thierry-henry-defends-rayan-cherki-arsenal-taunts/bltdad66df28e7aa5da"
       ],
       "published_at": "2026-04-04",
@@ -466,6 +466,67 @@
       ],
       "source_urls": [
         "https://kai-you.net/article/95023"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "x-com-javascript-disabled-error-page",
+      "path": "wiki/x-com-javascript-disabled-error-page.md",
+      "title": "X.com（Twitter）のJavaScript無効化エラーページ",
+      "type": "source",
+      "summary": "X.com（旧Twitter）でJavaScriptが無効化されているブラウザからアクセスした際に表示されるエラーページ。 プラットフォームの完全なJavaScript依存とウェブアクセシビリティの課題を示している。\n",
+      "topics": [
+        "web-accessibility",
+        "javascript-dependency",
+        "social-media-platform",
+        "browser-compatibility"
+      ],
+      "aliases_ja": [
+        "JavaScript無効化",
+        "エックス・ドット・コム",
+        "ツイッター",
+        "ブラウザ互換性",
+        "ウェブアクセシビリティ",
+        "JavaScriptエラー",
+        "対応ブラウザ"
+      ],
+      "source_ids": [
+        "7e99a783ca4d"
+      ],
+      "source_urls": [
+        "https://x.com/i/status/2039843234760073341"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "x-twitter-javascript-disabled-error",
+      "path": "wiki/x-twitter-javascript-disabled-error.md",
+      "title": "X（旧Twitter）のJavaScript無効化エラー表示",
+      "type": "source",
+      "summary": "X（旧Twitter）でJavaScriptが無効化されている場合に表示されるエラーメッセージ。 プラットフォームの完全なJavaScript依存とブラウザサポート要件を示している。\n",
+      "topics": [
+        "web-accessibility",
+        "javascript-dependency",
+        "social-media-platform"
+      ],
+      "aliases_ja": [
+        "JavaScript無効化",
+        "ツイッター",
+        "X Corp",
+        "ブラウザサポート",
+        "ウェブアクセシビリティ",
+        "JavaScript依存",
+        "SNSプラットフォーム"
+      ],
+      "source_ids": [
+        "7e99a783ca4d"
+      ],
+      "source_urls": [
+        "https://x.com/i/status/2039843234760073341"
       ],
       "published_at": "",
       "created_at": "2026-04-05",

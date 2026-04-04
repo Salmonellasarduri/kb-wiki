@@ -51,8 +51,6 @@ updated_at: "2026-04-05"
 ダリの「核の神秘主義」への転換は、20世紀シュルレアリスムの巨匠が晩年に辿った独特の軌跡として注目される。この変化は、芸術家の成熟とテーマ的深化の一方で、表現の豊かさという観点では議論の余地がある展開として評価されている。
 
 <!-- AUTO:Related Articles -->
-
-<!-- AUTO:Related Articles -->
 ## Related Articles
 
 - [[salvador-dali-sublime-faith-metropolitan-exhibition]]

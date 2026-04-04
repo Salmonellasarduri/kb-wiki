@@ -523,8 +523,9 @@ body {{
 /* Mobile back button */
 .back-btn {{
   display: none;
-  padding: 10px 16px;
-  font-size: 14px;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-weight: 600;
   color: var(--accent);
   background: var(--surface);
   border: none;
@@ -532,17 +533,23 @@ body {{
   cursor: pointer;
   text-align: left;
   width: 100%;
+  min-height: 48px;
 }}
 
 /* --- Mobile responsive --- */
 @media (max-width: 768px) {{
+  body {{
+    flex-direction: column;
+  }}
   .sidebar {{
     width: 100%;
     min-width: 100%;
   }}
   .content {{
     display: none;
-    padding: 20px 16px;
+    padding: 24px 18px;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }}
   body.show-article .sidebar {{
     display: none;
@@ -553,21 +560,117 @@ body {{
   }}
   body.show-article .back-btn {{
     display: block;
+    position: sticky;
+    top: 0;
+    z-index: 10;
   }}
+
+  /* Article list — larger touch targets */
   .article-item {{
-    padding: 14px 16px;
+    padding: 16px;
+    min-height: 56px;
+  }}
+  .article-item-title {{
+    font-size: 15px;
+    line-height: 1.5;
+  }}
+  .article-item-meta {{
+    font-size: 12px;
+    margin-top: 4px;
+  }}
+  .article-item-topics .tag {{
+    font-size: 11px;
+    padding: 2px 8px;
+  }}
+
+  /* Topic filter pills — touch-friendly */
+  .topic-filters {{
+    max-height: 120px;
+    gap: 6px;
+    padding: 10px 16px;
   }}
   .topic-btn {{
-    padding: 4px 10px;
-    font-size: 12px;
+    padding: 8px 14px;
+    font-size: 13px;
+    min-height: 36px;
   }}
+
+  /* Search — prevent iOS zoom */
   .search-box {{
     font-size: 16px;
-    padding: 10px 12px;
+    padding: 12px;
   }}
-  .content h1 {{ font-size: 22px; }}
-  .content h2 {{ font-size: 18px; }}
-  .content p, .content li {{ font-size: 15px; }}
+
+  /* Read controls */
+  .read-btn {{
+    padding: 8px 14px;
+    font-size: 12px;
+    min-height: 36px;
+  }}
+
+  /* Content typography — comfortable reading */
+  .content h1 {{
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }}
+  .content h2 {{
+    font-size: 18px;
+    margin: 24px 0 10px;
+  }}
+  .content h3 {{
+    font-size: 16px;
+  }}
+  .content p {{
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 14px 0;
+  }}
+  .content li {{
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 6px 0;
+  }}
+  .content ul, .content ol {{
+    margin-left: 20px;
+  }}
+  .content blockquote {{
+    padding: 8px 14px;
+    font-size: 14px;
+  }}
+
+  /* Tables — horizontal scroll on overflow */
+  .content table {{
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    font-size: 13px;
+  }}
+  .content th, .content td {{
+    padding: 6px 10px;
+  }}
+
+  /* Code — prevent overflow */
+  .content pre {{
+    padding: 12px;
+    font-size: 12px;
+  }}
+  .content code {{
+    font-size: 12px;
+    word-break: break-all;
+  }}
+
+  /* Meta header */
+  .content .article-meta-header {{
+    font-size: 13px;
+    line-height: 1.6;
+  }}
+
+  /* Links — larger tap area */
+  .content a {{
+    padding: 2px 0;
+  }}
 }}
 </style>
 </head>
@@ -721,6 +824,7 @@ function showArticle(a) {{
   renderList();
   contentEl.classList.remove('empty');
   document.body.classList.add('show-article');
+  history.pushState({{ view: 'article', id: a.id }}, '');
   contentEl.replaceChildren();
 
   // Title
@@ -786,9 +890,39 @@ document.addEventListener('keydown', (e) => {{
   }}
 }});
 
-// --- Back button (mobile) ---
-document.getElementById('backBtn').addEventListener('click', () => {{
+// --- History guard (prevent swipe-back from leaving page) ---
+history.replaceState({{ view: 'guard' }}, '');
+history.pushState({{ view: 'list' }}, '');
+
+function goBackToList() {{
   document.body.classList.remove('show-article');
+  activeArticleId = null;
+}}
+
+document.getElementById('backBtn').addEventListener('click', () => {{
+  history.back();
+}});
+
+window.addEventListener('popstate', (e) => {{
+  const s = e.state || {{}};
+  if (s.view === 'article') {{
+    const a = ARTICLES.find(x => x.id === s.id);
+    if (a) {{
+      activeArticleId = a.id;
+      markRead(a.id);
+      renderList();
+      contentEl.classList.remove('empty');
+      document.body.classList.add('show-article');
+      contentEl.replaceChildren();
+      // Re-render handled by forward nav — simplified
+      return;
+    }}
+  }}
+  if (s.view === 'guard') {{
+    // Hit the guard — re-push list entry so next back stays in app
+    history.pushState({{ view: 'list' }}, '');
+  }}
+  goBackToList();
 }});
 
 // --- Read controls ---

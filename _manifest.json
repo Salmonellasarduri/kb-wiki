@@ -19,7 +19,9 @@
     "clip:2d693555d8cca571280532d720ddbab50590d26a1abf091ce7564ce62b3dd5a1": "d2ea6a180078",
     "79391f1124d34d996fd11e7a1add958febd2520f63fa8126d1e469e4ec7062be": "79391f1124d3",
     "clip:6f69a8c66c3b27e0d27237a710a33f3c158ca291550b23ed0a3f51c90e79854c": "79391f1124d3",
-    "66cb1f76b9ff73ba661dc768742e04ad1cdce48c4916d034ddc3a6039303e170": "66cb1f76b9ff"
+    "66cb1f76b9ff73ba661dc768742e04ad1cdce48c4916d034ddc3a6039303e170": "66cb1f76b9ff",
+    "7e99a783ca4d353cc2265bce63740f075a44712e0f56e06915cccd110f27d052": "7e99a783ca4d",
+    "clip:d20431d9bc5d5b4b0e6f305a2051ef027943dd31104a21a763bc28a94b0b8cac": "7e99a783ca4d"
   },
   "items": {
     "16c0425f47df": {
@@ -203,6 +205,20 @@
         "thierry-henry-defends-rayan-cherki-selfie-celebration"
       ],
       "error": "repair failed: fetch failed: HTTP 404"
+    },
+    "7e99a783ca4d": {
+      "hash": "7e99a783ca4d353cc2265bce63740f075a44712e0f56e06915cccd110f27d052",
+      "original_name": "clip_8682498476_11.clip",
+      "source_path": "sources/7e99a783ca4d_clip.md",
+      "meta_path": "sources/7e99a783ca4d_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-04T22:32:01.848013+00:00",
+      "compiled_at": "2026-04-05T07:32:30.845437+09:00",
+      "article_ids": [
+        "x-com-javascript-disabled-error-page",
+        "x-twitter-javascript-disabled-error"
+      ],
+      "error": null
     }
   }
 }
