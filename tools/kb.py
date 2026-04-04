@@ -19,15 +19,19 @@ from __future__ import annotations
 import argparse
 import datetime
 import hashlib
+import ipaddress
 import json
 import os
 import re
 import shutil
+import socket
 import subprocess
 import sys
 import tempfile
+import threading
 import time
 from pathlib import Path
+from urllib.parse import urlparse, urlencode, parse_qs, urlunparse
 
 import yaml
 
@@ -64,6 +68,27 @@ FRONTMATTER_SCHEMA = {
 COMPILE_MODEL = "claude-sonnet-4-20250514"
 WATCH_DEBOUNCE_SEC = 3.0
 MAX_SOURCE_BYTES = 200_000  # ~200KB, well within Claude's context window
+
+# URL fetch limits
+FETCH_WIRE_MAX = 5_000_000       # 5MB wire size
+FETCH_DECODED_MAX = 10_000_000   # 10MB decompressed
+FETCH_TIMEOUT = (5, 15)          # (connect, read) seconds
+FETCH_MAX_REDIRECTS = 5
+FETCH_ALLOWED_PORTS = {80, 443}
+FETCH_UA = "Mozilla/5.0 (compatible; KBClipper/1.0)"
+
+# Telegram bot state
+BOT_STATE_PATH = KB_ROOT / "kb_bot_state.json"
+
+# URL normalization: tracking params to strip
+URL_TRACKING_PARAMS = {
+    "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
+    "utm_id", "fbclid", "gclid", "gclsrc", "dclid", "msclkid",
+    "mc_cid", "mc_eid", "ref", "ref_src", "ref_url",
+}
+
+# .clip JSON schema required fields
+CLIP_REQUIRED_FIELDS = {"version", "url"}
 
 
 # ---------------------------------------------------------------------------
@@ -167,6 +192,247 @@ def file_hash(path: Path) -> str:
     return h.hexdigest()
 
 
+def content_hash(text: str) -> str:
+    """Compute SHA-256 hex digest of a string."""
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+# ---------------------------------------------------------------------------
+# URL utilities
+# ---------------------------------------------------------------------------
+
+def normalize_url(url: str) -> str:
+    """Normalize URL for dedup: lowercase scheme/host, strip tracking params + fragment."""
+    parsed = urlparse(url)
+    scheme = parsed.scheme.lower()
+    netloc = parsed.netloc.lower()
+    path = parsed.path
+    # Strip tracking params
+    qs = parse_qs(parsed.query, keep_blank_values=False)
+    cleaned = {k: v for k, v in qs.items() if k.lower() not in URL_TRACKING_PARAMS}
+    query = urlencode(cleaned, doseq=True) if cleaned else ""
+    return urlunparse((scheme, netloc, path, parsed.params, query, ""))
+
+
+def _resolve_and_check_all_ips(hostname: str) -> None:
+    """Resolve hostname and check ALL addresses are safe. Raises on blocked IP."""
+    info = socket.getaddrinfo(hostname, None, socket.AF_UNSPEC, socket.SOCK_STREAM)
+    if not info:
+        raise ValueError(f"DNS resolution failed for {hostname}")
+    for entry in info:
+        ip_str = entry[4][0]
+        ip = ipaddress.ip_address(ip_str)
+        if _is_ip_blocked(ip):
+            raise ValueError(f"Blocked IP: {ip} ({hostname})")
+
+
+def _is_ip_blocked(ip: ipaddress.IPv4Address | ipaddress.IPv6Address) -> bool:
+    """Check if IP is private, loopback, link-local, or reserved."""
+    return (
+        ip.is_private
+        or ip.is_loopback
+        or ip.is_link_local
+        or ip.is_reserved
+        or ip.is_multicast
+    )
+
+
+def _validate_url_for_fetch(url: str) -> str:
+    """Validate URL for safe fetching. Returns validated URL or raises ValueError."""
+    parsed = urlparse(url)
+
+    # Scheme check
+    if parsed.scheme not in ("http", "https"):
+        raise ValueError(f"Unsupported scheme: {parsed.scheme}")
+
+    # Hostname check
+    hostname = parsed.hostname
+    if not hostname:
+        raise ValueError("No hostname in URL")
+
+    # Reject userinfo (user:pass@host)
+    if parsed.username or parsed.password:
+        raise ValueError("URL with userinfo not allowed")
+
+    # Port check
+    port = parsed.port or (443 if parsed.scheme == "https" else 80)
+    if port not in FETCH_ALLOWED_PORTS:
+        raise ValueError(f"Port {port} not allowed (only 80/443)")
+
+    # DNS resolve + check ALL IPs
+    _resolve_and_check_all_ips(hostname)
+
+    return url
+
+
+def safe_fetch(url: str) -> tuple[str, str, str | None]:
+    """Fetch URL with SSRF hardening and size limits.
+
+    Manually follows redirects to re-validate IP at each hop.
+
+    Returns:
+        (html_text, final_url, page_title_or_none)
+
+    Raises:
+        RuntimeError on fetch failure.
+    """
+    import requests
+
+    session = requests.Session()
+    session.trust_env = False  # ignore proxy env vars
+    session.max_redirects = 0  # we handle redirects manually
+
+    current_url = url
+    for hop in range(FETCH_MAX_REDIRECTS + 1):
+        # Validate each hop
+        try:
+            _validate_url_for_fetch(current_url)
+        except ValueError as e:
+            raise RuntimeError(f"URL validation failed (hop {hop}): {e}")
+
+        try:
+            resp = session.get(
+                current_url,
+                timeout=FETCH_TIMEOUT,
+                allow_redirects=False,
+                headers={"User-Agent": FETCH_UA},
+                stream=True,
+            )
+        except requests.RequestException as e:
+            raise RuntimeError(f"HTTP request failed: {e}")
+
+        # Handle redirect
+        if resp.is_redirect and "location" in resp.headers:
+            current_url = resp.headers["location"]
+            # Resolve relative redirects
+            if not urlparse(current_url).scheme:
+                from urllib.parse import urljoin
+                current_url = urljoin(resp.url, current_url)
+            resp.close()
+            continue
+
+        # Non-redirect response
+        if resp.status_code >= 400:
+            resp.close()
+            raise RuntimeError(f"HTTP {resp.status_code}")
+
+        # Content-Type check (allow html-like)
+        ct = (resp.headers.get("Content-Type") or "").lower()
+        if not any(t in ct for t in ("text/html", "application/xhtml+xml")):
+            # Sniff: read first 1KB and check for HTML tags
+            peek = resp.raw.read(1024)
+            if b"<html" not in peek.lower() and b"<!doctype" not in peek.lower():
+                resp.close()
+                raise RuntimeError(f"Not HTML: Content-Type={ct}")
+            # Put peek back by reading the rest
+            chunks = [peek]
+            total = len(peek)
+        else:
+            chunks = []
+            total = 0
+
+        # Read body with size limit
+        for chunk in resp.iter_content(chunk_size=8192):
+            total += len(chunk)
+            if total > FETCH_WIRE_MAX:
+                resp.close()
+                raise RuntimeError(f"Response too large (>{FETCH_WIRE_MAX} bytes)")
+            chunks.append(chunk)
+
+        resp.close()
+        raw_bytes = b"".join(chunks)
+
+        # Decompressed size check (requests handles decompression transparently)
+        if len(raw_bytes) > FETCH_DECODED_MAX:
+            raise RuntimeError(f"Decoded content too large (>{FETCH_DECODED_MAX} bytes)")
+
+        html = raw_bytes.decode("utf-8", errors="replace")
+
+        # Extract title from HTML
+        title = None
+        title_match = re.search(r"<title[^>]*>(.*?)</title>", html, re.IGNORECASE | re.DOTALL)
+        if title_match:
+            import html as html_mod
+            title = html_mod.unescape(title_match.group(1)).strip()[:200]
+
+        return html, current_url, title
+
+    raise RuntimeError(f"Too many redirects (>{FETCH_MAX_REDIRECTS})")
+
+
+def extract_article_text(html: str) -> str | None:
+    """Extract main article text from HTML using trafilatura."""
+    try:
+        import trafilatura
+    except ImportError:
+        print("ERROR: trafilatura not installed. Run: pip install trafilatura")
+        return None
+
+    text = trafilatura.extract(html, output_format="txt", include_comments=False)
+    if text and len(text.strip()) > 50:
+        return text.strip()
+    return None
+
+
+def parse_clip_file(path: Path) -> dict | None:
+    """Parse and validate a .clip JSON file. Returns dict or None on error."""
+    try:
+        raw = path.read_text(encoding="utf-8")
+        if len(raw) > 100_000:  # 100KB sanity limit for .clip JSON
+            print(f"ERROR: .clip too large: {path.name} ({len(raw)} bytes)")
+            return None
+        data = json.loads(raw)
+    except (OSError, json.JSONDecodeError, UnicodeDecodeError) as e:
+        print(f"ERROR: cannot parse .clip {path.name}: {e}")
+        return None
+
+    if not isinstance(data, dict):
+        print(f"ERROR: .clip {path.name}: not a JSON object")
+        return None
+
+    # Schema validation
+    missing = CLIP_REQUIRED_FIELDS - set(data.keys())
+    if missing:
+        print(f"ERROR: .clip {path.name}: missing fields: {missing}")
+        return None
+
+    url = data.get("url", "")
+    if not isinstance(url, str) or not url.startswith(("http://", "https://")):
+        print(f"ERROR: .clip {path.name}: invalid url")
+        return None
+
+    return data
+
+
+def build_source_markdown(
+    url: str,
+    title: str | None,
+    article_text: str | None,
+    user_comment: str | None,
+    shared_title: str | None,
+    fetch_status: str,
+) -> str:
+    """Build a markdown source file from clip data."""
+    parts = []
+
+    # Use fetched title, fallback to shared title
+    display_title = title or shared_title or url
+    parts.append(f"# {display_title}\n")
+    parts.append(f"Source: {url}\n")
+
+    if user_comment:
+        parts.append(f"\n> {user_comment}\n")
+
+    if article_text:
+        parts.append(f"\n{article_text}\n")
+    else:
+        parts.append(f"\nFetch status: {fetch_status}\n")
+        if title:
+            parts.append(f"Title: {title}\n")
+
+    return "\n".join(parts)
+
+
 def sanitize_filename(name: str) -> str:
     """Sanitize a filename for safe filesystem use."""
     name = re.sub(r'[<>:"/\\|?*]', "_", name)
@@ -179,6 +445,139 @@ def sanitize_filename(name: str) -> str:
 # ---------------------------------------------------------------------------
 # Commands
 # ---------------------------------------------------------------------------
+
+def _generate_source_id(fhash: str, items: dict) -> str | None:
+    """Generate source_id from hash, extending on collision. Returns None on failure."""
+    source_id = fhash[:HASH_DISPLAY_LEN]
+    while source_id in items and items[source_id]["hash"] != fhash:
+        if len(source_id) >= len(fhash):
+            return None
+        source_id = fhash[:len(source_id) + 1]
+    return source_id
+
+
+def _ingest_clip_file(
+    fpath: Path, manifest: dict, now: str,
+) -> tuple[bool, str]:
+    """Ingest a .clip file: parse, fetch URL, save source. Returns (success, message)."""
+    items = manifest["items"]
+    hash_index = manifest["_hash_index"]
+
+    clip = parse_clip_file(fpath)
+    if clip is None:
+        return False, "invalid .clip"
+
+    url = clip["url"]
+    normalized = normalize_url(url)
+    user_comment = clip.get("user_comment") or ""
+    shared_title = clip.get("shared_title")
+
+    # Dedupe by normalized URL (check existing sources for same URL)
+    url_key = "clip:" + content_hash(normalized)
+    if url_key in hash_index:
+        existing_id = hash_index[url_key]
+        return True, f"SKIP (duplicate URL): {normalized[:60]} -> {existing_id}"
+
+    # Fetch and extract
+    fetch_status = "pending"
+    fetched_title = None
+    article_text = None
+    fetch_error = None
+    final_url = None
+
+    try:
+        html, final_url, fetched_title = safe_fetch(url)
+        article_text = extract_article_text(html)
+        fetch_status = "ok" if article_text else "extraction_failed"
+        if not article_text:
+            fetch_error = "trafilatura returned empty or short text"
+    except RuntimeError as e:
+        fetch_status = "fetch_failed"
+        fetch_error = str(e)[:200]
+        print(f"  FETCH FAILED: {e}")
+
+    # Build markdown source
+    md = build_source_markdown(
+        url=url,
+        title=fetched_title,
+        article_text=article_text,
+        user_comment=user_comment if user_comment else None,
+        shared_title=shared_title,
+        fetch_status=fetch_status,
+    )
+
+    # Hash the produced markdown for content dedup
+    fhash = content_hash(md)
+    if fhash in hash_index:
+        existing_id = hash_index[fhash]
+        return True, f"SKIP (duplicate content): {fpath.name} -> {existing_id}"
+
+    source_id = _generate_source_id(fhash, items)
+    if source_id is None:
+        return False, "hash collision"
+
+    # Build slug from title (max 40 chars)
+    slug_base = (fetched_title or shared_title or "clip")[:40]
+    slug = sanitize_filename(slug_base).strip("_") or "clip"
+    dest_name = f"{source_id}_{slug}.md"
+    dest_path = SOURCES_DIR / dest_name
+    meta_path = SOURCES_DIR / f"{source_id}_meta.json"
+
+    # Write source markdown (atomic)
+    try:
+        import tempfile as _tf
+        fd, tmp = _tf.mkstemp(dir=str(SOURCES_DIR), suffix=".tmp")
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8") as f:
+                f.write(md)
+                f.flush()
+                os.fsync(f.fileno())
+            os.replace(tmp, dest_path)
+        except BaseException:
+            try:
+                os.unlink(tmp)
+            except OSError:
+                pass
+            raise
+    except OSError as e:
+        return False, f"write failed: {e}"
+
+    # Write meta with clip-specific fields
+    meta = {
+        "source_id": source_id,
+        "hash": fhash,
+        "original_name": fpath.name,
+        "ingested_at": now,
+        "clip_source": True,
+        "fetch_url": url,
+        "fetch_final_url": final_url if fetch_status == "ok" else None,
+        "fetch_status": fetch_status,
+        "fetch_error": fetch_error,
+        "fetched_title": fetched_title,
+        "shared_title": shared_title,
+        "user_comment": user_comment[:500] if user_comment else None,
+        "normalized_url": normalized,
+    }
+    atomic_write_json(meta_path, meta)
+
+    # Update manifest
+    hash_index[fhash] = source_id
+    hash_index[url_key] = source_id  # URL-based dedup key
+    items[source_id] = {
+        "hash": fhash,
+        "original_name": fpath.name,
+        "source_path": to_posix(dest_path, KB_ROOT),
+        "meta_path": to_posix(meta_path, KB_ROOT),
+        "status": "pending",
+        "ingested_at": now,
+        "compiled_at": None,
+        "article_ids": [],
+        "error": None,
+    }
+
+    status_label = "CLIPPED" if article_text else "CLIPPED (url-only)"
+    return True, f"{status_label}: {url[:60]} -> {source_id}"
+
 
 def cmd_ingest(_args: argparse.Namespace) -> int:
     """Process inbox/ files: hash, dedup, copy to sources/, update manifest."""
@@ -205,6 +604,21 @@ def cmd_ingest(_args: argparse.Namespace) -> int:
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
 
     for fpath in sorted(inbox_files):
+        # --- .clip files: URL fetch pipeline ---
+        if fpath.suffix == ".clip":
+            ok, msg = _ingest_clip_file(fpath, manifest, now)
+            print(f"  {msg}")
+            if ok:
+                to_delete.append(fpath)
+                if not msg.startswith("SKIP"):
+                    ingested += 1
+                else:
+                    skipped_dup += 1
+            else:
+                errors += 1
+            continue
+
+        # --- Regular files: existing pipeline ---
         try:
             fhash = file_hash(fpath)
         except OSError as e:
@@ -219,16 +633,10 @@ def cmd_ingest(_args: argparse.Namespace) -> int:
             to_delete.append(fpath)
             continue
 
-        source_id = fhash[:HASH_DISPLAY_LEN]
-        while source_id in items and items[source_id]["hash"] != fhash:
-            if len(source_id) >= len(fhash):
-                print(f"ERROR: hash collision or corrupt manifest for {fpath.name}")
-                errors += 1
-                break
-            source_id = fhash[:len(source_id) + 1]
-        else:
-            pass  # no collision, proceed
-        if len(source_id) >= len(fhash) and source_id in items:
+        source_id = _generate_source_id(fhash, items)
+        if source_id is None:
+            print(f"ERROR: hash collision or corrupt manifest for {fpath.name}")
+            errors += 1
             continue
 
         safe_name = sanitize_filename(fpath.name)
@@ -616,6 +1024,103 @@ def cmd_sync(_args: argparse.Namespace) -> int:
     return 0
 
 
+def _telegram_polling_thread(
+    token: str, chat_id: int, inbox_dir: Path, stop_event: threading.Event,
+) -> None:
+    """Telegram polling loop for use in a background thread."""
+    import requests as _req
+
+    state = _load_bot_state()
+    offset = state.get("last_update_id", 0)
+    processed_ids = set(state.get("processed_ids", []))
+
+    while not stop_event.is_set():
+        try:
+            data = _telegram_api(token, "getUpdates", {
+                "offset": offset + 1,
+                "timeout": 10,  # shorter timeout for responsive shutdown
+                "allowed_updates": '["message"]',
+            })
+        except _req.Timeout:
+            continue
+        except Exception as e:
+            print(f"[telegram] Poll error: {e}")
+            if stop_event.wait(5):
+                break
+            continue
+
+        for update in data.get("result", []):
+            if stop_event.is_set():
+                break
+            update_id = update["update_id"]
+            offset = max(offset, update_id)
+
+            msg = update.get("message")
+            if not msg:
+                continue
+
+            msg_chat_id = msg.get("chat", {}).get("id")
+            msg_id = msg.get("message_id", 0)
+            dedup_key = f"{msg_chat_id}:{msg_id}"
+
+            if msg_chat_id != chat_id or dedup_key in processed_ids:
+                continue
+
+            url = _extract_url_from_message(msg)
+            if not url:
+                processed_ids.add(dedup_key)
+                continue
+
+            comment = _extract_comment_from_message(msg, url)
+            msg_date = msg.get("date", 0)
+            clipped_at = (
+                datetime.datetime.fromtimestamp(msg_date, tz=datetime.timezone.utc).isoformat()
+                if msg_date else datetime.datetime.now(datetime.timezone.utc).isoformat()
+            )
+
+            clip_data = {
+                "version": 1,
+                "url": url,
+                "shared_title": None,
+                "user_comment": comment or None,
+                "capture_channel": "telegram",
+                "telegram_message_id": msg_id,
+                "telegram_chat_id": msg_chat_id,
+                "clipped_at": clipped_at,
+            }
+
+            clip_filename = f"clip_{msg_chat_id}_{msg_id}.clip"
+            clip_path = inbox_dir / clip_filename
+            try:
+                atomic_write_json(clip_path, clip_data)
+                print(f"  [telegram] CLIP: {url[:60]} -> {clip_filename}")
+            except Exception as e:
+                print(f"  [telegram] ERROR: {e}")
+                continue
+
+            processed_ids.add(dedup_key)
+
+            # Reply
+            try:
+                _telegram_api(token, "sendMessage", {
+                    "chat_id": chat_id,
+                    "reply_to_message_id": msg_id,
+                    "text": f"Clipped: {url[:50]}",
+                })
+            except Exception:
+                pass
+
+        # Save state (error-tolerant)
+        try:
+            state["last_update_id"] = offset
+            state["processed_ids"] = list(processed_ids)
+            _save_bot_state(state)
+        except Exception as e:
+            print(f"[telegram] WARNING: state save failed: {e}")
+
+    print("[telegram] Polling stopped.")
+
+
 def cmd_watch(args: argparse.Namespace) -> int:
     """Watch inbox/ for new files and auto-sync on changes."""
     try:
@@ -646,23 +1151,59 @@ def cmd_watch(args: argparse.Namespace) -> int:
     observer.schedule(handler, str(INBOX_DIR), recursive=False)
     observer.start()
 
+    # Optional Telegram polling
+    telegram_thread = None
+    stop_event = threading.Event()
+    use_telegram = getattr(args, "telegram", False)
+
+    if use_telegram:
+        token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+        chat_id_str = os.environ.get("TELEGRAM_CHAT_ID", "")
+        if token and chat_id_str:
+            try:
+                import requests  # noqa: F401
+                me = _telegram_api(token, "getMe")
+                bot_name = me["result"].get("username", "unknown")
+                print(f"Telegram bot connected: @{bot_name}")
+                telegram_thread = threading.Thread(
+                    target=_telegram_polling_thread,
+                    args=(token, int(chat_id_str), INBOX_DIR, stop_event),
+                    name="telegram-poller",
+                )
+                telegram_thread.start()
+            except Exception as e:
+                print(f"WARNING: Telegram bot failed to start: {e}")
+                print("Continuing with file watch only.")
+        else:
+            print("WARNING: --telegram requires TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID env vars")
+
     print(f"Watching {INBOX_DIR} for new files... (Ctrl+C to stop)")
     print(f"Debounce: {WATCH_DEBOUNCE_SEC}s after last file event")
+
+    sync_lock = threading.Lock()
 
     try:
         while True:
             time.sleep(0.5)
             if handler.pending and (time.time() - handler.last_event) >= WATCH_DEBOUNCE_SEC:
                 handler.pending = False
-                print(f"\n{'='*50}")
-                print(f"New files detected. Running sync...")
-                print(f"{'='*50}\n")
-                cmd_sync(args)
-                print(f"\nWatching {INBOX_DIR}... (Ctrl+C to stop)")
+                if sync_lock.acquire(blocking=False):
+                    try:
+                        print(f"\n{'='*50}")
+                        print(f"New files detected. Running sync...")
+                        print(f"{'='*50}\n")
+                        cmd_sync(args)
+                        print(f"\nWatching {INBOX_DIR}... (Ctrl+C to stop)")
+                    finally:
+                        sync_lock.release()
     except KeyboardInterrupt:
         print("\nStopping watcher...")
+        stop_event.set()
         observer.stop()
+
     observer.join()
+    if telegram_thread:
+        telegram_thread.join(timeout=15)
     return 0
 
 
@@ -877,10 +1418,225 @@ def cmd_health(args: argparse.Namespace) -> int:
 
 
 # ---------------------------------------------------------------------------
+# Telegram Bot
+# ---------------------------------------------------------------------------
+
+URL_RE = re.compile(r"https?://[^\s<>\"']+")
+
+
+def _extract_url_from_message(msg: dict) -> str | None:
+    """Extract URL from Telegram message, preferring entities over regex."""
+    text = msg.get("text") or msg.get("caption") or ""
+    entities = msg.get("entities") or msg.get("caption_entities") or []
+
+    # Prefer entity-based extraction
+    for ent in entities:
+        if ent.get("type") == "url":
+            offset = ent["offset"]
+            length = ent["length"]
+            return text[offset:offset + length]
+        if ent.get("type") == "text_link":
+            return ent.get("url")
+
+    # Fallback: regex
+    m = URL_RE.search(text)
+    return m.group(0) if m else None
+
+
+def _extract_comment_from_message(msg: dict, url: str) -> str:
+    """Extract user comment (text minus the URL)."""
+    text = msg.get("text") or ""
+    # Remove the URL from text to get the comment
+    comment = text.replace(url, "").strip()
+    # Clean up extra whitespace
+    comment = re.sub(r"\s+", " ", comment).strip()
+    return comment[:500]
+
+
+def _telegram_api(token: str, method: str, params: dict | None = None) -> dict:
+    """Call Telegram Bot API. Returns JSON response."""
+    import requests
+    url = f"https://api.telegram.org/bot{token}/{method}"
+    resp = requests.get(url, params=params or {}, timeout=35)
+    resp.raise_for_status()
+    data = resp.json()
+    if not data.get("ok"):
+        raise RuntimeError(f"Telegram API error: {data.get('description', 'unknown')}")
+    return data
+
+
+def _load_bot_state() -> dict:
+    """Load bot state (last_update_id, processed_ids)."""
+    return load_json(BOT_STATE_PATH) or {"last_update_id": 0, "processed_ids": []}
+
+
+def _save_bot_state(state: dict) -> None:
+    """Save bot state atomically."""
+    # Keep processed_ids bounded
+    ids = state.get("processed_ids", [])
+    if len(ids) > 1000:
+        state["processed_ids"] = ids[-500:]
+    atomic_write_json(BOT_STATE_PATH, state)
+
+
+def cmd_bot(args: argparse.Namespace) -> int:
+    """Run Telegram bot: poll for messages, create .clip files in inbox/."""
+    import requests as _requests  # noqa: F811 — verify import
+
+    token = args.token or os.environ.get("TELEGRAM_BOT_TOKEN", "")
+    chat_id_str = args.chat_id or os.environ.get("TELEGRAM_CHAT_ID", "")
+
+    if not token:
+        print("ERROR: --token or TELEGRAM_BOT_TOKEN required")
+        return 2
+    if not chat_id_str:
+        print("ERROR: --chat-id or TELEGRAM_CHAT_ID required")
+        return 2
+
+    allowed_chat_id = int(chat_id_str)
+
+    # Verify bot connection
+    try:
+        me = _telegram_api(token, "getMe")
+        bot_name = me["result"].get("username", "unknown")
+        print(f"Bot connected: @{bot_name}")
+    except Exception as e:
+        print(f"ERROR: Cannot connect to Telegram: {e}")
+        return 2
+
+    state = _load_bot_state()
+    offset = state.get("last_update_id", 0)
+    processed_ids = set(state.get("processed_ids", []))
+
+    print(f"Polling for messages (chat_id={allowed_chat_id})... Ctrl+C to stop")
+
+    try:
+        while True:
+            try:
+                data = _telegram_api(token, "getUpdates", {
+                    "offset": offset + 1,
+                    "timeout": 30,
+                    "allowed_updates": '["message"]',
+                })
+            except _requests.Timeout:
+                continue
+            except Exception as e:
+                print(f"Poll error: {e}")
+                time.sleep(5)
+                continue
+
+            for update in data.get("result", []):
+                update_id = update["update_id"]
+                offset = max(offset, update_id)
+
+                msg = update.get("message")
+                if not msg:
+                    continue
+
+                msg_chat_id = msg.get("chat", {}).get("id")
+                msg_id = msg.get("message_id", 0)
+                dedup_key = f"{msg_chat_id}:{msg_id}"
+
+                # Chat allowlist
+                if msg_chat_id != allowed_chat_id:
+                    continue
+
+                # Idempotency check
+                if dedup_key in processed_ids:
+                    continue
+
+                # Extract URL
+                url = _extract_url_from_message(msg)
+                if not url:
+                    # Reply: no URL found
+                    try:
+                        _telegram_api(token, "sendMessage", {
+                            "chat_id": allowed_chat_id,
+                            "reply_to_message_id": msg_id,
+                            "text": "No URL found in message. Send a URL to clip.",
+                        })
+                    except Exception:
+                        pass
+                    processed_ids.add(dedup_key)
+                    continue
+
+                comment = _extract_comment_from_message(msg, url)
+                msg_date = msg.get("date", 0)
+                clipped_at = (
+                    datetime.datetime.fromtimestamp(msg_date, tz=datetime.timezone.utc).isoformat()
+                    if msg_date else datetime.datetime.now(datetime.timezone.utc).isoformat()
+                )
+
+                # Build .clip JSON
+                clip_data = {
+                    "version": 1,
+                    "url": url,
+                    "shared_title": None,
+                    "user_comment": comment or None,
+                    "capture_channel": "telegram",
+                    "telegram_message_id": msg_id,
+                    "telegram_chat_id": msg_chat_id,
+                    "clipped_at": clipped_at,
+                }
+
+                # Write .clip to inbox/ (atomic)
+                clip_filename = f"clip_{msg_chat_id}_{msg_id}.clip"
+                clip_path = INBOX_DIR / clip_filename
+                try:
+                    atomic_write_json(clip_path, clip_data)
+                    print(f"CLIP: {url[:60]} -> {clip_filename}")
+                except Exception as e:
+                    print(f"ERROR writing .clip: {e}")
+                    continue
+
+                # Mark processed AFTER successful .clip write
+                processed_ids.add(dedup_key)
+
+                # Reply: acknowledged
+                try:
+                    reply_text = f"Clipped: {url[:50]}"
+                    if comment:
+                        reply_text += f"\nNote: {comment[:100]}"
+                    _telegram_api(token, "sendMessage", {
+                        "chat_id": allowed_chat_id,
+                        "reply_to_message_id": msg_id,
+                        "text": reply_text,
+                    })
+                except Exception:
+                    pass  # reply failure is non-critical
+
+            # Save state after processing batch (error-tolerant)
+            try:
+                state["last_update_id"] = offset
+                state["processed_ids"] = list(processed_ids)
+                _save_bot_state(state)
+            except Exception as e:
+                print(f"WARNING: state save failed: {e}")
+
+    except KeyboardInterrupt:
+        print("\nStopping bot...")
+        state["last_update_id"] = offset
+        state["processed_ids"] = list(processed_ids)
+        _save_bot_state(state)
+        print("State saved.")
+
+    return 0
+
+
+# ---------------------------------------------------------------------------
 # CLI entry point
 # ---------------------------------------------------------------------------
 
 def main() -> int:
+    # Load .env if present (for TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, etc.)
+    env_path = KB_ROOT / ".env"
+    if env_path.exists():
+        for line in env_path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, _, val = line.partition("=")
+                os.environ.setdefault(key.strip(), val.strip().strip('"').strip("'"))
+
     parser = argparse.ArgumentParser(
         prog="kb",
         description="LLM-driven Knowledge Base CLI",
@@ -900,7 +1656,16 @@ def main() -> int:
     sub.add_parser("sync", help="Run ingest + compile + index")
 
     # watch
-    sub.add_parser("watch", help="Monitor inbox/ and auto-sync on new files")
+    p_watch = sub.add_parser("watch", help="Monitor inbox/ and auto-sync on new files")
+    p_watch.add_argument(
+        "--telegram", action="store_true",
+        help="Also poll Telegram bot (requires TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID env vars)",
+    )
+
+    # bot
+    p_bot = sub.add_parser("bot", help="Run Telegram bot: poll messages and create .clip files")
+    p_bot.add_argument("--token", help="Telegram Bot API token (or TELEGRAM_BOT_TOKEN env)")
+    p_bot.add_argument("--chat-id", help="Allowed chat ID (or TELEGRAM_CHAT_ID env)")
 
     # search
     p_search = sub.add_parser("search", help="Search wiki/ articles")
@@ -926,6 +1691,7 @@ def main() -> int:
         "index": cmd_index,
         "sync": cmd_sync,
         "watch": cmd_watch,
+        "bot": cmd_bot,
         "search": cmd_search,
         "stats": cmd_stats,
         "health": cmd_health,
