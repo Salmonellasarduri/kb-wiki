@@ -2056,45 +2056,47 @@ INDEX_MD_PATH = KB_ROOT / "index.md"
 
 
 def _generate_index_md(articles: list[dict]) -> None:
-    """Generate a human-readable index.md grouped by primary topic."""
+    """Generate a human-readable index.md sorted newest-first."""
     if not articles:
         INDEX_MD_PATH.write_text(
             "# Knowledge Base Index\n\n_No articles yet._\n", encoding="utf-8"
         )
         return
 
-    # Group by primary topic (first in topics list)
-    topic_groups: dict[str, list[dict]] = {}
+    # Count unique topics for the header
+    all_topics: set[str] = set()
     for a in articles:
-        primary = a["topics"][0] if a.get("topics") else "uncategorized"
-        topic_groups.setdefault(primary, []).append(a)
+        all_topics.update(a.get("topics") or [])
 
-    # Sort topics alphabetically; articles within each by updated_at desc
+    # Sort all articles by updated_at descending (newest first)
+    sorted_articles = sorted(
+        articles,
+        key=lambda a: a.get("updated_at", ""),
+        reverse=True,
+    )
+
     lines = [
         "# Knowledge Base Index",
         "",
-        f"_{len(articles)} articles, {len(topic_groups)} topics "
+        f"_{len(articles)} articles, {len(all_topics)} topics "
         f"| generated {_jst_now().strftime('%Y-%m-%d %H:%M JST')}_",
         "",
     ]
 
-    for topic in sorted(topic_groups):
-        lines.append(f"## {topic}")
-        lines.append("")
-        group = sorted(
-            topic_groups[topic],
-            key=lambda a: a.get("updated_at", ""),
-            reverse=True,
+    for a in sorted_articles:
+        summary = (a.get("summary") or "")[:80].replace("\n", " ").strip()
+        type_tag = ""
+        atype = a.get("type", "source")
+        if atype != "source":
+            type_tag = f" [{atype}]"
+        topics_str = ", ".join(a.get("topics") or [])
+        date_str = a.get("updated_at", "")
+        lines.append(
+            f"- **{date_str}** [{a['title']}]({a['path']}){type_tag}"
+            f" `{topics_str}` -- {summary}"
         )
-        for a in group:
-            summary = (a.get("summary") or "")[:80].replace("\n", " ").strip()
-            type_tag = ""
-            atype = a.get("type", "source")
-            if atype != "source":
-                type_tag = f" [{atype}]"
-            lines.append(f"- [{a['title']}]({a['path']}){type_tag} -- {summary}")
-        lines.append("")
 
+    lines.append("")
     INDEX_MD_PATH.write_text("\n".join(lines), encoding="utf-8")
 
 
