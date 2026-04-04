@@ -54,6 +54,8 @@ INDEX_PATH = KB_ROOT / "_index.json"
 HASH_DISPLAY_LEN = 12  # chars used in filenames
 MANIFEST_VERSION = 1
 INDEX_VERSION = 1
+CHUNKS_PATH = KB_ROOT / "_chunks.json"
+CHUNKING_VERSION = 1
 
 # Frontmatter: must start at very beginning of file
 FRONTMATTER_RE = re.compile(r"\A---[ \t]*\n(.*?)\n---[ \t]*\n", re.DOTALL)
@@ -464,8 +466,15 @@ def parse_clip_file(path: Path) -> dict | None:
 
     url = data.get("url", "")
     if not isinstance(url, str) or not url.startswith(("http://", "https://")):
-        print(f"ERROR: .clip {path.name}: invalid url")
-        return None
+        # Fallback: extract URL from user_comment (shared messages may put
+        # the display name in url field and the real URL in the comment)
+        comment = data.get("user_comment") or ""
+        m = re.search(r'https?://\S+', comment)
+        if m:
+            data["url"] = m.group(0)
+        else:
+            print(f"ERROR: .clip {path.name}: invalid url")
+            return None
 
     return data
 
@@ -1319,8 +1328,15 @@ def _build_source_url_map() -> dict[str, str]:
         elif f.suffix == ".clip":
             try:
                 data = json.loads(content)
-                if url := data.get("url"):
+                url = data.get("url", "")
+                if url and url.startswith(("http://", "https://")):
                     url_map[sid] = url
+                else:
+                    # Fallback: extract URL from user_comment
+                    comment = data.get("user_comment") or ""
+                    m = re.search(r'https?://\S+', comment)
+                    if m:
+                        url_map[sid] = m.group(0)
             except json.JSONDecodeError:
                 pass
         elif f.suffix == ".md":
@@ -1339,6 +1355,99 @@ def _build_source_url_map() -> dict[str, str]:
                     url_map.setdefault(sid, m.group(1))
                     break
     return url_map
+
+
+# ---------------------------------------------------------------------------
+# Chunking
+# ---------------------------------------------------------------------------
+
+_HEADING2_RE = re.compile(r"^## (.+)$", re.MULTILINE)
+
+
+def _heading_to_slug(heading: str) -> str:
+    """Convert heading text to a kebab-case slug for chunk_id."""
+    s = heading.strip().lower()
+    s = re.sub(r"[^\w\s-]", "", s)
+    s = re.sub(r"[\s_]+", "-", s).strip("-")
+    return s or "section"
+
+
+def _split_into_chunks(body: str, article_id: str) -> list[dict]:
+    """Split article body into heading-based chunks.
+
+    Rules:
+    - Split at ## headings (### stays with parent)
+    - Leading text before first ## becomes heading="summary"
+    - Sections > 1000 chars are re-split at paragraph boundaries
+    - Trailing chunk < 50 chars merges with previous
+    - First chunk (summary) is kept even if < 50 chars
+    """
+    # Strip frontmatter
+    fm_match = FRONTMATTER_RE.match(body)
+    if fm_match:
+        body = body[fm_match.end():]
+
+    # Split into (heading, text) pairs
+    parts: list[tuple[str, str]] = []
+    splits = _HEADING2_RE.split(body)
+    # splits[0] = text before first ##, then alternating heading/text
+    lead = splits[0].strip()
+    if lead:
+        parts.append(("summary", lead))
+    for i in range(1, len(splits), 2):
+        heading = splits[i].strip()
+        text = splits[i + 1].strip() if i + 1 < len(splits) else ""
+        if text:
+            parts.append((heading, text))
+
+    if not parts:
+        # No headings and no content — single chunk
+        if body.strip():
+            parts.append(("summary", body.strip()))
+        else:
+            return []
+
+    # Re-split long sections at paragraph boundaries
+    expanded: list[tuple[str, str]] = []
+    for heading, text in parts:
+        if len(text) <= 1000:
+            expanded.append((heading, text))
+            continue
+        paragraphs = text.split("\n\n")
+        current = ""
+        for para in paragraphs:
+            if current and len(current) + len(para) + 2 > 1000:
+                expanded.append((heading, current.strip()))
+                current = para
+            else:
+                current = current + "\n\n" + para if current else para
+        if current.strip():
+            expanded.append((heading, current.strip()))
+
+    # Merge trailing tiny chunks (< 50 chars) into previous
+    if len(expanded) > 1 and len(expanded[-1][1]) < 50:
+        prev_heading, prev_text = expanded[-2]
+        _, tiny_text = expanded[-1]
+        expanded[-2] = (prev_heading, prev_text + "\n\n" + tiny_text)
+        expanded.pop()
+
+    # Build chunk dicts with stable IDs
+    chunks = []
+    heading_counts: dict[str, int] = {}
+    for heading, text in expanded:
+        slug = _heading_to_slug(heading)
+        ordinal = heading_counts.get(slug, 0)
+        heading_counts[slug] = ordinal + 1
+        chunk_id = f"{article_id}:{slug}:{ordinal}"
+        chunks.append({
+            "chunk_id": chunk_id,
+            "article_id": article_id,
+            "heading": heading,
+            "ordinal": ordinal,
+            "text": text,
+        })
+
+    return chunks
 
 
 def cmd_index(_args: argparse.Namespace) -> int:
@@ -1463,10 +1572,39 @@ def cmd_index(_args: argparse.Namespace) -> int:
     for a in articles:
         topics.update(a["topics"])
 
-    _append_log("index", f"{len(articles)} articles, {len(topics)} topics")
+    # --- Generate _chunks.json ---
+    all_chunks = []
+    for wf in wiki_files:
+        try:
+            text = wf.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError):
+            continue
+        fm = parse_frontmatter(text)
+        if fm is None:
+            continue
+        aid = fm.get("article_id", "")
+        if aid not in seen_ids:
+            continue
+        chunks = _split_into_chunks(text, aid)
+        all_chunks.extend(chunks)
+
+    # Canonical hash: includes metadata, not just text
+    canonical = json.dumps(all_chunks, sort_keys=True, ensure_ascii=False)
+    content_hash = hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+    chunks_data = {
+        "version": 1,
+        "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "chunking_version": CHUNKING_VERSION,
+        "content_hash": content_hash,
+        "chunk_count": len(all_chunks),
+        "chunks": all_chunks,
+    }
+    atomic_write_json(CHUNKS_PATH, chunks_data)
+
+    _append_log("index", f"{len(articles)} articles, {len(topics)} topics, {len(all_chunks)} chunks")
     _generate_index_md(articles)
 
-    print(f"Indexed: {len(articles)} articles, {len(topics)} topics")
+    print(f"Indexed: {len(articles)} articles, {len(topics)} topics, {len(all_chunks)} chunks")
     if all_errors:
         print(f"\nWarnings ({len(all_errors)}):")
         for e in all_errors:
@@ -2469,9 +2607,13 @@ def _extract_url_from_message(msg: dict) -> str | None:
         if ent.get("type") == "url":
             offset = ent["offset"]
             length = ent["length"]
-            return text[offset:offset + length]
+            candidate = text[offset:offset + length]
+            if candidate.startswith(("http://", "https://")):
+                return candidate
         if ent.get("type") == "text_link":
-            return ent.get("url")
+            url = ent.get("url")
+            if url and url.startswith(("http://", "https://")):
+                return url
 
     # Fallback: regex
     m = URL_RE.search(text)
