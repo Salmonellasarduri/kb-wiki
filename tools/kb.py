@@ -69,8 +69,9 @@ FRONTMATTER_SCHEMA = {
 }
 # Optional frontmatter fields (not validated as required)
 FRONTMATTER_OPTIONAL = {
-    "aliases_ja": list,  # Japanese aliases for search
-    "type": str,         # source | synthesis | entity
+    "aliases_ja": list,   # Japanese aliases for search
+    "type": str,          # source | synthesis | entity
+    "reduced_from": list, # [{id, updated_at}, ...] for synthesis provenance
 }
 
 COMPILE_MODEL = "claude-sonnet-4-20250514"
@@ -193,7 +194,7 @@ def parse_frontmatter(text: str) -> dict | None:
         return None
 
     # Ensure list fields are lists (YAML may parse single-item as string)
-    for key in ("source_ids", "topics"):
+    for key in ("source_ids", "topics", "reduced_from"):
         if key in result and isinstance(result[key], str):
             result[key] = [result[key]]
 
@@ -1207,6 +1208,15 @@ Rules:
                 item["status"] = "failed"
                 item["error"] = "compile failed after retries"
                 failed += 1
+            # Restore backed-up articles if compile failed after dedup removal
+            if old_articles_for_source:
+                for old_a in old_articles_for_source:
+                    old_wiki = WIKI_DIR / f"{old_a['id']}.md"
+                    if not old_wiki.exists():
+                        backups = sorted(BACKUP_DIR.glob(f"{old_a['id']}_*.md"), reverse=True)
+                        if backups:
+                            shutil.copy2(backups[0], old_wiki)
+                            print(f"  RESTORED: {old_a['id']} from backup")
             continue
 
         # Write wiki article (with path traversal guard)
