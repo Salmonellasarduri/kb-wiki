@@ -2,7 +2,23 @@
   "version": 1,
   "_hash_index": {
     "16c0425f47df1ef74b0a79c3d9a9f30cdb47029d618139f7c1412d59b8211afa": "16c0425f47df",
-    "f75138abebf3accdd634c4f02128a1f69894949b429c59ae0ed16d8f2e814e47": "f75138abebf3"
+    "f75138abebf3accdd634c4f02128a1f69894949b429c59ae0ed16d8f2e814e47": "f75138abebf3",
+    "ed90fbbf78b25b27b525af39004b8bd0c1486882f5d93a627c630e16cff42c5a": "ed90fbbf78b2",
+    "10a681adaf1304112893ee7ca8df7897233e8bd285e9ef08e41baa7bb4868441": "10a681adaf13",
+    "c0f8def6e3efe81beb01472e85cb10693a749a2f12953aa4a4e5c88009cae3c0": "c0f8def6e3ef",
+    "30ae257ca9859c62880775dd88ea1af69f0648e219cc564ad27b69d15b44cc29": "30ae257ca985",
+    "60b71a66a1028a89a5ede65338f529eab900560dce8e0565dc8c6b19d76ea0be": "60b71a66a102",
+    "3bb354b8df0773af4dece12b9f2eb37cc881930308e34f2e90147b4e86cd94b3": "3bb354b8df07",
+    "c6913490e3c678d12fe67e848a71470fe72e84d686f5a643b76c1579590ea4c3": "c6913490e3c6",
+    "2c8b2800779bd6457a94481d8c9b7e8eb745992269e4fd3ad6a396b28643fc86": "2c8b2800779b",
+    "afc2dce259a1296f9d162ceca2701a5f953838a9d0cee82db42283809b20f83f": "afc2dce259a1",
+    "95b83f92c2f9e5b87a00b9f70d4ad604df16bf5d26dbddfd638e47fac0c033ef": "95b83f92c2f9",
+    "1880dd1f04f0fda9fad9eb422daaafc4020cf18834fce15232f2832c9f8f9356": "1880dd1f04f0",
+    "6b49f210bcc51e3febfdc0c673e4a20e1117e867761c70a4d471f28069e03508": "6b49f210bcc5",
+    "d2ea6a1800789cc3df9a68baf9e314e85d4c41144cda02940e0b7aeb6c42e11e": "d2ea6a180078",
+    "clip:2d693555d8cca571280532d720ddbab50590d26a1abf091ce7564ce62b3dd5a1": "d2ea6a180078",
+    "79391f1124d34d996fd11e7a1add958febd2520f63fa8126d1e469e4ec7062be": "79391f1124d3",
+    "clip:6f69a8c66c3b27e0d27237a710a33f3c158ca291550b23ed0a3f51c90e79854c": "79391f1124d3"
   },
   "items": {
     "16c0425f47df": {
@@ -12,9 +28,9 @@
       "meta_path": "sources/16c0425f47df_meta.json",
       "status": "compiled",
       "ingested_at": "2026-04-03T15:13:14.468948+00:00",
-      "compiled_at": "2026-04-03T15:13:47.761382+00:00",
+      "compiled_at": "2026-04-04T20:02:25.252958+00:00",
       "article_ids": [
-        "llm-knowledge-base-pattern"
+        "karpathy-llm-knowledge-base-workflow"
       ],
       "error": null
     },
@@ -25,9 +41,152 @@
       "meta_path": "sources/f75138abebf3_meta.json",
       "status": "compiled",
       "ingested_at": "2026-04-03T15:46:35.376553+00:00",
-      "compiled_at": "2026-04-03T15:46:50.234542+00:00",
+      "compiled_at": "2026-04-04T20:02:48.247549+00:00",
       "article_ids": [
-        "prompt-caching-llm-apis"
+        "llm-api-prompt-caching-optimization"
+      ],
+      "error": null
+    },
+    "10a681adaf13": {
+      "hash": "10a681adaf1304112893ee7ca8df7897233e8bd285e9ef08e41baa7bb4868441",
+      "original_name": "Salvador Dalí’s Frustrating Vision of the Divine.md",
+      "source_path": "sources/10a681adaf13_Salvador Dalí’s Frustrating Vision of the Divine.md",
+      "meta_path": "sources/10a681adaf13_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-04T09:57:16.747666+00:00",
+      "compiled_at": "2026-04-04T20:03:28.754695+00:00",
+      "article_ids": [
+        "dali-nuclear-mysticism-critique"
+      ],
+      "error": null
+    },
+    "c0f8def6e3ef": {
+      "hash": "c0f8def6e3efe81beb01472e85cb10693a749a2f12953aa4a4e5c88009cae3c0",
+      "original_name": "“メディア化”したトー横の現在──秋葉恋×佐々木チワワ『東京逃避行』対談.md",
+      "source_path": "sources/c0f8def6e3ef_“メディア化”したトー横の現在──秋葉恋×佐々木チワワ『東京逃避行』対談.md",
+      "meta_path": "sources/c0f8def6e3ef_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-04T09:57:16.747666+00:00",
+      "compiled_at": "2026-04-04T20:03:49.461247+00:00",
+      "article_ids": [
+        "tokyoko-mediatization-effects-youth-spaces"
+      ],
+      "error": null
+    },
+    "3bb354b8df07": {
+      "hash": "3bb354b8df0773af4dece12b9f2eb37cc881930308e34f2e90147b4e86cd94b3",
+      "original_name": "New Advances Bring the Era of Quantum Computers Closer Than Ever.md",
+      "source_path": "sources/3bb354b8df07_New Advances Bring the Era of Quantum Computers Closer Than Ever.md",
+      "meta_path": "sources/3bb354b8df07_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-04T11:59:34.017064+00:00",
+      "compiled_at": "2026-04-04T20:04:46.260006+00:00",
+      "article_ids": [
+        "quantum-cryptography-breakthrough-2026"
+      ],
+      "error": null
+    },
+    "c6913490e3c6": {
+      "hash": "c6913490e3c678d12fe67e848a71470fe72e84d686f5a643b76c1579590ea4c3",
+      "original_name": "クトゥルフ神話・精神病院探索ホラー『Sefton Asylum』発表。夜勤看護師の過酷ワンオペ勤務、手遅れになった患者は“脅威”として蘇る.md",
+      "source_path": "sources/c6913490e3c6_クトゥルフ神話・精神病院探索ホラー『Sefton Asylum』発表。夜勤看護師の過酷ワンオペ勤務、手遅れになった患者は“脅威”として蘇る.md",
+      "meta_path": "sources/c6913490e3c6_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-04T11:59:34.017064+00:00",
+      "compiled_at": "2026-04-04T20:05:11.530878+00:00",
+      "article_ids": [
+        "sefton-asylum-horror-game-care-responsibility"
+      ],
+      "error": null
+    },
+    "2c8b2800779b": {
+      "hash": "2c8b2800779bd6457a94481d8c9b7e8eb745992269e4fd3ad6a396b28643fc86",
+      "original_name": "新たな「国産LLM」公開、国立情報学研究所 「gpt-oss-20b」超えの日本語性能うたう.md",
+      "source_path": "sources/2c8b2800779b_新たな「国産LLM」公開、国立情報学研究所 「gpt-oss-20b」超えの日本語性能うたう.md",
+      "meta_path": "sources/2c8b2800779b_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-04T11:59:34.017064+00:00",
+      "compiled_at": "2026-04-04T20:05:36.871970+00:00",
+      "article_ids": [
+        "nii-llm-jp-4-japanese-language-model-release"
+      ],
+      "error": null
+    },
+    "afc2dce259a1": {
+      "hash": "afc2dce259a1296f9d162ceca2701a5f953838a9d0cee82db42283809b20f83f",
+      "original_name": "AIデータセンター建設計画の半数は変圧器やバッテリー不足で延期または取り消しになる見込み.md",
+      "source_path": "sources/afc2dce259a1_AIデータセンター建設計画の半数は変圧器やバッテリー不足で延期または取り消しになる見込み.md",
+      "meta_path": "sources/afc2dce259a1_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-04T13:59:13.635644+00:00",
+      "compiled_at": "2026-04-04T20:05:54.785946+00:00",
+      "article_ids": [
+        "ai-datacenter-construction-delays-transformer-battery-shortage"
+      ],
+      "error": null
+    },
+    "95b83f92c2f9": {
+      "hash": "95b83f92c2f9e5b87a00b9f70d4ad604df16bf5d26dbddfd638e47fac0c033ef",
+      "original_name": "Salvador Dalí’s Sublime Faith.md",
+      "source_path": "sources/95b83f92c2f9_Salvador Dalí’s Sublime Faith.md",
+      "meta_path": "sources/95b83f92c2f9_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-04T13:59:13.635644+00:00",
+      "compiled_at": "2026-04-04T20:06:17.929120+00:00",
+      "article_ids": [
+        "dali-sublime-faith-metropolitan-exhibition"
+      ],
+      "error": null
+    },
+    "1880dd1f04f0": {
+      "hash": "1880dd1f04f0fda9fad9eb422daaafc4020cf18834fce15232f2832c9f8f9356",
+      "original_name": "The World of Aramco.md",
+      "source_path": "sources/1880dd1f04f0_The World of Aramco.md",
+      "meta_path": "sources/1880dd1f04f0_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-04T13:59:13.635644+00:00",
+      "compiled_at": "2026-04-04T20:06:36.218634+00:00",
+      "article_ids": [
+        "aramco-world-magazine-hybrid-publishing"
+      ],
+      "error": null
+    },
+    "6b49f210bcc5": {
+      "hash": "6b49f210bcc51e3febfdc0c673e4a20e1117e867761c70a4d471f28069e03508",
+      "original_name": "n2af892aa6aef_sub_rt=share_pw.md",
+      "source_path": "sources/6b49f210bcc5_n2af892aa6aef_sub_rt=share_pw.md",
+      "meta_path": "sources/6b49f210bcc5_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-04T16:59:06.308780+00:00",
+      "compiled_at": "2026-04-04T20:07:14.614785+00:00",
+      "article_ids": [
+        "sofia-ai-memory-system-event-driven-personality"
+      ],
+      "error": null
+    },
+    "d2ea6a180078": {
+      "hash": "d2ea6a1800789cc3df9a68baf9e314e85d4c41144cda02940e0b7aeb6c42e11e",
+      "original_name": "clip_8682498476_5.clip",
+      "source_path": "sources/d2ea6a180078_セリエAに活躍の場を移したデ・ブライネ、3大会連続W杯予選敗退のイタリア代表に言.md",
+      "meta_path": "sources/d2ea6a180078_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-04T17:04:01.101064+00:00",
+      "compiled_at": "2026-04-04T20:07:43.471622+00:00",
+      "article_ids": [
+        "de-bruyne-italy-world-cup-failure-analysis"
+      ],
+      "error": null
+    },
+    "79391f1124d3": {
+      "hash": "79391f1124d34d996fd11e7a1add958febd2520f63fa8126d1e469e4ec7062be",
+      "original_name": "clip_8682498476_7.clip",
+      "source_path": "sources/79391f1124d3_思いつきを手軽にメモ。Claudeでアイデアを残し、広げる仕組みを作ってみた。 .md",
+      "meta_path": "sources/79391f1124d3_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-04T19:47:09.346935+00:00",
+      "compiled_at": "2026-04-04T20:08:24.446387+00:00",
+      "article_ids": [
+        "claude-github-memo-system-workflow"
       ],
       "error": null
     }

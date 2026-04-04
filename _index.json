@@ -1,39 +1,337 @@
 {
   "version": 1,
-  "generated_at": "2026-04-03T15:46:50.242268+00:00",
-  "article_count": 2,
+  "generated_at": "2026-04-04T21:08:27.713953+00:00",
+  "article_count": 13,
   "articles": [
     {
-      "id": "llm-knowledge-base-pattern",
-      "path": "wiki/llm-knowledge-base-pattern.md",
-      "title": "LLM-Driven Knowledge Base Pattern",
-      "summary": "Andrej Karpathy's approach to using LLMs as knowledge base compilers. Raw sources are ingested into a directory, LLMs compile them into a wiki of interlinked markdown articles, and the same LLMs perform Q&A against the wiki. Outputs feed back into the wiki, creating a self-reinforcing knowledge loop.\n",
+      "id": "ai-datacenter-construction-delays-transformer-battery-shortage",
+      "path": "wiki/ai-datacenter-construction-delays-transformer-battery-shortage.md",
+      "title": "AIデータセンター建設計画の半数が変圧器・バッテリー不足で延期・中止へ",
+      "type": "source",
+      "summary": "AIデータセンター建設計画の約半数が変圧器やバッテリーの供給不足により延期またはキャンセルされる見込み。 この状況は、AI需要の急激な成長が物理的インフラの供給能力を上回っている現実を示している。\n",
+      "topics": [
+        "ai-infrastructure",
+        "supply-chain-constraints",
+        "datacenter-construction",
+        "electrical-infrastructure"
+      ],
+      "aliases_ja": [
+        "AIデータセンター",
+        "変圧器",
+        "バッテリー",
+        "供給不足",
+        "インフラストラクチャ"
+      ],
+      "source_ids": [
+        "afc2dce259a1"
+      ],
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "aramco-world-magazine-hybrid-publishing",
+      "path": "wiki/aramco-world-magazine-hybrid-publishing.md",
+      "title": "「The World of Aramco」- 年鑑と総合誌の融合による独特な印刷メディア",
+      "type": "source",
+      "summary": "「The World of Aramco」は年鑑的な難解さとLife誌風の総合誌スタイルを組み合わせた独特な印刷メディアとして評価されている。 この出版物は「魅力的でやや奇妙な印刷メディアの飛び地」として進化し、愛情と距離感を同時に持つ複雑な性格を持っている。\n",
+      "topics": [
+        "print-media",
+        "corporate-publishing",
+        "magazine-design",
+        "cultural-publications"
+      ],
+      "aliases_ja": [
+        "プリントメディア",
+        "企業出版物",
+        "雑誌デザイン",
+        "文化出版物"
+      ],
+      "source_ids": [
+        "1880dd1f04f0"
+      ],
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "claude-github-memo-system-workflow",
+      "path": "wiki/claude-github-memo-system-workflow.md",
+      "title": "Claudeを活用したGitHubメモシステムの統合ワークフロー",
+      "type": "source",
+      "summary": "「メモして」の一言でアイデアをGitHubプライベートリポジトリに自動保存するClaude活用システムの構築手法を解説。 GitHub MCPとClaude長期メモリを組み合わせ、複数のClaudeサーフェス間でシームレスに動作する統合ワークフローを実現している。\n",
+      "topics": [
+        "claude-workflows",
+        "github-mcp",
+        "idea-management",
+        "ai-productivity",
+        "knowledge-management"
+      ],
+      "aliases_ja": [
+        "クロード",
+        "ギットハブ",
+        "アイデア管理",
+        "メモシステム",
+        "生産性向上"
+      ],
+      "source_ids": [
+        "79391f1124d3"
+      ],
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "dali-nuclear-mysticism-critique",
+      "path": "wiki/dali-nuclear-mysticism-critique.md",
+      "title": "ダリの「核の神秘主義」への転向とその芸術的限界",
+      "type": "source",
+      "summary": "サルバドール・ダリは晩年「Nuclear Mysticism（核の神秘主義）」に傾倒し、世俗的テーマを放棄して宗教的・形而上学的主題のみを追求するようになった。しかし批評家は、この転換が「経験の豊かさを形而上学の乾燥さと引き換えにした」として批判的に評価している。\n",
+      "topics": [
+        "nuclear-mysticism",
+        "salvador-dali",
+        "religious-art",
+        "artistic-evolution",
+        "surrealism-decline"
+      ],
+      "aliases_ja": [
+        "サルバドール・ダリ",
+        "核の神秘主義",
+        "宗教的絵画",
+        "シュルレアリスム"
+      ],
+      "source_ids": [
+        "10a681adaf13"
+      ],
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "dali-sublime-faith-metropolitan-exhibition",
+      "path": "wiki/dali-sublime-faith-metropolitan-exhibition.md",
+      "title": "ダリの「崇高な信仰」とその矛盾性 - メトロポリタン美術館展覧会における考察",
+      "type": "source",
+      "summary": "メトロポリタン美術館のラファエロ展覧会に関連して展示されたサルバドール・ダリの信仰をテーマとした作品について、「崇高な信仰」という概念の矛盾性を考察。通常自明とされる信仰の崇高性に対して、ダリ特有の「奇形の影」が持ち込まれることによる複雑性が指摘されている。\n",
+      "topics": [
+        "salvador-dali",
+        "religious-art",
+        "metropolitan-museum",
+        "faith-and-surrealism",
+        "art-criticism"
+      ],
+      "aliases_ja": [
+        "サルバドール・ダリ",
+        "宗教芸術",
+        "メトロポリタン美術館",
+        "信仰とシュルレアリスム",
+        "美術批評"
+      ],
+      "source_ids": [
+        "95b83f92c2f9"
+      ],
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "de-bruyne-italy-world-cup-failure-analysis",
+      "path": "wiki/de-bruyne-italy-world-cup-failure-analysis.md",
+      "title": "デ・ブライネによるイタリア代表W杯3大会連続敗退の分析",
+      "type": "source",
+      "summary": "ナポリ所属のケヴィン・デ・ブライネが、イタリア代表の2026年W杯予選敗退について「大きな損失」とコメント。 欧州サッカーのレベル向上により小規模国でも結果を出せる現状を分析し、イタリアサッカーの構造的危機を示唆している。\n",
+      "topics": [
+        "world-cup-qualification",
+        "italian-football",
+        "european-football-competition",
+        "football-analysis",
+        "serie-a-decline"
+      ],
+      "aliases_ja": [
+        "デ・ブライネ",
+        "ケヴィン・デ・ブライネ",
+        "イタリア代表",
+        "ワールドカップ予選",
+        "セリエA",
+        "ナポリ"
+      ],
+      "source_ids": [
+        "d2ea6a180078"
+      ],
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "karpathy-llm-knowledge-base-workflow",
+      "path": "wiki/karpathy-llm-knowledge-base-workflow.md",
+      "title": "Andrej Karpathyによる個人用知識ベース構築のLLMワークフロー",
+      "type": "source",
+      "summary": "Andrej Karpathyが提案するLLMを活用した個人用知識ベース構築手法。生データをraw/ディレクトリに収集し、LLMがマークダウンwikiに「コンパイル」して運用する。 400K語規模のwikiに対して複雑なQ&Aが可能で、出力結果をwikiに還元することで知識が自己強化される仕組み。\n",
       "topics": [
         "llm-workflows",
         "knowledge-management",
-        "personal-tools"
+        "personal-tools",
+        "markdown-wiki",
+        "obsidian-integration"
+      ],
+      "aliases_ja": [
+        "アンドレイ・カルパシー",
+        "知識ベース",
+        "ワークフロー",
+        "マークダウンウィキ",
+        "オブシディアン"
       ],
       "source_ids": [
         "16c0425f47df"
       ],
-      "created_at": "2026-04-04",
-      "updated_at": "2026-04-04"
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
     },
     {
-      "id": "prompt-caching-llm-apis",
-      "path": "wiki/prompt-caching-llm-apis.md",
-      "title": "Prompt Caching in LLM APIs",
-      "summary": "Prompt caching is a technique used by LLM API providers to store previously processed prompt prefixes, resulting in 50-90% cost savings and reduced latency for subsequent requests. Major providers like Anthropic, OpenAI, and Google implement automatic caching with different pricing models and TTL configurations.\n",
+      "id": "llm-api-prompt-caching-optimization",
+      "path": "wiki/llm-api-prompt-caching-optimization.md",
+      "title": "LLM APIにおけるプロンプトキャッシング最適化技術",
+      "type": "source",
+      "summary": "LLM APIプロバイダーが提供するプロンプトキャッシング技術により、同一のプレフィックスを持つリクエストで50-90%のコスト削減と大幅な遅延短縮を実現。 Anthropic、OpenAI、Googleなどの主要プロバイダーが異なる価格モデルとTTL設定で自動キャッシングを実装している。\n",
       "topics": [
         "llm-optimization",
         "api-efficiency",
-        "cost-reduction"
+        "cost-reduction",
+        "prompt-engineering"
+      ],
+      "aliases_ja": [
+        "プロンプトキャッシング",
+        "LLM最適化",
+        "API効率化",
+        "コスト削減"
       ],
       "source_ids": [
         "f75138abebf3"
       ],
-      "created_at": "2026-04-04",
-      "updated_at": "2026-04-04"
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "nii-llm-jp-4-japanese-language-model-release",
+      "path": "wiki/nii-llm-jp-4-japanese-language-model-release.md",
+      "title": "国立情報学研究所、日本語特化LLM「LLM-jp-4」をオープンソース公開",
+      "type": "source",
+      "summary": "国立情報学研究所が日本語に特化したLLM「LLM-jp-4」（8Bおよび32B-A3B）をオープンソースで公開し、 OpenAIのgpt-oss-20bを超える日本語性能を実現したと発表。 日本語を母語とするAI開発の新たな進展として注目される。\n",
+      "topics": [
+        "japanese-llm",
+        "open-source-ai",
+        "national-ai-research",
+        "language-model-performance"
+      ],
+      "aliases_ja": [
+        "国立情報学研究所",
+        "日本語LLM",
+        "オープンソースAI",
+        "言語モデル性能"
+      ],
+      "source_ids": [
+        "2c8b2800779b"
+      ],
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "quantum-cryptography-breakthrough-2026",
+      "path": "wiki/quantum-cryptography-breakthrough-2026.md",
+      "title": "量子コンピュータによる暗号解読の大幅効率化と時代の転換点",
+      "type": "source",
+      "summary": "2つの研究グループが量子コンピュータによるオンライン暗号解読に必要なqubit数と所要時間を大幅に削減する技術的突破を達成した。 この進歩により現在の暗号インフラが脆弱化する時期が大幅に前倒しされ、量子コンピュータ時代の本格的な到来が現実味を帯びてきた。\n",
+      "topics": [
+        "quantum-computing",
+        "cryptography",
+        "cybersecurity",
+        "technological-disruption"
+      ],
+      "aliases_ja": [
+        "量子コンピュータ",
+        "暗号解読",
+        "qubit",
+        "クビット",
+        "サイバーセキュリティ"
+      ],
+      "source_ids": [
+        "3bb354b8df07"
+      ],
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "sefton-asylum-horror-game-care-responsibility",
+      "path": "wiki/sefton-asylum-horror-game-care-responsibility.md",
+      "title": "『Sefton Asylum』- ケア責任と恐怖が融合したクトゥルフ神話ホラーゲーム",
+      "type": "source",
+      "summary": "Clever Trickster Productionsが発表した『Sefton Asylum』は、夜勤看護師として精神病院を探索するクトゥルフ神話ホラーゲーム。 「ケアが間に合わなかった患者が脅威として蘇る」という設定により、職業的責任と恐怖を同一の体験として統合している。\n",
+      "topics": [
+        "horror-games",
+        "cthulhu-mythos",
+        "healthcare-horror",
+        "responsibility-fear",
+        "indie-games"
+      ],
+      "aliases_ja": [
+        "セフトンアサイラム",
+        "クトゥルフ神話",
+        "ホラーゲーム",
+        "精神病院",
+        "看護師"
+      ],
+      "source_ids": [
+        "c6913490e3c6"
+      ],
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "sofia-ai-memory-system-event-driven-personality",
+      "path": "wiki/sofia-ai-memory-system-event-driven-personality.md",
+      "title": "ソフィアAI記憶システム - イベント駆動による人格変化の実装アーキテクチャ",
+      "type": "source",
+      "summary": "AIキャラクター「ソフィア」は従来の会話ログ保存に代わり「イベント駆動認知ループ」による記憶システムを実装。 MemoryEventによる体験の評価・選別・圧縮を通じて、人間の記憶特性（新しさ・感情・社会的重要性）を模倣し、体験による人格変化を実現する。\n",
+      "topics": [
+        "ai-character-development",
+        "memory-systems",
+        "event-driven-architecture",
+        "cognitive-modeling",
+        "personality-simulation"
+      ],
+      "aliases_ja": [
+        "ソフィアちゃん",
+        "メモリーイベント",
+        "認知ループ",
+        "記憶システム",
+        "イベント駆動"
+      ],
+      "source_ids": [
+        "6b49f210bcc5"
+      ],
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "tokyoko-mediatization-effects-youth-spaces",
+      "path": "wiki/tokyoko-mediatization-effects-youth-spaces.md",
+      "title": "トー横のメディア化による若者の居場所変容に関する対談分析",
+      "type": "source",
+      "summary": "新宿歌舞伎町の「トー横界隈」が2019年頃から若者の居場所として機能してきたが、近年のメディア露出により本質的な変容を遂げている。映画監督・秋葉恋と社会学者・佐々木チワワによる対談『東京逃避行』では、居場所がメディアに「発見」された瞬間の不可逆的変化について論じられている。\n",
+      "topics": [
+        "youth-culture",
+        "media-effects",
+        "urban-spaces",
+        "social-issues",
+        "mediatization"
+      ],
+      "aliases_ja": [
+        "トー横",
+        "歌舞伎町",
+        "メディア化",
+        "若者文化",
+        "都市空間"
+      ],
+      "source_ids": [
+        "c0f8def6e3ef"
+      ],
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
     }
   ]
 }

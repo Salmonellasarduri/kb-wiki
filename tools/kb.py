@@ -5,14 +5,16 @@ Deterministic tooling for an LLM-operated markdown knowledge base.
 The LLM writes wiki articles; this CLI handles hashing, indexing, and validation.
 
 Commands:
-    ingest   - Process inbox/ files into sources/ with dedup
-    compile  - Auto-generate wiki articles from pending sources via Claude API
-    index    - Rebuild _index.json from wiki/ and reconcile manifest
-    sync     - Run ingest + compile + index in one shot
-    watch    - Monitor inbox/ for new files and auto-sync
-    search   - Search wiki/ articles (ripgrep or fallback)
-    stats    - Show knowledge base statistics
-    health   - Run integrity checks
+    ingest     - Process inbox/ files into sources/ with dedup
+    compile    - Auto-generate wiki articles from pending sources via Claude API
+    index      - Rebuild _index.json and index.md from wiki/
+    sync       - Run ingest + compile + index in one shot
+    watch      - Monitor inbox/ for new files and auto-sync
+    search     - Search wiki/ articles (ripgrep or fallback)
+    stats      - Show knowledge base statistics
+    health     - Run integrity checks
+    lint       - Run structural quality checks on wiki content
+    synthesize - Generate synthesis page from articles on a topic
 """
 from __future__ import annotations
 
@@ -32,6 +34,7 @@ import threading
 import time
 from pathlib import Path
 from urllib.parse import urlparse, urlencode, parse_qs, urlunparse
+from zoneinfo import ZoneInfo
 
 import yaml
 
@@ -67,11 +70,13 @@ FRONTMATTER_SCHEMA = {
 # Optional frontmatter fields (not validated as required)
 FRONTMATTER_OPTIONAL = {
     "aliases_ja": list,  # Japanese aliases for search
+    "type": str,         # source | synthesis | entity
 }
 
 COMPILE_MODEL = "claude-sonnet-4-20250514"
 WATCH_DEBOUNCE_SEC = 3.0
 MAX_SOURCE_BYTES = 200_000  # ~200KB, well within Claude's context window
+MIN_SOURCE_BODY_CHARS = 200  # reject sources with trivial body content
 
 # URL fetch limits
 FETCH_WIRE_MAX = 5_000_000       # 5MB wire size
@@ -90,6 +95,12 @@ URL_TRACKING_PARAMS = {
     "utm_id", "fbclid", "gclid", "gclsrc", "dclid", "msclkid",
     "mc_cid", "mc_eid", "ref", "ref_src", "ref_url",
 }
+
+# Article types
+ARTICLE_TYPES = ("source", "synthesis", "entity")
+
+# Operation log
+LOG_PATH = KB_ROOT / "log.md"
 
 # .clip JSON schema required fields
 CLIP_REQUIRED_FIELDS = {"version", "url"}
@@ -132,6 +143,31 @@ def load_json(path: Path) -> dict:
 def to_posix(path: Path, base: Path) -> str:
     """Convert a path to POSIX-style relative string for JSON storage."""
     return path.relative_to(base).as_posix()
+
+
+# ---------------------------------------------------------------------------
+# Logging
+# ---------------------------------------------------------------------------
+
+_JST = ZoneInfo("Asia/Tokyo")
+
+
+def _jst_now() -> datetime.datetime:
+    """Return the current datetime in JST."""
+    return datetime.datetime.now(_JST)
+
+
+def _append_log(action: str, details: str) -> None:
+    """Append a parseable entry to log.md.
+
+    Format: ## [ISO timestamp] action | details
+    """
+    ts = _jst_now().strftime("%Y-%m-%dT%H:%M:%S+09:00")
+    try:
+        with open(LOG_PATH, "a", encoding="utf-8") as f:
+            f.write(f"## [{ts}] {action} | {details}\n\n")
+    except OSError as e:
+        print(f"WARNING: log write failed: {e}", file=sys.stderr)
 
 
 # ---------------------------------------------------------------------------
@@ -362,6 +398,30 @@ def safe_fetch(url: str) -> tuple[str, str, str | None]:
         return html, current_url, title
 
     raise RuntimeError(f"Too many redirects (>{FETCH_MAX_REDIRECTS})")
+
+
+# Error-page / placeholder patterns that should never be compiled
+_GARBAGE_SOURCE_PATTERNS: list[re.Pattern[str]] = [
+    re.compile(r"Something went wrong.*try again", re.IGNORECASE | re.DOTALL),
+    re.compile(r"Page not found", re.IGNORECASE),
+    re.compile(r"403 Forbidden", re.IGNORECASE),
+    re.compile(r"404 Not Found", re.IGNORECASE),
+    re.compile(r"Access Denied", re.IGNORECASE),
+    re.compile(r"privacy.related extensions may cause issues", re.IGNORECASE),
+    re.compile(r"^\s*#\s*Test\s*\n+\s*Hello world\s*$", re.IGNORECASE | re.MULTILINE),
+]
+
+
+def _is_source_garbage(text: str) -> str | None:
+    """Return a reason string if the source is garbage, else None."""
+    # Strip YAML frontmatter to measure actual body
+    body = re.sub(r"\A---.*?\n---[ \t]*\n", "", text, count=1, flags=re.DOTALL).strip()
+    if len(body) < MIN_SOURCE_BODY_CHARS:
+        return f"body too short ({len(body)} chars < {MIN_SOURCE_BODY_CHARS})"
+    for pat in _GARBAGE_SOURCE_PATTERNS:
+        if pat.search(body):
+            return f"matches garbage pattern: {pat.pattern!r}"
+    return None
 
 
 def extract_article_text(html: str) -> str | None:
@@ -689,7 +749,159 @@ def cmd_ingest(_args: argparse.Namespace) -> int:
             pass
 
     print(f"\nDone: {ingested} ingested, {skipped_dup} duplicates skipped, {errors} errors")
+    if ingested:
+        _append_log("ingest", f"{ingested} ingested, {skipped_dup} dups, {errors} errors")
     return 2 if errors else 0
+
+
+# ---------------------------------------------------------------------------
+# Incremental update helpers
+# ---------------------------------------------------------------------------
+
+RELEVANCE_THRESHOLD = 0.6
+RELEVANCE_MARGIN = 0.15
+BACKUP_DIR = WIKI_DIR / ".backup"
+BACKUP_GENERATIONS = 5
+
+# Related Articles anchors
+RELATED_ANCHOR_START = "<!-- AUTO:Related Articles -->"
+RELATED_ANCHOR_END = "<!-- /AUTO:Related Articles -->"
+RELATED_SECTION_RE = re.compile(
+    re.escape(RELATED_ANCHOR_START) + r".*?" + re.escape(RELATED_ANCHOR_END),
+    re.DOTALL,
+)
+
+
+def _extract_source_topics(source_text: str) -> list[str]:
+    """Extract topic hints from source frontmatter if present."""
+    fm = parse_frontmatter(source_text)
+    if fm and fm.get("topics"):
+        return fm["topics"]
+    return []
+
+
+def _score_relevance(
+    source_topics: list[str],
+    source_title_tokens: set[str],
+    article: dict,
+) -> float:
+    """Score how relevant an existing article is to a new source.
+
+    Returns 0.0..1.0 based on topic Jaccard + title overlap + summary overlap.
+    """
+    # Topic Jaccard
+    a_topics = set(article.get("topics", []))
+    s_topics = set(source_topics)
+    union = a_topics | s_topics
+    topic_jaccard = len(a_topics & s_topics) / max(len(union), 1)
+
+    # Title token overlap
+    a_title_tokens = _tokenize_simple(article.get("title") or "")
+    title_inter = source_title_tokens & a_title_tokens
+    title_union = source_title_tokens | a_title_tokens
+    title_overlap = len(title_inter) / max(len(title_union), 1)
+
+    # Summary token overlap (lighter)
+    a_summary_tokens = _tokenize_simple(article.get("summary") or "")
+    summary_inter = source_title_tokens & a_summary_tokens
+    summary_overlap = len(summary_inter) / max(len(a_summary_tokens), 1)
+
+    return topic_jaccard * 0.5 + title_overlap * 0.3 + summary_overlap * 0.2
+
+
+def _tokenize_simple(text: str) -> set[str]:
+    """Lightweight tokenizer for relevance scoring."""
+    text = text.lower().replace("\u30fb", "").replace("\u00b7", "")
+    tokens = set(re.split(r"[\s,./;:!?_()[\]{}\-]+", text))
+    return {t for t in tokens if len(t) >= 2}
+
+
+def _backup_article(article_path: Path) -> None:
+    """Save a timestamped backup of an article before update."""
+    if not article_path.exists():
+        return
+    BACKUP_DIR.mkdir(parents=True, exist_ok=True)
+    ts = _jst_now().strftime("%Y%m%dT%H%M%S")
+    dst = BACKUP_DIR / f"{article_path.stem}_{ts}.md"
+    shutil.copy2(article_path, dst)
+    # Prune old generations
+    backups = sorted(BACKUP_DIR.glob(f"{article_path.stem}_*.md"))
+    for old in backups[:-BACKUP_GENERATIONS]:
+        try:
+            old.unlink()
+        except OSError:
+            pass
+
+
+def _read_wiki_body(article_id: str) -> str:
+    """Read the full text of a wiki article."""
+    wiki_path = WIKI_DIR / f"{article_id}.md"
+    if not wiki_path.exists():
+        return ""
+    try:
+        return wiki_path.read_text(encoding="utf-8")
+    except OSError:
+        return ""
+
+
+def _refresh_cross_references(articles: list[dict]) -> int:
+    """Update Related Articles sections across all wiki pages.
+
+    Uses topic overlap to determine related articles.
+    Only writes files where the section actually changed.
+    Returns number of files updated.
+    """
+    if not articles:
+        return 0
+
+    # Build topic -> article_ids map
+    topic_to_aids: dict[str, set[str]] = {}
+    for a in articles:
+        for t in a.get("topics", []):
+            topic_to_aids.setdefault(t, set()).add(a["id"])
+
+    # For each article, find related articles (share >= 1 topic, not self)
+    updated = 0
+    for a in articles:
+        related: set[str] = set()
+        for t in a.get("topics", []):
+            related |= topic_to_aids.get(t, set())
+        related.discard(a["id"])
+
+        if not related:
+            new_section = ""
+        else:
+            links = "\n".join(f"- [[{rid}]]" for rid in sorted(related))
+            new_section = (
+                f"\n{RELATED_ANCHOR_START}\n"
+                f"## Related Articles\n\n{links}\n"
+                f"{RELATED_ANCHOR_END}\n"
+            )
+
+        wiki_path = WIKI_DIR / f"{a['id']}.md"
+        if not wiki_path.exists():
+            continue
+
+        try:
+            text = wiki_path.read_text(encoding="utf-8")
+        except OSError:
+            continue
+
+        # Check if auto-section exists
+        existing_match = RELATED_SECTION_RE.search(text)
+        if existing_match:
+            old_section = existing_match.group(0)
+            if old_section.strip() == new_section.strip():
+                continue
+            new_text = RELATED_SECTION_RE.sub(new_section.strip(), text)
+        else:
+            # No auto-section yet; append it (preserve manual sections)
+            new_text = text.rstrip() + "\n" + new_section
+
+        wiki_path.write_text(new_text, encoding="utf-8")
+        updated += 1
+
+    return updated
 
 
 def cmd_compile(_args: argparse.Namespace) -> int:
@@ -763,13 +975,144 @@ def cmd_compile(_args: argparse.Namespace) -> int:
             failed += 1
             continue
 
+        # Reject garbage sources (error pages, placeholders, trivial content)
+        garbage_reason = _is_source_garbage(source_text)
+        if garbage_reason:
+            print(f"SKIP (garbage): {source_path.name} — {garbage_reason}")
+            item["status"] = "failed"
+            item["error"] = f"garbage source: {garbage_reason}"
+            failed += 1
+            continue
+
         # Mark as compiling
         item["status"] = "compiling"
         atomic_write_json(MANIFEST_PATH, manifest)
 
-        print(f"COMPILING: {item['original_name']} ({sid})...")
+        # --- Source-level dedup: remove old articles for this source_id ---
+        old_articles_for_source = [
+            a for a in existing_articles
+            if sid in a.get("source_ids", [])
+        ]
+        if old_articles_for_source:
+            for old_a in old_articles_for_source:
+                old_wiki = WIKI_DIR / f"{old_a['id']}.md"
+                if old_wiki.exists():
+                    _backup_article(old_wiki)
+                    old_wiki.unlink()
+                    print(f"  REPLACED: removed old article {old_a['id']}")
+            existing_articles = [
+                a for a in existing_articles if a not in old_articles_for_source
+            ]
+            # Rebuild context without removed articles
+            existing_ctx = "\n".join(
+                f"- {a['title']} (topics: {', '.join(a['topics'])}): {a['summary']}"
+                for a in existing_articles
+            ) or "(none yet)"
 
-        prompt = f"""Read this source document and compile it into a wiki article.
+        # --- Incremental update: 2-stage detection ---
+        # Extract title from source for scoring
+        source_title = item.get("original_name", "").replace(".md", "").replace("_", " ")
+        source_fm = parse_frontmatter(source_text)
+        if source_fm:
+            source_title = source_fm.get("title", source_title) or source_title
+        source_title_tokens = _tokenize_simple(source_title)
+        source_topics = _extract_source_topics(source_text)
+
+        # Stage 1: lightweight scoring against all existing articles
+        update_target: dict | None = None
+        if existing_articles and source_topics:
+            scored = []
+            for ea in existing_articles:
+                s = _score_relevance(source_topics, source_title_tokens, ea)
+                scored.append((s, ea))
+            scored.sort(key=lambda x: x[0], reverse=True)
+
+            best_score = scored[0][0] if scored else 0.0
+            second_score = scored[1][0] if len(scored) > 1 else 0.0
+
+            if (best_score >= RELEVANCE_THRESHOLD
+                    and best_score - second_score >= RELEVANCE_MARGIN):
+                candidate_article = scored[0][1]
+                # Stage 2: LLM confirmation
+                existing_body = _read_wiki_body(candidate_article["id"])
+                if existing_body:
+                    try:
+                        merge_check = client.messages.create(
+                            model=COMPILE_MODEL,
+                            max_tokens=100,
+                            messages=[{"role": "user", "content": (
+                                f"Should this new source be merged into the existing article?\n\n"
+                                f"Existing article title: {candidate_article['title']}\n"
+                                f"Existing article summary: {candidate_article['summary']}\n\n"
+                                f"New source (first 500 chars):\n{source_text[:500]}\n\n"
+                                f"Answer only 'yes' or 'no' with a one-line reason."
+                            )}],
+                        )
+                        answer = merge_check.content[0].text.strip().lower()  # type: ignore[union-attr]
+                        if answer.startswith("yes"):
+                            update_target = candidate_article
+                            print(f"  UPDATE MODE: merging into {candidate_article['id']} "
+                                  f"(score={best_score:.2f}, margin={best_score - second_score:.2f})")
+                            _append_log(
+                                "compile:merge-check",
+                                f"{sid} -> {candidate_article['id']} "
+                                f"(score={best_score:.2f}, llm=yes)"
+                            )
+                        else:
+                            print(f"  CREATE MODE: LLM rejected merge with {candidate_article['id']} "
+                                  f"(score={best_score:.2f}, llm=no)")
+                            _append_log(
+                                "compile:merge-check",
+                                f"{sid} vs {candidate_article['id']} "
+                                f"(score={best_score:.2f}, llm=no -> create)"
+                            )
+                    except Exception as e:
+                        print(f"  Merge check failed ({e}), defaulting to create mode")
+
+        # --- Build prompt ---
+        if update_target:
+            # Update mode: merge new source into existing article
+            existing_body = _read_wiki_body(update_target["id"])
+            existing_source_ids = update_target.get("source_ids", [])
+            merged_source_ids = list(existing_source_ids) + [sid]
+            source_ids_yaml = "\n".join(f"  - {s}" for s in merged_source_ids)
+
+            print(f"UPDATING: {update_target['id']} with {item['original_name']} ({sid})...")
+
+            prompt = f"""Update this existing wiki article by integrating new information from a new source.
+
+Existing article:
+---
+{existing_body}
+---
+
+New source document (source_id: {sid}):
+---
+{source_text}
+---
+
+Instructions:
+- Integrate the new information into the existing article naturally
+- If the new source CONTRADICTS existing claims, mark contradictions with:
+  > [!warning] Contradiction
+  > Old claim: ... | New source says: ...
+- Update the summary to reflect the combined knowledge
+- Keep the same article_id: {update_target['id']}
+- Update source_ids to include both old and new:
+{source_ids_yaml}
+- Set updated_at to "{today}"
+- Keep created_at as "{update_target.get('created_at', today)}"
+- type: source
+- aliases_ja: must have at least 5 entries. Include Japanese translations of topics, katakana for names, and conversational terms people might use when discussing this topic
+
+Write the COMPLETE updated article with EXACT YAML frontmatter format."""
+
+            max_tokens = 6144
+        else:
+            # Create mode: new article (original behavior)
+            print(f"COMPILING: {item['original_name']} ({sid})...")
+
+            prompt = f"""Read this source document and compile it into a wiki article.
 
 Source document (source_id: {sid}):
 ---
@@ -783,12 +1126,13 @@ Write a complete wiki article in markdown with this EXACT frontmatter format at 
 ---
 article_id: unique-kebab-case-slug
 title: Human Readable Title
+type: source
 source_ids:
   - {sid}
 topics:
   - relevant-topic-kebab-case
 aliases_ja:
-  - Japanese reading or alias for each topic/entity (e.g. デブライネ, 量子コンピュータ)
+  - (想起ワード: 最低5個。会話で使われそうな日本語表現を含む)
 summary: >
   2-3 sentence summary of the key concepts and conclusions.
   Be specific about entities, terminology, and actionable insights.
@@ -799,19 +1143,27 @@ updated_at: "{today}"
 Rules:
 - article_id must be unique, descriptive, kebab-case
 - topics must be kebab-case, lowercase
-- aliases_ja: list Japanese readings/aliases for key topics, people, and entities mentioned in the article. Include katakana for foreign names, common Japanese terms for technical concepts. If the article is in Japanese, include the original Japanese terms. If no Japanese aliases apply, use an empty list []
+- aliases_ja (REQUIRED, minimum 5 entries): この記事を思い出すきっかけになる日本語のワード。以下すべてを含める:
+  1. 各topicの日本語訳（例: ai-infrastructure → AIインフラ）
+  2. 記事中の人名・団体名のカタカナ（例: Paul Graham → ポール・グレアム）
+  3. 会話で言及されそうな口語的表現（例: 「量子コンピュータ」「暴号解読」「デブライネ」）
+  空リストは禁止。英語記事でも必ず日本語エイリアスを付ける
 - summary is critical for retrieval quality
 - Include a "## Related Articles" section at the end with [[article-id]] links if relevant
-- Write in the language of the source document
+- Always write the article body in Japanese, regardless of the source language. Translate and summarize naturally — do not produce a literal translation
+- Keep proper nouns, technical terms, and titles in their original form where conventional (e.g. "Paul Graham", "LLM", "MCP"), adding Japanese reading in parentheses on first mention if helpful
 - Focus on extracting key concepts, patterns, and actionable knowledge"""
 
+            max_tokens = 4096
+
+        # --- LLM call with retry ---
         article_text = None
         fm: dict | None = None
         for attempt in range(2):
             try:
                 response = client.messages.create(
                     model=COMPILE_MODEL,
-                    max_tokens=4096,
+                    max_tokens=max_tokens,
                     messages=[{"role": "user", "content": prompt}],
                 )
                 candidate = response.content[0].text  # type: ignore[union-attr]
@@ -872,21 +1224,54 @@ Rules:
             item["error"] = f"path traversal in article_id: {article_id!r}"
             failed += 1
             continue
+
+        # Backup before update
+        if update_target:
+            _backup_article(wiki_path)
+
         wiki_path.write_text(article_text, encoding="utf-8")
 
         item["status"] = "compiled"
-        item["compiled_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+        item["compiled_at"] = _jst_now().isoformat()
         item["article_ids"] = [article_id]
         item["error"] = None
         compiled += 1
 
-        print(f"  -> wiki/{article_id}.md")
+        mode = "updated" if update_target else "created"
+        print(f"  -> wiki/{article_id}.md ({mode})")
+        _append_log("compile", f"{mode} {article_id} from {sid}")
 
         # Update existing context for next source
         existing_ctx += f"\n- {fm['title']} (topics: {', '.join(fm.get('topics', []))}): {fm.get('summary', '')}"
 
     atomic_write_json(MANIFEST_PATH, manifest)
+
+    # Refresh cross-references after all compilations
+    if compiled:
+        print("\nRefreshing cross-references...")
+        refreshed_index = load_json(INDEX_PATH)
+        ref_articles = refreshed_index.get("articles", [])
+        if not ref_articles:
+            # Index not yet rebuilt; read directly from wiki
+            ref_articles = []
+            for wf in sorted(WIKI_DIR.glob("*.md")):
+                try:
+                    text = wf.read_text(encoding="utf-8")
+                except OSError:
+                    continue
+                wfm = parse_frontmatter(text)
+                if wfm and "article_id" in wfm:
+                    ref_articles.append({
+                        "id": wfm["article_id"],
+                        "topics": wfm.get("topics", []),
+                        "path": to_posix(wf, KB_ROOT),
+                    })
+        xref_count = _refresh_cross_references(ref_articles)
+        print(f"  {xref_count} articles updated with cross-references")
+
     print(f"\nDone: {compiled} compiled, {failed} failed")
+    if compiled:
+        _append_log("compile:done", f"{compiled} compiled, {failed} failed")
     return 2 if failed else 0
 
 
@@ -939,6 +1324,7 @@ def cmd_index(_args: argparse.Namespace) -> int:
             "id": aid,
             "path": to_posix(wf, KB_ROOT),
             "title": fm["title"],
+            "type": fm.get("type", "source"),
             "summary": fm["summary"],
             "topics": fm["topics"],
             "aliases_ja": fm.get("aliases_ja", []),
@@ -988,6 +1374,9 @@ def cmd_index(_args: argparse.Namespace) -> int:
     topics = set()
     for a in articles:
         topics.update(a["topics"])
+
+    _append_log("index", f"{len(articles)} articles, {len(topics)} topics")
+    _generate_index_md(articles)
 
     print(f"Indexed: {len(articles)} articles, {len(topics)} topics")
     if all_errors:
@@ -1404,12 +1793,13 @@ def cmd_health(args: argparse.Namespace) -> int:
             issues.append(("WARN", f"orphaned file in sources/: {sf.name}"))
 
     # Report
+    error_list = [i for i in issues if i[0] == "ERROR"]
+    warn_list = [i for i in issues if i[0] == "WARN"]
+    _append_log("health", f"{len(error_list)} errors, {len(warn_list)} warnings")
+
     if not issues:
         print("Health check passed. No issues found.")
         return 0
-
-    error_list = [i for i in issues if i[0] == "ERROR"]
-    warn_list = [i for i in issues if i[0] == "WARN"]
 
     if args.json:
         print(json.dumps({
@@ -1423,6 +1813,367 @@ def cmd_health(args: argparse.Namespace) -> int:
             print(f"  [{severity}] {msg}")
 
     return 1 if error_list else 0
+
+
+# ---------------------------------------------------------------------------
+# Index markdown generation
+# ---------------------------------------------------------------------------
+
+INDEX_MD_PATH = KB_ROOT / "index.md"
+
+
+def _generate_index_md(articles: list[dict]) -> None:
+    """Generate a human-readable index.md grouped by primary topic."""
+    if not articles:
+        INDEX_MD_PATH.write_text(
+            "# Knowledge Base Index\n\n_No articles yet._\n", encoding="utf-8"
+        )
+        return
+
+    # Group by primary topic (first in topics list)
+    topic_groups: dict[str, list[dict]] = {}
+    for a in articles:
+        primary = a["topics"][0] if a.get("topics") else "uncategorized"
+        topic_groups.setdefault(primary, []).append(a)
+
+    # Sort topics alphabetically; articles within each by updated_at desc
+    lines = [
+        "# Knowledge Base Index",
+        "",
+        f"_{len(articles)} articles, {len(topic_groups)} topics "
+        f"| generated {_jst_now().strftime('%Y-%m-%d %H:%M JST')}_",
+        "",
+    ]
+
+    for topic in sorted(topic_groups):
+        lines.append(f"## {topic}")
+        lines.append("")
+        group = sorted(
+            topic_groups[topic],
+            key=lambda a: a.get("updated_at", ""),
+            reverse=True,
+        )
+        for a in group:
+            summary = (a.get("summary") or "")[:80].replace("\n", " ").strip()
+            type_tag = ""
+            atype = a.get("type", "source")
+            if atype != "source":
+                type_tag = f" [{atype}]"
+            lines.append(f"- [{a['title']}]({a['path']}){type_tag} -- {summary}")
+        lines.append("")
+
+    INDEX_MD_PATH.write_text("\n".join(lines), encoding="utf-8")
+
+
+# ---------------------------------------------------------------------------
+# Lint (structural checks)
+# ---------------------------------------------------------------------------
+
+WIKILINK_RE = re.compile(r"\[\[([a-z0-9-]+)\]\]")
+
+
+def cmd_lint(args: argparse.Namespace) -> int:
+    """Run structural quality checks on the wiki."""
+    index = load_json(INDEX_PATH)
+    articles = index.get("articles", [])
+    if not articles:
+        print("No articles in index. Run 'kb index' first.")
+        return 1
+
+    issues: list[tuple[str, str]] = []  # (severity, message)
+
+    # Build lookup maps
+    article_ids = {a["id"] for a in articles}
+    article_by_id: dict[str, dict] = {a["id"]: a for a in articles}
+
+    # Read all article bodies and extract wikilinks
+    inbound_links: dict[str, set[str]] = {aid: set() for aid in article_ids}
+    outbound_links: dict[str, set[str]] = {aid: set() for aid in article_ids}
+
+    for a in articles:
+        wiki_path = KB_ROOT / a["path"]
+        try:
+            text = wiki_path.read_text(encoding="utf-8")
+        except OSError:
+            issues.append(("ERROR", f"{a['id']}: cannot read file {a['path']}"))
+            continue
+        found = set(WIKILINK_RE.findall(text))
+        outbound_links[a["id"]] = found
+        for target in found:
+            if target in inbound_links:
+                inbound_links[target].add(a["id"])
+
+    # 1. Orphan pages: no inbound links (exclude synthesis which are hubs)
+    for aid, sources in inbound_links.items():
+        atype = article_by_id[aid].get("type", "source")
+        if not sources and atype != "synthesis":
+            issues.append(("INFO", f"orphan: {aid} (no inbound wikilinks)"))
+
+    # 2. Dead links: outbound links pointing to non-existent articles
+    for aid, targets in outbound_links.items():
+        for target in targets:
+            if target not in article_ids:
+                issues.append(("WARN", f"dead link: {aid} -> [[{target}]]"))
+
+    # 3. Missing aliases_ja
+    for a in articles:
+        aliases = a.get("aliases_ja") or []
+        if not aliases:
+            issues.append(("INFO", f"no aliases_ja: {a['id']}"))
+
+    # 4. Stale articles: updated_at > 30 days, same topic has newer article
+    today = datetime.date.today()
+    topic_latest: dict[str, str] = {}
+    for a in articles:
+        for t in a.get("topics", []):
+            existing = topic_latest.get(t, "")
+            if a.get("updated_at", "") > existing:
+                topic_latest[t] = a["updated_at"]
+
+    for a in articles:
+        try:
+            updated = datetime.date.fromisoformat(a["updated_at"])
+        except (ValueError, TypeError):
+            continue
+        age = (today - updated).days
+        if age > 30:
+            for t in a.get("topics", []):
+                if topic_latest.get(t, "") > a["updated_at"]:
+                    issues.append((
+                        "INFO",
+                        f"stale: {a['id']} ({age}d old, topic '{t}' has newer article)"
+                    ))
+                    break
+
+    # 5. Thin topics: topics with only 1 article (synthesize candidates)
+    topic_count: dict[str, int] = {}
+    for a in articles:
+        for t in a.get("topics", []):
+            topic_count[t] = topic_count.get(t, 0) + 1
+    thin_topics = [t for t, c in topic_count.items() if c == 1]
+    for t in sorted(thin_topics):
+        issues.append(("INFO", f"thin topic: '{t}' (1 article only)"))
+
+    # 6. Deep lint: LLM-based content checks (--deep flag)
+    if getattr(args, "deep", False):
+        print("\nRunning deep lint (LLM checks)...")
+        try:
+            import anthropic
+            client = anthropic.Anthropic()
+
+            # 6a. Contradiction detection: check pairs sharing topics
+            topic_to_aids: dict[str, list[str]] = {}
+            for a in articles:
+                for t in a.get("topics", []):
+                    topic_to_aids.setdefault(t, []).append(a["id"])
+
+            checked_pairs: set[tuple[str, ...]] = set()
+            for _topic, aids in topic_to_aids.items():
+                if len(aids) < 2:
+                    continue
+                for i, a1_id in enumerate(aids):
+                    for a2_id in aids[i + 1:]:
+                        pair = tuple(sorted((a1_id, a2_id)))
+                        if pair in checked_pairs:
+                            continue
+                        checked_pairs.add(pair)
+
+                        a1 = article_by_id[a1_id]
+                        a2 = article_by_id[a2_id]
+
+                        try:
+                            resp = client.messages.create(
+                                model=COMPILE_MODEL,
+                                max_tokens=300,
+                                messages=[{"role": "user", "content": (
+                                    f"Do these two article summaries contain any contradictions?\n\n"
+                                    f"Article 1: {a1['title']}\n{a1.get('summary', '')}\n\n"
+                                    f"Article 2: {a2['title']}\n{a2.get('summary', '')}\n\n"
+                                    f"If contradictions exist, describe them briefly. "
+                                    f"If no contradictions, reply 'none'."
+                                )}],
+                            )
+                            answer = resp.content[0].text.strip()  # type: ignore[union-attr]
+                            if not answer.lower().startswith("none"):
+                                issues.append((
+                                    "WARN",
+                                    f"contradiction: {a1_id} vs {a2_id}: {answer[:150]}"
+                                ))
+                        except Exception as e:
+                            print(f"  Deep lint error ({a1_id} vs {a2_id}): {e}")
+
+            # 6b. Missing concept pages
+            all_topics = sorted({t for a in articles for t in a.get("topics", [])})
+            all_titles = [a.get("title", "") for a in articles]
+            try:
+                resp = client.messages.create(
+                    model=COMPILE_MODEL,
+                    max_tokens=400,
+                    messages=[{"role": "user", "content": (
+                        f"Given these wiki topics and article titles, suggest up to 5 concepts or entities "
+                        f"that deserve their own dedicated page but don't have one yet.\n\n"
+                        f"Topics: {', '.join(all_topics)}\n"
+                        f"Articles: {'; '.join(all_titles[:30])}\n\n"
+                        f"List each suggestion as: - concept-name: reason\n"
+                        f"If nothing is missing, reply 'none'."
+                    )}],
+                )
+                answer = resp.content[0].text.strip()  # type: ignore[union-attr]
+                if not answer.lower().startswith("none"):
+                    for line in answer.split("\n"):
+                        line = line.strip()
+                        if line.startswith("- "):
+                            issues.append(("INFO", f"suggested page: {line[2:]}"))
+            except Exception as e:
+                print(f"  Deep lint error (concept suggestions): {e}")
+
+        except ImportError:
+            print("WARNING: anthropic package not installed. Skipping deep lint.")
+
+    # Log
+    _append_log("lint", f"{len(issues)} issues ({sum(1 for s, _ in issues if s != 'INFO')} actionable)")
+
+    # Report
+    if not issues:
+        print("Lint passed. No issues found.")
+        return 0
+
+    error_list = [i for i in issues if i[0] == "ERROR"]
+    warn_list = [i for i in issues if i[0] == "WARN"]
+    info_list = [i for i in issues if i[0] == "INFO"]
+
+    if getattr(args, "json", False):
+        print(json.dumps({
+            "errors": len(error_list),
+            "warnings": len(warn_list),
+            "info": len(info_list),
+            "issues": [{"severity": s, "message": m} for s, m in issues],
+        }, indent=2, ensure_ascii=False))
+    else:
+        print(f"Lint: {len(error_list)} errors, {len(warn_list)} warnings, {len(info_list)} info\n")
+        for severity, msg in issues:
+            print(f"  [{severity}] {msg}")
+
+    return 1 if error_list else 0
+
+
+# ---------------------------------------------------------------------------
+# Synthesize
+# ---------------------------------------------------------------------------
+
+def cmd_synthesize(args: argparse.Namespace) -> int:
+    """Generate a synthesis page from multiple articles on a topic."""
+    try:
+        import anthropic
+    except ImportError:
+        print("ERROR: anthropic package not installed. Run: pip install anthropic")
+        return 2
+
+    topic = args.topic
+    index = load_json(INDEX_PATH)
+    articles = index.get("articles", [])
+
+    # Find articles matching the topic
+    matching = [a for a in articles if topic in a.get("topics", [])]
+    if not matching:
+        print(f"No articles found with topic '{topic}'.")
+        print(f"Available topics: {', '.join(sorted({t for a in articles for t in a.get('topics', [])}))}")
+        return 1
+
+    if len(matching) < 2:
+        print(f"Only 1 article with topic '{topic}'. Need at least 2 for synthesis.")
+        return 1
+
+    print(f"Synthesizing {len(matching)} articles on topic '{topic}'...")
+
+    # Read article bodies
+    bodies = []
+    all_source_ids: list[str] = []
+    for a in matching:
+        body = _read_wiki_body(a["id"])
+        if body:
+            bodies.append(f"### {a['title']}\n{body}")
+            all_source_ids.extend(a.get("source_ids", []))
+
+    if not bodies:
+        print("ERROR: could not read any article bodies")
+        return 2
+
+    today = datetime.date.today().isoformat()
+    article_id = f"{topic}-overview"
+
+    # Check if synthesis page already exists
+    existing_synth = WIKI_DIR / f"{article_id}.md"
+    if existing_synth.exists():
+        _backup_article(existing_synth)
+        print(f"  Updating existing synthesis: {article_id}")
+
+    source_ids_yaml = "\n".join(f"  - {s}" for s in sorted(set(all_source_ids)))
+    articles_text = "\n\n".join(bodies)
+
+    client = anthropic.Anthropic()
+    prompt = f"""Create a synthesis page that integrates knowledge from {len(matching)} articles on the topic "{topic}".
+
+Source articles:
+---
+{articles_text}
+---
+
+Write a comprehensive synthesis article with this EXACT frontmatter:
+---
+article_id: {article_id}
+title: "{topic}" Overview
+type: synthesis
+source_ids:
+{source_ids_yaml}
+topics:
+  - {topic}
+aliases_ja: []
+summary: >
+  Synthesis of {len(matching)} articles on {topic}. Key themes, patterns, and connections.
+created_at: "{today}"
+updated_at: "{today}"
+---
+
+Rules:
+- Synthesize and integrate, don't just summarize each article separately
+- Identify patterns, contradictions, and connections across articles
+- Write in Japanese
+- Include a "## Related Articles" section with [[article-id]] links
+- Focus on insights that emerge from seeing all articles together"""
+
+    try:
+        response = client.messages.create(
+            model=COMPILE_MODEL,
+            max_tokens=6144,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        article_text = response.content[0].text  # type: ignore[union-attr]
+
+        # Strip code fences
+        article_text = re.sub(r"\A\s*```(?:markdown|md)?\s*\n", "", article_text)
+        article_text = re.sub(r"\n```\s*\Z", "", article_text)
+
+        fm = parse_frontmatter(article_text)
+        if fm is None:
+            print("ERROR: LLM response has no valid frontmatter")
+            return 2
+
+        errors = validate_frontmatter(fm, Path(article_id))
+        if errors:
+            print(f"ERROR: frontmatter validation failed: {'; '.join(errors)}")
+            return 2
+
+        wiki_path = WIKI_DIR / f"{article_id}.md"
+        wiki_path.write_text(article_text, encoding="utf-8")
+        print(f"  -> wiki/{article_id}.md (synthesis)")
+
+        _append_log("synthesize", f"{article_id} from {len(matching)} articles on '{topic}'")
+        return 0
+
+    except Exception as e:
+        print(f"ERROR: synthesis failed: {e}")
+        return 2
 
 
 # ---------------------------------------------------------------------------
@@ -1687,6 +2438,15 @@ def main() -> int:
     p_health = sub.add_parser("health", help="Run integrity checks")
     p_health.add_argument("--json", action="store_true", help="Machine-readable output")
 
+    # lint
+    p_lint = sub.add_parser("lint", help="Run structural quality checks on wiki content")
+    p_lint.add_argument("--json", action="store_true", help="Machine-readable output")
+    p_lint.add_argument("--deep", action="store_true", help="Run LLM-based content checks (API cost)")
+
+    # synthesize
+    p_synth = sub.add_parser("synthesize", help="Generate synthesis page from articles on a topic")
+    p_synth.add_argument("topic", help="Topic to synthesize (kebab-case)")
+
     args = parser.parse_args()
 
     # Ensure directories exist
@@ -1703,6 +2463,8 @@ def main() -> int:
         "search": cmd_search,
         "stats": cmd_stats,
         "health": cmd_health,
+        "lint": cmd_lint,
+        "synthesize": cmd_synthesize,
     }
 
     return commands[args.command](args)
