@@ -64,6 +64,10 @@ FRONTMATTER_SCHEMA = {
     "created_at": str,
     "updated_at": str,
 }
+# Optional frontmatter fields (not validated as required)
+FRONTMATTER_OPTIONAL = {
+    "aliases_ja": list,  # Japanese aliases for search
+}
 
 COMPILE_MODEL = "claude-sonnet-4-20250514"
 WATCH_DEBOUNCE_SEC = 3.0
@@ -783,6 +787,8 @@ source_ids:
   - {sid}
 topics:
   - relevant-topic-kebab-case
+aliases_ja:
+  - Japanese reading or alias for each topic/entity (e.g. デブライネ, 量子コンピュータ)
 summary: >
   2-3 sentence summary of the key concepts and conclusions.
   Be specific about entities, terminology, and actionable insights.
@@ -793,6 +799,7 @@ updated_at: "{today}"
 Rules:
 - article_id must be unique, descriptive, kebab-case
 - topics must be kebab-case, lowercase
+- aliases_ja: list Japanese readings/aliases for key topics, people, and entities mentioned in the article. Include katakana for foreign names, common Japanese terms for technical concepts. If the article is in Japanese, include the original Japanese terms. If no Japanese aliases apply, use an empty list []
 - summary is critical for retrieval quality
 - Include a "## Related Articles" section at the end with [[article-id]] links if relevant
 - Write in the language of the source document
@@ -934,6 +941,7 @@ def cmd_index(_args: argparse.Namespace) -> int:
             "title": fm["title"],
             "summary": fm["summary"],
             "topics": fm["topics"],
+            "aliases_ja": fm.get("aliases_ja", []),
             "source_ids": fm["source_ids"],
             "created_at": fm["created_at"],
             "updated_at": fm["updated_at"],
