@@ -17,6 +17,8 @@ KB_ROOT = Path(__file__).resolve().parent.parent
 WIKI_DIR = KB_ROOT / "wiki"
 SOURCES_DIR = KB_ROOT / "sources"
 OUTPUT = WIKI_DIR / "viewer.html"
+DOCS_DIR = KB_ROOT / "docs"
+DOCS_OUTPUT = DOCS_DIR / "index.html"
 
 
 def parse_frontmatter(text: str) -> tuple[dict, str]:
@@ -192,21 +194,23 @@ def _resolve_wiki_links(body: str, articles: list[dict]) -> str:
         for a in articles:
             if ref in a['title'] or a['title'] in ref:
                 return f'[{a["title"]}](#{a["id"]})'
-        # Fuzzy: significant shared prefix (>= 6 chars)
+        # Fuzzy: longest shared prefix (>= 6 chars) on id or title
         ref_lower = ref.lower()
+        best, best_len = None, 0
         for a in articles:
-            t_lower = a['title'].lower()
-            # Check common prefix length
-            plen = 0
-            for c1, c2 in zip(ref_lower, t_lower):
-                if c1 == c2:
-                    plen += 1
-                else:
-                    break
-            if plen >= 6:
-                return f'[{a["title"]}](#{a["id"]})'
-        # No match - render as plain text
-        return ref
+            for candidate in (a['id'], a['title'].lower()):
+                plen = 0
+                for c1, c2 in zip(ref_lower, candidate.lower()):
+                    if c1 == c2:
+                        plen += 1
+                    else:
+                        break
+                if plen > best_len:
+                    best, best_len = a, plen
+        if best and best_len >= 6:
+            return f'[{best["title"]}](#{best["id"]})'
+        # No match - keep original text
+        return f'[[{ref}]]'
 
     # Ensure wiki-links at line start become list items
     body = re.sub(r'^(?=\[\[)', '- ', body, flags=re.MULTILINE)
@@ -373,6 +377,44 @@ body {{
   border-top: 1px solid var(--border);
 }}
 
+/* Read status */
+.unread-dot {{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+  flex-shrink: 0;
+}}
+.article-item-title {{
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}}
+.article-item-title .title-text {{
+  flex: 1;
+}}
+.read-controls {{
+  padding: 6px 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}}
+.read-btn {{
+  padding: 3px 10px;
+  font-size: 11px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+}}
+.read-btn:hover {{
+  border-color: var(--accent);
+  color: var(--accent);
+}}
+
 /* --- Content area --- */
 .content {{
   flex: 1;
@@ -477,6 +519,56 @@ body {{
 ::-webkit-scrollbar-track {{ background: transparent; }}
 ::-webkit-scrollbar-thumb {{ background: var(--border); border-radius: 4px; }}
 ::-webkit-scrollbar-thumb:hover {{ background: var(--text-dim); }}
+
+/* Mobile back button */
+.back-btn {{
+  display: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: var(--accent);
+  background: var(--surface);
+  border: none;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}}
+
+/* --- Mobile responsive --- */
+@media (max-width: 768px) {{
+  .sidebar {{
+    width: 100%;
+    min-width: 100%;
+  }}
+  .content {{
+    display: none;
+    padding: 20px 16px;
+  }}
+  body.show-article .sidebar {{
+    display: none;
+  }}
+  body.show-article .content {{
+    display: block;
+    overflow-y: auto;
+  }}
+  body.show-article .back-btn {{
+    display: block;
+  }}
+  .article-item {{
+    padding: 14px 16px;
+  }}
+  .topic-btn {{
+    padding: 4px 10px;
+    font-size: 12px;
+  }}
+  .search-box {{
+    font-size: 16px;
+    padding: 10px 12px;
+  }}
+  .content h1 {{ font-size: 22px; }}
+  .content h2 {{ font-size: 18px; }}
+  .content p, .content li {{ font-size: 15px; }}
+}}
 </style>
 </head>
 <body>
@@ -488,9 +580,15 @@ body {{
   </div>
   <div class="topic-filters" id="topicFilters"></div>
   <div class="article-list" id="articleList"></div>
+  <div class="read-controls">
+    <button class="read-btn" id="markAllRead" title="Mark all as read">All read</button>
+    <button class="read-btn" id="markAllUnread" title="Mark all as unread">Reset</button>
+    <span id="unreadCount" style="font-size:11px;color:var(--text-dim)"></span>
+  </div>
   <div class="count-badge" id="countBadge"></div>
 </div>
 
+<button class="back-btn" id="backBtn">&larr; Back to list</button>
 <div class="content empty" id="content">
   <div class="empty-msg">Select an article from the sidebar</div>
 </div>
@@ -501,6 +599,18 @@ const ALL_TOPICS = {topics_json};
 
 let activeTopic = null;
 let activeArticleId = null;
+
+// --- Read tracking (localStorage) ---
+const READ_KEY = 'kb-wiki-read';
+function getReadSet() {{
+  try {{ return new Set(JSON.parse(localStorage.getItem(READ_KEY) || '[]')); }}
+  catch {{ return new Set(); }}
+}}
+function saveReadSet(s) {{ localStorage.setItem(READ_KEY, JSON.stringify([...s])); }}
+function markRead(id) {{ const s = getReadSet(); s.add(id); saveReadSet(s); }}
+function markAllRead() {{ const s = new Set(ARTICLES.map(a => a.id)); saveReadSet(s); }}
+function clearAllRead() {{ localStorage.removeItem(READ_KEY); }}
+function isRead(id) {{ return getReadSet().has(id); }}
 
 // Wiki-link lookup: map id and title to article
 const wikiLookup = new Map();
@@ -568,16 +678,29 @@ function getFiltered() {{
 const articleListEl = document.getElementById('articleList');
 const countBadge = document.getElementById('countBadge');
 
+function updateUnreadCount() {{
+  const readSet = getReadSet();
+  const unread = ARTICLES.filter(a => !readSet.has(a.id)).length;
+  const badge = document.getElementById('unreadCount');
+  badge.textContent = unread > 0 ? unread + ' unread' : 'all read';
+}}
+
 function renderList() {{
   articleListEl.replaceChildren();
   const filtered = getFiltered();
+  const readSet = getReadSet();
   filtered.forEach(a => {{
     const topicTags = a.topics.slice(0, 4).map(t => el('span', {{ className: 'tag' }}, t));
+    const titleChildren = [];
+    if (!readSet.has(a.id)) {{
+      titleChildren.push(el('span', {{ className: 'unread-dot', title: 'Unread' }}));
+    }}
+    titleChildren.push(el('span', {{ className: 'title-text' }}, a.title));
     const item = el('div', {{
       className: 'article-item' + (a.id === activeArticleId ? ' active' : ''),
       onclick: () => showArticle(a)
     }}, [
-      el('div', {{ className: 'article-item-title' }}, a.title),
+      el('div', {{ className: 'article-item-title' }}, titleChildren),
       el('div', {{ className: 'article-item-meta' }}, [
         el('span', {{}}, a.updated_at || a.created_at || '')
       ]),
@@ -586,6 +709,7 @@ function renderList() {{
     articleListEl.appendChild(item);
   }});
   countBadge.textContent = filtered.length + ' / ' + ARTICLES.length + ' articles';
+  updateUnreadCount();
 }}
 
 // --- Show article ---
@@ -593,8 +717,10 @@ const contentEl = document.getElementById('content');
 
 function showArticle(a) {{
   activeArticleId = a.id;
+  markRead(a.id);
   renderList();
   contentEl.classList.remove('empty');
+  document.body.classList.add('show-article');
   contentEl.replaceChildren();
 
   // Title
@@ -660,6 +786,21 @@ document.addEventListener('keydown', (e) => {{
   }}
 }});
 
+// --- Back button (mobile) ---
+document.getElementById('backBtn').addEventListener('click', () => {{
+  document.body.classList.remove('show-article');
+}});
+
+// --- Read controls ---
+document.getElementById('markAllRead').addEventListener('click', () => {{
+  markAllRead();
+  renderList();
+}});
+document.getElementById('markAllUnread').addEventListener('click', () => {{
+  clearAllRead();
+  renderList();
+}});
+
 // Init
 renderList();
 </script>
@@ -672,6 +813,11 @@ def main():
     html = build_html(articles)
     OUTPUT.write_text(html, encoding="utf-8")
     print(f"Generated {OUTPUT}  ({len(articles)} articles)")
+
+    # Also output to docs/index.html for GitHub Pages
+    DOCS_DIR.mkdir(exist_ok=True)
+    DOCS_OUTPUT.write_text(html, encoding="utf-8")
+    print(f"Generated {DOCS_OUTPUT}  (GitHub Pages)")
 
     if "--open" in sys.argv:
         import webbrowser

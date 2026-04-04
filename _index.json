@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-04-04T21:36:42.345410+00:00",
-  "article_count": 13,
+  "generated_at": "2026-04-04T22:15:44.924198+00:00",
+  "article_count": 14,
   "articles": [
     {
       "id": "ai-datacenter-construction-delays-transformer-battery-shortage",
@@ -33,25 +33,26 @@
       "updated_at": "2026-04-05"
     },
     {
-      "id": "aramco-world-publication-analysis",
-      "path": "wiki/aramco-world-publication-analysis.md",
-      "title": "「The World of Aramco」出版物の特異性分析",
+      "id": "aramco-world-magazine-publishing-analysis",
+      "path": "wiki/aramco-world-magazine-publishing-analysis.md",
+      "title": "「The World of Aramco」誌の出版メディア分析",
       "type": "source",
-      "summary": "「The World of Aramco」は年鑑的な難解雑学とLife誌風の総合誌スタイルを組み合わせた、魅力的でありながら奇妙な印刷メディアの飛び地として評価されている。 この特異な出版物は企業出版の新たな形態を示している。\n",
+      "summary": "「The World of Aramco」は年鑑的な難解さとLife誌風の総合誌スタイルを組み合わせた、魅力的でやや奇妙な印刷メディアとして進化してきた企業出版物。 この出版物は愛情と距離感を同時に持つ独特な印刷メディアの飛び地として評価されている。\n",
       "topics": [
         "corporate-publishing",
-        "print-media",
-        "cultural-documentation"
+        "print-media-evolution",
+        "magazine-design",
+        "cultural-publications"
       ],
       "aliases_ja": [
-        "アラムコ・ワールド",
+        "アラムコワールド",
         "企業出版",
         "印刷メディア",
+        "雑誌デザイン",
         "総合誌スタイル",
-        "年鑑",
-        "Life誌",
-        "文化記録",
-        "企業広報誌"
+        "Life誌風",
+        "年鑑スタイル",
+        "コーポレート出版物"
       ],
       "source_ids": [
         "1880dd1f04f0"
@@ -64,24 +65,28 @@
       "updated_at": "2026-04-05"
     },
     {
-      "id": "claude-github-memo-system-workflow",
-      "path": "wiki/claude-github-memo-system-workflow.md",
-      "title": "Claudeを活用したGitHubメモシステムの統合ワークフロー",
+      "id": "claude-memo-github-integration-workflow",
+      "path": "wiki/claude-memo-github-integration-workflow.md",
+      "title": "Claudeを使った思いつき自動メモシステム：GitHubリポジトリ連携によるアイデア管理ワークフロー",
       "type": "source",
-      "summary": "「メモして」の一言でアイデアをGitHubプライベートリポジトリに自動保存するClaude活用システムの構築手法を解説。 GitHub MCPとClaude長期メモリを組み合わせ、複数のClaudeサーフェス間でシームレスに動作する統合ワークフローを実現している。\n",
+      "summary": "Claudeに「メモして」と発話するだけでGitHubプライベートリポジトリにアイデアが自動保存される統合ワークフローの構築手法。 GitHub MCP Connectorを使用してclaude.ai、Cowork、Claude Codeの全てから同一リポジトリへアクセス可能で、メモの入口から活用まで全てClaude起点で完結する。\n",
       "topics": [
-        "claude-workflows",
-        "github-mcp",
+        "claude-integration",
+        "github-automation",
         "idea-management",
         "ai-productivity",
-        "knowledge-management"
+        "markdown-workflows"
       ],
       "aliases_ja": [
-        "クロード",
-        "ギットハブ",
+        "Claude連携",
+        "GitHubメモ",
         "アイデア管理",
-        "メモシステム",
-        "生産性向上"
+        "思いつきメモ",
+        "メモ自動化",
+        "AI生産性",
+        "Markdownワークフロー",
+        "GitHub MCP",
+        "クロード"
       ],
       "source_ids": [
         "79391f1124d3"
@@ -94,59 +99,28 @@
       "updated_at": "2026-04-05"
     },
     {
-      "id": "dali-nuclear-mysticism-late-period",
-      "path": "wiki/dali-nuclear-mysticism-late-period.md",
-      "title": "ダリの晩年「Nuclear Mysticism」への転換と芸術的乾燥化",
+      "id": "de-bruyne-italy-world-cup-exclusion-serie-a",
+      "path": "wiki/de-bruyne-italy-world-cup-exclusion-serie-a.md",
+      "title": "デ・ブライネがイタリア代表のW杯3大会連続予選敗退に言及",
       "type": "source",
-      "summary": "サルバドール・ダリは晩年「Nuclear Mysticism（核の神秘主義）」に傾倒し、世俗的なテーマを放棄して形而上学的・宗教的な主題のみを描くようになった。 この転換は「経験の豊かさを形而上学の乾燥さと引き換えにした」として批判されている。\n",
+      "summary": "ナポリに移籍したベルギー代表MFケヴィン・デ・ブライネが、イタリア代表のFIFAワールドカップ2026予選敗退について「大きな損失だ」とコメント。 ヨーロッパサッカーのレベル向上により小規模国でも結果を出せる状況を分析し、イタリアサッカーの危機的状況について言及した。\n",
       "topics": [
-        "salvador-dali",
-        "nuclear-mysticism",
-        "religious-art",
-        "late-period-art",
-        "metaphysical-art"
-      ],
-      "aliases_ja": [
-        "ダリ",
-        "サルバドール・ダリ",
-        "核の神秘主義",
-        "Nuclear Mysticism",
-        "晩年のダリ",
-        "宗教的絵画",
-        "形而上学的絵画",
-        "芸術の乾燥化",
-        "世俗的テーマの放棄"
-      ],
-      "source_ids": [
-        "10a681adaf13"
-      ],
-      "source_urls": [
-        "https://hyperallergic.com/salvador-dalis-frustrating-vision-of-the-divine"
-      ],
-      "published_at": "",
-      "created_at": "2026-04-05",
-      "updated_at": "2026-04-05"
-    },
-    {
-      "id": "de-bruyne-italy-world-cup-failure-analysis",
-      "path": "wiki/de-bruyne-italy-world-cup-failure-analysis.md",
-      "title": "デ・ブライネによるイタリア代表W杯3大会連続敗退の分析",
-      "type": "source",
-      "summary": "ナポリ所属のケヴィン・デ・ブライネが、イタリア代表の2026年W杯予選敗退について「大きな損失」とコメント。 欧州サッカーのレベル向上により小規模国でも結果を出せる現状を分析し、イタリアサッカーの構造的危機を示唆している。\n",
-      "topics": [
-        "world-cup-qualification",
-        "italian-football",
+        "football-world-cup-qualification",
+        "serie-a-decline",
         "european-football-competition",
-        "football-analysis",
-        "serie-a-decline"
+        "italy-national-team"
       ],
       "aliases_ja": [
-        "デ・ブライネ",
+        "デブライネ",
         "ケヴィン・デ・ブライネ",
         "イタリア代表",
-        "ワールドカップ予選",
+        "ワールドカップ予選敗退",
         "セリエA",
-        "ナポリ"
+        "ナポリ",
+        "3大会連続",
+        "ボスニア・ヘルツェゴビナ",
+        "ヨーロッパサッカーレベル向上",
+        "ベルギー代表"
       ],
       "source_ids": [
         "d2ea6a180078"
@@ -154,98 +128,32 @@
       "source_urls": [
         "https://www.soccer-king.jp/news/world/ita/20260404/2144780.html"
       ],
-      "published_at": "",
-      "created_at": "2026-04-05",
-      "updated_at": "2026-04-05"
-    },
-    {
-      "id": "henry-defends-cherki-selfie-celebration-arsenal-provocation",
-      "path": "wiki/henry-defends-cherki-selfie-celebration-arsenal-provocation.md",
-      "title": "ティエリ・アンリ、シェルキのアーセナル挑発セレブレーションを擁護",
-      "type": "source",
-      "summary": "アーセナルのレジェンド、ティエリ・アンリがマンチェスター・シティのライアン・シェルキによるカラバオ・カップでの挑発的な自撮りセレブレーションを擁護。 シェルキがアーセナル戦後に行った「桁外れ」のパフォーマンスについて、アンリは「好きなだけ自撮りをすればいい」と発言し、若手選手の表現を支持する姿勢を示した。\n",
-      "topics": [
-        "football-celebrations",
-        "arsenal-manchester-city",
-        "carabao-cup",
-        "player-controversies"
-      ],
-      "aliases_ja": [
-        "ティエリ・アンリ",
-        "ライアン・シェルキ",
-        "カラバオ・カップ",
-        "マンチェスター・シティ",
-        "アーセナル",
-        "自撮りセレブレーション",
-        "挑発的なゴールパフォーマンス",
-        "フットボール論争",
-        "セレブレーション擁護",
-        "サッカー挑発行為"
-      ],
-      "source_ids": [
-        "66cb1f76b9ff"
-      ],
-      "source_urls": [
-        "Goal.com"
-      ],
-      "published_at": "",
-      "created_at": "2026-04-05",
-      "updated_at": "2026-04-05"
-    },
-    {
-      "id": "llm-api-prompt-caching-techniques",
-      "path": "wiki/llm-api-prompt-caching-techniques.md",
-      "title": "LLM APIにおけるプロンプトキャッシュ技術",
-      "type": "source",
-      "summary": "LLM APIプロバイダーが提供するプロンプトキャッシュ機能により、同一プレフィックスの再利用で50-90%のコスト削減とレイテンシ改善が可能。 静的コンテンツを先頭に配置し、動的コンテンツを末尾に置く設計パターンが効果的。\n",
-      "topics": [
-        "llm-api-optimization",
-        "prompt-caching",
-        "ai-cost-optimization",
-        "knowledge-base-design"
-      ],
-      "aliases_ja": [
-        "プロンプトキャッシュ",
-        "LLMキャッシュ",
-        "APIコスト削減",
-        "レイテンシ最適化",
-        "Anthropic",
-        "OpenAI",
-        "Google Gemini",
-        "プロンプト設計"
-      ],
-      "source_ids": [
-        "f75138abebf3"
-      ],
-      "source_urls": [],
-      "published_at": "",
+      "published_at": "2026-04-04",
       "created_at": "2026-04-05",
       "updated_at": "2026-04-05"
     },
     {
       "id": "llm-knowledge-base-workflow-karpathy",
       "path": "wiki/llm-knowledge-base-workflow-karpathy.md",
-      "title": "Andrej KarpathyのLLM活用ナレッジベース構築ワークフロー",
+      "title": "LLMによる個人ナレッジベース構築ワークフロー（Andrej Karpathy手法）",
       "type": "source",
-      "summary": "Andrej Karpathyが開発したLLMを活用した個人ナレッジベース構築手法。生データからLLMが自動的に.mdウィキを編纂し、Obsidianで可視化・運用する統合ワークフローを実現している。 約100記事・40万語規模でも高度なRAG手法なしに効果的なQ&Aが可能で、出力結果をウィキに還元することで知識ベースが継続的に成長する仕組みを構築している。\n",
+      "summary": "Andrej KarpathyがLLMを活用して構築している個人ナレッジベースワークフローを詳解。 生データをLLMが自動的にMarkdown Wikiにコンパイルし、Obsidianで管理・可視化する手法。 40万語規模でもRAG不要で複雑なQ&Aが可能な実用的知識管理システム。\n",
       "topics": [
-        "llm-workflows",
-        "knowledge-management",
-        "obsidian-integration",
-        "ai-productivity",
-        "markdown-automation"
+        "llm-knowledge-management",
+        "obsidian-workflow",
+        "automated-wiki-generation",
+        "personal-knowledge-base",
+        "ai-productivity-tools"
       ],
       "aliases_ja": [
-        "LLMワークフロー",
-        "ナレッジベース構築",
-        "オブシディアン連携",
-        "AIプロダクティビティ",
-        "マークダウン自動化",
+        "LLMナレッジベース",
+        "個人知識ベース",
+        "Obsidianワークフロー",
         "アンドレイ・カルパシー",
+        "自動Wiki生成",
+        "Markdownコンパイル",
         "知識管理システム",
-        "RAG手法",
-        "ウィキ自動生成",
-        "データ整理術"
+        "AIエージェント活用"
       ],
       "source_ids": [
         "16c0425f47df"
@@ -258,26 +166,26 @@
     {
       "id": "nii-llm-jp-4-japanese-language-model",
       "path": "wiki/nii-llm-jp-4-japanese-language-model.md",
-      "title": "国立情報学研究所がLLM-jp-4を公開 - 日本語特化型大規模言語モデル",
+      "title": "国立情報学研究所がLLM-jp-4を公開 - 日本語性能でgpt-oss-20bを超える国産LLM",
       "type": "source",
-      "summary": "国立情報学研究所（NII）がオープンソースの日本語特化型大規模言語モデル「LLM-jp-4」（8Bおよび32B-A3B）を公開。 既存のgpt-oss-20bを上回る日本語性能を実現したと発表されている。\n",
+      "summary": "国立情報学研究所(NII)がLLM-jp-4（8Bおよび32B-A3B）をオープンソースで公開し、OpenAIのgpt-oss-20bを超える日本語性能を実現したと発表。 日本語に特化した大規模言語モデルの開発において重要な進展を示している。\n",
       "topics": [
         "japanese-llm",
+        "nii-research",
         "open-source-ai",
-        "nlp-research",
-        "domestic-ai-development"
+        "language-model-performance"
       ],
       "aliases_ja": [
         "日本語LLM",
-        "国産大規模言語モデル",
         "国立情報学研究所",
-        "LLM-jp-4",
-        "gpt-oss-20b",
         "オープンソースAI",
+        "言語モデル性能",
+        "LLM-jp-4",
+        "国産LLM",
+        "NIIの言語モデル",
         "日本語AI",
-        "国産AI",
-        "NII",
-        "大規模言語モデル"
+        "大規模言語モデル",
+        "gpt-oss-20b"
       ],
       "source_ids": [
         "2c8b2800779b"
@@ -290,26 +198,57 @@
       "updated_at": "2026-04-05"
     },
     {
-      "id": "quantum-computing-breakthrough-cryptography-threat-2026",
-      "path": "wiki/quantum-computing-breakthrough-cryptography-threat-2026.md",
-      "title": "量子コンピュータによる暗号解読能力の大幅向上 - 必要qubit数と時間の劇的削減",
+      "id": "prompt-caching-llm-apis",
+      "path": "wiki/prompt-caching-llm-apis.md",
+      "title": "LLM API のプロンプトキャッシュ機能",
       "type": "source",
-      "summary": "2つの研究グループが量子コンピュータによる一般的なオンライン暗号解読に必要なqubit数と所要時間を大幅に削減することに成功。 この技術的ブレークスルーにより、量子コンピュータ時代の到来が従来予想よりも大幅に早まる可能性が示された。\n",
+      "summary": "LLM APIプロバイダーが提供するプロンプトキャッシュ機能により、同じプレフィックスを持つリクエストで50-90%のコスト削減と大幅なレスポンス時間短縮が実現できる。 静的コンテンツを先頭に、動的コンテンツを末尾に配置することで効果的にキャッシュを活用できる。\n",
+      "topics": [
+        "prompt-caching",
+        "llm-apis",
+        "cost-optimization",
+        "api-performance"
+      ],
+      "aliases_ja": [
+        "プロンプトキャッシュ",
+        "LLM API",
+        "コスト最適化",
+        "APIパフォーマンス",
+        "Anthropic",
+        "OpenAI",
+        "キャッシュヒット率",
+        "レスポンス時間短縮",
+        "トークン処理費用削減"
+      ],
+      "source_ids": [
+        "f75138abebf3"
+      ],
+      "source_urls": [],
+      "published_at": "",
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "quantum-computing-cryptography-breakthrough-2026",
+      "path": "wiki/quantum-computing-cryptography-breakthrough-2026.md",
+      "title": "量子コンピュータによる暗号解読の新展開 - 必要qubit数と時間の大幅削減",
+      "type": "source",
+      "summary": "2つの研究グループが量子コンピュータによる一般的なオンライン暗号解読に必要なqubit数と所要時間を大幅に削減することに成功。 現在の暗号インフラの脆弱性が顕在化し、量子コンピュータ時代の到来が現実味を帯びてきている。\n",
       "topics": [
         "quantum-computing",
         "cryptography",
         "cybersecurity",
-        "computational-breakthrough"
+        "technology-breakthrough"
       ],
       "aliases_ja": [
         "量子コンピュータ",
         "暗号解読",
-        "qubit数削減",
         "オンライン暗号",
-        "量子コンピュータ時代",
-        "サイバーセキュリティ",
+        "qubit",
+        "キュービット",
+        "量子暗号",
         "暗号インフラ",
-        "計算能力の向上"
+        "量子時代"
       ],
       "source_ids": [
         "3bb354b8df07"
@@ -322,27 +261,63 @@
       "updated_at": "2026-04-05"
     },
     {
+      "id": "salvador-dali-nuclear-mysticism-critique",
+      "path": "wiki/salvador-dali-nuclear-mysticism-critique.md",
+      "title": "サルバドール・ダリの「核の神秘主義」への傾倒と芸術的変化",
+      "type": "source",
+      "summary": "サルバドール・ダリは晩年「Nuclear Mysticism（核の神秘主義）」に傾倒し、世俗的なテーマを放棄して宗教的・形而上学的主題のみを描くようになった。 批評家はこの変化を「経験の豊かさを形而上学の乾燥さと引き換えにした」として批判的に評価している。\n",
+      "topics": [
+        "salvador-dali",
+        "nuclear-mysticism",
+        "religious-art",
+        "artistic-evolution",
+        "metaphysical-art"
+      ],
+      "aliases_ja": [
+        "サルバドール・ダリ",
+        "ダリ",
+        "核の神秘主義",
+        "Nuclear Mysticism",
+        "宗教的主題",
+        "形而上学的絵画",
+        "晩年のダリ",
+        "世俗的テーマの放棄",
+        "聖なるものの追求"
+      ],
+      "source_ids": [
+        "10a681adaf13"
+      ],
+      "source_urls": [
+        "https://hyperallergic.com/salvador-dalis-frustrating-vision-of-the-divine"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
       "id": "salvador-dali-sublime-faith-metropolitan-exhibition",
       "path": "wiki/salvador-dali-sublime-faith-metropolitan-exhibition.md",
-      "title": "サルバドール・ダリの崇高な信仰 - メトロポリタン美術館ラファエロ展での考察",
+      "title": "サルバドール・ダリの崇高な信仰 - メトロポリタン美術館での展示と考察",
       "type": "source",
-      "summary": "メトロポリタン美術館のラファエロ展でサルバドール・ダリの信仰をテーマにした作品が取り上げられている。 ダリの「崇高な信仰」という概念について、通常の信仰の崇高性に対してダリが持ち込む「奇形の影」という独特な要素が考察されている。\n",
+      "summary": "メトロポリタン美術館でのラファエロ展に関連して、サルバドール・ダリの信仰をテーマにした作品が取り上げられている。 ダリの「崇高な信仰」という概念について、通常の信仰の崇高性に対してダリが持ち込む奇形的な要素との対比で考察されている。\n",
       "topics": [
         "salvador-dali",
         "religious-art",
-        "surrealism",
         "metropolitan-museum",
+        "surrealism",
         "art-exhibition"
       ],
       "aliases_ja": [
         "サルバドール・ダリ",
-        "ダリの信仰",
+        "ダリ",
         "崇高な信仰",
         "メトロポリタン美術館",
         "ラファエロ展",
         "シュルレアリスム",
-        "宗教芸術",
-        "奇形の影"
+        "宗教画",
+        "信仰をテーマにした作品",
+        "ダリの宗教画",
+        "メット美術館"
       ],
       "source_ids": [
         "95b83f92c2f9"
@@ -357,25 +332,26 @@
     {
       "id": "sefton-asylum-cthulhu-horror-game",
       "path": "wiki/sefton-asylum-cthulhu-horror-game.md",
-      "title": "Sefton Asylum - クトゥルフ神話精神病院探索ホラーゲーム",
+      "title": "Sefton Asylum - クトゥルフ神話精神病院ホラーゲーム",
       "type": "source",
-      "summary": "Clever Trickster Productionsが発表した『Sefton Asylum』は、夜勤看護師として精神病院で働くクトゥルフ神話テーマのホラーゲーム。 ケアが間に合わなかった患者が脅威として蘇るという設定で、責任と恐怖を同時に描く作品として注目される。\n",
+      "summary": "Clever Trickster Productionsが開発するクトゥルフ神話テーマの精神病院探索ホラーゲーム『Sefton Asylum』。 夜勤看護師として過酷なワンオペ勤務を体験し、ケアが間に合わなかった患者が脅威として蘇る設定が特徴的。 責任と恐怖を同時に体験するユニークなホラー体験を提供する。\n",
       "topics": [
-        "cthulhu-mythos",
-        "horror-games",
-        "psychological-horror",
+        "cthulhu-mythos-games",
+        "horror-game-design",
+        "medical-horror",
         "indie-game-development",
-        "healthcare-themes"
+        "psychological-horror"
       ],
       "aliases_ja": [
-        "クトゥルフ神話",
+        "クトゥルフ神話ゲーム",
         "精神病院ホラー",
-        "夜勤看護師",
         "セフトン・アサイラム",
         "クレバー・トリックスター・プロダクションズ",
+        "夜勤看護師",
         "ワンオペ勤務",
+        "医療ホラー",
         "探索ホラー",
-        "患者が脅威として蘇る"
+        "インディーゲーム"
       ],
       "source_ids": [
         "c6913490e3c6"
@@ -388,28 +364,102 @@
       "updated_at": "2026-04-05"
     },
     {
-      "id": "tokyoko-media-transformation-youth-refuge",
-      "path": "wiki/tokyoko-media-transformation-youth-refuge.md",
-      "title": "トー横の「メディア化」と居場所の変容 - 秋葉恋×佐々木チワワ対談分析",
+      "id": "sophia-ai-experience-based-memory-system",
+      "path": "wiki/sophia-ai-experience-based-memory-system.md",
+      "title": "AIキャラ「ソフィア」の体験型記憶システム：会話ログ保存を超えた人格変化の実装",
       "type": "source",
-      "summary": "新宿歌舞伎町の「トー横界隈」が2019年頃から若者の居場所として機能してきたが、近年のメディア化により変容を遂げている。 映画監督と社会学者の対談を通じて、居場所がメディアに「発見」されることによる影響と変化を分析している。\n",
+      "summary": "AIキャラ「ソフィア」の記憶システムは、従来の会話ログ保存とは異なり、出来事の評価・選別・圧縮を行うイベント駆動型認知ループを実装。 人間の記憶と同様に重要性を判定し、体験によって相手への見方や自己理解を変化させる仕組みで、より人間らしいキャラクター性を実現している。\n",
       "topics": [
-        "youth-social-issues",
-        "media-representation",
-        "urban-sociology",
-        "social-refuge-spaces",
-        "tokyo-subculture"
+        "ai-character-development",
+        "memory-systems",
+        "event-driven-architecture",
+        "cognitive-modeling",
+        "personality-simulation"
       ],
       "aliases_ja": [
-        "トー横",
-        "歌舞伎町",
-        "若者の居場所",
+        "AIキャラクター開発",
+        "記憶システム",
+        "イベント駆動アーキテクチャ",
+        "認知モデリング",
+        "人格シミュレーション",
+        "ソフィアちゃん",
+        "体験で変化する人格",
+        "記憶の選別と圧縮",
+        "MemoryEvent",
+        "認知ループ"
+      ],
+      "source_ids": [
+        "6b49f210bcc5"
+      ],
+      "source_urls": [
+        "https://note.com/sophia_chan/n/n2af892aa6aef?sub_rt=share_pw"
+      ],
+      "published_at": "2026-04-04",
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "thierry-henry-defends-rayan-cherki-selfie-celebration",
+      "path": "wiki/thierry-henry-defends-rayan-cherki-selfie-celebration.md",
+      "title": "「好きなだけ自撮りをすればいい！」アンリ、シェルキのアーセナル挑発セレブレーションを擁護",
+      "type": "source",
+      "summary": "カラバオカップ決勝でマンチェスター・シティがアーセナルを2-0で下した後、ライアン・シェルキが試合中のボールジャグリングや試合後のアーセナル選手前での自撮りで物議。 アーセナルのレジェンド、ティエリ・アンリは「俺のチームが負けて彼が勝った。好きなだけ自撮りをすればいい」とBetway取材で擁護し、 シェルキを「この世のものとは思えない（out of this world）」と評価。 さらにアーセナルに「インビンシブルズ」の精神でリーグ・CL・FAカップに集中するよう呼びかけ、 ズビメンディへの批判にはロドリの例を挙げて忍耐を訴えた。\n",
+      "topics": [
+        "football-celebrations",
+        "manchester-city",
+        "arsenal-rivalry",
+        "carabao-cup",
+        "player-controversies",
+        "thierry-henry"
+      ],
+      "aliases_ja": [
+        "ティエリ・アンリ",
+        "ライアン・シェルキ",
+        "ラヤン・シェルキ",
+        "Rayan Cherki",
+        "マンチェスター・シティ",
+        "アーセナル",
+        "カラバオカップ",
+        "自撮りセレブレーション",
+        "セルフィー挑発",
+        "インビンシブルズ",
+        "ズビメンディ"
+      ],
+      "source_ids": [
+        "66cb1f76b9ff"
+      ],
+      "source_urls": [
+        "https://www.goal.com/jp/%E3%83%AA%E3%82%B9%E3%83%88/%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%9F%E3%82%99%E3%81%91%E8%87%AA%E6%92%AE%E3%82%8A%E3%82%92%E3%81%99%E3%82%8C%E3%81%AF%E3%82%99%E3%81%84%E3%81%84-%E3%83%86%E3%82%A3%E3%82%A8%E3%83%AA-%E3%82%A2%E3%83%B3%E3%83%AA-%E3%83%9E%E3%83%B3%E3%83%81%E3%82%A7%E3%82%B9%E3%82%BF%E3%83%BC-%E3%82%B7%E3%83%86%E3%82%A3%E3%81%AE%E3%82%AB%E3%83%A9%E3%83%8F%E3%82%99%E3%82%AA-%E3%82",
+        "https://www.goal.com/en/lists/thierry-henry-defends-rayan-cherki-arsenal-taunts/bltdad66df28e7aa5da"
+      ],
+      "published_at": "2026-04-04",
+      "created_at": "2026-04-05",
+      "updated_at": "2026-04-05"
+    },
+    {
+      "id": "tokyo-toyoko-media-transformation-dialogue",
+      "path": "wiki/tokyo-toyoko-media-transformation-dialogue.md",
+      "title": "「メディア化」したトー横の現在──秋葉恋×佐々木チワワ『東京逃避行』対談",
+      "type": "source",
+      "summary": "新宿・歌舞伎町のトー横界隈が2019年頃から若者の居場所として機能してきたが、近年ニュースや映画の題材となり「メディア化」が進行している。 映画監督の秋葉恋と社会学者の佐々木チワワによる対談で、メディアに「発見」された場所の変容について論じられている。\n",
+      "topics": [
+        "media-transformation",
+        "urban-youth-culture",
+        "social-issues",
+        "tokyo-subculture",
+        "documentary-filmmaking"
+      ],
+      "aliases_ja": [
         "メディア化",
+        "トー横",
         "秋葉恋",
         "佐々木チワワ",
         "東京逃避行",
-        "社会問題",
-        "新宿"
+        "歌舞伎町",
+        "若者の居場所",
+        "社会問題化",
+        "映画監督",
+        "社会学者"
       ],
       "source_ids": [
         "c0f8def6e3ef"

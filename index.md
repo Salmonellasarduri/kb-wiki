@@ -1,52 +1,18 @@
 # Knowledge Base Index
 
-_13 articles, 12 topics | generated 2026-04-05 06:36 JST_
+_14 articles, 63 topics | generated 2026-04-05 07:15 JST_
 
-## ai-infrastructure
-
-- [AIデータセンター建設計画の半数が変圧器・バッテリー不足で延期・中止へ](wiki/ai-datacenter-construction-delays-transformer-battery-shortage.md) -- AIデータセンター建設計画の約半数が変圧器やバッテリーの供給不足により延期またはキャンセルされる見込み。 この状況は、AI需要の急激な成長が物理的インフラの供給
-
-## claude-workflows
-
-- [Claudeを活用したGitHubメモシステムの統合ワークフロー](wiki/claude-github-memo-system-workflow.md) -- 「メモして」の一言でアイデアをGitHubプライベートリポジトリに自動保存するClaude活用システムの構築手法を解説。 GitHub MCPとClaude長期
-
-## corporate-publishing
-
-- [「The World of Aramco」出版物の特異性分析](wiki/aramco-world-publication-analysis.md) -- 「The World of Aramco」は年鑑的な難解雑学とLife誌風の総合誌スタイルを組み合わせた、魅力的でありながら奇妙な印刷メディアの飛び地として評価
-
-## cthulhu-mythos
-
-- [Sefton Asylum - クトゥルフ神話精神病院探索ホラーゲーム](wiki/sefton-asylum-cthulhu-horror-game.md) -- Clever Trickster Productionsが発表した『Sefton Asylum』は、夜勤看護師として精神病院で働くクトゥルフ神話テーマのホラーゲ
-
-## football-celebrations
-
-- [ティエリ・アンリ、シェルキのアーセナル挑発セレブレーションを擁護](wiki/henry-defends-cherki-selfie-celebration-arsenal-provocation.md) -- アーセナルのレジェンド、ティエリ・アンリがマンチェスター・シティのライアン・シェルキによるカラバオ・カップでの挑発的な自撮りセレブレーションを擁護。 シェルキが
-
-## japanese-llm
-
-- [国立情報学研究所がLLM-jp-4を公開 - 日本語特化型大規模言語モデル](wiki/nii-llm-jp-4-japanese-language-model.md) -- 国立情報学研究所（NII）がオープンソースの日本語特化型大規模言語モデル「LLM-jp-4」（8Bおよび32B-A3B）を公開。 既存のgpt-oss-20bを
-
-## llm-api-optimization
-
-- [LLM APIにおけるプロンプトキャッシュ技術](wiki/llm-api-prompt-caching-techniques.md) -- LLM APIプロバイダーが提供するプロンプトキャッシュ機能により、同一プレフィックスの再利用で50-90%のコスト削減とレイテンシ改善が可能。 静的コンテンツ
-
-## llm-workflows
-
-- [Andrej KarpathyのLLM活用ナレッジベース構築ワークフロー](wiki/llm-knowledge-base-workflow-karpathy.md) -- Andrej Karpathyが開発したLLMを活用した個人ナレッジベース構築手法。生データからLLMが自動的に.mdウィキを編纂し、Obsidianで可視化・
-
-## quantum-computing
-
-- [量子コンピュータによる暗号解読能力の大幅向上 - 必要qubit数と時間の劇的削減](wiki/quantum-computing-breakthrough-cryptography-threat-2026.md) -- 2つの研究グループが量子コンピュータによる一般的なオンライン暗号解読に必要なqubit数と所要時間を大幅に削減することに成功。 この技術的ブレークスルーにより、
-
-## salvador-dali
-
-- [ダリの晩年「Nuclear Mysticism」への転換と芸術的乾燥化](wiki/dali-nuclear-mysticism-late-period.md) -- サルバドール・ダリは晩年「Nuclear Mysticism（核の神秘主義）」に傾倒し、世俗的なテーマを放棄して形而上学的・宗教的な主題のみを描くようになった。
-- [サルバドール・ダリの崇高な信仰 - メトロポリタン美術館ラファエロ展での考察](wiki/salvador-dali-sublime-faith-metropolitan-exhibition.md) -- メトロポリタン美術館のラファエロ展でサルバドール・ダリの信仰をテーマにした作品が取り上げられている。 ダリの「崇高な信仰」という概念について、通常の信仰の崇高性
-
-## world-cup-qualification
-
-- [デ・ブライネによるイタリア代表W杯3大会連続敗退の分析](wiki/de-bruyne-italy-world-cup-failure-analysis.md) -- ナポリ所属のケヴィン・デ・ブライネが、イタリア代表の2026年W杯予選敗退について「大きな損失」とコメント。 欧州サッカーのレベル向上により小規模国でも結果を出
-
-## youth-social-issues
-
-- [トー横の「メディア化」と居場所の変容 - 秋葉恋×佐々木チワワ対談分析](wiki/tokyoko-media-transformation-youth-refuge.md) -- 新宿歌舞伎町の「トー横界隈」が2019年頃から若者の居場所として機能してきたが、近年のメディア化により変容を遂げている。 映画監督と社会学者の対談を通じて、居場
+- **2026-04-05** [AIデータセンター建設計画の半数が変圧器・バッテリー不足で延期・中止へ](wiki/ai-datacenter-construction-delays-transformer-battery-shortage.md) `ai-infrastructure, supply-chain-constraints, datacenter-construction, electrical-infrastructure` -- AIデータセンター建設計画の約半数が変圧器やバッテリーの供給不足により延期またはキャンセルされる見込み。 この状況は、AI需要の急激な成長が物理的インフラの供給
+- **2026-04-05** [「The World of Aramco」誌の出版メディア分析](wiki/aramco-world-magazine-publishing-analysis.md) `corporate-publishing, print-media-evolution, magazine-design, cultural-publications` -- 「The World of Aramco」は年鑑的な難解さとLife誌風の総合誌スタイルを組み合わせた、魅力的でやや奇妙な印刷メディアとして進化してきた企業出版
+- **2026-04-05** [Claudeを使った思いつき自動メモシステム：GitHubリポジトリ連携によるアイデア管理ワークフロー](wiki/claude-memo-github-integration-workflow.md) `claude-integration, github-automation, idea-management, ai-productivity, markdown-workflows` -- Claudeに「メモして」と発話するだけでGitHubプライベートリポジトリにアイデアが自動保存される統合ワークフローの構築手法。 GitHub MCP Con
+- **2026-04-05** [デ・ブライネがイタリア代表のW杯3大会連続予選敗退に言及](wiki/de-bruyne-italy-world-cup-exclusion-serie-a.md) `football-world-cup-qualification, serie-a-decline, european-football-competition, italy-national-team` -- ナポリに移籍したベルギー代表MFケヴィン・デ・ブライネが、イタリア代表のFIFAワールドカップ2026予選敗退について「大きな損失だ」とコメント。 ヨーロッパサ
+- **2026-04-05** [LLMによる個人ナレッジベース構築ワークフロー（Andrej Karpathy手法）](wiki/llm-knowledge-base-workflow-karpathy.md) `llm-knowledge-management, obsidian-workflow, automated-wiki-generation, personal-knowledge-base, ai-productivity-tools` -- Andrej KarpathyがLLMを活用して構築している個人ナレッジベースワークフローを詳解。 生データをLLMが自動的にMarkdown Wikiにコンパ
+- **2026-04-05** [国立情報学研究所がLLM-jp-4を公開 - 日本語性能でgpt-oss-20bを超える国産LLM](wiki/nii-llm-jp-4-japanese-language-model.md) `japanese-llm, nii-research, open-source-ai, language-model-performance` -- 国立情報学研究所(NII)がLLM-jp-4（8Bおよび32B-A3B）をオープンソースで公開し、OpenAIのgpt-oss-20bを超える日本語性能を実現し
+- **2026-04-05** [LLM API のプロンプトキャッシュ機能](wiki/prompt-caching-llm-apis.md) `prompt-caching, llm-apis, cost-optimization, api-performance` -- LLM APIプロバイダーが提供するプロンプトキャッシュ機能により、同じプレフィックスを持つリクエストで50-90%のコスト削減と大幅なレスポンス時間短縮が実現
+- **2026-04-05** [量子コンピュータによる暗号解読の新展開 - 必要qubit数と時間の大幅削減](wiki/quantum-computing-cryptography-breakthrough-2026.md) `quantum-computing, cryptography, cybersecurity, technology-breakthrough` -- 2つの研究グループが量子コンピュータによる一般的なオンライン暗号解読に必要なqubit数と所要時間を大幅に削減することに成功。 現在の暗号インフラの脆弱性が顕在
+- **2026-04-05** [サルバドール・ダリの「核の神秘主義」への傾倒と芸術的変化](wiki/salvador-dali-nuclear-mysticism-critique.md) `salvador-dali, nuclear-mysticism, religious-art, artistic-evolution, metaphysical-art` -- サルバドール・ダリは晩年「Nuclear Mysticism（核の神秘主義）」に傾倒し、世俗的なテーマを放棄して宗教的・形而上学的主題のみを描くようになった。
+- **2026-04-05** [サルバドール・ダリの崇高な信仰 - メトロポリタン美術館での展示と考察](wiki/salvador-dali-sublime-faith-metropolitan-exhibition.md) `salvador-dali, religious-art, metropolitan-museum, surrealism, art-exhibition` -- メトロポリタン美術館でのラファエロ展に関連して、サルバドール・ダリの信仰をテーマにした作品が取り上げられている。 ダリの「崇高な信仰」という概念について、通常の
+- **2026-04-05** [Sefton Asylum - クトゥルフ神話精神病院ホラーゲーム](wiki/sefton-asylum-cthulhu-horror-game.md) `cthulhu-mythos-games, horror-game-design, medical-horror, indie-game-development, psychological-horror` -- Clever Trickster Productionsが開発するクトゥルフ神話テーマの精神病院探索ホラーゲーム『Sefton Asylum』。 夜勤看護師とし
+- **2026-04-05** [AIキャラ「ソフィア」の体験型記憶システム：会話ログ保存を超えた人格変化の実装](wiki/sophia-ai-experience-based-memory-system.md) `ai-character-development, memory-systems, event-driven-architecture, cognitive-modeling, personality-simulation` -- AIキャラ「ソフィア」の記憶システムは、従来の会話ログ保存とは異なり、出来事の評価・選別・圧縮を行うイベント駆動型認知ループを実装。 人間の記憶と同様に重要性を
+- **2026-04-05** [「好きなだけ自撮りをすればいい！」アンリ、シェルキのアーセナル挑発セレブレーションを擁護](wiki/thierry-henry-defends-rayan-cherki-selfie-celebration.md) `football-celebrations, manchester-city, arsenal-rivalry, carabao-cup, player-controversies, thierry-henry` -- カラバオカップ決勝でマンチェスター・シティがアーセナルを2-0で下した後、ライアン・シェルキが試合中のボールジャグリングや試合後のアーセナル選手前での自撮りで物
+- **2026-04-05** [「メディア化」したトー横の現在──秋葉恋×佐々木チワワ『東京逃避行』対談](wiki/tokyo-toyoko-media-transformation-dialogue.md) `media-transformation, urban-youth-culture, social-issues, tokyo-subculture, documentary-filmmaking` -- 新宿・歌舞伎町のトー横界隈が2019年頃から若者の居場所として機能してきたが、近年ニュースや映画の題材となり「メディア化」が進行している。 映画監督の秋葉恋と社

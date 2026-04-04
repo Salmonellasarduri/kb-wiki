@@ -1189,6 +1189,23 @@ Write the COMPLETE updated article with EXACT YAML frontmatter format."""
             # Create mode: new article (original behavior)
             print(f"COMPILING: {item['original_name']} ({sid})...")
 
+            # --- Source quality pre-classification ---
+            _source_body = re.sub(
+                r"\A---.*?\n---[ \t]*\n", "", source_text,
+                count=1, flags=re.DOTALL,
+            ).strip()
+            _source_paragraphs = [
+                p for p in _source_body.split("\n\n") if len(p.strip()) > 30
+            ]
+            is_stub_source = (
+                len(_source_body) < 500 or len(_source_paragraphs) < 3
+            )
+            if is_stub_source:
+                print(f"  (stub source: {len(_source_body)} chars, "
+                      f"{len(_source_paragraphs)} paragraphs)")
+
+            article_type = "stub" if is_stub_source else "source"
+
             prompt = f"""Read this source document and compile it into a wiki article.
 
 Source document (source_id: {sid}):
@@ -1203,7 +1220,7 @@ Write a complete wiki article in markdown with this EXACT frontmatter format at 
 ---
 article_id: unique-kebab-case-slug
 title: Human Readable Title
-type: source
+type: {article_type}
 source_ids:
   - {sid}
 topics:
@@ -1235,9 +1252,21 @@ Rules:
 - Include a "## Related Articles" section at the end with [[article-id]] links if relevant
 - Always write the article body in Japanese, regardless of the source language. Translate and summarize naturally — do not produce a literal translation
 - Keep proper nouns, technical terms, and titles in their original form where conventional (e.g. "Paul Graham", "LLM", "MCP"), adding Japanese reading in parentheses on first mention if helpful
+- CRITICAL: ソースドキュメントに明記されていない名前・引用・統計・事実を捏造しないこと。ソースに書かれた情報のみを使え
+- ソースの各主要段落を異なるセクションで網羅すること。単一の見出しの言い換えで全体を埋めないこと
+- 引用文はソースから正確に引用し、創作しないこと
 - Focus on extracting key concepts, patterns, and actionable knowledge"""
 
-            max_tokens = 4096
+            if is_stub_source:
+                prompt += """
+
+IMPORTANT — THIS IS A STUB CASE. The source contains limited content (headline or brief description only).
+- Write a short factual summary using ONLY the information available
+- Set type: stub in frontmatter
+- Add "> [!note] ソースが限定的です。記事は不完全な可能性があります。" at the end of the article body
+- Do NOT fabricate details, quotes, statistics, or narrative beyond what the source states"""
+
+            max_tokens = 4096 if is_stub_source else 6144
 
         # --- LLM call with retry ---
         article_text = None
@@ -1322,6 +1351,19 @@ Rules:
             _backup_article(wiki_path)
 
         wiki_path.write_text(article_text, encoding="utf-8")
+
+        # --- Post-compile diagnostics (non-blocking) ---
+        _diag_body = re.sub(
+            r"\A---.*?\n---[ \t]*\n", "", article_text,
+            count=1, flags=re.DOTALL,
+        ).strip()
+        _diag_chars = len(_diag_body)
+        _diag_sections = len(re.findall(r"^##\s+", _diag_body, re.MULTILINE))
+        _diag_type = fm.get("type", "source")
+        print(f"  QUALITY: {_diag_chars} chars, {_diag_sections} sections, "
+              f"type={_diag_type}")
+        if _diag_chars < 300 and _diag_type != "stub":
+            print(f"  WARNING: article may be too thin ({_diag_chars} chars)")
 
         item["status"] = "compiled"
         item["compiled_at"] = _jst_now().isoformat()

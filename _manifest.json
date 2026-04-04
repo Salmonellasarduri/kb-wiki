@@ -18,7 +18,8 @@
     "d2ea6a1800789cc3df9a68baf9e314e85d4c41144cda02940e0b7aeb6c42e11e": "d2ea6a180078",
     "clip:2d693555d8cca571280532d720ddbab50590d26a1abf091ce7564ce62b3dd5a1": "d2ea6a180078",
     "79391f1124d34d996fd11e7a1add958febd2520f63fa8126d1e469e4ec7062be": "79391f1124d3",
-    "clip:6f69a8c66c3b27e0d27237a710a33f3c158ca291550b23ed0a3f51c90e79854c": "79391f1124d3"
+    "clip:6f69a8c66c3b27e0d27237a710a33f3c158ca291550b23ed0a3f51c90e79854c": "79391f1124d3",
+    "66cb1f76b9ff73ba661dc768742e04ad1cdce48c4916d034ddc3a6039303e170": "66cb1f76b9ff"
   },
   "items": {
     "16c0425f47df": {
@@ -28,9 +29,9 @@
       "meta_path": "sources/16c0425f47df_meta.json",
       "status": "compiled",
       "ingested_at": "2026-04-03T15:13:14.468948+00:00",
-      "compiled_at": "2026-04-04T20:02:25.252958+00:00",
+      "compiled_at": "2026-04-05T06:42:21.147360+09:00",
       "article_ids": [
-        "karpathy-llm-knowledge-base-workflow"
+        "llm-knowledge-base-workflow-karpathy"
       ],
       "error": null
     },
@@ -41,9 +42,9 @@
       "meta_path": "sources/f75138abebf3_meta.json",
       "status": "compiled",
       "ingested_at": "2026-04-03T15:46:35.376553+00:00",
-      "compiled_at": "2026-04-04T20:02:48.247549+00:00",
+      "compiled_at": "2026-04-05T06:43:25.053502+09:00",
       "article_ids": [
-        "llm-api-prompt-caching-optimization"
+        "prompt-caching-llm-apis"
       ],
       "error": null
     },
@@ -54,9 +55,9 @@
       "meta_path": "sources/10a681adaf13_meta.json",
       "status": "compiled",
       "ingested_at": "2026-04-04T09:57:16.747666+00:00",
-      "compiled_at": "2026-04-04T20:03:28.754695+00:00",
+      "compiled_at": "2026-04-05T06:43:44.492640+09:00",
       "article_ids": [
-        "dali-nuclear-mysticism-critique"
+        "salvador-dali-nuclear-mysticism-critique"
       ],
       "error": null
     },
@@ -67,9 +68,9 @@
       "meta_path": "sources/c0f8def6e3ef_meta.json",
       "status": "compiled",
       "ingested_at": "2026-04-04T09:57:16.747666+00:00",
-      "compiled_at": "2026-04-04T20:03:49.461247+00:00",
+      "compiled_at": "2026-04-05T06:44:12.639330+09:00",
       "article_ids": [
-        "tokyoko-mediatization-effects-youth-spaces"
+        "tokyo-toyoko-media-transformation-dialogue"
       ],
       "error": null
     },
@@ -80,9 +81,9 @@
       "meta_path": "sources/3bb354b8df07_meta.json",
       "status": "compiled",
       "ingested_at": "2026-04-04T11:59:34.017064+00:00",
-      "compiled_at": "2026-04-04T20:04:46.260006+00:00",
+      "compiled_at": "2026-04-05T06:44:36.140781+09:00",
       "article_ids": [
-        "quantum-cryptography-breakthrough-2026"
+        "quantum-computing-cryptography-breakthrough-2026"
       ],
       "error": null
     },
@@ -93,9 +94,9 @@
       "meta_path": "sources/c6913490e3c6_meta.json",
       "status": "compiled",
       "ingested_at": "2026-04-04T11:59:34.017064+00:00",
-      "compiled_at": "2026-04-04T20:05:11.530878+00:00",
+      "compiled_at": "2026-04-05T06:45:03.269936+09:00",
       "article_ids": [
-        "sefton-asylum-horror-game-care-responsibility"
+        "sefton-asylum-cthulhu-horror-game"
       ],
       "error": null
     },
@@ -106,9 +107,9 @@
       "meta_path": "sources/2c8b2800779b_meta.json",
       "status": "compiled",
       "ingested_at": "2026-04-04T11:59:34.017064+00:00",
-      "compiled_at": "2026-04-04T20:05:36.871970+00:00",
+      "compiled_at": "2026-04-05T06:45:27.660797+09:00",
       "article_ids": [
-        "nii-llm-jp-4-japanese-language-model-release"
+        "nii-llm-jp-4-japanese-language-model"
       ],
       "error": null
     },
@@ -117,13 +118,13 @@
       "original_name": "AIデータセンター建設計画の半数は変圧器やバッテリー不足で延期または取り消しになる見込み.md",
       "source_path": "sources/afc2dce259a1_AIデータセンター建設計画の半数は変圧器やバッテリー不足で延期または取り消しになる見込み.md",
       "meta_path": "sources/afc2dce259a1_meta.json",
-      "status": "compiled",
+      "status": "blocked",
       "ingested_at": "2026-04-04T13:59:13.635644+00:00",
-      "compiled_at": "2026-04-04T20:05:54.785946+00:00",
+      "compiled_at": "2026-04-04T21:48:45.932931+00:00",
       "article_ids": [
         "ai-datacenter-construction-delays-transformer-battery-shortage"
       ],
-      "error": null
+      "error": "repair failed: no fetchable URL found"
     },
     "95b83f92c2f9": {
       "hash": "95b83f92c2f9e5b87a00b9f70d4ad604df16bf5d26dbddfd638e47fac0c033ef",
@@ -132,9 +133,9 @@
       "meta_path": "sources/95b83f92c2f9_meta.json",
       "status": "compiled",
       "ingested_at": "2026-04-04T13:59:13.635644+00:00",
-      "compiled_at": "2026-04-04T20:06:17.929120+00:00",
+      "compiled_at": "2026-04-05T06:45:50.073631+09:00",
       "article_ids": [
-        "dali-sublime-faith-metropolitan-exhibition"
+        "salvador-dali-sublime-faith-metropolitan-exhibition"
       ],
       "error": null
     },
@@ -145,9 +146,9 @@
       "meta_path": "sources/1880dd1f04f0_meta.json",
       "status": "compiled",
       "ingested_at": "2026-04-04T13:59:13.635644+00:00",
-      "compiled_at": "2026-04-04T20:06:36.218634+00:00",
+      "compiled_at": "2026-04-05T06:46:10.226086+09:00",
       "article_ids": [
-        "aramco-world-magazine-hybrid-publishing"
+        "aramco-world-magazine-publishing-analysis"
       ],
       "error": null
     },
@@ -158,9 +159,9 @@
       "meta_path": "sources/6b49f210bcc5_meta.json",
       "status": "compiled",
       "ingested_at": "2026-04-04T16:59:06.308780+00:00",
-      "compiled_at": "2026-04-04T20:07:14.614785+00:00",
+      "compiled_at": "2026-04-05T06:46:56.662761+09:00",
       "article_ids": [
-        "sofia-ai-memory-system-event-driven-personality"
+        "sophia-ai-experience-based-memory-system"
       ],
       "error": null
     },
@@ -171,9 +172,9 @@
       "meta_path": "sources/d2ea6a180078_meta.json",
       "status": "compiled",
       "ingested_at": "2026-04-04T17:04:01.101064+00:00",
-      "compiled_at": "2026-04-04T20:07:43.471622+00:00",
+      "compiled_at": "2026-04-05T06:47:27.253219+09:00",
       "article_ids": [
-        "de-bruyne-italy-world-cup-failure-analysis"
+        "de-bruyne-italy-world-cup-exclusion-serie-a"
       ],
       "error": null
     },
@@ -184,11 +185,24 @@
       "meta_path": "sources/79391f1124d3_meta.json",
       "status": "compiled",
       "ingested_at": "2026-04-04T19:47:09.346935+00:00",
-      "compiled_at": "2026-04-04T20:08:24.446387+00:00",
+      "compiled_at": "2026-04-05T06:48:10.522081+09:00",
       "article_ids": [
-        "claude-github-memo-system-workflow"
+        "claude-memo-github-integration-workflow"
       ],
       "error": null
+    },
+    "66cb1f76b9ff": {
+      "hash": "66cb1f76b9ff73ba661dc768742e04ad1cdce48c4916d034ddc3a6039303e170",
+      "original_name": "clip_8682498476_9.clip",
+      "source_path": "sources/66cb1f76b9ff_clip_8682498476_9.clip",
+      "meta_path": "sources/66cb1f76b9ff_meta.json",
+      "status": "blocked",
+      "ingested_at": "2026-04-04T21:28:51.482715+00:00",
+      "compiled_at": "2026-04-05T06:48:37.449662+09:00",
+      "article_ids": [
+        "thierry-henry-defends-rayan-cherki-selfie-celebration"
+      ],
+      "error": "repair failed: fetch failed: HTTP 404"
     }
   }
 }
