@@ -596,7 +596,7 @@ function showArticle(a) {
   renderList();
   contentEl.classList.remove('empty');
   document.body.classList.add('show-article');
-  history.pushState({ article: a.id }, '', '#' + a.id);
+  history.pushState({ view: 'article', id: a.id }, '');
   contentEl.replaceChildren();
 
   // Title
@@ -662,21 +662,37 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// --- Back to list (mobile) ---
+// --- History guard (prevent swipe-back from leaving page) ---
+history.replaceState({ view: 'guard' }, '');
+history.pushState({ view: 'list' }, '');
+
 function goBackToList() {
   document.body.classList.remove('show-article');
   activeArticleId = null;
 }
+
 document.getElementById('backBtn').addEventListener('click', () => {
   history.back();
 });
 
-// Browser back/forward (swipe or button) → return to list
 window.addEventListener('popstate', (e) => {
-  if (e.state && e.state.article) {
-    // Navigating to a different article via forward
-    const a = ARTICLES.find(x => x.id === e.state.article);
-    if (a) { showArticle(a); return; }
+  const s = e.state || {};
+  if (s.view === 'article') {
+    const a = ARTICLES.find(x => x.id === s.id);
+    if (a) {
+      activeArticleId = a.id;
+      markRead(a.id);
+      renderList();
+      contentEl.classList.remove('empty');
+      document.body.classList.add('show-article');
+      contentEl.replaceChildren();
+      // Re-render handled by forward nav — simplified
+      return;
+    }
+  }
+  if (s.view === 'guard') {
+    // Hit the guard — re-push list entry so next back stays in app
+    history.pushState({ view: 'list' }, '');
   }
   goBackToList();
 });
