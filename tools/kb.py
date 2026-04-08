@@ -1219,7 +1219,7 @@ Existing articles in the wiki (avoid duplication, add cross-references where rel
 Write a complete wiki article in markdown with this EXACT frontmatter format at the very beginning:
 ---
 article_id: unique-kebab-case-slug
-title: Human Readable Title
+title: "Human Readable Title"
 type: {article_type}
 source_ids:
   - {sid}
@@ -1239,6 +1239,7 @@ updated_at: "{today}"
 ---
 
 Rules:
+- title MUST be wrapped in double quotes ("..."). This is CRITICAL when the title contains a colon, hyphen, or other YAML-special characters (e.g. "Silent Hill: Townfall")
 - article_id must be unique, descriptive, kebab-case
 - topics must be kebab-case, lowercase
 - aliases_ja (REQUIRED, minimum 5 entries): この記事を思い出すきっかけになる日本語のワード。以下すべてを含める:
@@ -1849,7 +1850,7 @@ def _telegram_polling_thread(
         except _req.Timeout:
             continue
         except Exception as e:
-            print(f"[telegram] Poll error: {e}")
+            print(f"[telegram] Poll error: {_mask_bot_token(e)}")
             if stop_event.wait(5):
                 break
             continue
@@ -1926,13 +1927,54 @@ def _telegram_polling_thread(
     print("[telegram] Polling stopped.")
 
 
+def _is_pid_alive(pid: int) -> bool:
+    """Return True if the given PID is a live process (Windows tasklist check)."""
+    if pid <= 0:
+        return False
+    try:
+        result = subprocess.run(
+            ["tasklist", "/FI", f"PID eq {pid}", "/NH"],
+            capture_output=True, text=True, timeout=5,
+        )
+        return str(pid) in (result.stdout or "")
+    except (subprocess.SubprocessError, FileNotFoundError, OSError):
+        return False
+
+
 def cmd_watch(args: argparse.Namespace) -> int:
     """Watch inbox/ for new files and auto-sync on changes."""
+    # --- singleton guard: prevent multi-instance Telegram 409 conflicts ---
+    lock_path = KB_ROOT / "watch.lock"
+    if lock_path.exists():
+        try:
+            existing_pid = int((lock_path.read_text(encoding="utf-8") or "0").strip())
+        except (ValueError, OSError):
+            existing_pid = 0
+        if existing_pid and _is_pid_alive(existing_pid):
+            print(f"ERROR: KB watcher already running (PID {existing_pid}). Aborting.")
+            print(f"  If you are sure no watcher is running, delete {lock_path}")
+            return 1
+        print(f"Stale lock file (PID {existing_pid or 'unknown'}), removing.")
+        try:
+            lock_path.unlink()
+        except OSError:
+            pass
+    try:
+        lock_path.write_text(str(os.getpid()), encoding="utf-8")
+        import atexit
+        atexit.register(lambda: lock_path.unlink() if lock_path.exists() else None)
+    except OSError as e:
+        print(f"WARNING: Could not write lock file: {e}")
+
     try:
         from watchdog.observers import Observer
         from watchdog.events import FileSystemEventHandler
     except ImportError:
         print("ERROR: watchdog package not installed. Run: pip install watchdog")
+        try:
+            lock_path.unlink()
+        except OSError:
+            pass
         return 2
 
     class InboxHandler(FileSystemEventHandler):
@@ -3105,6 +3147,11 @@ def _extract_comment_from_message(msg: dict, url: str) -> str:
     return comment[:500]
 
 
+def _mask_bot_token(msg: object) -> str:
+    """Redact Telegram bot tokens from log/error messages."""
+    return re.sub(r"bot\d+:[A-Za-z0-9_-]+", "bot<MASKED>", str(msg))
+
+
 def _telegram_api(token: str, method: str, params: dict | None = None) -> dict:
     """Call Telegram Bot API. Returns JSON response."""
     import requests
@@ -3153,7 +3200,7 @@ def cmd_bot(args: argparse.Namespace) -> int:
         bot_name = me["result"].get("username", "unknown")
         print(f"Bot connected: @{bot_name}")
     except Exception as e:
-        print(f"ERROR: Cannot connect to Telegram: {e}")
+        print(f"ERROR: Cannot connect to Telegram: {_mask_bot_token(e)}")
         return 2
 
     state = _load_bot_state()
@@ -3173,7 +3220,7 @@ def cmd_bot(args: argparse.Namespace) -> int:
             except _requests.Timeout:
                 continue
             except Exception as e:
-                print(f"Poll error: {e}")
+                print(f"Poll error: {_mask_bot_token(e)}")
                 time.sleep(5)
                 continue
 

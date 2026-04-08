@@ -26,3 +26,7 @@ uv.lock
 !output/.gitkeep
 .env
 kb_bot_state.json
+
+# Added for KB watcher (logs may contain bot tokens; lock is runtime state)
+*.log
+watch.lock
