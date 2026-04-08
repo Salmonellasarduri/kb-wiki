@@ -1,0 +1,17 @@
+{
+  "source_id": "af72d9d6f6dc",
+  "hash": "af72d9d6f6dc5ca2e3530958c8451c78b1a16291d7f9d92bfef3f1288fd59de1",
+  "original_name": "clip_8682498476_24.clip",
+  "ingested_at": "2026-04-05T04:16:25.448082+00:00",
+  "clip_source": true,
+  "fetch_url": "https://t.co/KyJgx0rTct",
+  "fetch_final_url": null,
+  "fetch_status": "fetch_failed",
+  "fetch_error": "HTTP request failed: Exceeded 0 redirects.",
+  "fetched_title": null,
+  "shared_title": null,
+  "user_comment": null,
+  "normalized_url": "https://t.co/KyJgx0rTct",
+  "repair_count": 35,
+  "last_repair_error": "fetch failed: HTTP request failed: Exceeded 0 redirects."
+}

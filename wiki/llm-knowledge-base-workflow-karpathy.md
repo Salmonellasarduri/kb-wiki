@@ -104,3 +104,10 @@ Wikiが十分な規模（約100記事、40万語）に達すると：
 - 40万語規模でも高いパフォーマンスを維持
 - 従来想定されたRAG技術なしで実用レベルの検索・回答を実現
 - 個人利用レベルでの最適化された設計
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[obsidian-mind-claude-code-memory-system]]
+- [[obsidian-mind-claude-memory-system]]
+<!-- /AUTO:Related Articles -->

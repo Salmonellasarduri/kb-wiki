@@ -75,3 +75,9 @@ JavaScript必須の設計は以下の課題を生む：
 3. **モバイルファースト**：スマートフォンブラウザでの最適化
 
 ただし、これは従来のウェブアクセシビリティ原則との緊張関係も生んでいる。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[x-com-javascript-disabled-error-page]]
+<!-- /AUTO:Related Articles -->

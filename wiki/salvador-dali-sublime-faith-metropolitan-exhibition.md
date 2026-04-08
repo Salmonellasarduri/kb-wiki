@@ -56,5 +56,6 @@ updated_at: "2026-04-05"
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[dolores-huerta-art-exhibition-goat]]
 - [[salvador-dali-nuclear-mysticism-critique]]
 <!-- /AUTO:Related Articles -->

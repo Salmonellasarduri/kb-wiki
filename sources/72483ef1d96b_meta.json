@@ -1,0 +1,15 @@
+{
+  "source_id": "72483ef1d96b",
+  "hash": "72483ef1d96b15cacdb9712bda82ab5c0111e017c6f3f1150783502cafa306a5",
+  "original_name": "clip_8682498476_26.clip",
+  "ingested_at": "2026-04-05T09:34:48.951716+00:00",
+  "clip_source": true,
+  "fetch_url": "https://github.com/kevinrgu/autoagent",
+  "fetch_final_url": "https://github.com/kevinrgu/autoagent",
+  "fetch_status": "ok",
+  "fetch_error": null,
+  "fetched_title": "GitHub - kevinrgu/autoagent: autonomous harness engineering · GitHub",
+  "shared_title": null,
+  "user_comment": null,
+  "normalized_url": "https://github.com/kevinrgu/autoagent"
+}

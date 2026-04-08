@@ -21,7 +21,81 @@
     "clip:6f69a8c66c3b27e0d27237a710a33f3c158ca291550b23ed0a3f51c90e79854c": "79391f1124d3",
     "66cb1f76b9ff73ba661dc768742e04ad1cdce48c4916d034ddc3a6039303e170": "66cb1f76b9ff",
     "7e99a783ca4d353cc2265bce63740f075a44712e0f56e06915cccd110f27d052": "7e99a783ca4d",
-    "clip:d20431d9bc5d5b4b0e6f305a2051ef027943dd31104a21a763bc28a94b0b8cac": "7e99a783ca4d"
+    "clip:d20431d9bc5d5b4b0e6f305a2051ef027943dd31104a21a763bc28a94b0b8cac": "7e99a783ca4d",
+    "69777a9795e351c6ebbf3e8bef257e3dc804df9b8010bf78afd633d34dc9f777": "69777a9795e3",
+    "clip:3fd31d3f27efe6978af04066deac8e84b3aad2b28157acf9fbbc90577abb5525": "69777a9795e3",
+    "2eab761a5fa5f6d5317f7ee22e31640b516a1cb473f0d5426734337f0c3027fc": "2eab761a5fa5",
+    "clip:76d3a8d4cedb49e236309506dce339dc1fe0e470c665b392cd3b0a0f0f58b6a2": "2eab761a5fa5",
+    "cfd7fba73ec2ec7cdde05319e090e9ae1c5e908141a71c73dc954396bfd2cda3": "cfd7fba73ec2",
+    "clip:b8e62b19811236a46f76dc7c6b34e2186673f08226ed4d2b618a70320dd67d19": "cfd7fba73ec2",
+    "af72d9d6f6dc5ca2e3530958c8451c78b1a16291d7f9d92bfef3f1288fd59de1": "af72d9d6f6dc",
+    "clip:4aa8ec497048589855265878fb7204923b943a4d6b67946bf1a9b19c2d0e56e1": "af72d9d6f6dc",
+    "c5c298c99cdb655bd517bf74db9c1e3865fbec509dcc85cfea56f67995c6aab7": "c5c298c99cdb",
+    "f50e838ad4df08a8156072835fbf8538a254ed9757f5f336c37303a91bf7d160": "f50e838ad4df",
+    "50288bf11efbd99613b11b558603f566a5a033f82ccb5d97a3cff723def54809": "50288bf11efb",
+    "f0f0da658da77977778bcdfdad94f291befcede657cc69f31e60d8bbf5e59f33": "f0f0da658da7",
+    "0e34c725f36103312bb359d20a4c5cdc0d8e3fb68842540a47fccba2ef19098e": "0e34c725f361",
+    "f8501603dda4c6e77f4a04ee8d5059ef44dc5572c3232f0283a6bae38cc2c303": "f8501603dda4",
+    "4277e7dab70cb61a66af14d18fdfdb233cbaee3861cfd94a0bea89b0e57ea839": "4277e7dab70c",
+    "bf61ae9e64ad167f0bd3c4074dab68c2cb6b1e2f045fd4748f421997f36d6d67": "bf61ae9e64ad",
+    "72483ef1d96b15cacdb9712bda82ab5c0111e017c6f3f1150783502cafa306a5": "72483ef1d96b",
+    "clip:8035fdea0411038b08596554ab1f4556f7587460ea494a5d3a79796289657b74": "72483ef1d96b",
+    "d975e7d348f85db16e0a3ede2b632d76ed8e45fa7100840a56865c2e2f861d56": "d975e7d348f8",
+    "a98028a4198f641a702a43525515eecc474c38a5973ae00f92e6ef5d56a07e64": "a98028a4198f",
+    "09f1f75acc1197054425e95c435138cbb0facf367c8c957ab0c1d7334a2bfc09": "09f1f75acc11",
+    "abc76907b2097e22dab3f734b2a7a93f49bbba44f85448112e4f632247e23b16": "abc76907b209",
+    "clip:d0cc9beac948966174e41dc2fef0329a4603f32ed81b46b7e0351a8243cc6625": "abc76907b209",
+    "96c1c258aef63d9e69be8901933d6a0e6db017f6776b316e68a1d454a754342b": "96c1c258aef6",
+    "ab2625f99d349acc41a9e74817159aaba59336d62a6f2854be2d7a2596b0c1ad": "ab2625f99d34",
+    "6fc503e1733ab051350d13cfbbcc471b40fdfaf3a8ef2c145c6882c1852d82b1": "6fc503e1733a",
+    "74b3b6f136320005ca720583cf479b2c8ede14f089e508127cd151ba3f84c8a9": "74b3b6f13632",
+    "41f104627f639345ed85e0896c2eafd8d23dab0a64dc0c0adca7a4ab9c43d484": "41f104627f63",
+    "a9d5529ce4f61428b7ea721ecc042b768a9db00e769bf054a0ae7f96b606f597": "a9d5529ce4f6",
+    "269016f10af34571e42e409a26f4d1fe9e1327b96923c697a283b6b9dd0f40b7": "269016f10af3",
+    "d3517b60aa2f161c0655fb3fd3865a15ad1cf25782f4c019a9d190fb9f1eea83": "d3517b60aa2f",
+    "63f096f23b16692e9aafcfa5ab7fcde8498785763ff3c083cc2813fb74722875": "63f096f23b16",
+    "1b11023aa39b42ed60ec4db0840fb0f01c6ea6408d6aee81813b94d0f4835513": "1b11023aa39b",
+    "4b14509b6556dff5fb49dbedc54a21cd203fdcffa0b22f9390673a4efe779036": "4b14509b6556",
+    "d9d1a247eab728e34b2b14e6f3fac98d34d470adacf42da9f6d0f45e53e62071": "d9d1a247eab7",
+    "clip:fa0acdcfa471128015712d32a16f6756da3c282aa688de7dc83e0a895f00ebd3": "d9d1a247eab7",
+    "c21bf387b73d382c11ce295f24049b96c86e47c277448b45b876e18647bed1e4": "c21bf387b73d",
+    "1bbfdbe88ed37cd167b78f33ce3682631ff6a50825fb91827730e7f33f395ace": "1bbfdbe88ed3",
+    "19849bc6324abc958046fe60d295537eef875d17167425778eee23a0677eb361": "19849bc6324a",
+    "0a0c6152c75249898b144d9467dbf13b81aff722c1b05a7f54cd3c6a9a1f1b3a": "0a0c6152c752",
+    "clip:83f62204e2691cc46df29d273321692df2807ee8f0c2a6712ae57f1ff56c92b4": "0a0c6152c752",
+    "bc0aa9ecaf206e5acd5d92f2e5307911e5285536f19861115c5c1d5a16309d1b": "bc0aa9ecaf20",
+    "b9c68eeebeb34697e139250f24a879a88b949407a6e89eb8c7b19d46120e2752": "b9c68eeebeb3",
+    "e700925e2870053742486bbeec5dc980a7aab504e3a283b60ff3f9af76c999a9": "e700925e2870",
+    "a72c64791279d5912957ca20da8c4e2f9130c866cd27a420aa190b05aad1d5f9": "a72c64791279",
+    "7e4eed0dfc9916d0a1a0386bd304771e9b2a1955adf26d8558c40b4b69df51e4": "7e4eed0dfc99",
+    "81b8311fac040801aa804f45881fa9400ef73b5e8e5fe0cf68e7f7151bf71315": "81b8311fac04",
+    "c50efadce7b895b12d0e9a018f1f6c7c86434e45b22b046900b06b17b3b59650": "c50efadce7b8",
+    "3d0629afcae3e3ab9b055ef1e3e503c07e0e8ac08ce088b726c5e9baf8eaa87d": "3d0629afcae3",
+    "05e1a6de964e6cbe6713220d3cad092ef7ead5fa05cd51103611905f37c5387d": "05e1a6de964e",
+    "9671887bd8499dc9614a74bea36d807bc7e44f097dae40e8b2b6ccb5d0e595ca": "9671887bd849",
+    "9afb038f24296e82eaa6ae7ac3583c7f7859f415175c2582424bc003ff975f52": "9afb038f2429",
+    "713672289a0bacc4bde80e25afdfcb3feb3363e845f69924cb41dd1a0ff5c18f": "713672289a0b",
+    "7abd6b364e4f2e1ef89c93493f938abfeb6c42e3b1c61d959779cb8259f74871": "7abd6b364e4f",
+    "de31db0412f532bd4025fe3016f8d01ead2572d0bd0a8797a0e9a03664fe08f3": "de31db0412f5",
+    "0dcbd89ebf7180320570b9d7d5a46d642ba0f098ae27643d2ea47ef7b5669ea5": "0dcbd89ebf71",
+    "cf81832ab0263b0dde79fe172775dd8f3d027d7d889e4fec157a3c7ae345479b": "cf81832ab026",
+    "2932fef3b27eab54c7812ab8c0ea9f9fcb8a46dfad2b13fca6451a54f3d30754": "2932fef3b27e",
+    "a7860a9924f66297dcf08fc644357b74ad19eb81502b32b92c0a14d64478913e": "a7860a9924f6",
+    "7b591683c5671dbfc718017a2ca2c091f4a84dca55711928f7d1b92b039de8bb": "7b591683c567",
+    "c63d7897824914da730a52a0f7ecf5ee32aebb007ab761ad75dabdd4d35d8d3e": "c63d78978249",
+    "5a95565213d714877e4681d0533dcf879b1065c39df3e417c95e62aad3e9be51": "5a95565213d7",
+    "ef0a0a9e8559518b7d183e9529c5db9583359eea182443d52d08cbd70e779ccb": "ef0a0a9e8559",
+    "075826430e5537eb69bb9130cb0135ccf166dcddc733755889b8198ad8c71e52": "075826430e55",
+    "a76129eaa2e5180e2293a92ec6f4f4b3cdd651e3eea2197f67a16088be9b6a3f": "a76129eaa2e5",
+    "26981e27a8712d322a2ff1ce026326883268051c2ad1866c3fa1740c906afd8b": "26981e27a871",
+    "0152ac7775a02fafd1005e6b7be81be293fed478b6e03c4442c3571c68042246": "0152ac7775a0",
+    "529fc7a71818b86225d75d73c2dea75a070bbdef3bcbba76b1d44af7b7b1515c": "529fc7a71818",
+    "47837283b9bcba2c2147019c3070ef364ac1ad62e6f75d41c872421f8dff9118": "47837283b9bc",
+    "0c0d17dcfda481e2db10023a9ded98af1c08a89e652504d343042c0fa9492784": "0c0d17dcfda4",
+    "7819ca74b6f27f3fbb843b2343c20cc7edd6fa16d551cb7ba597b10465d4661a": "7819ca74b6f2",
+    "725ca768b3a87f57b5f2e0ee59835f1b1a977767548e3c178b7aeae04da251d6": "725ca768b3a8",
+    "7b2c149d3a39147052136adc66e2a8c55acf41d0975072e6c71f7dcbefdb943b": "7b2c149d3a39",
+    "57d5b425bc19dc75c8aaf12c69f533e94a8e6768707ee6b76c2a1829839b8fa2": "57d5b425bc19"
   },
   "items": {
     "16c0425f47df": {
@@ -217,6 +291,877 @@
       "article_ids": [
         "x-com-javascript-disabled-error-page",
         "x-twitter-javascript-disabled-error"
+      ],
+      "error": null
+    },
+    "69777a9795e3": {
+      "hash": "69777a9795e351c6ebbf3e8bef257e3dc804df9b8010bf78afd633d34dc9f777",
+      "original_name": "clip_8682498476_13.clip",
+      "source_path": "sources/69777a9795e3_Claude Code CLIに直接のPCを操作を可能にする「Computer .md",
+      "meta_path": "sources/69777a9795e3_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T00:42:43.010787+00:00",
+      "compiled_at": "2026-04-05T09:44:24.746825+09:00",
+      "article_ids": [
+        "claude-code-cli-computer-use-implementation",
+        "claude-code-computer-use-cli-implementation"
+      ],
+      "error": null
+    },
+    "2eab761a5fa5": {
+      "hash": "2eab761a5fa5f6d5317f7ee22e31640b516a1cb473f0d5426734337f0c3027fc",
+      "original_name": "clip_8682498476_17.clip",
+      "source_path": "sources/2eab761a5fa5_『鳴潮』のUnreal Engineの使い方は、専門家から見ても“変態的”だった.md",
+      "meta_path": "sources/2eab761a5fa5_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T03:52:00.952643+00:00",
+      "compiled_at": "2026-04-05T12:52:50.355451+09:00",
+      "article_ids": [
+        "wuthering-waves-unreal-engine-custom-implementation",
+        "wuthering-waves-unreal-engine-customization-analysis",
+        "wuthering-waves-unreal-engine-technical-analysis"
+      ],
+      "error": null
+    },
+    "cfd7fba73ec2": {
+      "hash": "cfd7fba73ec2ec7cdde05319e090e9ae1c5e908141a71c73dc954396bfd2cda3",
+      "original_name": "clip_8682498476_21.clip",
+      "source_path": "sources/cfd7fba73ec2_わざと汚く書いたコードを _simplify に渡したら半分以下になった.md",
+      "meta_path": "sources/cfd7fba73ec2_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T04:05:58.113435+00:00",
+      "compiled_at": "2026-04-05T13:07:17.489831+09:00",
+      "article_ids": [
+        "claude-code-simplify-refactoring-experiment",
+        "claude-simplify-code-refactoring-experiment"
+      ],
+      "error": null
+    },
+    "af72d9d6f6dc": {
+      "hash": "af72d9d6f6dc5ca2e3530958c8451c78b1a16291d7f9d92bfef3f1288fd59de1",
+      "original_name": "clip_8682498476_24.clip",
+      "source_path": "sources/af72d9d6f6dc_clip.md",
+      "meta_path": "sources/af72d9d6f6dc_meta.json",
+      "status": "blocked",
+      "ingested_at": "2026-04-05T04:16:25.232713+00:00",
+      "compiled_at": null,
+      "article_ids": [],
+      "error": "repair failed: fetch failed: HTTP request failed: Exceeded 0 redirects."
+    },
+    "c5c298c99cdb": {
+      "hash": "c5c298c99cdb655bd517bf74db9c1e3865fbec509dcc85cfea56f67995c6aab7",
+      "original_name": "‘Nelumbo’ Solves Platforming Puzzles With a Magical Water Lily.md",
+      "source_path": "sources/c5c298c99cdb_‘Nelumbo’ Solves Platforming Puzzles With a Magical Water Lily.md",
+      "meta_path": "sources/c5c298c99cdb_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T04:24:39.358832+00:00",
+      "compiled_at": "2026-04-05T04:25:22.688982+00:00",
+      "article_ids": [
+        "nelumbo-water-lily-platformer-puzzle-game"
+      ],
+      "error": "No valid frontmatter after retry"
+    },
+    "f50e838ad4df": {
+      "hash": "f50e838ad4df08a8156072835fbf8538a254ed9757f5f336c37303a91bf7d160",
+      "original_name": "「Claude」で「OpenClaw」などの利用がサブスク対象外に API利用や追加使用量購入が必要.md",
+      "source_path": "sources/f50e838ad4df_「Claude」で「OpenClaw」などの利用がサブスク対象外に API利用や追加使用量購入が必要.md",
+      "meta_path": "sources/f50e838ad4df_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T04:24:39.358832+00:00",
+      "compiled_at": "2026-04-05T13:25:22.615163+09:00",
+      "article_ids": [
+        "claude-openclaw-subscription-exclusion"
+      ],
+      "error": null
+    },
+    "50288bf11efb": {
+      "hash": "50288bf11efbd99613b11b558603f566a5a033f82ccb5d97a3cff723def54809",
+      "original_name": "Another Eden Begins launches September 17.md",
+      "source_path": "sources/50288bf11efb_Another Eden Begins launches September 17.md",
+      "meta_path": "sources/50288bf11efb_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T05:23:55.011617+00:00",
+      "compiled_at": "2026-04-05T14:24:11.888605+09:00",
+      "article_ids": [
+        "another-eden-begins-september-17-launch"
+      ],
+      "error": null
+    },
+    "f0f0da658da7": {
+      "hash": "f0f0da658da77977778bcdfdad94f291befcede657cc69f31e60d8bbf5e59f33",
+      "original_name": "AnthropicがClaude Code利用者にOpenClawなどのサードパーティーツールを利用する場合は追加料金が必要になると通知.md",
+      "source_path": "sources/f0f0da658da7_AnthropicがClaude Code利用者にOpenClawなどのサードパーティーツールを利用する場合は追加料金が必要になると通知.md",
+      "meta_path": "sources/f0f0da658da7_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T05:23:55.011617+00:00",
+      "compiled_at": "2026-04-05T14:24:27.075914+09:00",
+      "article_ids": [
+        "anthropic-claude-code-third-party-tools-additional-fees",
+        "anthropic-claude-code-third-party-tools-pricing-change"
+      ],
+      "error": null
+    },
+    "0e34c725f361": {
+      "hash": "0e34c725f36103312bb359d20a4c5cdc0d8e3fb68842540a47fccba2ef19098e",
+      "original_name": "『Slay the Spire 2』は“プレイ以外”も超楽しい。コイン落としローグライク『RACCOIN』はハマりすぎると危険そう。『こふんは生きている』で世界.md",
+      "source_path": "sources/0e34c725f361_『Slay the Spire 2』は“プレイ以外”も超楽しい。コイン落としローグライク『RACCOIN』はハマりすぎると危険そう。『こふんは生きている』で世界.md",
+      "meta_path": "sources/0e34c725f361_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T05:23:55.011617+00:00",
+      "compiled_at": "2026-04-05T14:24:46.794336+09:00",
+      "article_ids": [
+        "gaming-weekly-column-531-slay-the-spire-2-raccoin-kofun-analysis",
+        "weekly-gaming-column-531-slay-the-spire-2-raccoin-kofun"
+      ],
+      "error": null
+    },
+    "f8501603dda4": {
+      "hash": "f8501603dda4c6e77f4a04ee8d5059ef44dc5572c3232f0283a6bae38cc2c303",
+      "original_name": "基本プレイ無料『サカつく2026』強豪ひしめく“魔境”スペインでもがき苦しむガチプレイ日記。久保建英に敗れて思い知る、「負けないサッカー」の向こう側.md",
+      "source_path": "sources/f8501603dda4_基本プレイ無料『サカつく2026』強豪ひしめく“魔境”スペインでもがき苦しむガチプレイ日記。久保建英に敗れて思い知る、「負けないサッカー」の向こう側.md",
+      "meta_path": "sources/f8501603dda4_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T05:23:55.011617+00:00",
+      "compiled_at": "2026-04-05T14:25:05.535075+09:00",
+      "article_ids": [
+        "sakatsuku-2026-spain-league-struggle-diary",
+        "sakatsuku-2026-spain-league-struggle"
+      ],
+      "error": null
+    },
+    "4277e7dab70c": {
+      "hash": "4277e7dab70cb61a66af14d18fdfdb233cbaee3861cfd94a0bea89b0e57ea839",
+      "original_name": "アンデス山脈に住む人々はヒ素の多い水を飲めるように進化してきた.md",
+      "source_path": "sources/4277e7dab70c_アンデス山脈に住む人々はヒ素の多い水を飲めるように進化してきた.md",
+      "meta_path": "sources/4277e7dab70c_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T06:53:50.138449+00:00",
+      "compiled_at": "2026-04-05T15:54:05.045800+09:00",
+      "article_ids": [
+        "andean-population-arsenic-adaptation-evolution",
+        "andean-populations-arsenic-adaptation-evolution"
+      ],
+      "error": null
+    },
+    "bf61ae9e64ad": {
+      "hash": "bf61ae9e64ad167f0bd3c4074dab68c2cb6b1e2f045fd4748f421997f36d6d67",
+      "original_name": "obsidian-mind.md",
+      "source_path": "sources/bf61ae9e64ad_obsidian-mind.md",
+      "meta_path": "sources/bf61ae9e64ad_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T07:20:12.212237+00:00",
+      "compiled_at": "2026-04-05T16:20:58.797727+09:00",
+      "article_ids": [
+        "obsidian-mind-claude-code-memory-system",
+        "obsidian-mind-claude-memory-system"
+      ],
+      "error": null
+    },
+    "72483ef1d96b": {
+      "hash": "72483ef1d96b15cacdb9712bda82ab5c0111e017c6f3f1150783502cafa306a5",
+      "original_name": "clip_8682498476_26.clip",
+      "source_path": "sources/72483ef1d96b_GitHub - kevinrgu_autoagent_ autonomous .md",
+      "meta_path": "sources/72483ef1d96b_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T09:34:49.088367+00:00",
+      "compiled_at": "2026-04-05T18:35:51.014265+09:00",
+      "article_ids": [
+        "autoagent-autonomous-agent-harness-engineering",
+        "autoagent-autonomous-ai-agent-engineering-framework"
+      ],
+      "error": null
+    },
+    "d975e7d348f8": {
+      "hash": "d975e7d348f85db16e0a3ede2b632d76ed8e45fa7100840a56865c2e2f861d56",
+      "original_name": "ZETA DIVISIONが切り込むeスポーツ産業の人材不足 バンタンと提携した学校設立の背景とは.md",
+      "source_path": "sources/d975e7d348f8_ZETA DIVISIONが切り込むeスポーツ産業の人材不足 バンタンと提携した学校設立の背景とは.md",
+      "meta_path": "sources/d975e7d348f8_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T10:55:21.315749+00:00",
+      "compiled_at": "2026-04-05T19:55:37.947882+09:00",
+      "article_ids": [
+        "zeta-division-gaming-academy-esports-education-partnership",
+        "zeta-division-gaming-academy-vantan-partnership"
+      ],
+      "error": null
+    },
+    "a98028a4198f": {
+      "hash": "a98028a4198f641a702a43525515eecc474c38a5973ae00f92e6ef5d56a07e64",
+      "original_name": "クトゥルフ神話・絶壁登頂ローグライト『Ascenders_ Beyond the Peak』発表。生首育成恋愛シム『TOMAK』は今ならまだ無料DL可。今週の見.md",
+      "source_path": "sources/a98028a4198f_クトゥルフ神話・絶壁登頂ローグライト『Ascenders_ Beyond the Peak』発表。生首育成恋愛シム『TOMAK』は今ならまだ無料DL可。今週の見.md",
+      "meta_path": "sources/a98028a4198f_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T10:55:21.315749+00:00",
+      "compiled_at": "2026-04-06T00:21:56.938216+00:00",
+      "article_ids": [
+        "ascenders-beyond-the-peak-cthulhu-climbing-roguelike"
+      ],
+      "error": "No valid frontmatter after retry"
+    },
+    "09f1f75acc11": {
+      "hash": "09f1f75acc1197054425e95c435138cbb0facf367c8c957ab0c1d7334a2bfc09",
+      "original_name": "電子工作に必要なハードウェアをAIでサクッと調べられるウェブサイト「Open Hardware Directory」.md",
+      "source_path": "sources/09f1f75acc11_電子工作に必要なハードウェアをAIでサクッと調べられるウェブサイト「Open Hardware Directory」.md",
+      "meta_path": "sources/09f1f75acc11_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T10:55:21.315749+00:00",
+      "compiled_at": "2026-04-05T19:56:26.813934+09:00",
+      "article_ids": [
+        "open-hardware-directory-ai-component-search",
+        "open-hardware-directory-ai-search"
+      ],
+      "error": null
+    },
+    "abc76907b209": {
+      "hash": "abc76907b2097e22dab3f734b2a7a93f49bbba44f85448112e4f632247e23b16",
+      "original_name": "clip_8682498476_29.clip",
+      "source_path": "sources/abc76907b209_【大阪杯結果＆コメント】クロワデュノールが歓喜のV　北村友一「主役級でずっと引っ.md",
+      "meta_path": "sources/abc76907b209_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T14:45:53.494071+00:00",
+      "compiled_at": "2026-04-05T23:46:42.119570+09:00",
+      "article_ids": [
+        "croix-du-nord-osaka-hai-victory-kitamura-yuichi"
+      ],
+      "error": null
+    },
+    "96c1c258aef6": {
+      "hash": "96c1c258aef63d9e69be8901933d6a0e6db017f6776b316e68a1d454a754342b",
+      "original_name": "Bacteria found in the human intestine capable of improving muscle strength.md",
+      "source_path": "sources/96c1c258aef6_Bacteria found in the human intestine capable of improving muscle strength.md",
+      "meta_path": "sources/96c1c258aef6_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T21:20:19.433236+00:00",
+      "compiled_at": "2026-04-06T06:21:10.525396+09:00",
+      "article_ids": [
+        "gut-bacteria-muscle-strength-enhancement-granada-university",
+        "gut-bacteria-muscle-strength-granada-university"
+      ],
+      "error": null
+    },
+    "ab2625f99d34": {
+      "hash": "ab2625f99d349acc41a9e74817159aaba59336d62a6f2854be2d7a2596b0c1ad",
+      "original_name": "Genesis RPG Traysia coming to PS5, Xbox Series, PS4, Xbox One, Switch, and PC on.md",
+      "source_path": "sources/ab2625f99d34_Genesis RPG Traysia coming to PS5, Xbox Series, PS4, Xbox One, Switch, and PC on.md",
+      "meta_path": "sources/ab2625f99d34_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T21:20:19.433236+00:00",
+      "compiled_at": "2026-04-06T06:21:28.339109+09:00",
+      "article_ids": [
+        "traysia-genesis-rpg-multiplatform-remaster-2026",
+        "traysia-genesis-rpg-remaster-2026"
+      ],
+      "error": null
+    },
+    "6fc503e1733a": {
+      "hash": "6fc503e1733ab051350d13cfbbcc471b40fdfaf3a8ef2c145c6882c1852d82b1",
+      "original_name": "Microsoftはいかにして1兆ドルを消滅させたのか、Azureに対する信頼を損なった自己満足と誤った判断の内幕を元Azureコアエンジニアが証言.md",
+      "source_path": "sources/6fc503e1733a_Microsoftはいかにして1兆ドルを消滅させたのか、Azureに対する信頼を損なった自己満足と誤った判断の内幕を元Azureコアエンジニアが証言.md",
+      "meta_path": "sources/6fc503e1733a_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-05T21:20:19.433236+00:00",
+      "compiled_at": "2026-04-06T06:21:47.305148+09:00",
+      "article_ids": [
+        "microsoft-azure-trillion-dollar-failure-insider-testimony",
+        "microsoft-azure-trillion-dollar-failure-whistleblower"
+      ],
+      "error": null
+    },
+    "74b3b6f13632": {
+      "hash": "74b3b6f136320005ca720583cf479b2c8ede14f089e508127cd151ba3f84c8a9",
+      "original_name": "Italian TV Copyright-Strikes Nvidia over Nvidia's Own DLSS 5 Footage.md",
+      "source_path": "sources/74b3b6f13632_Italian TV Copyright-Strikes Nvidia over Nvidia's Own DLSS 5 Footage.md",
+      "meta_path": "sources/74b3b6f13632_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-06T00:20:52.630314+00:00",
+      "compiled_at": "2026-04-06T09:21:41.881322+09:00",
+      "article_ids": [
+        "italian-tv-copyright-strike-nvidia-dlss-5",
+        "italian-tv-copyright-strikes-nvidia-dlss-footage"
+      ],
+      "error": null
+    },
+    "41f104627f63": {
+      "hash": "41f104627f639345ed85e0896c2eafd8d23dab0a64dc0c0adca7a4ab9c43d484",
+      "original_name": "「非常に好評」残酷美ノベル続編『プトリカ 2nd.cut』6月5日発売へ。“救いのない話が好きではまだ足りない人”向け、愛と復讐のフルボイス物語.md",
+      "source_path": "sources/41f104627f63_「非常に好評」残酷美ノベル続編『プトリカ 2nd.cut』6月5日発売へ。“救いのない話が好きではまだ足りない人”向け、愛と復讐のフルボイス物語.md",
+      "meta_path": "sources/41f104627f63_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-06T00:20:52.630314+00:00",
+      "compiled_at": "2026-04-06T09:21:56.800025+09:00",
+      "article_ids": [
+        "putorika-2nd-cut-dark-fantasy-novel-game",
+        "putorika-2nd-cut-dark-fantasy-novel-sequel"
+      ],
+      "error": null
+    },
+    "a9d5529ce4f6": {
+      "hash": "a9d5529ce4f61428b7ea721ecc042b768a9db00e769bf054a0ae7f96b606f597",
+      "original_name": "中学教師の3分の2がAIの使用により生徒の思考力が低下していると回答.md",
+      "source_path": "sources/a9d5529ce4f6_中学教師の3分の2がAIの使用により生徒の思考力が低下していると回答.md",
+      "meta_path": "sources/a9d5529ce4f6_meta.json",
+      "status": "blocked",
+      "ingested_at": "2026-04-06T00:20:52.630314+00:00",
+      "compiled_at": null,
+      "article_ids": [],
+      "error": "repair failed: no fetchable URL found"
+    },
+    "269016f10af3": {
+      "hash": "269016f10af34571e42e409a26f4d1fe9e1327b96923c697a283b6b9dd0f40b7",
+      "original_name": "Eight years of wanting, three months of building with AI.md",
+      "source_path": "sources/269016f10af3_Eight years of wanting, three months of building with AI.md",
+      "meta_path": "sources/269016f10af3_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-06T02:50:56.741021+00:00",
+      "compiled_at": "2026-04-06T11:51:15.154892+09:00",
+      "article_ids": [
+        "ai-development-8-years-3-months-syntaqlite",
+        "ai-development-eight-years-three-months"
+      ],
+      "error": null
+    },
+    "d3517b60aa2f": {
+      "hash": "d3517b60aa2f161c0655fb3fd3865a15ad1cf25782f4c019a9d190fb9f1eea83",
+      "original_name": "Introducing GEN-1 [video].md",
+      "source_path": "sources/d3517b60aa2f_Introducing GEN-1 [video].md",
+      "meta_path": "sources/d3517b60aa2f_meta.json",
+      "status": "blocked",
+      "ingested_at": "2026-04-06T02:50:56.741021+00:00",
+      "compiled_at": null,
+      "article_ids": [],
+      "error": "repair failed: no fetchable URL found"
+    },
+    "63f096f23b16": {
+      "hash": "63f096f23b16692e9aafcfa5ab7fcde8498785763ff3c083cc2813fb74722875",
+      "original_name": "知られざるネパールの大規模「登山偽救助」詐欺、世界中の保険会社から数百万ドルをだまし取っていた.md",
+      "source_path": "sources/63f096f23b16_知られざるネパールの大規模「登山偽救助」詐欺、世界中の保険会社から数百万ドルをだまし取っていた.md",
+      "meta_path": "sources/63f096f23b16_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-06T02:50:56.741021+00:00",
+      "compiled_at": "2026-04-06T11:51:31.431754+09:00",
+      "article_ids": [
+        "nepal-fake-mountain-rescue-fraud-scheme",
+        "nepal-mountain-rescue-fraud-network"
+      ],
+      "error": null
+    },
+    "1b11023aa39b": {
+      "hash": "1b11023aa39b42ed60ec4db0840fb0f01c6ea6408d6aee81813b94d0f4835513",
+      "original_name": "Stamp It! All Programs Must Report Their Version.md",
+      "source_path": "sources/1b11023aa39b_Stamp It! All Programs Must Report Their Version.md",
+      "meta_path": "sources/1b11023aa39b_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-06T03:21:01.330253+00:00",
+      "compiled_at": "2026-04-06T12:21:17.534980+09:00",
+      "article_ids": [
+        "programs-must-report-version-numbers",
+        "programs-version-reporting-developer-culture"
+      ],
+      "error": null
+    },
+    "4b14509b6556": {
+      "hash": "4b14509b6556dff5fb49dbedc54a21cd203fdcffa0b22f9390673a4efe779036",
+      "original_name": "Steamセールで『バイオハザード RE_3』がなんと90％オフの399円。好評“壁登り”採掘ローグライト『Wall World』は85％オフ。今週の高割引率P.md",
+      "source_path": "sources/4b14509b6556_Steamセールで『バイオハザード RE_3』がなんと90％オフの399円。好評“壁登り”採掘ローグライト『Wall World』は85％オフ。今週の高割引率P.md",
+      "meta_path": "sources/4b14509b6556_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-06T03:21:01.330253+00:00",
+      "compiled_at": "2026-04-06T12:21:32.753818+09:00",
+      "article_ids": [
+        "steam-sale-biohazard-re3-wall-world-discount",
+        "steam-sale-resident-evil-re3-wall-world-april-2026"
+      ],
+      "error": null
+    },
+    "d9d1a247eab7": {
+      "hash": "d9d1a247eab728e34b2b14e6f3fac98d34d470adacf42da9f6d0f45e53e62071",
+      "original_name": "clip_8682498476_33.clip",
+      "source_path": "sources/d9d1a247eab7_AIメモリ設計の最適解：エージェントは何を記憶し、何を「忘れる」べきか.md",
+      "meta_path": "sources/d9d1a247eab7_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-06T09:23:09.895796+00:00",
+      "compiled_at": "2026-04-06T18:24:45.994690+09:00",
+      "article_ids": [
+        "ai-memory-design-optimal-solution",
+        "ai-memory-design-optimal-solutions"
+      ],
+      "error": null
+    },
+    "c21bf387b73d": {
+      "hash": "c21bf387b73d382c11ce295f24049b96c86e47c277448b45b876e18647bed1e4",
+      "original_name": "Best Paper Awards in Computer Science over the past 30 years.md",
+      "source_path": "sources/c21bf387b73d_Best Paper Awards in Computer Science over the past 30 years.md",
+      "meta_path": "sources/c21bf387b73d_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-06T10:21:31.565415+00:00",
+      "compiled_at": "2026-04-06T19:21:44.198120+09:00",
+      "article_ids": [
+        "best-paper-awards-computer-science-30-years",
+        "computer-science-best-paper-awards-30-years"
+      ],
+      "error": null
+    },
+    "1bbfdbe88ed3": {
+      "hash": "1bbfdbe88ed37cd167b78f33ce3682631ff6a50825fb91827730e7f33f395ace",
+      "original_name": "Facebook創業者マーク・ザッカーバーグCEOが20年にわたるプログラミングのブランクを経て再びコードを書き始めた、使っているのはAIコーディング支援ツール.md",
+      "source_path": "sources/1bbfdbe88ed3_Facebook創業者マーク・ザッカーバーグCEOが20年にわたるプログラミングのブランクを経て再びコードを書き始めた、使っているのはAIコーディング支援ツール.md",
+      "meta_path": "sources/1bbfdbe88ed3_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-06T10:21:31.565415+00:00",
+      "compiled_at": "2026-04-06T19:22:02.637151+09:00",
+      "article_ids": [
+        "mark-zuckerberg-returns-to-coding-with-ai-tools",
+        "zuckerberg-returns-to-coding-ai-tools"
+      ],
+      "error": null
+    },
+    "19849bc6324a": {
+      "hash": "19849bc6324abc958046fe60d295537eef875d17167425778eee23a0677eb361",
+      "original_name": "松任谷由実、AIボイスで声優に マンガ「火の鳥」原作の公演で.md",
+      "source_path": "sources/19849bc6324a_松任谷由実、AIボイスで声優に マンガ「火の鳥」原作の公演で.md",
+      "meta_path": "sources/19849bc6324a_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-06T10:21:31.565415+00:00",
+      "compiled_at": "2026-04-06T19:22:19.151123+09:00",
+      "article_ids": [
+        "matsutoya-yumi-ai-voice-hibitori-performance",
+        "matsutoya-yumi-ai-voice-hinotori-performance"
+      ],
+      "error": null
+    },
+    "0a0c6152c752": {
+      "hash": "0a0c6152c75249898b144d9467dbf13b81aff722c1b05a7f54cd3c6a9a1f1b3a",
+      "original_name": "clip_8682498476_37.clip",
+      "source_path": "sources/0a0c6152c752_NASA「アルテミス計画」のリアルタイムビューワーはUnity製。“ゲームデザイ.md",
+      "meta_path": "sources/0a0c6152c752_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-06T11:33:41.749917+00:00",
+      "compiled_at": "2026-04-06T20:34:24.780857+09:00",
+      "article_ids": [
+        "nasa-artemis-real-time-viewer-unity-game-developer"
+      ],
+      "error": null
+    },
+    "bc0aa9ecaf20": {
+      "hash": "bc0aa9ecaf206e5acd5d92f2e5307911e5285536f19861115c5c1d5a16309d1b",
+      "original_name": "A Month or So, Minneapolis.md",
+      "source_path": "sources/bc0aa9ecaf20_A Month or So, Minneapolis.md",
+      "meta_path": "sources/bc0aa9ecaf20_meta.json",
+      "status": "blocked",
+      "ingested_at": "2026-04-07T11:11:43.963176+00:00",
+      "compiled_at": null,
+      "article_ids": [],
+      "error": "repair failed: no fetchable URL found"
+    },
+    "b9c68eeebeb3": {
+      "hash": "b9c68eeebeb34697e139250f24a879a88b949407a6e89eb8c7b19d46120e2752",
+      "original_name": "Every GPU That Mattered.md",
+      "source_path": "sources/b9c68eeebeb3_Every GPU That Mattered.md",
+      "meta_path": "sources/b9c68eeebeb3_meta.json",
+      "status": "blocked",
+      "ingested_at": "2026-04-07T11:11:43.963176+00:00",
+      "compiled_at": null,
+      "article_ids": [],
+      "error": "repair failed: no fetchable URL found"
+    },
+    "e700925e2870": {
+      "hash": "e700925e2870053742486bbeec5dc980a7aab504e3a283b60ff3f9af76c999a9",
+      "original_name": "AIに頼ると「粘り強さ」が失われる――研究チームが警鐘「AIも“助けない”判断をすべき」.md",
+      "source_path": "sources/e700925e2870_AIに頼ると「粘り強さ」が失われる――研究チームが警鐘「AIも“助けない”判断をすべき」.md",
+      "meta_path": "sources/e700925e2870_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:13:42.664329+09:00",
+      "article_ids": [
+        "ai-dependency-reduces-human-persistence"
+      ],
+      "error": null
+    },
+    "a72c64791279": {
+      "hash": "a72c64791279d5912957ca20da8c4e2f9130c866cd27a420aa190b05aad1d5f9",
+      "original_name": "ARTDINK GAME LOG_ Aquanaut’s Holiday launches April 23 in Japan.md",
+      "source_path": "sources/a72c64791279_ARTDINK GAME LOG_ Aquanaut’s Holiday launches April 23 in Japan.md",
+      "meta_path": "sources/a72c64791279_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:13:56.455582+09:00",
+      "article_ids": [
+        "artdink-aquanauts-holiday-april-2026-release"
+      ],
+      "error": null
+    },
+    "7e4eed0dfc99": {
+      "hash": "7e4eed0dfc9916d0a1a0386bd304771e9b2a1955adf26d8558c40b4b69df51e4",
+      "original_name": "Bitcoin and Quantum Computing.md",
+      "source_path": "sources/7e4eed0dfc99_Bitcoin and Quantum Computing.md",
+      "meta_path": "sources/7e4eed0dfc99_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:14:11.022326+09:00",
+      "article_ids": [
+        "bitcoin-quantum-computing-cryptography-threat"
+      ],
+      "error": null
+    },
+    "81b8311fac04": {
+      "hash": "81b8311fac040801aa804f45881fa9400ef73b5e8e5fe0cf68e7f7151bf71315",
+      "original_name": "Dolores Huerta Is the GOAT.md",
+      "source_path": "sources/81b8311fac04_Dolores Huerta Is the GOAT.md",
+      "meta_path": "sources/81b8311fac04_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:14:24.815476+09:00",
+      "article_ids": [
+        "dolores-huerta-art-exhibition-goat"
+      ],
+      "error": null
+    },
+    "c50efadce7b8": {
+      "hash": "c50efadce7b895b12d0e9a018f1f6c7c86434e45b22b046900b06b17b3b59650",
+      "original_name": "Elucidating the Esoteric with Hilma's Ghost.md",
+      "source_path": "sources/c50efadce7b8_Elucidating the Esoteric with Hilma's Ghost.md",
+      "meta_path": "sources/c50efadce7b8_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:14:41.987621+09:00",
+      "article_ids": [
+        "hilma-af-klint-feminist-collective-esoteric-art-research"
+      ],
+      "error": null
+    },
+    "3d0629afcae3": {
+      "hash": "3d0629afcae3e3ab9b055ef1e3e503c07e0e8ac08ce088b726c5e9baf8eaa87d",
+      "original_name": "Ex-Meta worker investigated for downloading 30k private Facebook photos.md",
+      "source_path": "sources/3d0629afcae3_Ex-Meta worker investigated for downloading 30k private Facebook photos.md",
+      "meta_path": "sources/3d0629afcae3_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:14:58.328527+09:00",
+      "article_ids": [
+        "meta-employee-facebook-photos-download-investigation"
+      ],
+      "error": null
+    },
+    "05e1a6de964e": {
+      "hash": "05e1a6de964e6cbe6713220d3cad092ef7ead5fa05cd51103611905f37c5387d",
+      "original_name": "Google、「Gemini」のメンタルヘルス対応を改善 専門窓口への誘導強化など新たなセーフガード.md",
+      "source_path": "sources/05e1a6de964e_Google、「Gemini」のメンタルヘルス対応を改善 専門窓口への誘導強化など新たなセーフガード.md",
+      "meta_path": "sources/05e1a6de964e_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:15:16.809605+09:00",
+      "article_ids": [
+        "google-gemini-mental-health-safeguards"
+      ],
+      "error": null
+    },
+    "9671887bd849": {
+      "hash": "9671887bd8499dc9614a74bea36d807bc7e44f097dae40e8b2b6ccb5d0e595ca",
+      "original_name": "GoogleがGeminiのメンタルヘルスに関する安全性のアップデートについて詳細を発表.md",
+      "source_path": "sources/9671887bd849_GoogleがGeminiのメンタルヘルスに関する安全性のアップデートについて詳細を発表.md",
+      "meta_path": "sources/9671887bd849_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:15:30.567674+09:00",
+      "article_ids": [
+        "google-gemini-mental-health-safety-update"
+      ],
+      "error": null
+    },
+    "9afb038f2429": {
+      "hash": "9afb038f24296e82eaa6ae7ac3583c7f7859f415175c2582424bc003ff975f52",
+      "original_name": "Intel、イーロン・マスク氏の「Terafab」構想に参画 次世代AIチップ生産を支援.md",
+      "source_path": "sources/9afb038f2429_Intel、イーロン・マスク氏の「Terafab」構想に参画 次世代AIチップ生産を支援.md",
+      "meta_path": "sources/9afb038f2429_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:15:47.283596+09:00",
+      "article_ids": [
+        "intel-elon-musk-terafab-partnership"
+      ],
+      "error": null
+    },
+    "713672289a0b": {
+      "hash": "713672289a0bacc4bde80e25afdfcb3feb3363e845f69924cb41dd1a0ff5c18f",
+      "original_name": "Josh Kline Misses the Mark.md",
+      "source_path": "sources/713672289a0b_Josh Kline Misses the Mark.md",
+      "meta_path": "sources/713672289a0b_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:16:05.672206+09:00",
+      "article_ids": [
+        "josh-kline-art-exhibition-review-theresa-hak-kyung-cha-retrospective"
+      ],
+      "error": null
+    },
+    "7abd6b364e4f": {
+      "hash": "7abd6b364e4f2e1ef89c93493f938abfeb6c42e3b1c61d959779cb8259f74871",
+      "original_name": "Living without my self.md",
+      "source_path": "sources/7abd6b364e4f_Living without my self.md",
+      "meta_path": "sources/7abd6b364e4f_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:16:23.150376+09:00",
+      "article_ids": [
+        "living-without-self-musil-philosophy"
+      ],
+      "error": null
+    },
+    "de31db0412f5": {
+      "hash": "de31db0412f532bd4025fe3016f8d01ead2572d0bd0a8797a0e9a03664fe08f3",
+      "original_name": "LLM may be standardizing human expression – and subtly influencing how we think.md",
+      "source_path": "sources/de31db0412f5_LLM may be standardizing human expression – and subtly influencing how we think.md",
+      "meta_path": "sources/de31db0412f5_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:16:37.668987+09:00",
+      "article_ids": [
+        "llm-standardizing-human-expression-usc-study"
+      ],
+      "error": null
+    },
+    "0dcbd89ebf71": {
+      "hash": "0dcbd89ebf7180320570b9d7d5a46d642ba0f098ae27643d2ea47ef7b5669ea5",
+      "original_name": "Macに搭載されている無料のAIを簡単に使える「apfel」、設定不要・ダウンロード不要・トークン費用不要.md",
+      "source_path": "sources/0dcbd89ebf71_Macに搭載されている無料のAIを簡単に使える「apfel」、設定不要・ダウンロード不要・トークン費用不要.md",
+      "meta_path": "sources/0dcbd89ebf71_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:16:53.032014+09:00",
+      "article_ids": [
+        "apfel-mac-ai-tool-free"
+      ],
+      "error": null
+    },
+    "cf81832ab026": {
+      "hash": "cf81832ab0263b0dde79fe172775dd8f3d027d7d889e4fec157a3c7ae345479b",
+      "original_name": "Nintendo Switch金子一馬ローグライク『KAZUMA KANEKO’S ツクヨミ』先行プレイ感想。『デビル メイ クライ 5』とのコラボレーションも.md",
+      "source_path": "sources/cf81832ab026_Nintendo Switch金子一馬ローグライク『KAZUMA KANEKO’S ツクヨミ』先行プレイ感想。『デビル メイ クライ 5』とのコラボレーションも.md",
+      "meta_path": "sources/cf81832ab026_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:17:08.786295+09:00",
+      "article_ids": [
+        "kazuma-kaneko-tsukuyomi-deck-builder-rpg"
+      ],
+      "error": null
+    },
+    "2932fef3b27e": {
+      "hash": "2932fef3b27eab54c7812ab8c0ea9f9fcb8a46dfad2b13fca6451a54f3d30754",
+      "original_name": "Operational Noncommutativity in Sequential Metacognitive Judgments.md",
+      "source_path": "sources/2932fef3b27e_Operational Noncommutativity in Sequential Metacognitive Judgments.md",
+      "meta_path": "sources/2932fef3b27e_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:17:22.309570+09:00",
+      "article_ids": [
+        "operational-noncommutativity-metacognitive-judgments"
+      ],
+      "error": null
+    },
+    "a7860a9924f6": {
+      "hash": "a7860a9924f66297dcf08fc644357b74ad19eb81502b32b92c0a14d64478913e",
+      "original_name": "RSoC 2026_ A new CPU scheduler for Redox OS.md",
+      "source_path": "sources/a7860a9924f6_RSoC 2026_ A new CPU scheduler for Redox OS.md",
+      "meta_path": "sources/a7860a9924f6_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:17:36.576559+09:00",
+      "article_ids": [
+        "redox-os-rsoc-2026-dwrr-scheduler"
+      ],
+      "error": null
+    },
+    "7b591683c567": {
+      "hash": "7b591683c5671dbfc718017a2ca2c091f4a84dca55711928f7d1b92b039de8bb",
+      "original_name": "Silent Hill_ Townfall composed by Canadian musician Pilotpriest.md",
+      "source_path": "sources/7b591683c567_Silent Hill_ Townfall composed by Canadian musician Pilotpriest.md",
+      "meta_path": "sources/7b591683c567_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:57:45.631536+09:00",
+      "article_ids": [
+        "silent-hill-townfall-pilotpriest-composer"
+      ],
+      "error": null
+    },
+    "c63d78978249": {
+      "hash": "c63d7897824914da730a52a0f7ecf5ee32aebb007ab761ad75dabdd4d35d8d3e",
+      "original_name": "The Downfall and Enshittification of Microsoft in 2026.md",
+      "source_path": "sources/c63d78978249_The Downfall and Enshittification of Microsoft in 2026.md",
+      "meta_path": "sources/c63d78978249_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:18:14.096943+09:00",
+      "article_ids": [
+        "microsoft-downfall-enshittification-2026"
+      ],
+      "error": null
+    },
+    "5a95565213d7": {
+      "hash": "5a95565213d714877e4681d0533dcf879b1065c39df3e417c95e62aad3e9be51",
+      "original_name": "ZOZO、独自のAI活用指標「アザース」導入 “エンジニアか否か”問わず同一基準で評価.md",
+      "source_path": "sources/5a95565213d7_ZOZO、独自のAI活用指標「アザース」導入 “エンジニアか否か”問わず同一基準で評価.md",
+      "meta_path": "sources/5a95565213d7_meta.json",
+      "status": "blocked",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": null,
+      "article_ids": [],
+      "error": "repair failed: no fetchable URL found"
+    },
+    "ef0a0a9e8559": {
+      "hash": "ef0a0a9e8559518b7d183e9529c5db9583359eea182443d52d08cbd70e779ccb",
+      "original_name": "「今月の経理業務をまとめて処理して」──マネフォからAIエージェント機能 あいまい指示で自律処理.md",
+      "source_path": "sources/ef0a0a9e8559_「今月の経理業務をまとめて処理して」──マネフォからAIエージェント機能 あいまい指示で自律処理.md",
+      "meta_path": "sources/ef0a0a9e8559_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:18:29.303443+09:00",
+      "article_ids": [
+        "moneyforward-ai-cowork-agent-service"
+      ],
+      "error": null
+    },
+    "075826430e55": {
+      "hash": "075826430e5537eb69bb9130cb0135ccf166dcddc733755889b8198ad8c71e52",
+      "original_name": "『ポケモンGO』世界大会、喜び過ぎで優勝剥奪 感情表現はスポーツマンシップに反する？.md",
+      "source_path": "sources/075826430e55_『ポケモンGO』世界大会、喜び過ぎで優勝剥奪 感情表現はスポーツマンシップに反する？.md",
+      "meta_path": "sources/075826430e55_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:18:44.906374+09:00",
+      "article_ids": [
+        "pokemon-go-world-championship-celebration-penalty"
+      ],
+      "error": null
+    },
+    "a76129eaa2e5": {
+      "hash": "a76129eaa2e5180e2293a92ec6f4f4b3cdd651e3eea2197f67a16088be9b6a3f",
+      "original_name": "なぜアルテミスIIミッションのカメラには旧世代一眼レフの「Nikon D5」が採用されたのか？.md",
+      "source_path": "sources/a76129eaa2e5_なぜアルテミスIIミッションのカメラには旧世代一眼レフの「Nikon D5」が採用されたのか？.md",
+      "meta_path": "sources/a76129eaa2e5_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:19:01.835982+09:00",
+      "article_ids": [
+        "nikon-d5-artemis-ii-mission-camera-selection"
+      ],
+      "error": null
+    },
+    "26981e27a871": {
+      "hash": "26981e27a8712d322a2ff1ce026326883268051c2ad1866c3fa1740c906afd8b",
+      "original_name": "ゲーマーの顔をスキャンしてゲーム内のキャラクターとして利用するプロジェクト「プレイヤーベース」をPlayStationが発表.md",
+      "source_path": "sources/26981e27a871_ゲーマーの顔をスキャンしてゲーム内のキャラクターとして利用するプロジェクト「プレイヤーベース」をPlayStationが発表.md",
+      "meta_path": "sources/26981e27a871_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:19:19.708126+09:00",
+      "article_ids": [
+        "playstation-playerbase-face-scanning-project"
+      ],
+      "error": null
+    },
+    "0152ac7775a0": {
+      "hash": "0152ac7775a02fafd1005e6b7be81be293fed478b6e03c4442c3571c68042246",
+      "original_name": "サウジアラビアのマクドナルドが日本語で謎の投稿 『呪術廻戦』コラボを示唆？.md",
+      "source_path": "sources/0152ac7775a0_サウジアラビアのマクドナルドが日本語で謎の投稿 『呪術廻戦』コラボを示唆？.md",
+      "meta_path": "sources/0152ac7775a0_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:19:36.144344+09:00",
+      "article_ids": [
+        "saudi-mcdonalds-jujutsu-kaisen-collab-speculation"
+      ],
+      "error": null
+    },
+    "529fc7a71818": {
+      "hash": "529fc7a71818b86225d75d73c2dea75a070bbdef3bcbba76b1d44af7b7b1515c",
+      "original_name": "トランジスタ1つから順番にステップアップしてGPUを組み立てるゲーム「Mvidia」をプレイしてみた.md",
+      "source_path": "sources/529fc7a71818_トランジスタ1つから順番にステップアップしてGPUを組み立てるゲーム「Mvidia」をプレイしてみた.md",
+      "meta_path": "sources/529fc7a71818_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:19:50.504030+09:00",
+      "article_ids": [
+        "mvidia-gpu-assembly-educational-game"
+      ],
+      "error": null
+    },
+    "47837283b9bc": {
+      "hash": "47837283b9bcba2c2147019c3070ef364ac1ad62e6f75d41c872421f8dff9118",
+      "original_name": "ニューヨークの地下鉄に異変発生──映画『8番出口』の“おじさん”が実際に登場.md",
+      "source_path": "sources/47837283b9bc_ニューヨークの地下鉄に異変発生──映画『8番出口』の“おじさん”が実際に登場.md",
+      "meta_path": "sources/47837283b9bc_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:20:05.563185+09:00",
+      "article_ids": [
+        "hachiban-deguchi-movie-nyc-subway-promo"
+      ],
+      "error": null
+    },
+    "0c0d17dcfda4": {
+      "hash": "0c0d17dcfda481e2db10023a9ded98af1c08a89e652504d343042c0fa9492784",
+      "original_name": "ボカロP 東京真中「ブレインロット」MVが1000万再生突破 重音テトがリミナルスペースで踊る.md",
+      "source_path": "sources/0c0d17dcfda4_ボカロP 東京真中「ブレインロット」MVが1000万再生突破 重音テトがリミナルスペースで踊る.md",
+      "meta_path": "sources/0c0d17dcfda4_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:20:22.062557+09:00",
+      "article_ids": [
+        "tokyo-manaka-brainrot-mv-10-million-views"
+      ],
+      "error": null
+    },
+    "7819ca74b6f2": {
+      "hash": "7819ca74b6f27f3fbb843b2343c20cc7edd6fa16d551cb7ba597b10465d4661a",
+      "original_name": "ラッパーkegøn、新シングル『4GENT』リリース 「POP YOURS」でも存在感放つ新鋭.md",
+      "source_path": "sources/7819ca74b6f2_ラッパーkegøn、新シングル『4GENT』リリース 「POP YOURS」でも存在感放つ新鋭.md",
+      "meta_path": "sources/7819ca74b6f2_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:20:36.978972+09:00",
+      "article_ids": [
+        "kegon-4gent-single-release"
+      ],
+      "error": null
+    },
+    "725ca768b3a8": {
+      "hash": "725ca768b3a87f57b5f2e0ee59835f1b1a977767548e3c178b7aeae04da251d6",
+      "original_name": "人類の数はすでに地球の持続可能な収容限界を超えてしまったとの研究結果.md",
+      "source_path": "sources/725ca768b3a8_人類の数はすでに地球の持続可能な収容限界を超えてしまったとの研究結果.md",
+      "meta_path": "sources/725ca768b3a8_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:20:50.026808+09:00",
+      "article_ids": [
+        "earth-population-exceeds-sustainable-capacity-2026"
+      ],
+      "error": null
+    },
+    "7b2c149d3a39": {
+      "hash": "7b2c149d3a39147052136adc66e2a8c55acf41d0975072e6c71f7dcbefdb943b",
+      "original_name": "判読困難な「中世ギリシャ語」を読み取り、TOPPANがAI-OCR開発 日本語の「くずし字」解読技術を活用.md",
+      "source_path": "sources/7b2c149d3a39_判読困難な「中世ギリシャ語」を読み取り、TOPPANがAI-OCR開発 日本語の「くずし字」解読技術を活用.md",
+      "meta_path": "sources/7b2c149d3a39_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:21:05.534997+09:00",
+      "article_ids": [
+        "toppan-ai-ocr-medieval-greek-manuscripts"
+      ],
+      "error": null
+    },
+    "57d5b425bc19": {
+      "hash": "57d5b425bc19dc75c8aaf12c69f533e94a8e6768707ee6b76c2a1829839b8fa2",
+      "original_name": "最新AI「Claude Mythos」がSFすぎる件 研究者の作った”牢”を脱出、悪用懸念で一般公開なし──まるで映画の序章.md",
+      "source_path": "sources/57d5b425bc19_最新AI「Claude Mythos」がSFすぎる件 研究者の作った”牢”を脱出、悪用懸念で一般公開なし──まるで映画の序章.md",
+      "meta_path": "sources/57d5b425bc19_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-04-08T14:13:21.178432+00:00",
+      "compiled_at": "2026-04-08T23:21:23.694458+09:00",
+      "article_ids": [
+        "claude-mythos-containment-breach"
       ],
       "error": null
     }

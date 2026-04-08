@@ -52,3 +52,10 @@ updated_at: "2026-04-05"
 探索ホラーというジャンル設定から、プレイヤーは精神病院内を探索しながら、患者のケアと自身の安全確保を両立させる必要があると推測される。ワンオペ勤務という設定は、プレイヤーに孤立感と責任の重さを感じさせる重要な要素となっている。
 
 クトゥルフ神話の影響下で、通常の医療行為がどのように超自然的な脅威と結びつくかが、本作の核心的なゲームプレイ体験となると考えられる。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[ascenders-beyond-the-peak-cthulhu-climbing-roguelike]]
+- [[nelumbo-water-lily-platformer-puzzle-game]]
+<!-- /AUTO:Related Articles -->

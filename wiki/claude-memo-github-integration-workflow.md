@@ -141,3 +141,9 @@ memos/YYYY-MM.md に日付・内容・タグ付きで追記。
 ## 効果と意義
 
 このシステムの核心は技術的構成より「判断の排除」にある。「どこに書くか」「どこに書いたか」という日々の小さな選択が消え、考えること自体に集中できる環境を実現している。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[ai-development-8-years-3-months-syntaqlite]]
+<!-- /AUTO:Related Articles -->

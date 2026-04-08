@@ -63,3 +63,9 @@ updated_at: "2026-04-05"
 ### 技術競争の加速
 
 量子コンピュータ技術の実用化競争は新たな段階に入り、各国の研究機関や企業による開発競争がさらに激化することが予想される。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[bitcoin-quantum-computing-cryptography-threat]]
+<!-- /AUTO:Related Articles -->
