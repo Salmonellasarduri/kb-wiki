@@ -38,6 +38,16 @@ from pathlib import Path
 from urllib.parse import urlparse, urlencode, parse_qs, urlunparse, unquote
 from zoneinfo import ZoneInfo
 
+# Force UTF-8 stdout/stderr to prevent UnicodeEncodeError on Windows cp932.
+# Non-ASCII titles in print() killed the watcher silently on 2026-04-16.
+for _stream in (sys.stdout, sys.stderr):
+    _reconfigure = getattr(_stream, "reconfigure", None)
+    if _reconfigure is not None:
+        try:
+            _reconfigure(encoding="utf-8", errors="replace")
+        except (OSError, ValueError):
+            pass
+
 import yaml
 
 # ---------------------------------------------------------------------------
@@ -2029,9 +2039,30 @@ def cmd_watch(args: argparse.Namespace) -> int:
 
     sync_lock = threading.Lock()
 
+    # Liveness heartbeat: INANNA's kb_bridge reads this file's mtime to detect a dead watcher.
+    heartbeat_path = KB_ROOT / "watch.heartbeat"
+    HEARTBEAT_INTERVAL = 30.0
+    last_beat_ts = 0.0
+
+    def _write_heartbeat() -> None:
+        try:
+            heartbeat_path.write_text(
+                datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                encoding="utf-8",
+            )
+        except OSError:
+            pass
+
+    _write_heartbeat()
+    last_beat_ts = time.time()
+
     try:
         while True:
             time.sleep(0.5)
+            now = time.time()
+            if now - last_beat_ts >= HEARTBEAT_INTERVAL:
+                _write_heartbeat()
+                last_beat_ts = now
             if handler.pending and (time.time() - handler.last_event) >= WATCH_DEBOUNCE_SEC:
                 handler.pending = False
                 if sync_lock.acquire(blocking=False):
