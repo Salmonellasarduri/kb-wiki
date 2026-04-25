@@ -30,3 +30,7 @@ kb_bot_state.json
 # Added for KB watcher (logs may contain bot tokens; lock is runtime state)
 *.log
 watch.lock
+watch.heartbeat
+
+# Personal Obsidian vault (separate workspace, not versioned)
+llm_main/
