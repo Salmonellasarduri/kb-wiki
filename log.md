@@ -606,3 +606,367 @@
 
 ## [2026-04-08T23:58:12+09:00] index | 101 articles, 345 topics, 532 chunks
 
+## [2026-04-09T03:24:45+09:00] ingest | 1 ingested, 0 dups, 0 errors
+
+## [2026-04-09T03:25:41+09:00] compile | created anthropic-project-glasswing-ai-cybersecurity-initiative from 41a4d89b9951
+
+## [2026-04-09T03:25:41+09:00] compile:done | 1 compiled, 0 failed
+
+## [2026-04-09T03:25:42+09:00] index | 102 articles, 350 topics, 542 chunks
+
+## [2026-04-09T12:24:37+09:00] ingest | 3 ingested, 0 dups, 0 errors
+
+## [2026-04-09T12:24:55+09:00] compile | created altk-evolve-on-the-job-ai-learning from 4aff0c24ac8a
+
+## [2026-04-09T12:25:12+09:00] compile | created sterile-neutrinos-death-knell-2026 from e7b747fb6202
+
+## [2026-04-09T12:25:28+09:00] compile | created pramana-epistemic-reasoning-navya-nyaya from cf9b98aa1c63
+
+## [2026-04-09T12:25:28+09:00] compile:done | 3 compiled, 0 failed
+
+## [2026-04-09T12:25:29+09:00] index | 105 articles, 361 topics, 552 chunks
+
+## [2026-04-09T15:54:44+09:00] ingest | 3 ingested, 0 dups, 0 errors
+
+## [2026-04-09T15:54:59+09:00] compile | created aphyr-future-everything-lies from 9583c581242e
+
+## [2026-04-09T15:55:15+09:00] compile | created satoshi-nakamoto-adam-back-identity-claim-denial from d32fd8f8bc9c
+
+## [2026-04-09T15:55:30+09:00] compile | created rocket1994-90s-action-game-announcement from e6010e3446de
+
+## [2026-04-09T15:55:30+09:00] compile:done | 3 compiled, 0 failed
+
+## [2026-04-09T15:55:31+09:00] index | 108 articles, 370 topics, 564 chunks
+
+## [2026-04-09T19:38:14+09:00] ingest | 1 ingested, 0 dups, 0 errors
+
+## [2026-04-09T19:39:00+09:00] compile | created inspiration-cat-zero-cost-50-million-access from 36cdc2de5940
+
+## [2026-04-09T19:39:01+09:00] compile:done | 1 compiled, 0 failed
+
+## [2026-04-09T19:39:01+09:00] index | 109 articles, 375 topics, 574 chunks
+
+## [2026-04-09T20:24:54+09:00] ingest | 3 ingested, 0 dups, 0 errors
+
+## [2026-04-09T20:25:12+09:00] compile | created mac-os-x-wii-port-brian-keller from 2a87245df488
+
+## [2026-04-09T20:25:30+09:00] compile | created vtuber-saekiyahiro-avatar-design-dislike-elements from 3943550046ed
+
+## [2026-04-09T20:25:31+09:00] compile:done | 2 compiled, 0 failed
+
+## [2026-04-09T20:25:31+09:00] index | 111 articles, 383 topics, 582 chunks
+
+## [2026-04-09T20:55:41+09:00] ingest | 3 ingested, 0 dups, 0 errors
+
+## [2026-04-09T20:55:58+09:00] compile | created google-ai-agents-academic-workflow-improvement from e25bbc0f694c
+
+## [2026-04-09T20:56:14+09:00] compile | created red-chat-ritual-tsumimi-time-horror-game-announcement from 3c3f39fc3191
+
+## [2026-04-09T20:56:14+09:00] compile:done | 2 compiled, 0 failed
+
+## [2026-04-09T20:56:15+09:00] index | 113 articles, 390 topics, 590 chunks
+
+## [2026-04-09T21:54:43+09:00] ingest | 3 ingested, 0 dups, 0 errors
+
+## [2026-04-09T21:54:45+09:00] index | 113 articles, 390 topics, 590 chunks
+
+## [2026-04-10T08:33:11+09:00] ingest | 3 ingested, 0 dups, 0 errors
+
+## [2026-04-10T08:33:30+09:00] compile | created multimodal-embedding-sentence-transformers from 6ddf3300b57a
+
+## [2026-04-10T08:33:44+09:00] compile | created aeon-video-light-speed-travel-experience from deaf72e11d4a
+
+## [2026-04-10T08:33:58+09:00] compile | created waypoint-1-5-interactive-virtual-worlds from 0d7e590a93a3
+
+## [2026-04-10T08:33:58+09:00] compile:done | 3 compiled, 0 failed
+
+## [2026-04-10T08:33:59+09:00] index | 116 articles, 402 topics, 601 chunks
+
+## [2026-04-10T10:01:52+09:00] ingest | 1 ingested, 0 dups, 0 errors
+
+## [2026-04-10T10:02:42+09:00] compile | created claude-advisor-strategy-opus-sonnet-cost-optimization from 74540eb04375
+
+## [2026-04-10T10:02:42+09:00] compile:done | 1 compiled, 0 failed
+
+## [2026-04-10T10:02:42+09:00] index | 117 articles, 405 topics, 608 chunks
+
+## [2026-04-10T12:03:52+09:00] ingest | 3 ingested, 0 dups, 0 errors
+
+## [2026-04-10T12:04:11+09:00] compile | created bunnycdn-silent-file-loss-incident from 5e90a7faf3fc
+
+## [2026-04-10T12:04:25+09:00] compile | created programming-hunches-investigation from e256e6dfa730
+
+## [2026-04-10T12:04:40+09:00] compile | created x-external-links-reduce-engagement-study from 417f20ac9ac0
+
+## [2026-04-10T12:04:41+09:00] compile:done | 3 compiled, 0 failed
+
+## [2026-04-10T12:04:41+09:00] index | 120 articles, 416 topics, 620 chunks
+
+## [2026-04-10T13:02:45+09:00] ingest | 2 ingested, 0 dups, 0 errors
+
+## [2026-04-10T13:02:59+09:00] compile | created daoko-niconico-chokaigi-world-wide-words-2026 from 5163e4d9985b
+
+## [2026-04-10T13:03:13+09:00] compile | created african-funeral-expenses-economic-burden from 7427910867e8
+
+## [2026-04-10T13:03:13+09:00] compile:done | 2 compiled, 0 failed
+
+## [2026-04-10T13:03:14+09:00] index | 122 articles, 424 topics, 625 chunks
+
+## [2026-04-10T17:03:02+09:00] ingest | 3 ingested, 0 dups, 0 errors
+
+## [2026-04-10T17:03:22+09:00] compile | created anthropic-claude-skill-creator-testing-enhancement from 71a9eccf2f48
+
+## [2026-04-10T17:03:34+09:00] compile | created shogi-state-space-complexity-monte-carlo-estimation from 22d87f7f72cf
+
+## [2026-04-10T17:03:47+09:00] compile | created afrika-bambaataa-hip-hop-pioneer-dies-68 from 1697f2acf90e
+
+## [2026-04-10T17:03:47+09:00] compile:done | 3 compiled, 0 failed
+
+## [2026-04-10T17:03:48+09:00] index | 125 articles, 435 topics, 635 chunks
+
+## [2026-04-10T18:02:22+09:00] ingest | 2 ingested, 0 dups, 0 errors
+
+## [2026-04-10T18:02:41+09:00] compile | created blind-refusal-language-models-unjust-authority from 3e9ce4148a8e
+
+## [2026-04-10T18:03:00+09:00] compile | created brave-group-arg-virtual-talent-tokyo-kasou from e512e12dc573
+
+## [2026-04-10T18:03:00+09:00] compile:done | 2 compiled, 0 failed
+
+## [2026-04-10T18:03:01+09:00] index | 127 articles, 441 topics, 645 chunks
+
+## [2026-04-15T02:43:16+09:00] ingest | 2 ingested, 0 dups, 0 errors
+
+## [2026-04-15T02:44:09+09:00] compile | created soulforge-graph-powered-ai-coding from af50edb92452
+
+## [2026-04-15T02:44:09+09:00] compile:done | 1 compiled, 0 failed
+
+## [2026-04-15T02:44:10+09:00] index | 128 articles, 444 topics, 659 chunks
+
+## [2026-04-15T02:44:14+09:00] index | 128 articles, 444 topics, 659 chunks
+
+## [2026-04-15T08:10:59+09:00] ingest | 3 ingested, 0 dups, 0 errors
+
+## [2026-04-15T08:11:16+09:00] compile | created llm-wiki-knowledge-management-karpathy from c738a925c22b
+
+## [2026-04-15T08:11:16+09:00] compile:done | 1 compiled, 0 failed
+
+## [2026-04-15T08:11:16+09:00] index | 129 articles, 445 topics, 665 chunks
+
+## [2026-04-15T10:04:40+09:00] ingest | 2 ingested, 0 dups, 0 errors
+
+## [2026-04-15T10:04:58+09:00] compile | created antigone-modern-theater-virginia-woolf-reflection from 15e1b6497343
+
+## [2026-04-15T10:04:58+09:00] compile:done | 1 compiled, 0 failed
+
+## [2026-04-15T10:04:58+09:00] index | 130 articles, 449 topics, 669 chunks
+
+## [2026-04-15T13:03:46+09:00] ingest | 3 ingested, 0 dups, 0 errors
+
+## [2026-04-15T13:04:04+09:00] compile | created self-monitoring-metacognition-reinforcement-learning from 271b5ce61a63
+
+## [2026-04-15T13:04:23+09:00] compile | created anthropic-ai-monitoring-experiment from e4fe575dd19c
+
+## [2026-04-15T13:04:23+09:00] compile:done | 2 compiled, 0 failed
+
+## [2026-04-15T13:04:23+09:00] index | 132 articles, 455 topics, 677 chunks
+
+## [2026-04-15T17:20:19+09:00] ingest | 3 ingested, 0 dups, 0 errors
+
+## [2026-04-15T17:20:38+09:00] compile | created mexican-artist-femicide-project-plagiarism-allegation from 128f15b16efc
+
+## [2026-04-15T17:20:57+09:00] compile | created scientific-knowledge-non-optimality-path-dependence from d4a8908553ac
+
+## [2026-04-15T17:21:12+09:00] compile | created ware-ware-wa-uchuujin-cannes-film-festival from 497730111fe9
+
+## [2026-04-15T17:21:12+09:00] compile:done | 3 compiled, 0 failed
+
+## [2026-04-15T17:21:12+09:00] index | 135 articles, 468 topics, 692 chunks
+
+## [2026-04-15T18:45:40+09:00] ingest | 1 ingested, 0 dups, 0 errors
+
+## [2026-04-15T18:46:05+09:00] compile | created collaborative-multi-agent-murder-mystery-vlm-enhancement from 6e2fd89bc3c0
+
+## [2026-04-15T18:46:05+09:00] compile:done | 1 compiled, 0 failed
+
+## [2026-04-15T18:46:05+09:00] index | 136 articles, 473 topics, 696 chunks
+
+## [2026-04-15T18:48:17+09:00] index | 136 articles, 473 topics, 696 chunks
+
+## [2026-04-15T18:48:57+09:00] ingest | 3 ingested, 0 dups, 0 errors
+
+## [2026-04-15T18:49:13+09:00] compile | created dragon-quest-smash-grow-april-21-launch from d8d5694e7db9
+
+## [2026-04-15T18:50:06+09:00] compile | created disney-1000-layoffs-marvel-visual-development from 91c942ddeb3f
+
+## [2026-04-15T18:50:06+09:00] compile:done | 2 compiled, 1 failed
+
+## [2026-04-15T18:50:06+09:00] index | 138 articles, 479 topics, 704 chunks
+
+## [2026-04-15T18:50:42+09:00] index | 138 articles, 479 topics, 704 chunks
+
+## [2026-04-15T22:11:39+09:00] ingest | 2 ingested, 0 dups, 0 errors
+
+## [2026-04-15T22:12:38+09:00] compile | created guernica-gigapixel-multimodal-analysis from d4ca3ca886b7
+
+## [2026-04-15T22:12:38+09:00] compile:done | 1 compiled, 1 failed
+
+## [2026-04-15T22:12:38+09:00] index | 139 articles, 484 topics, 710 chunks
+
+## [2026-04-16T23:05:18+09:00] compile | created nec-executive-ai-dashboard-system from 78a40a2d4a58
+
+## [2026-04-16T23:05:18+09:00] compile:done | 1 compiled, 0 failed
+
+## [2026-04-25T18:19:45+09:00] ingest | 85 ingested, 0 dups, 0 errors
+
+## [2026-04-25T18:20:05+09:00] compile | created nec-ai-sustainability-disclosure-automation from 3ac1fa875fd5
+
+## [2026-04-25T18:20:22+09:00] compile | created single-experience-neuroplasticity-rewiring from 2a82eec92972
+
+## [2026-04-25T18:20:40+09:00] compile | created ona-judge-poetic-tribute-philadelphia from 5481909b1a99
+
+## [2026-04-25T18:20:53+09:00] compile | created qr-code-knot-theory-mathematical-tool from f5f95c7be722
+
+## [2026-04-25T18:21:09+09:00] compile | created aipad-photography-show-craft-turn-2026 from d82daed733de
+
+## [2026-04-25T18:21:28+09:00] compile | created ai-to-learn-2-governance-framework from 670081ccd5f6
+
+## [2026-04-25T18:21:57+09:00] compile | created ai-hand-rejection-evaluation-collection-matsui-tetsuya from ac50c59a98c4
+
+## [2026-04-25T18:22:25+09:00] compile | created claude-token-counter-opus-consumption-comparison from c8fbc0b438aa
+
+## [2026-04-25T18:22:38+09:00] compile | created deeper-med-medical-ai-system from 8ca5bd069ed9
+
+## [2026-04-25T18:22:55+09:00] compile | created deepseek-v4-million-token-context from 1767aa445a7a
+
+## [2026-04-25T18:23:26+09:00] compile | created synthetic-datasets-mechanism-design-real-world from 2c35f6166aa8
+
+## [2026-04-25T18:23:43+09:00] compile | created hungary-art-world-silence-orban-16-years from e4b35b8cdfce
+
+## [2026-04-25T18:24:06+09:00] compile | created dragon-quest-smash-grow-april-21-launch from 3413439d95f4
+
+## [2026-04-25T18:24:23+09:00] compile | created ecom-rlve-adaptive-verifiable-environments from 2e3183420487
+
+## [2026-04-25T18:24:40+09:00] compile | created exploration-exploitation-errors-measurable-llm-agents from c8a241027810
+
+## [2026-04-25T18:24:57+09:00] compile | created google-cloud-next-2026-agentic-enterprise from c4a3f463f645
+
+## [2026-04-25T18:25:15+09:00] compile | created gemini-3-1-flash-tts-natural-language-voice-control from f2122a6a3ed6
+
+## [2026-04-25T18:25:46+09:00] compile | created diy-ai-autoprober-duct-tape-cnc from 6f2250da7ebb
+
+## [2026-04-25T18:26:00+09:00] compile | created hans-holbein-visceral-intimacy-painting from cba2211966e1
+
+## [2026-04-25T18:26:17+09:00] compile | created stop-sgv-data-center-nimby from 86681ea483a9
+
+## [2026-04-25T18:26:46+09:00] compile | created jean-shin-living-memorial-greenwood-cemetery from 83937f35f8c6
+
+## [2026-04-25T18:27:01+09:00] compile | created lacma-makeover-art-media-layoffs-lebanon-artist from 7d8fd8552cdc
+
+## [2026-04-25T18:27:19+09:00] compile | created jeffrey-angles-memory-of-three-year-old-poem-creation from e9ce552ffa1f
+
+## [2026-04-25T18:27:34+09:00] compile | created maria-britton-second-sleep-exhibition from a047503f0cc9
+
+## [2026-04-25T18:27:49+09:00] compile | created metal-slug-30th-anniversary-mission-reboot from 06e3e9a47761
+
+## [2026-04-25T18:28:11+09:00] compile | created meta-aws-graviton5-ai-agent-partnership from 2626f69f6575
+
+## [2026-04-25T18:28:34+09:00] compile | created nec-executive-ai-dashboard-system from 0e8381ccf54c
+
+## [2026-04-25T18:28:58+09:00] compile | created netflix-gundam-live-action-movie-production-start from 1bf2499d1a27
+
+## [2026-04-25T18:29:13+09:00] compile | created neverness-to-everness-launch-trailer-music-collaboration from 4caf9db77650
+
+## [2026-04-25T18:29:28+09:00] compile | created nude-performance-xandra-ibarra-mfa-boston from e234f26c1065
+
+## [2026-04-25T18:29:41+09:00] compile | created quantum-jamming-fundamental-principles from 382c31c07750
+
+## [2026-04-25T18:29:57+09:00] compile | created scifi-autonomous-ai-workflow from 44800b14e72f
+
+## [2026-04-25T18:30:13+09:00] compile | created simulating-human-cognition-heartbeat-driven-autonomous-thinking from ab97aba084de
+
+## [2026-04-25T18:30:31+09:00] compile | created claude-coding-vibes-getting-worse from 99dce1869f00
+
+## [2026-04-25T18:30:47+09:00] compile | created jan-morris-conversation-sara-wheeler from a521e99beb33
+
+## [2026-04-25T18:31:02+09:00] compile | created ignorant-art-historian-introduction from 24ea8b736445
+
+## [2026-04-25T18:31:17+09:00] compile | created soul-invention-language-humphrey from 6ec37e08a5c3
+
+## [2026-04-25T18:31:31+09:00] compile | created tool-overuse-illusion-llm-external-tools from 9e56de1e6dca
+
+## [2026-04-25T18:31:45+09:00] compile | created multimodal-sentence-transformers-training from 6300421969ef
+
+## [2026-04-25T18:32:10+09:00] compile | created bacterial-flagellar-motor-mechanism-discovery from a1a12b8f02a2
+
+## [2026-04-25T18:32:31+09:00] compile | created xmpp-era-internet-reflection-2023 from a0270ea10683
+
+## [2026-04-25T18:32:47+09:00] compile | created yojam-macos-browser-shim from 3906118eb281
+
+## [2026-04-25T18:33:01+09:00] compile | created burn-with-me-card-game-occult-rituals from 7959df6ec21d
+
+## [2026-04-25T18:33:15+09:00] compile | created trees-hate-you-indie-game from 5f0b0d559a4d
+
+## [2026-04-25T18:33:44+09:00] compile | created japan-project-glasswing-claude-mythos-ai-defense from 0c34d1bdd1fe
+
+## [2026-04-25T18:34:16+09:00] compile | created salesforce-headless-360-ai-agent-announcement from 47d1d15ad47b
+
+## [2026-04-25T18:34:34+09:00] compile | created ultraman-60th-anniversary-documentary-film from dc3ab1e6b668
+
+## [2026-04-25T18:34:53+09:00] compile | created ai-wildlife-photography-copyright-abuse from bb2dcbfeccfe
+
+## [2026-04-25T18:35:13+09:00] compile | created placebo-memory-improvement-elderly-study from 8679fb7b15cb
+
+## [2026-04-25T18:35:41+09:00] compile | created apple-google-store-nudify-apps-report from 97e406caf1cd
+
+## [2026-04-25T18:36:10+09:00] compile | created soulframe-naming-regret-souls-like-confusion from 62752e67af66
+
+## [2026-04-25T18:36:26+09:00] compile | created street-fighter-6-ingrid-character-release from 7e9bdf77985b
+
+## [2026-04-25T18:36:38+09:00] compile | created dragon-ball-xenoverse-3-announcement from 1b1f295994c2
+
+## [2026-04-25T18:37:27+09:00] compile | created nijisanji-y4t4-debut-twitch-streamers from ab3faf346c26
+
+## [2026-04-25T18:37:48+09:00] compile | created anime-transcription-copyright-conviction from ccef7abd498d
+
+## [2026-04-25T18:38:03+09:00] compile | created beast-of-reincarnation-game-freak-ps5 from 2586263d84e7
+
+## [2026-04-25T18:38:23+09:00] compile | created disney-1000-layoffs-marvel-visual-development from ae67e850eff4
+
+## [2026-04-25T18:38:39+09:00] compile | created seeda-rapper-criticizes-pop-yours-festival from 35226d1a6cc2
+
+## [2026-04-25T18:38:56+09:00] compile | created chinese-humanoid-robot-marathon-record from 57d465ab7f4f
+
+## [2026-04-25T18:40:19+09:00] compile | created james-webb-notch-season-2-mabito-horror from 2512889b7bc2
+
+## [2026-04-25T18:40:36+09:00] compile | created ollama-criticism-llama-cpp-recommendation from 70bebaf5b5cb
+
+## [2026-04-25T18:40:53+09:00] compile | created nishino-akihiro-straight-edge-trademark-opposition from 35125da882e3
+
+## [2026-04-25T18:41:08+09:00] compile | created kami-to-miko-akasaka-aka-scrap-mystery-game from 0b33eaf792d0
+
+## [2026-04-25T18:41:24+09:00] compile | created spotify-copyright-infringement-origins from 03116faba852
+
+## [2026-04-25T18:41:40+09:00] compile | created satoshi-kon-animation-analysis-book from 9a7f731a672f
+
+## [2026-04-25T18:41:40+09:00] compile:done | 65 compiled, 2 failed
+
+## [2026-04-25T18:41:40+09:00] index | 202 articles, 712 topics, 962 chunks
+
+## [2026-04-25T19:42:24+09:00] ingest | 3 ingested, 0 dups, 0 errors
+
+## [2026-04-25T19:44:05+09:00] compile | created india-ai-film-industry-mahabharat-ai-adaptation from 8df35277d8e1
+
+## [2026-04-25T19:44:23+09:00] compile | created ai-military-course-of-action-generation-system from e03634c1d4ee
+
+## [2026-04-25T19:44:23+09:00] compile:done | 2 compiled, 1 failed
+
+## [2026-04-25T19:44:24+09:00] index | 204 articles, 720 topics, 1008 chunks
+
+## [2026-04-25T20:11:29+09:00] ingest | 1 ingested, 0 dups, 0 errors
+
+## [2026-04-25T20:12:27+09:00] compile | created llm-tool-overuse-illusion from cfbda4d9922c
+
+## [2026-04-25T20:12:27+09:00] compile:done | 1 compiled, 1 failed
+
+## [2026-04-25T20:12:28+09:00] index | 205 articles, 722 topics, 1014 chunks
+

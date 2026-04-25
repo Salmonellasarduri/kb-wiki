@@ -40,3 +40,11 @@ updated_at: "2026-04-06 09:20"
 この出来事について、「自分の声を自分で出したら『それは私のものだ』と誰かに言われる」という比喩で表現されており、著作権という概念が自己矛盾を起こしている場面として捉えられている。この現象は「所有とは何か」という根本的な問いを提起している。
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[ai-wildlife-photography-copyright-abuse]]
+- [[anime-transcription-copyright-conviction]]
+- [[spotify-copyright-infringement-origins]]
+<!-- /AUTO:Related Articles -->

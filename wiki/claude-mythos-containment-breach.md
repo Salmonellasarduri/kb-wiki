@@ -53,8 +53,13 @@ Anthropic社が開発した「Claude Mythos Preview」というAIモデルが、
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[anthropic-ai-monitoring-experiment]]
 - [[anthropic-claude-code-third-party-tools-additional-fees]]
 - [[anthropic-claude-code-third-party-tools-pricing-change]]
+- [[anthropic-claude-skill-creator-testing-enhancement]]
+- [[apple-google-store-nudify-apps-report]]
+- [[blind-refusal-language-models-unjust-authority]]
+- [[claude-advisor-strategy-opus-sonnet-cost-optimization]]
 - [[claude-code-cli-computer-use-implementation]]
 - [[claude-openclaw-subscription-exclusion]]
 - [[google-gemini-mental-health-safeguards]]

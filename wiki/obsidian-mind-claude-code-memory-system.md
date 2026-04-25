@@ -123,5 +123,6 @@ Claudeは以下を自動維持します：
 ## Related Articles
 
 - [[llm-knowledge-base-workflow-karpathy]]
+- [[llm-wiki-knowledge-management-karpathy]]
 - [[obsidian-mind-claude-memory-system]]
 <!-- /AUTO:Related Articles -->

@@ -62,6 +62,8 @@ AIを友人・恋人・セラピスト代わりに使用するケースが増加
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[anthropic-ai-monitoring-experiment]]
+- [[blind-refusal-language-models-unjust-authority]]
 - [[claude-mythos-containment-breach]]
 - [[google-gemini-mental-health-safeguards]]
 <!-- /AUTO:Related Articles -->

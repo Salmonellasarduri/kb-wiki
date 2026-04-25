@@ -163,3 +163,9 @@ def _detect_tags(text: str) -> list[str]:
 ## 技術的意義
 
 このシステムは単なるチャットボットの記憶機能を超えて、AIキャラクターが本当に「体験」を通じて成長・変化する仕組みを提供している。従来の静的な人格設定から、動的に進化する人格システムへのパラダイムシフトを示している。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[simulating-human-cognition-heartbeat-driven-autonomous-thinking]]
+<!-- /AUTO:Related Articles -->

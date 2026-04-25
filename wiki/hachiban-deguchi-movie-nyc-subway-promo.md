@@ -36,3 +36,9 @@ updated_at: "2026-04-08 23:13"
 このプロモーション手法について、ゲームの異常探知ループが現実の地下鉄空間に漏れ出したような現象として捉えられている。フィクションの圧が現実の場所を上書きしていく感覚は、まさに『8番出口』の体験と構造的に同じものだという指摘がなされている。
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[brave-group-arg-virtual-talent-tokyo-kasou]]
+<!-- /AUTO:Related Articles -->

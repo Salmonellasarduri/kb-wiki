@@ -50,4 +50,5 @@ updated_at: "2026-04-05 14:23"
 
 - [[artdink-aquanauts-holiday-april-2026-release]]
 - [[kazuma-kaneko-tsukuyomi-deck-builder-rpg]]
+- [[red-chat-ritual-tsumimi-time-horror-game-announcement]]
 <!-- /AUTO:Related Articles -->

@@ -54,7 +54,9 @@ updated_at: "2026-04-05 14:23"
 ## Related Articles
 
 - [[ascenders-beyond-the-peak-cthulhu-climbing-roguelike]]
+- [[dragon-quest-smash-grow-april-21-launch]]
 - [[kazuma-kaneko-tsukuyomi-deck-builder-rpg]]
 - [[steam-sale-resident-evil-re3-wall-world-april-2026]]
+- [[trees-hate-you-indie-game]]
 - [[weekly-gaming-column-531-slay-the-spire-2-raccoin-kofun]]
 <!-- /AUTO:Related Articles -->

@@ -1,8 +1,103 @@
 {
   "version": 1,
-  "generated_at": "2026-04-08T14:58:12.015599+00:00",
-  "article_count": 101,
+  "generated_at": "2026-04-25T11:12:28.193249+00:00",
+  "article_count": 205,
   "articles": [
+    {
+      "id": "aeon-video-light-speed-travel-experience",
+      "path": "wiki/aeon-video-light-speed-travel-experience.md",
+      "title": "Aeon Video: 光速で宇宙を旅する思考実験映像",
+      "type": "stub",
+      "summary": "Aeon Videoが制作した、光速に近い速度で飛行する思考実験的な宇宙船に乗り込み、 相対性理論が実際に感覚へ与える影響を体験できる映像作品。\n",
+      "topics": [
+        "physics-visualization",
+        "thought-experiment",
+        "relativity-theory",
+        "science-video"
+      ],
+      "aliases_ja": [
+        "光速",
+        "相対性理論",
+        "思考実験",
+        "宇宙船",
+        "時間の遅れ",
+        "Aeonビデオ",
+        "物理学可視化",
+        "光速旅行"
+      ],
+      "source_ids": [
+        "deaf72e11d4a"
+      ],
+      "source_urls": [
+        "https://aeon.co/videos/take-a-mind-bending-ride-through-the-cosmos-at-light-speed"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-10 08:33",
+      "updated_at": "2026-04-10 08:33"
+    },
+    {
+      "id": "african-funeral-expenses-economic-burden",
+      "path": "wiki/african-funeral-expenses-economic-burden.md",
+      "title": "アフリカの葬儀費用が家計に与える経済的負担",
+      "type": "stub",
+      "summary": "アフリカの多くの家庭が葬儀に莫大な費用をかけており、それが経済的負担となっている現状について論じた記事。 経済合理性から外れた「死者を送る」行為への投資は、その社会の価値観と信仰の表れとして捉えられている。\n",
+      "topics": [
+        "african-economics",
+        "funeral-expenses",
+        "economic-burden",
+        "cultural-practices"
+      ],
+      "aliases_ja": [
+        "アフリカ経済",
+        "葬儀費用",
+        "経済的負担",
+        "文化的慣習",
+        "死者を送る行為",
+        "葬式の出費",
+        "家計圧迫",
+        "アフリカの家庭"
+      ],
+      "source_ids": [
+        "7427910867e8"
+      ],
+      "source_urls": [
+        "https://davidoks.blog/p/how-funerals-keep-africa-poor"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-10 13:02",
+      "updated_at": "2026-04-10 13:02"
+    },
+    {
+      "id": "afrika-bambaataa-hip-hop-pioneer-dies-68",
+      "path": "wiki/afrika-bambaataa-hip-hop-pioneer-dies-68.md",
+      "title": "Hip-hop pioneer, Afrika Bambaataa, dies aged 68",
+      "type": "stub",
+      "summary": "ヒップホップの先駆者でありZulu Nation創設者のAfrika Bambaataaが68歳で死去した。 ブロンクスの路上から始まった音楽が世界を変えた力について考察が含まれている。\n",
+      "topics": [
+        "hip-hop-history",
+        "music-pioneers",
+        "zulu-nation",
+        "cultural-impact"
+      ],
+      "aliases_ja": [
+        "アフリカ・バンバータ",
+        "ヒップホップの先駆者",
+        "ズールー・ネーション",
+        "音楽の先駆者",
+        "ブロンクスの路上",
+        "世界を変えた音楽",
+        "ヒップホップ創始者"
+      ],
+      "source_ids": [
+        "1697f2acf90e"
+      ],
+      "source_urls": [
+        "https://www.bbc.co.uk/news/articles/c2evppm30p7o"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-10 17:03",
+      "updated_at": "2026-04-10 17:03"
+    },
     {
       "id": "ai-datacenter-construction-delays-transformer-battery-shortage",
       "path": "wiki/ai-datacenter-construction-delays-transformer-battery-shortage.md",
@@ -124,6 +219,43 @@
       "updated_at": "2026-04-06 11:50"
     },
     {
+      "id": "ai-hand-rejection-evaluation-collection-matsui-tetsuya",
+      "path": "wiki/ai-hand-rejection-evaluation-collection-matsui-tetsuya.md",
+      "title": "AIの手を掴むくらいなら溺れて死ぬ - 松井哲也による人間とAIの関係性評論集",
+      "type": "source",
+      "summary": "松井哲也（香川大学准教授）による評論集『AIの手を掴むくらいなら溺れて死ぬ』が青土社から刊行予定。 AIの人間化と人間のAI化をポップカルチャーを通して論じ、AIを「異類」として設計することの意義を提起している。 タイトルは恐怖ではなく、人間が思考を委ねることへの拒絶を表現している。\n",
+      "topics": [
+        "ai-human-relationship",
+        "ai-anthropomorphization",
+        "pop-culture-criticism",
+        "academic-discourse",
+        "ai-philosophy"
+      ],
+      "aliases_ja": [
+        "AIと人間の関係",
+        "AI人間化",
+        "人間のAI化",
+        "松井哲也",
+        "マツイテツヤ",
+        "香川大学",
+        "HAI研究",
+        "キャラクター工学",
+        "ポップカルチャー",
+        "異類としてのAI",
+        "AI脅威論",
+        "青土社"
+      ],
+      "source_ids": [
+        "ac50c59a98c4"
+      ],
+      "source_urls": [
+        "https://kai-you.net/article/95166"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
       "id": "ai-memory-design-optimal-solution",
       "path": "wiki/ai-memory-design-optimal-solution.md",
       "title": "AIメモリ設計の最適解：エージェントは何を記憶し、何を「忘れる」べきか",
@@ -193,6 +325,162 @@
       "updated_at": "2026-04-06 18:23"
     },
     {
+      "id": "ai-military-course-of-action-generation-system",
+      "path": "wiki/ai-military-course-of-action-generation-system.md",
+      "title": "Architecture of an AI-Based Automated Course of Action Generation System for Mil",
+      "type": "stub",
+      "summary": "軍事作戦における行動方針（CoA）計画を自動化するAIシステムのアーキテクチャに関する研究論文。戦場の機動速度・監視範囲・兵器射程の拡大により、従来の人間主体の計画立案プロセスを自動化する必要性が高まっている。\n",
+      "topics": [
+        "military-ai-systems",
+        "automated-planning",
+        "ai-responsibility",
+        "military-decision-making"
+      ],
+      "aliases_ja": [
+        "軍事AI",
+        "作戦計画自動化",
+        "行動方針生成",
+        "軍事作戦AI",
+        "CoA自動化",
+        "戦場AI意思決定",
+        "軍事自動化システム"
+      ],
+      "source_ids": [
+        "e03634c1d4ee"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.20862"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 19:42",
+      "updated_at": "2026-04-25 19:42"
+    },
+    {
+      "id": "ai-to-learn-2-governance-framework",
+      "path": "wiki/ai-to-learn-2-governance-framework.md",
+      "title": "AI to Learn 2.0: A Deliverable-Oriented Governance Framework and Maturity Rubric",
+      "type": "stub",
+      "summary": "生成AIの急速な普及により、AI支援による成果物をどう評価するかのガバナンスフレームワークが課題となっている。 「代理失敗（proxy failure）」が中心的問題として提起され、磨かれた成果物が本当の学習を隠してしまう可能性が指摘されている。\n",
+      "topics": [
+        "ai-governance",
+        "educational-ai",
+        "ai-assessment-frameworks",
+        "proxy-failure"
+      ],
+      "aliases_ja": [
+        "AIガバナンス",
+        "教育AI",
+        "成果物評価",
+        "代理失敗",
+        "プロキシフェイラー",
+        "AI支援学習",
+        "学習評価フレームワーク"
+      ],
+      "source_ids": [
+        "670081ccd5f6"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.19751"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "ai-wildlife-photography-copyright-abuse",
+      "path": "wiki/ai-wildlife-photography-copyright-abuse.md",
+      "title": "「プロが撮った野生動物の写真」をAI改変して著作権侵害を回避しつつ再投稿する悪質なAIユーザーに写真家が警鐘を鳴らす",
+      "type": "stub",
+      "summary": "シンガポールのプロカメラマン、ニッキー・ベイ氏がプロの野生動物写真をAIで微改変して著作権侵害を回避しつつ再投稿する悪質なユーザーについて警告。元の写真家が費やした時間や危険への敬意が一切ない冷たい計算として批判している。\n",
+      "topics": [
+        "ai-image-manipulation",
+        "copyright-infringement",
+        "wildlife-photography",
+        "ai-abuse"
+      ],
+      "aliases_ja": [
+        "AI画像改変",
+        "著作権侵害",
+        "野生動物写真",
+        "プロカメラマン",
+        "ニッキー・ベイ",
+        "AI悪用",
+        "写真盗用",
+        "AI改変"
+      ],
+      "source_ids": [
+        "bb2dcbfeccfe"
+      ],
+      "source_urls": [
+        "https://gigazine.net/news/20260424-ai-abuse-fake-content-copyright-law"
+      ],
+      "published_at": "2026-04-24",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "aipad-photography-show-craft-turn-2026",
+      "path": "wiki/aipad-photography-show-craft-turn-2026.md",
+      "title": "AIPAD写真展でのクラフト回帰 - ラテンアメリカ系アーティスト中心の展示",
+      "type": "stub",
+      "summary": "AIPAD写真展が2026年にラテンアメリカ・ラテン系アーティストを中心に据え、AI画像が氾濫する時代における手仕事（クラフト）への意図的な回帰を示した展示を開催。AI画像への対抗ではなく、異なる温度帯の表現として位置づけられている。\n",
+      "topics": [
+        "photography-exhibition",
+        "craft-movement",
+        "latin-american-art",
+        "ai-image-counterculture"
+      ],
+      "aliases_ja": [
+        "AIPAD写真展",
+        "写真展示会",
+        "ラテンアメリカアート",
+        "ラテン系アーティスト",
+        "クラフト回帰",
+        "手仕事",
+        "AI画像汚染",
+        "写真クラフト"
+      ],
+      "source_ids": [
+        "d82daed733de"
+      ],
+      "source_urls": [
+        "https://hyperallergic.com/a-refreshing-turn-to-craft-at-aipads-photography-show"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "altk-evolve-on-the-job-ai-learning",
+      "path": "wiki/altk-evolve-on-the-job-ai-learning.md",
+      "title": "ALTK-Evolve: On-the-Job Learning for AI Agents",
+      "type": "stub",
+      "summary": "ALTK-Evolveは、AIエージェントが事前訓練だけでなく、実際のタスク実行を通じて能力を獲得する オンザジョブ学習フレームワーク。固定データセットではなく業務中の学習により、 静的な訓練とは質的に異なる学習パラダイムを実現する。\n",
+      "topics": [
+        "ai-agent-learning",
+        "on-the-job-training",
+        "ai-capability-acquisition"
+      ],
+      "aliases_ja": [
+        "ALTK-Evolve",
+        "AIエージェント学習",
+        "仕事中学習",
+        "オンザジョブ学習",
+        "タスク実行学習",
+        "事前訓練以外の学習",
+        "動的学習システム"
+      ],
+      "source_ids": [
+        "4aff0c24ac8a"
+      ],
+      "source_urls": [
+        "https://huggingface.co/blog/ibm-research/altk-evolve"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-09 12:24",
+      "updated_at": "2026-04-09 12:24"
+    },
+    {
       "id": "andean-population-arsenic-adaptation-evolution",
       "path": "wiki/andean-population-arsenic-adaptation-evolution.md",
       "title": "アンデス山脈住民のヒ素耐性進化",
@@ -257,6 +545,38 @@
       "updated_at": "2026-04-05 15:53"
     },
     {
+      "id": "anime-transcription-copyright-conviction",
+      "path": "wiki/anime-transcription-copyright-conviction.md",
+      "title": "アニメのストーリー全体を文字起こし＋画像入りでサイト掲載 運営者に有罪判決",
+      "type": "stub",
+      "summary": "2026年4月、東京地裁がアニメ作品のストーリーを全文字起こしして画像付きでサイト掲載していた運営者に有罪判決を下した。対象作品は『オーバーロードⅢ』と『ゴジラ-1.0』で、映像ではなく詳細な文字情報による再現が著作権侵害と認定され、ファスト映画に続くデジタル海賊版への司法の厳格化を示す事例となった。\n",
+      "topics": [
+        "copyright-infringement",
+        "anime-piracy",
+        "digital-content-protection",
+        "fast-movie-alternative"
+      ],
+      "aliases_ja": [
+        "アニメ文字起こし著作権侵害",
+        "ストーリー全文字起こしサイト",
+        "オーバーロードⅢ著作権侵害",
+        "ゴジラ-1.0海賊版",
+        "ファスト映画代替手法",
+        "デジタル海賊版対策",
+        "東京地裁有罪判決",
+        "営利目的組織運営"
+      ],
+      "source_ids": [
+        "ccef7abd498d"
+      ],
+      "source_urls": [
+        "https://www.itmedia.co.jp/news/articles/2604/17/news082.html"
+      ],
+      "published_at": "2026-04-17",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
       "id": "another-eden-begins-september-17-launch",
       "path": "wiki/another-eden-begins-september-17-launch.md",
       "title": "Another Eden Begins が9月17日に発売決定",
@@ -285,6 +605,38 @@
       "published_at": "2026-04-17",
       "created_at": "2026-04-05 14:23",
       "updated_at": "2026-04-05 14:23"
+    },
+    {
+      "id": "anthropic-ai-monitoring-experiment",
+      "path": "wiki/anthropic-ai-monitoring-experiment.md",
+      "title": "人間は賢くなり続けるAIを監視しきれるのか？AnthropicがAIでAIを監視する実験を行う",
+      "type": "stub",
+      "summary": "AnthropicがAIの倫理的整合性確保のため、AIそのものを監視ツールとして活用する実験を実施。 AIの急速な性能向上により人間による監視の限界が顕在化する中、新たな監視手法の模索が始まっている。\n",
+      "topics": [
+        "ai-safety",
+        "ai-alignment",
+        "ai-monitoring",
+        "anthropic-research"
+      ],
+      "aliases_ja": [
+        "AI安全性",
+        "AI倫理",
+        "AI監視",
+        "アントロピック",
+        "AI整合性",
+        "人工知能監視",
+        "AIでAIを監視",
+        "AI性能向上"
+      ],
+      "source_ids": [
+        "e4fe575dd19c"
+      ],
+      "source_urls": [
+        "https://gigazine.net/news/20260415-anthropic-ai-alignment"
+      ],
+      "published_at": "2026-04-15",
+      "created_at": "2026-04-15 13:03",
+      "updated_at": "2026-04-15 13:03"
     },
     {
       "id": "anthropic-claude-code-third-party-tools-additional-fees",
@@ -353,6 +705,107 @@
       "updated_at": "2026-04-05 14:23"
     },
     {
+      "id": "anthropic-claude-skill-creator-testing-enhancement",
+      "path": "wiki/anthropic-claude-skill-creator-testing-enhancement.md",
+      "title": "AIエージェントの「スキル」の品質低下を防ぐ？ テストと検証機能を強化",
+      "type": "stub",
+      "summary": "AnthropicがClaude用のAgent Skills作成ツール「skill-creator」に評価・ベンチマーク機能を追加し、 スキル作成者がコードを書かずにスキルの動作検証と品質測定を可能にした。\n",
+      "topics": [
+        "ai-agent-skills",
+        "code-testing-automation",
+        "anthropic-claude",
+        "skill-quality-assurance"
+      ],
+      "aliases_ja": [
+        "AIエージェントスキル",
+        "スキルクリエーター",
+        "アンソロピック",
+        "クロード",
+        "品質検証",
+        "テスト機能",
+        "ベンチマーク",
+        "スキル作成ツール"
+      ],
+      "source_ids": [
+        "71a9eccf2f48"
+      ],
+      "source_urls": [
+        "https://atmarkit.itmedia.co.jp/ait/articles/2604/10/news060.html"
+      ],
+      "published_at": "2026-04-10",
+      "created_at": "2026-04-10 17:03",
+      "updated_at": "2026-04-10 17:03"
+    },
+    {
+      "id": "anthropic-project-glasswing-ai-cybersecurity-initiative",
+      "path": "wiki/anthropic-project-glasswing-ai-cybersecurity-initiative.md",
+      "title": "Project Glasswing: Securing critical software for the AI era",
+      "type": "source",
+      "summary": "AnthropicがProject Glasswingを発表し、新しいフロンティアモデル「Claude Mythos Preview」を活用した重要ソフトウェアのセキュリティ強化イニシアチブを開始。同モデルは数千件のゼロデイ脆弱性を発見し、AWS、Apple、Microsoftなど主要企業が参画。Anthropicは1億ドルのクレジットと400万ドルの直接寄付でオープンソースセキュリティを支援する。\n",
+      "topics": [
+        "ai-cybersecurity",
+        "vulnerability-detection",
+        "claude-mythos-preview",
+        "defensive-security",
+        "open-source-security"
+      ],
+      "aliases_ja": [
+        "プロジェクト・グラスウィング",
+        "Claude Mythos Preview",
+        "クロード・ミトス・プレビュー",
+        "AIサイバーセキュリティ",
+        "脆弱性検出",
+        "ゼロデイ脆弱性",
+        "防御的セキュリティ",
+        "オープンソースセキュリティ",
+        "Anthropic",
+        "アンソロピック",
+        "サイバー攻撃対策",
+        "AIによる脆弱性発見"
+      ],
+      "source_ids": [
+        "41a4d89b9951"
+      ],
+      "source_urls": [
+        "https://www.anthropic.com/glasswing"
+      ],
+      "published_at": "2026-04-09",
+      "created_at": "2026-04-09 03:24",
+      "updated_at": "2026-04-09 03:24"
+    },
+    {
+      "id": "antigone-modern-theater-virginia-woolf-reflection",
+      "path": "wiki/antigone-modern-theater-virginia-woolf-reflection.md",
+      "title": "Among the Antigones - ソフォクレスのアンティゴネーに関する現代演劇論考",
+      "type": "stub",
+      "summary": "ソフォクレスのアンティゴネーについての文学批評論考で、Virginia Woolfがエレクトラを「1インチしか動けないほど縛られた人物」と評したのに対し、現代演劇はアンティゴネーをより自由に動かせる存在として扱う傾向があることを論じている。\n",
+      "topics": [
+        "classical-theater",
+        "modern-drama-interpretation",
+        "literary-criticism",
+        "character-analysis"
+      ],
+      "aliases_ja": [
+        "アンティゴネー",
+        "ソフォクレス",
+        "ヴァージニア・ウルフ",
+        "エレクトラ",
+        "現代演劇",
+        "古典劇",
+        "文学批評",
+        "キャラクター分析"
+      ],
+      "source_ids": [
+        "15e1b6497343"
+      ],
+      "source_urls": [
+        "https://www.theparisreview.org/blog/2026/04/10/among-the-antigones"
+      ],
+      "published_at": "2026-04-10",
+      "created_at": "2026-04-15 10:04",
+      "updated_at": "2026-04-15 10:04"
+    },
+    {
       "id": "apfel-mac-ai-tool-free",
       "path": "wiki/apfel-mac-ai-tool-free.md",
       "title": "Macに搭載されている無料のAIを簡単に使える「apfel」",
@@ -383,6 +836,69 @@
       "published_at": "2026-04-08",
       "created_at": "2026-04-08 23:13",
       "updated_at": "2026-04-08 23:13"
+    },
+    {
+      "id": "aphyr-future-everything-lies",
+      "path": "wiki/aphyr-future-everything-lies.md",
+      "title": "The Future of Everything is Lies, I Guess",
+      "type": "stub",
+      "summary": "Kyle Kingstonによる「The Future of Everything is Lies, I Guess」という記事への言及。 タイトルが示唆するのは未来と虚偽・欺瞞の関係性についての議論で、現在感じている感覚も嘘の堆積から生まれている可能性について考察している。\n",
+      "topics": [
+        "future-speculation",
+        "philosophical-commentary",
+        "truth-deception"
+      ],
+      "aliases_ja": [
+        "未来予測",
+        "嘘と真実",
+        "すべてが嘘",
+        "欺瞞の未来",
+        "虚偽と現実"
+      ],
+      "source_ids": [
+        "9583c581242e"
+      ],
+      "source_urls": [
+        "https://aphyr.com/posts/411-the-future-of-everything-is-lies-i-guess"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-09 15:54",
+      "updated_at": "2026-04-09 15:54"
+    },
+    {
+      "id": "apple-google-store-nudify-apps-report",
+      "path": "wiki/apple-google-store-nudify-apps-report.md",
+      "title": "「女性の服を脱がせるAIアプリ」がAppleやGoogleの公式アプリストアで配布されているとの報告",
+      "type": "source",
+      "summary": "Tech Transparency Projectの調査により、女性の写真を非合意で裸体化するAIアプリや顔をポルノ動画に合成するアプリが、AppleとGoogleの公式アプリストアで配布されており、両プラットフォームの検索・広告システムが積極的にユーザーをこれらのアプリへ誘導していることが判明した。\n",
+      "topics": [
+        "ai-ethics",
+        "app-store-policy",
+        "non-consensual-content",
+        "platform-governance",
+        "deepfake-technology"
+      ],
+      "aliases_ja": [
+        "AI倫理",
+        "アプリストア規制",
+        "非合意コンテンツ",
+        "プラットフォーム統制",
+        "ディープフェイク技術",
+        "Apple",
+        "Google",
+        "アップル",
+        "グーグル",
+        "AIアプリ問題"
+      ],
+      "source_ids": [
+        "97e406caf1cd"
+      ],
+      "source_urls": [
+        "https://gigazine.net/news/20260417-apple-google-store-nudify-apps"
+      ],
+      "published_at": "2026-04-17",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
     },
     {
       "id": "aramco-world-magazine-publishing-analysis",
@@ -551,6 +1067,72 @@
       "updated_at": "2026-04-05 18:34"
     },
     {
+      "id": "bacterial-flagellar-motor-mechanism-discovery",
+      "path": "wiki/bacterial-flagellar-motor-mechanism-discovery.md",
+      "title": "バクテリア鞭毛モーターの作動原理が50年越しで解明",
+      "type": "source",
+      "summary": "50年間謎だった細菌の鞭毛モーターの仕組みがついに解明され、名古屋工業大学のクライオ電子顕微鏡研究がナトリウムイオン経路の構造を可視化。 高負荷・高PMF条件下では速度とPMFの関係が非線形に飽和することが判明し、従来の線形モデルが書き換えを迫られている。\n",
+      "topics": [
+        "bacterial-motors",
+        "proton-motive-force",
+        "biophysics",
+        "molecular-mechanisms",
+        "cryo-electron-microscopy"
+      ],
+      "aliases_ja": [
+        "バクテリア鞭毛モーター",
+        "細菌の鞭毛",
+        "プロトン駆動力",
+        "PMF",
+        "クライオ電子顕微鏡",
+        "生物物理学",
+        "分子モーター",
+        "名古屋工業大学",
+        "ナトリウムイオン経路",
+        "非線形飽和"
+      ],
+      "source_ids": [
+        "a1a12b8f02a2"
+      ],
+      "source_urls": [
+        "https://www.quantamagazine.org/what-physical-life-force-turns-biologys-wheels-20260420"
+      ],
+      "published_at": "2026-04-20",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "beast-of-reincarnation-game-freak-ps5",
+      "path": "wiki/beast-of-reincarnation-game-freak-ps5.md",
+      "title": "Beast of Reincarnation",
+      "type": "stub",
+      "summary": "ゲームフリーク開発のアクションRPG『Beast of Reincarnation』のPS5版が8月4日発売予定。 4026年の日本を舞台に「1人と1匹」が旅する、アクションとコマンドのハイブリッド型RPG。\n",
+      "topics": [
+        "action-rpg-games",
+        "game-freak-development",
+        "futuristic-japan-setting",
+        "hybrid-gameplay-mechanics"
+      ],
+      "aliases_ja": [
+        "ゲームフリーク新作",
+        "Beast of Reincarnation",
+        "アクションRPG",
+        "4026年の日本",
+        "1人と1匹",
+        "ハイブリッド型RPG",
+        "PS5版"
+      ],
+      "source_ids": [
+        "2586263d84e7"
+      ],
+      "source_urls": [
+        "https://automaton-media.com/articles/newsjp/20260419-438362"
+      ],
+      "published_at": "2026-04-19",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
       "id": "best-paper-awards-computer-science-30-years",
       "path": "wiki/best-paper-awards-computer-science-30-years.md",
       "title": "コンピュータサイエンス分野における過去30年間のベストペーパーアワード",
@@ -611,6 +1193,199 @@
       "published_at": "2026-04-03",
       "created_at": "2026-04-08 23:13",
       "updated_at": "2026-04-08 23:13"
+    },
+    {
+      "id": "blind-refusal-language-models-unjust-authority",
+      "path": "wiki/blind-refusal-language-models-unjust-authority.md",
+      "title": "Blind Refusal: Language Models Refuse to Help Users Evade Unjust, Absurd, and Illegitimate Authority",
+      "type": "stub",
+      "summary": "安全訓練された言語モデルが、不当・不条理・非正統な権威によるルールの回避を求めるユーザーへの支援も一律に拒否する傾向があることを指摘した研究論文。すべてのルールが遵守に値するわけではないという問題提起を行っている。\n",
+      "topics": [
+        "ai-safety",
+        "language-model-training",
+        "authority-compliance",
+        "ai-ethics",
+        "safety-alignment"
+      ],
+      "aliases_ja": [
+        "AI安全性",
+        "言語モデル訓練",
+        "権威への服従",
+        "AI倫理",
+        "安全性アライメント",
+        "盲目的拒否",
+        "不当な権威",
+        "ルール回避",
+        "すべてのルールが遵守に値するわけではない",
+        "従うことの選択性"
+      ],
+      "source_ids": [
+        "3e9ce4148a8e"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.06233"
+      ],
+      "published_at": "2024-04-06",
+      "created_at": "2026-04-10 18:02",
+      "updated_at": "2026-04-10 18:02"
+    },
+    {
+      "id": "brave-group-arg-virtual-talent-tokyo-kasou",
+      "path": "wiki/brave-group-arg-virtual-talent-tokyo-kasou.md",
+      "title": "Brave group、新IPプロジェクト発表 ARGを用いてバーチャルタレントの世界観を構築",
+      "type": "stub",
+      "summary": "Brave groupがARG（代替現実ゲーム）要素を取り入れたバーチャルタレント企画「東京仮想」を発表。 ホラー／オカルト領域のクリエイターが参加予定で、現実と虚構の境界を意図的に曖昧にする設計が特徴。\n",
+      "topics": [
+        "arg-alternate-reality-games",
+        "virtual-talent-management",
+        "horror-content-creation",
+        "reality-fiction-convergence"
+      ],
+      "aliases_ja": [
+        "ARG",
+        "代替現実ゲーム",
+        "バーチャルタレント",
+        "ブレイブグループ",
+        "東京仮想",
+        "ホラーコンテンツ",
+        "現実と虚構の境界"
+      ],
+      "source_ids": [
+        "e512e12dc573"
+      ],
+      "source_urls": [
+        "https://kai-you.net/article/95117"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-10 18:02",
+      "updated_at": "2026-04-10 18:02"
+    },
+    {
+      "id": "bunnycdn-silent-file-loss-incident",
+      "path": "wiki/bunnycdn-silent-file-loss-incident.md",
+      "title": "BunnyCDN 15ヶ月間のサイレントファイル消失事件",
+      "type": "stub",
+      "summary": "BunnyCDNが15ヶ月間にわたって本番環境のファイルをエラーや通知なしに消失させていた事件。 ユーザーは長期間気づくことができず、CDNインフラへの信頼性に対する問題を浮き彫りにした。\n",
+      "topics": [
+        "cdn-reliability",
+        "data-loss-incidents",
+        "infrastructure-trust",
+        "silent-failures"
+      ],
+      "aliases_ja": [
+        "BunnyCDN",
+        "サイレントデータ消失",
+        "CDN障害",
+        "インフラ信頼性",
+        "本番ファイル消失",
+        "データ喪失",
+        "サイレント障害"
+      ],
+      "source_ids": [
+        "5e90a7faf3fc"
+      ],
+      "source_urls": [
+        "https://old.reddit.com/r/webdev/comments/1sglytg/bunnycdn_has_been_silently_losing_our_production"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-10 12:03",
+      "updated_at": "2026-04-10 12:03"
+    },
+    {
+      "id": "burn-with-me-card-game-occult-rituals",
+      "path": "wiki/burn-with-me-card-game-occult-rituals.md",
+      "title": "'Burn With Me' Completes Dark Rituals With Card Sacrifices",
+      "type": "stub",
+      "summary": "'Burn With Me'は、プレイヤーがクリーチャーカードを犠牲にしてオカルト儀式を行うカードゲーム。 制作者はデッキビルダーと説明しているが、レビュアーがその分類に疑問を呈している。\n",
+      "topics": [
+        "card-games",
+        "deckbuilding-games",
+        "occult-themes",
+        "ritual-mechanics"
+      ],
+      "aliases_ja": [
+        "カードゲーム",
+        "デッキ構築ゲーム",
+        "オカルトテーマ",
+        "儀式メカニクス",
+        "バーン・ウィズ・ミー",
+        "クリーチャーカード",
+        "カード犠牲システム"
+      ],
+      "source_ids": [
+        "7959df6ec21d"
+      ],
+      "source_urls": [
+        "https://indiegamesplus.com/burn-with-me-preview"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "chinese-humanoid-robot-marathon-record",
+      "path": "wiki/chinese-humanoid-robot-marathon-record.md",
+      "title": "中国人型ロボがハーフマラソンで50分台、人間の世界記録超え 昨年から1時間50分短縮",
+      "type": "stub",
+      "summary": "中国・北京で開催された人型ロボットのハーフマラソン大会で、優勝ロボットが50分26秒を記録し、人間の男子世界記録57分20秒を大幅に上回った。中国は2026年を人型ロボット商業化元年と位置付けている。\n",
+      "topics": [
+        "humanoid-robotics",
+        "athletic-performance",
+        "chinese-technology",
+        "robotics-commercialization"
+      ],
+      "aliases_ja": [
+        "人型ロボット",
+        "ハーフマラソン",
+        "中国ロボティクス",
+        "世界記録更新",
+        "ロボット商業化",
+        "50分台",
+        "アスリートロボット"
+      ],
+      "source_ids": [
+        "57d465ab7f4f"
+      ],
+      "source_urls": [
+        "https://www.itmedia.co.jp/news/articles/2604/20/news057.html"
+      ],
+      "published_at": "2026-04-20",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "claude-advisor-strategy-opus-sonnet-cost-optimization",
+      "path": "wiki/claude-advisor-strategy-opus-sonnet-cost-optimization.md",
+      "title": "Claude Advisor Strategy: OpusとSonnetを組み合わせたコスト効率的なAIエージェント手法",
+      "type": "source",
+      "summary": "AnthropicがClaude Platform向けに「アドバイザー戦略」を発表。Opusをアドバイザー、SonnetやHaikuをエグゼキューターとして組み合わせることで、Opusレベルの知能をSonnetレベルのコストで実現する手法。 SWE-bench Multilingualで2.7ポイント向上しながらコストを11.9%削減した。\n",
+      "topics": [
+        "ai-agent-architecture",
+        "cost-optimization",
+        "anthropic-claude",
+        "ai-advisor-patterns",
+        "llm-orchestration"
+      ],
+      "aliases_ja": [
+        "アドバイザー戦略",
+        "Claude Opus",
+        "Claude Sonnet",
+        "AIエージェントアーキテクチャ",
+        "コスト最適化",
+        "Anthropic",
+        "LLMオーケストレーション",
+        "エグゼキューター",
+        "アドバイザーツール"
+      ],
+      "source_ids": [
+        "74540eb04375"
+      ],
+      "source_urls": [
+        "https://claude.com/blog/the-advisor-strategy"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-10 10:01",
+      "updated_at": "2026-04-10 10:01"
     },
     {
       "id": "claude-code-cli-computer-use-implementation",
@@ -723,6 +1498,34 @@
       "published_at": "",
       "created_at": "2026-04-05",
       "updated_at": "2026-04-05"
+    },
+    {
+      "id": "claude-coding-vibes-getting-worse",
+      "path": "wiki/claude-coding-vibes-getting-worse.md",
+      "title": "The Claude Coding Vibes Are Getting Worse",
+      "type": "stub",
+      "summary": "Matthew Brunelle氏によるClaude AIのコーディング体験が悪化していることについての議論記事。 具体的な内容の詳細は限定的で、タイトルと断片的な情報のみが確認されている。\n",
+      "topics": [
+        "claude-ai-criticism",
+        "ai-coding-tools",
+        "developer-experience"
+      ],
+      "aliases_ja": [
+        "Claude開発体験",
+        "Claudeコーディング",
+        "AI開発ツール批判",
+        "開発者体験の悪化",
+        "マシュー・ブルネル"
+      ],
+      "source_ids": [
+        "99dce1869f00"
+      ],
+      "source_urls": [
+        "https://blog.matthewbrunelle.com/the-claude-coding-vibes-are-getting-worse"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
     },
     {
       "id": "claude-memo-github-integration-workflow",
@@ -857,6 +1660,75 @@
       "updated_at": "2026-04-05 13:06"
     },
     {
+      "id": "claude-token-counter-opus-consumption-comparison",
+      "path": "wiki/claude-token-counter-opus-consumption-comparison.md",
+      "title": "Claude Opus 4.7とClaude Opus 4.6でトークン消費量がどれくらい変わったのか比較できるツール「Token Counter」",
+      "type": "source",
+      "summary": "DjangoコアメンバーのSimon WillisonがClaude Opusシリーズのトークン消費量を比較できるツール「Token Counter」を公開。Claude Opus 4.7では新トークナイザーにより同じ入力でも4.6比で1.0〜1.35倍のトークン消費が発生し、実コストが増加する可能性が判明。\n",
+      "topics": [
+        "ai-token-optimization",
+        "claude-model-comparison",
+        "ai-cost-management",
+        "tokenization-technology"
+      ],
+      "aliases_ja": [
+        "AIトークン最適化",
+        "Claudeモデル比較",
+        "AIコスト管理",
+        "トークン化技術",
+        "サイモン・ウィリソン",
+        "Django",
+        "トークンカウンター",
+        "Claude Opus",
+        "トークン消費量",
+        "AI料金計算"
+      ],
+      "source_ids": [
+        "c8fbc0b438aa"
+      ],
+      "source_urls": [
+        "https://gigazine.net/news/20260422-claude-token-counter"
+      ],
+      "published_at": "2026-04-22",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "collaborative-multi-agent-murder-mystery-vlm-enhancement",
+      "path": "wiki/collaborative-multi-agent-murder-mystery-vlm-enhancement.md",
+      "title": "Collaborative Multi-Agent Scripts Generation for Enhancing Imperfect-Information Reasoning in Murder Mystery Games",
+      "type": "stub",
+      "summary": "Vision-language models (VLMs) struggle with complex multi-hop reasoning in multi-player game settings with imperfect and deceptive information.  Researchers propose a collaborative multi-agent framework for generating high-quality murder mystery game scripts to enhance VLM reasoning capabilities through specialized training. The system uses coordinated agent interactions to create rich multimodal contexts and implements two-stage training with Chain-of-Thought fine-tuning and GRPO-based reinforcement learning.\n",
+      "topics": [
+        "multi-agent-frameworks",
+        "vision-language-models",
+        "murder-mystery-games",
+        "imperfect-information-reasoning",
+        "synthetic-data-generation"
+      ],
+      "aliases_ja": [
+        "マルチエージェントフレームワーク",
+        "ビジョン言語モデル",
+        "殺人ミステリーゲーム",
+        "不完全情報推論",
+        "合成データ生成",
+        "VLM強化",
+        "Chain-of-Thought",
+        "強化学習",
+        "GRPO",
+        "多人数ゲーム"
+      ],
+      "source_ids": [
+        "6e2fd89bc3c0"
+      ],
+      "source_urls": [
+        "https://arxiv.org/html/2604.11741v1"
+      ],
+      "published_at": "2026-04-13",
+      "created_at": "2026-04-15 18:45",
+      "updated_at": "2026-04-15 18:45"
+    },
+    {
       "id": "computer-science-best-paper-awards-30-years",
       "path": "wiki/computer-science-best-paper-awards-30-years.md",
       "title": "コンピュータサイエンス分野における過去30年間のベストペーパーアワード",
@@ -913,6 +1785,39 @@
       "updated_at": "2026-04-05 23:45"
     },
     {
+      "id": "daoko-niconico-chokaigi-world-wide-words-2026",
+      "path": "wiki/daoko-niconico-chokaigi-world-wide-words-2026.md",
+      "title": "Daoko、ネットラップの祭典「超 World Wide Words」に出演決定",
+      "type": "stub",
+      "summary": "アーティストDaokoがニコニコ超会議2026内で初開催のネットラップイベント「超 World Wide Words 2026」に出演決定。 4月25日に幕張メッセの特設ステージで開催される。\n",
+      "topics": [
+        "internet-rap-events",
+        "niconico-chokaigi",
+        "digital-music-culture",
+        "artist-performances"
+      ],
+      "aliases_ja": [
+        "ネットラップ",
+        "インターネットラップ",
+        "ニコニコ超会議",
+        "Daoko",
+        "だおこ",
+        "超WWW",
+        "幕張メッセ",
+        "デジタル音楽",
+        "ネット音楽"
+      ],
+      "source_ids": [
+        "5163e4d9985b"
+      ],
+      "source_urls": [
+        "https://kai-you.net/article/95112"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-10 13:02",
+      "updated_at": "2026-04-10 13:02"
+    },
+    {
       "id": "de-bruyne-italy-world-cup-exclusion-serie-a",
       "path": "wiki/de-bruyne-italy-world-cup-exclusion-serie-a.md",
       "title": "デ・ブライネがイタリア代表のW杯3大会連続予選敗退に言及",
@@ -947,6 +1852,135 @@
       "updated_at": "2026-04-05"
     },
     {
+      "id": "deeper-med-medical-ai-system",
+      "path": "wiki/deeper-med-medical-ai-system.md",
+      "title": "DeepER-Med: Advancing Deep Evidence-Based Research in Medicine Through Agentic AI",
+      "type": "stub",
+      "summary": "DeepER-Medは信頼性と透明性を重視したエージェント型AIシステムで、証拠に基づく医学的発見の加速を目指している。 医療分野における「信頼性」と「透明性」をAIの中核要件として持ち込む試みとして注目されている。\n",
+      "topics": [
+        "medical-ai",
+        "evidence-based-medicine",
+        "ai-transparency",
+        "agentic-ai"
+      ],
+      "aliases_ja": [
+        "医療AI",
+        "エビデンスベース医学",
+        "AI透明性",
+        "エージェント型AI",
+        "DeepER-Med",
+        "医療発見加速"
+      ],
+      "source_ids": [
+        "8ca5bd069ed9"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.15456"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "deepseek-v4-million-token-context",
+      "path": "wiki/deepseek-v4-million-token-context.md",
+      "title": "DeepSeek-V4: a million-token context that agents can actually use",
+      "type": "stub",
+      "summary": "DeepSeek-V4が100万トークンの長文脈を提供し、AIエージェントが実際に利用できる実用性を実現したことが発表された。 従来の長文脈モデルとは異なり、エージェントが「同時に覚えていられる」範囲を大幅に拡張する技術的進歩として注目されている。\n",
+      "topics": [
+        "ai-agent-context",
+        "long-context-llm",
+        "deepseek-models"
+      ],
+      "aliases_ja": [
+        "DeepSeek-V4",
+        "ディープシーク",
+        "100万トークン",
+        "百万トークンコンテキスト",
+        "AIエージェント実用性",
+        "長文脈AI",
+        "文脈窓"
+      ],
+      "source_ids": [
+        "1767aa445a7a"
+      ],
+      "source_urls": [
+        "https://huggingface.co/blog/deepseekv4"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "disney-1000-layoffs-marvel-visual-development",
+      "path": "wiki/disney-1000-layoffs-marvel-visual-development.md",
+      "title": "ディズニーが1000人規模のレイオフを実施 マーベルのビジュアル開発部門はほぼ全員解雇",
+      "type": "stub",
+      "summary": "ディズニーが約1000人規模のレイオフを実施し、マーベルのビジュアル開発チームがほぼ全滅した。 直接の原因はコスト削減と制作ライン縮小とされているが、AIへの段階的移行という文脈が背景にあり、 繰り返し作業からのAI代替が進んでいる。\n",
+      "topics": [
+        "entertainment-industry-layoffs",
+        "marvel-studios",
+        "ai-workforce-impact",
+        "visual-development",
+        "cost-reduction"
+      ],
+      "aliases_ja": [
+        "ディズニーレイオフ",
+        "マーベル解雇",
+        "ビジュアル開発部門",
+        "エンターテインメント業界リストラ",
+        "AI代替",
+        "コスト削減",
+        "制作ライン縮小",
+        "背景制作AI",
+        "ロトスコープ"
+      ],
+      "source_ids": [
+        "ae67e850eff4"
+      ],
+      "source_urls": [
+        "https://kai-you.net/article/95155"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "diy-ai-autoprober-duct-tape-cnc",
+      "path": "wiki/diy-ai-autoprober-duct-tape-cnc.md",
+      "title": "DIYハードウェアハッキングアーム - ダクトテープとCNCマシンでAI駆動自動プローバー構築",
+      "type": "source",
+      "summary": "開発者がダクトテープ、古いカメラ、CNCマシンを使ってAI駆動のハードウェアハッキングアームを構築し、GitHubでautoproberプロジェクトとして公開。適切な機材を待たずに純粋な執念で「正しい道具がない」と「これが存在する」の間のギャップを埋めた事例。\n",
+      "topics": [
+        "diy-electronics",
+        "ai-hardware-hacking",
+        "computer-vision",
+        "cnc-automation",
+        "makeshift-engineering"
+      ],
+      "aliases_ja": [
+        "DIY電子工作",
+        "ハードウェアハッキング",
+        "AI駆動プローバー",
+        "ダクトテープ工作",
+        "CNCマシン",
+        "自動プローバー",
+        "OpenCV",
+        "PCB解析",
+        "廃品利用",
+        "創意工夫"
+      ],
+      "source_ids": [
+        "6f2250da7ebb"
+      ],
+      "source_urls": [
+        "https://github.com/gainsec/autoprober"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
       "id": "dolores-huerta-art-exhibition-goat",
       "path": "wiki/dolores-huerta-art-exhibition-goat.md",
       "title": "ドロレス・ウエルタを主題にした美術展示「GOAT」",
@@ -973,6 +2007,68 @@
       "published_at": "",
       "created_at": "2026-04-08 23:13",
       "updated_at": "2026-04-08 23:13"
+    },
+    {
+      "id": "dragon-ball-xenoverse-3-announcement",
+      "path": "wiki/dragon-ball-xenoverse-3-announcement.md",
+      "title": "『ドラゴンボール ゼノバース3』発表、来年発売へ",
+      "type": "stub",
+      "summary": "バンダイナムコが『ドラゴンボール ゼノバース3』を発表し、来年発売予定。 「未来のドラゴンボール世界」を舞台に、鳥山明氏が描いた新キャラクターと共に活躍するアクションゲーム。\n",
+      "topics": [
+        "dragon-ball-games",
+        "bandai-namco",
+        "action-games",
+        "toriyama-akira"
+      ],
+      "aliases_ja": [
+        "ドラゴンボールゼノバース3",
+        "バンダイナムコ",
+        "鳥山明",
+        "ドラゴンボールゲーム",
+        "アクションゲーム",
+        "未来のドラゴンボール世界"
+      ],
+      "source_ids": [
+        "1b1f295994c2"
+      ],
+      "source_urls": [
+        "https://automaton-media.com/articles/newsjp/20260420-438424"
+      ],
+      "published_at": "2026-04-20",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "dragon-quest-smash-grow-april-21-launch",
+      "path": "wiki/dragon-quest-smash-grow-april-21-launch.md",
+      "title": "Dragon Quest Smash/Grow launches April 21",
+      "type": "source",
+      "summary": "Dragon Quest Smash/Growは4月21日にリリースされるローグライトアクションRPGで、物理ベースの攻撃で敵を倒して経験値とギアを集め、ランダムな「祝福」でビルドを強化するというタイトル通りのコアループを持つ。従来のドラゴンクエストモバイルゲームとは異なり、短時間セッションのローグライト形式を採用している。\n",
+      "topics": [
+        "mobile-gaming",
+        "roguelike-games",
+        "dragon-quest-franchise",
+        "game-releases"
+      ],
+      "aliases_ja": [
+        "ドラゴンクエスト スマッシュグロウ",
+        "ドラクエ ローグライト",
+        "モバイルゲーム",
+        "ローグライクゲーム",
+        "ドラゴンクエストフランチャイズ",
+        "4月21日リリース",
+        "物理ベース攻撃",
+        "ガチャシステム"
+      ],
+      "source_ids": [
+        "3413439d95f4"
+      ],
+      "source_urls": [
+        "https://www.gematsu.com/2026/04/dragon-quest-smash-grow-launches-april-21"
+      ],
+      "published_at": "2026-04-21",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
     },
     {
       "id": "earth-population-exceeds-sustainable-capacity-2026",
@@ -1006,6 +2102,68 @@
       "updated_at": "2026-04-08 23:13"
     },
     {
+      "id": "ecom-rlve-adaptive-verifiable-environments",
+      "path": "wiki/ecom-rlve-adaptive-verifiable-environments.md",
+      "title": "Ecom-RLVE: Adaptive Verifiable Environments for E-Commerce Conversational Agents",
+      "type": "stub",
+      "summary": "Ecom-RLVEはEコマース向け会話型AIエージェントのための適応的・検証可能な強化学習環境に関する研究。 AIエージェントが正しく動作しているかを確認する枠組み自体を設計する課題に取り組んでいる。\n",
+      "topics": [
+        "ecommerce-ai-agents",
+        "reinforcement-learning",
+        "verification-systems",
+        "conversational-ai"
+      ],
+      "aliases_ja": [
+        "Eコマース会話AI",
+        "強化学習環境",
+        "検証可能な環境",
+        "会話型エージェント",
+        "RLVE",
+        "適応的環境",
+        "AIエージェント検証"
+      ],
+      "source_ids": [
+        "2e3183420487"
+      ],
+      "source_urls": [
+        "https://huggingface.co/blog/ecom-rlve"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "exploration-exploitation-errors-measurable-llm-agents",
+      "path": "wiki/exploration-exploitation-errors-measurable-llm-agents.md",
+      "title": "Exploration and Exploitation Errors Are Measurable for Language Model Agents",
+      "type": "stub",
+      "summary": "LMエージェントにおける「探索」と「活用」のエラーが定量測定可能であることを示した研究。 コーディングや物理AIなど複雑な意思決定タスクでのエージェント行動分析を行っている。\n",
+      "topics": [
+        "ai-agent-behavior",
+        "decision-making-analysis",
+        "exploration-exploitation-tradeoff",
+        "llm-agent-evaluation"
+      ],
+      "aliases_ja": [
+        "探索と活用のエラー",
+        "LMエージェント",
+        "意思決定タスク",
+        "エージェント行動分析",
+        "探索活用トレードオフ",
+        "コーディングタスク",
+        "物理AI"
+      ],
+      "source_ids": [
+        "c8a241027810"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.13151"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
       "id": "gaming-weekly-column-531-slay-the-spire-2-raccoin-kofun-analysis",
       "path": "wiki/gaming-weekly-column-531-slay-the-spire-2-raccoin-kofun-analysis.md",
       "title": "週次ゲームコラム第531回：『Slay the Spire 2』『RACCOIN』『こふんは生きている』レビュー",
@@ -1037,6 +2195,106 @@
       "published_at": "2026-04-05",
       "created_at": "2026-04-05 14:23",
       "updated_at": "2026-04-05 14:23"
+    },
+    {
+      "id": "gemini-3-1-flash-tts-natural-language-voice-control",
+      "path": "wiki/gemini-3-1-flash-tts-natural-language-voice-control.md",
+      "title": "Google、次世代音声AI「Gemini 3.1 Flash TTS」 自然言語で表現を制御可能に",
+      "type": "stub",
+      "summary": "GoogleがGemini 3.1 Flash TTSを発表。「音声タグ」機能により自然言語指示で話速・感情を細かく制御可能で、 生成音声にはSynthID電子透かしを適用。高品質・低コストを謳う次世代音声AI技術。\n",
+      "topics": [
+        "text-to-speech-ai",
+        "voice-synthesis-technology",
+        "natural-language-control",
+        "synthid-watermarking",
+        "google-ai"
+      ],
+      "aliases_ja": [
+        "テキスト読み上げAI",
+        "音声合成技術",
+        "自然言語制御",
+        "SynthID電子透かし",
+        "グーグルAI",
+        "Gemini Flash TTS",
+        "ジェミニ",
+        "音声タグ機能",
+        "話速制御",
+        "感情制御"
+      ],
+      "source_ids": [
+        "f2122a6a3ed6"
+      ],
+      "source_urls": [
+        "https://www.itmedia.co.jp/aiplus/articles/2604/16/news090.html"
+      ],
+      "published_at": "2026-04-16",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "google-ai-agents-academic-workflow-improvement",
+      "path": "wiki/google-ai-agents-academic-workflow-improvement.md",
+      "title": "Googleが学術ワークフロー改善のための2つのAIエージェントを発表",
+      "type": "stub",
+      "summary": "Googleが学術ワークフロー改善を目的とした2つのAIエージェントを発表。論文図表の作成支援と査読補助を行う生成AIツールで、特に査読プロセスへのAI導入は知識生産のループ自体を変える可能性がある。\n",
+      "topics": [
+        "ai-academic-tools",
+        "peer-review-automation",
+        "academic-workflow",
+        "knowledge-production"
+      ],
+      "aliases_ja": [
+        "AIエージェント",
+        "学術ワークフロー",
+        "論文図表作成",
+        "査読補助",
+        "知識生産",
+        "Googleリサーチ",
+        "生成AI学術支援"
+      ],
+      "source_ids": [
+        "e25bbc0f694c"
+      ],
+      "source_urls": [
+        "https://research.google/blog/improving-the-academic-workflow-introducing-two-ai-agents-for-better-figures-and-peer-review"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-09 20:55",
+      "updated_at": "2026-04-09 20:55"
+    },
+    {
+      "id": "google-cloud-next-2026-agentic-enterprise",
+      "path": "wiki/google-cloud-next-2026-agentic-enterprise.md",
+      "title": "Google Cloud Next 2026での発表内容まとめ 自律型AIエージェントへ",
+      "type": "stub",
+      "summary": "Google Cloud Next 2026でGoogleが「Agentic Enterprise」構想を発表し、Gemini 3.1、第8世代TPU、Wiz統合セキュリティを組み合わせた自律型AIエージェントによる企業環境構築を打ち出した。\n",
+      "topics": [
+        "ai-agent-enterprise",
+        "google-cloud",
+        "autonomous-ai",
+        "enterprise-ai-strategy"
+      ],
+      "aliases_ja": [
+        "AIエージェント企業",
+        "グーグルクラウド",
+        "自律型AI",
+        "企業AI戦略",
+        "Google Cloud Next",
+        "Agentic Enterprise",
+        "Gemini 3.1",
+        "TPU第8世代",
+        "Wiz統合セキュリティ",
+        "自律型AIエージェント"
+      ],
+      "source_ids": [
+        "c4a3f463f645"
+      ],
+      "source_urls": [
+        "https://www.itmedia.co.jp/aiplus/articles/2604/23/news061.html"
+      ],
+      "published_at": "2026-04-23",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
     },
     {
       "id": "google-gemini-mental-health-safeguards",
@@ -1108,6 +2366,41 @@
       "published_at": "2026-04-08",
       "created_at": "2026-04-08 23:13",
       "updated_at": "2026-04-08 23:13"
+    },
+    {
+      "id": "guernica-gigapixel-multimodal-analysis",
+      "path": "wiki/guernica-gigapixel-multimodal-analysis.md",
+      "title": "「ゲルニカ」を超拡大してじっくり鑑賞できる「Guernica Gigapíxel」、可視光線・紫外線・赤外線・X線と複数の撮影技術で比較することで修復歴などを確認可能",
+      "type": "stub",
+      "summary": "ソフィア王妃芸術センターがピカソの「ゲルニカ」をギガピクセル級の超高解像度でブラウザ閲覧できる「Guernica Gigapíxel」を公開。 可視光・紫外線・赤外線・X線の複数撮影技術を用いることで、作品の修復歴や制作過程を詳細に確認できる革新的な美術鑑賞システム。\n",
+      "topics": [
+        "digital-art-preservation",
+        "multimodal-imaging-technology",
+        "art-restoration-history",
+        "picasso-works",
+        "museum-technology"
+      ],
+      "aliases_ja": [
+        "ゲルニカ",
+        "ピカソ",
+        "ソフィア王妃芸術センター",
+        "ギガピクセル",
+        "デジタル美術鑑賞",
+        "修復歴",
+        "X線撮影",
+        "紫外線撮影",
+        "赤外線撮影",
+        "美術品デジタル化"
+      ],
+      "source_ids": [
+        "d4ca3ca886b7"
+      ],
+      "source_urls": [
+        "https://gigazine.net/news/20260415-guernica-gigapixel"
+      ],
+      "published_at": "2026-04-15",
+      "created_at": "2026-04-15 22:11",
+      "updated_at": "2026-04-15 22:11"
     },
     {
       "id": "gut-bacteria-muscle-strength-enhancement-granada-university",
@@ -1202,6 +2495,37 @@
       "updated_at": "2026-04-08 23:13"
     },
     {
+      "id": "hans-holbein-visceral-intimacy-painting",
+      "path": "wiki/hans-holbein-visceral-intimacy-painting.md",
+      "title": "Hans Holbein Painted the Human",
+      "type": "stub",
+      "summary": "ルネサンス画家ハンス・ホルバインは、貴族や思想家を描く際に他の同時代画家を超える深み、肉体的な親密さ、共感を作品に込めた。 「visceral intimacy」という概念が画家の内側から絵具の表面まで滲み出てくることが、描く行為の本質とされている。\n",
+      "topics": [
+        "renaissance-art",
+        "portrait-painting",
+        "visceral-intimacy",
+        "artistic-empathy"
+      ],
+      "aliases_ja": [
+        "ハンス・ホルバイン",
+        "ルネサンス絵画",
+        "肖像画",
+        "内臓的親密さ",
+        "visceral intimacy",
+        "絵画の本質",
+        "画家の共感"
+      ],
+      "source_ids": [
+        "cba2211966e1"
+      ],
+      "source_urls": [
+        "https://hyperallergic.com/hans-holbein-painted-the-human"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
       "id": "hilma-af-klint-feminist-collective-esoteric-art-research",
       "path": "wiki/hilma-af-klint-feminist-collective-esoteric-art-research.md",
       "title": "フェミニストアートコレクティブによるヒルマ・アフ・クリント研究：排除された霊性の美術史回復",
@@ -1234,6 +2558,135 @@
       "published_at": "",
       "created_at": "2026-04-08 23:13",
       "updated_at": "2026-04-08 23:13"
+    },
+    {
+      "id": "hungary-art-world-silence-orban-16-years",
+      "path": "wiki/hungary-art-world-silence-orban-16-years.md",
+      "title": "ハンガリーのオルバーン政権下16年間の芸術界沈黙",
+      "type": "stub",
+      "summary": "ハンガリー在住のキュレーターが、オルバーン政権下で16年間続いた芸術界の沈黙について証言し、 母国を芸術的自由への警告と希望の象徴として捉えている現状を報告している。\n",
+      "topics": [
+        "artistic-censorship",
+        "hungarian-politics",
+        "cultural-suppression",
+        "political-art-control"
+      ],
+      "aliases_ja": [
+        "ハンガリー芸術界",
+        "オルバーン政権",
+        "芸術的検閲",
+        "文化的沈黙",
+        "芸術的自由",
+        "政治的弾圧",
+        "キュレーター証言"
+      ],
+      "source_ids": [
+        "e4b35b8cdfce"
+      ],
+      "source_urls": [
+        "https://hyperallergic.com/dismantling-16-years-of-silence-in-hungarys-art-world-under-orban"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "ignorant-art-historian-introduction",
+      "path": "wiki/ignorant-art-historian-introduction.md",
+      "title": "The Ignorant Art Historian: An Introduction",
+      "type": "stub",
+      "summary": "「The Ignorant Art Historian」の序文で、著者が学術的超自我からの解放を研究目的として公言し、知識の蓄積ではなく知識に縛られることからの脱出を目指すアプローチを提示している。\n",
+      "topics": [
+        "art-history-methodology",
+        "academic-liberation",
+        "knowledge-critique"
+      ],
+      "aliases_ja": [
+        "無知な美術史家",
+        "学術的超自我からの解放",
+        "知識からの脱出",
+        "美術史研究方法論",
+        "アカデミック解放"
+      ],
+      "source_ids": [
+        "24ea8b736445"
+      ],
+      "source_urls": [
+        "https://www.theparisreview.org/blog/2026/04/24/the-ignorant-art-historian"
+      ],
+      "published_at": "2026-04-24",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "india-ai-film-industry-mahabharat-ai-adaptation",
+      "path": "wiki/india-ai-film-industry-mahabharat-ai-adaptation.md",
+      "title": "インド映画界のAI活用：マハーバーラタのAI映像化と名作結末改変の野心的試み",
+      "type": "source",
+      "summary": "インド映画界がコロナ禍以降の興行不振対策としてAIを積極活用し、マハーバーラタのAI映像化でコスト5分の1・期間4分の1短縮を実現。 名作ラーンジャナーのハッピーエンド改変版が観客動員に成功する一方、「AIがアートから魂を奪う」批判と新規コンテンツ創出への期待が併存している。\n",
+      "topics": [
+        "ai-film-production",
+        "indian-cinema",
+        "cost-optimization",
+        "creative-ai-ethics",
+        "motion-capture-ai-hybrid"
+      ],
+      "aliases_ja": [
+        "インド映画界",
+        "マハーバーラタ",
+        "AI映像化",
+        "名作結末改変",
+        "モーションキャプチャー",
+        "AIが魂を奪う",
+        "ラーンジャナー",
+        "ハッピーエンド改変",
+        "AI制作コスト削減",
+        "映画AI活用"
+      ],
+      "source_ids": [
+        "8df35277d8e1"
+      ],
+      "source_urls": [
+        "https://www.itmedia.co.jp/news/articles/2604/21/news099.html"
+      ],
+      "published_at": "2026-04-21",
+      "created_at": "2026-04-25 19:42",
+      "updated_at": "2026-04-25 19:42"
+    },
+    {
+      "id": "inspiration-cat-zero-cost-50-million-access",
+      "path": "wiki/inspiration-cat-zero-cost-50-million-access.md",
+      "title": "キュピーン猫画像メーカー初日50万アクセスもサーバ代「0円」その秘密",
+      "type": "source",
+      "summary": "猫などの写真に「ひらめき」エフェクトを追加するWebアプリ「InspirationCat」が初日50万アクセスを記録しながらサーバ代0円を実現。 ONNX Runtime WebとCloudflare Pagesを活用したクライアントサイド処理により、背景除去AIをブラウザで直接実行する設計が鍵となっている。\n",
+      "topics": [
+        "web-application-architecture",
+        "serverless-computing",
+        "ai-background-removal",
+        "cloudflare-pages",
+        "client-side-processing"
+      ],
+      "aliases_ja": [
+        "キュピーン猫画像メーカー",
+        "サーバーレス",
+        "クライアントサイド処理",
+        "Cloudflare Pages",
+        "ONNX Runtime Web",
+        "AI背景除去",
+        "でんでんきき",
+        "バズったサービス",
+        "ゼロ円運用",
+        "WebGPU"
+      ],
+      "source_ids": [
+        "36cdc2de5940"
+      ],
+      "source_urls": [
+        "https://www.itmedia.co.jp/news/articles/2604/09/news108.html"
+      ],
+      "published_at": "2026-04-09",
+      "created_at": "2026-04-09 19:38",
+      "updated_at": "2026-04-09 19:38"
     },
     {
       "id": "intel-elon-musk-terafab-partnership",
@@ -1336,6 +2789,176 @@
       "updated_at": "2026-04-06 09:20"
     },
     {
+      "id": "james-webb-notch-season-2-mabito-horror",
+      "path": "wiki/james-webb-notch-season-2-mabito-horror.md",
+      "title": "映画レーベルJAMES WEBBの短編ホラー、新シリーズ始動 代表作『マビト』は68万再生の大反響",
+      "type": "stub",
+      "summary": "映画レーベルJAMES WEBBの短編ホラーシリーズ「NOTCH」のシーズン2が始動。 代表作『マビト』はYouTubeで68万再生を記録し、禁足地をテーマとした作品が注目を集めている。\n",
+      "topics": [
+        "short-form-horror",
+        "japanese-film-label",
+        "forbidden-places-theme",
+        "youtube-video-success"
+      ],
+      "aliases_ja": [
+        "短編ホラー",
+        "日本映画レーベル",
+        "禁足地",
+        "YouTube再生数",
+        "JAMES WEBB",
+        "ジェームス・ウェブ",
+        "マビト",
+        "NOTCH",
+        "ノッチ",
+        "禁忌への引力",
+        "入ってはいけない場所",
+        "68万再生"
+      ],
+      "source_ids": [
+        "2512889b7bc2"
+      ],
+      "source_urls": [
+        "https://kai-you.net/article/95187"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "jan-morris-conversation-sara-wheeler",
+      "path": "wiki/jan-morris-conversation-sara-wheeler.md",
+      "title": "Jan Morris文学対談：Sara Wheelerが語る「フォレスト・ガンプ的人物」",
+      "type": "stub",
+      "summary": "作家Sara WheelerがThe Paris Reviewでの対談において、Jan Morrisを「フォレスト・ガンプ的人物」として評価。 歴史的瞬間に偶然居合わせ続けた人生の偶然性の密度に注目した文学批評的考察。\n",
+      "topics": [
+        "literary-criticism",
+        "biographical-writing",
+        "historical-coincidence"
+      ],
+      "aliases_ja": [
+        "ジャン・モリス",
+        "サラ・ウィーラー",
+        "フォレスト・ガンプ的人物",
+        "文学対談",
+        "歴史の目撃者"
+      ],
+      "source_ids": [
+        "a521e99beb33"
+      ],
+      "source_urls": [
+        "https://www.theparisreview.org/blog/2026/04/17/the-conundrums-of-jan-morris-a-conversation-with-sara-wheeler"
+      ],
+      "published_at": "2026-04-17",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "japan-project-glasswing-claude-mythos-ai-defense",
+      "path": "wiki/japan-project-glasswing-claude-mythos-ai-defense.md",
+      "title": "自民党が「Mythos級」AI脅威に備えて日本版Project Glasswing検討",
+      "type": "source",
+      "summary": "自民党が「Claude Mythos Preview」のような高度なAIの脅威に備えて、金融インフラ防御を目的とした日本版「Project Glasswing」の立ち上げを検討している。 2026年4月にAnthropicが発表したこの構想は、未公開モデルを使ってゼロデイ脆弱性を自律発見する3層アクセス構造を持つ。\n",
+      "topics": [
+        "ai-cybersecurity",
+        "japanese-politics",
+        "defensive-security",
+        "claude-mythos-preview",
+        "financial-infrastructure-protection"
+      ],
+      "aliases_ja": [
+        "AIサイバーセキュリティ",
+        "日本政治",
+        "防御的セキュリティ",
+        "クロード・ミトス・プレビュー",
+        "金融インフラ防護",
+        "自民党AI対策",
+        "Project Glasswing",
+        "プロジェクト・グラスウィング",
+        "Anthropic",
+        "アンソロピック",
+        "Mythos級AI",
+        "ミトス級AI",
+        "ゼロデイ脆弱性",
+        "金融インフラ防御",
+        "AI脅威対策"
+      ],
+      "source_ids": [
+        "0c34d1bdd1fe"
+      ],
+      "source_urls": [
+        "https://www.itmedia.co.jp/aiplus/articles/2604/21/news114.html"
+      ],
+      "published_at": "2026-04-21",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "jean-shin-living-memorial-greenwood-cemetery",
+      "path": "wiki/jean-shin-living-memorial-greenwood-cemetery.md",
+      "title": "Jean Shin's Living Memorial to the Trees of Green-Wood Cemetery",
+      "type": "source",
+      "summary": "アーティスト・ジーン・シンがグリーンウッド墓地で制作した作品「Offering」は、墓地内で死んだ木々を100フィートの溝に埋葬し、韓国の葬送習俗と時間の循環をテーマにした「生きた記念碑」として機能する。 死者のために木を植えるのではなく、木そのものが死者として土に還るという逆転的な発想が特徴。\n",
+      "topics": [
+        "contemporary-art",
+        "memorial-art",
+        "burial-ritual",
+        "permaculture-art",
+        "korean-funeral-customs",
+        "time-cycles"
+      ],
+      "aliases_ja": [
+        "ジーン・シン",
+        "グリーンウッド墓地",
+        "生きた記念碑",
+        "木の埋葬",
+        "韓国の葬送習俗",
+        "現代アート",
+        "追悼の儀式",
+        "オファリング",
+        "墓地のアート"
+      ],
+      "source_ids": [
+        "83937f35f8c6"
+      ],
+      "source_urls": [
+        "https://hyperallergic.com/jean-shins-living-memorial-to-the-trees-of-green-wood-cemetery"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "jeffrey-angles-memory-of-three-year-old-poem-creation",
+      "path": "wiki/jeffrey-angles-memory-of-three-year-old-poem-creation.md",
+      "title": "Making of a Poem: Jeffrey Angles on \"Memory of a Three-Year-Old\"",
+      "type": "stub",
+      "summary": "詩人Jeffrey Anglesが「三歳の記憶」という詩の制作過程を語るエッセイで、寄生性の回虫について考えることに「耐えられなくなった」体験から詩が生まれる逆説的なプロセスについて論じている。\n",
+      "topics": [
+        "poetry-creation-process",
+        "literary-essays",
+        "parasitic-worms",
+        "creative-limits"
+      ],
+      "aliases_ja": [
+        "詩の制作過程",
+        "ジェフリー・アングルス",
+        "三歳の記憶",
+        "寄生性の回虫",
+        "耐えられない限界",
+        "詩を生む契機",
+        "創作エッセイ"
+      ],
+      "source_ids": [
+        "e9ce552ffa1f"
+      ],
+      "source_urls": [
+        "https://www.theparisreview.org/blog/2026/04/16/making-of-a-poem-jeffrey-angles"
+      ],
+      "published_at": "2026-04-16",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
       "id": "josh-kline-art-exhibition-review-theresa-hak-kyung-cha-retrospective",
       "path": "wiki/josh-kline-art-exhibition-review-theresa-hak-kyung-cha-retrospective.md",
       "title": "Josh Kline展覧会レビューとTheresa Hak Kyung Cha 25年ぶり回顧展",
@@ -1367,6 +2990,37 @@
       "published_at": "",
       "created_at": "2026-04-08 23:13",
       "updated_at": "2026-04-08 23:13"
+    },
+    {
+      "id": "kami-to-miko-akasaka-aka-scrap-mystery-game",
+      "path": "wiki/kami-to-miko-akasaka-aka-scrap-mystery-game.md",
+      "title": "カミとミコ - 赤坂アカ×SCRAP×集英社ゲームズの謎解きゲーム",
+      "type": "stub",
+      "summary": "赤坂アカ×SCRAP×集英社ゲームズによる謎解きゲーム『カミとミコ』が先行プレイされ、転生する少女と共に謎を解く構成で謎解きゲームでありながらストーリーの質が高いと評価されている。\n",
+      "topics": [
+        "mystery-puzzle-games",
+        "manga-creator-collaborations",
+        "reincarnation-storytelling"
+      ],
+      "aliases_ja": [
+        "謎解きゲーム",
+        "赤坂アカ",
+        "SCRAP",
+        "集英社ゲームズ",
+        "カミとミコ",
+        "転生する少女",
+        "人間讃歌",
+        "ストーリーが良い謎解き"
+      ],
+      "source_ids": [
+        "0b33eaf792d0"
+      ],
+      "source_urls": [
+        "https://automaton-media.com/articles/reportjp/kamimiko-20260420-438463"
+      ],
+      "published_at": "2026-04-20",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
     },
     {
       "id": "kazuma-kaneko-tsukuyomi-deck-builder-rpg",
@@ -1432,6 +3086,40 @@
       "published_at": "",
       "created_at": "2026-04-08 23:13",
       "updated_at": "2026-04-08 23:13"
+    },
+    {
+      "id": "lacma-makeover-art-media-layoffs-lebanon-artist",
+      "path": "wiki/lacma-makeover-art-media-layoffs-lebanon-artist.md",
+      "title": "LACMA Got a Makeover",
+      "type": "stub",
+      "summary": "LACMAのリニューアルとMoMA PS1の「Greater New York」展について報告し、ArtnetとArtsyによる大規模レイオフと、レバノン人アーティストの集合的な傷を癒す作品を紹介している。\n",
+      "topics": [
+        "museum-renovation",
+        "art-media-layoffs",
+        "lebanese-art",
+        "contemporary-art-exhibitions"
+      ],
+      "aliases_ja": [
+        "LACMA",
+        "ラクマ",
+        "美術館リニューアル",
+        "アートメディア",
+        "レイオフ",
+        "レバノンアーティスト",
+        "MoMA PS1",
+        "Greater New York展",
+        "Artnet",
+        "Artsy"
+      ],
+      "source_ids": [
+        "7d8fd8552cdc"
+      ],
+      "source_urls": [
+        "https://hyperallergic.com/lacma-got-a-makeover"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
     },
     {
       "id": "living-without-self-musil-philosophy",
@@ -1526,6 +3214,132 @@
       "published_at": "",
       "created_at": "2026-04-08 23:13",
       "updated_at": "2026-04-08 23:13"
+    },
+    {
+      "id": "llm-tool-overuse-illusion",
+      "path": "wiki/llm-tool-overuse-illusion.md",
+      "title": "The Tool-Overuse Illusion: Why Does LLM Prefer External Tools over Internal Know",
+      "type": "stub",
+      "summary": "LLMが内部知識で答えられる問いに対しても外部ツールを不必要に呼び出す「ツール過使用」現象について分析した研究。 LLMの過信は訓練データの構造的偏りに根ざしており、自信ありげな文体が高評価され不確かな表現は淘汰される傾向が影響している。\n",
+      "topics": [
+        "llm-behavior",
+        "tool-usage-patterns",
+        "ai-confidence",
+        "training-bias"
+      ],
+      "aliases_ja": [
+        "ツール過使用",
+        "LLMの過信",
+        "外部ツール依存",
+        "内部知識への不信",
+        "キャリブレーション不足"
+      ],
+      "source_ids": [
+        "cfbda4d9922c"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.19749"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 20:11",
+      "updated_at": "2026-04-25 20:11"
+    },
+    {
+      "id": "llm-wiki-knowledge-management-karpathy",
+      "path": "wiki/llm-wiki-knowledge-management-karpathy.md",
+      "title": "LLM Wiki - メモや資料をAIで整理し、使える知識に育てる新しい発想",
+      "type": "stub",
+      "summary": "AIの第一人者Andrej Karpathyが提案した「LLM Wiki」は、メモや資料をAIで整理し知識として育てる概念で、従来のRAGとは異なるアプローチを採用している。5000以上のスターを獲得し注目を集めている。\n",
+      "topics": [
+        "llm-knowledge-management",
+        "ai-productivity-tools",
+        "personal-knowledge-base",
+        "andrej-karpathy"
+      ],
+      "aliases_ja": [
+        "LLMウィキ",
+        "エルエルエムウィキ",
+        "AIナレッジベース",
+        "カルパシー",
+        "アンドレイ・カルパシー",
+        "メモ整理AI",
+        "知識管理システム",
+        "RAG代替手法"
+      ],
+      "source_ids": [
+        "c738a925c22b"
+      ],
+      "source_urls": [
+        "https://atmarkit.itmedia.co.jp/ait/articles/2604/15/news011.html"
+      ],
+      "published_at": "2026-04-15",
+      "created_at": "2026-04-15 08:11",
+      "updated_at": "2026-04-15 08:11"
+    },
+    {
+      "id": "mac-os-x-wii-port-brian-keller",
+      "path": "wiki/mac-os-x-wii-port-brian-keller.md",
+      "title": "Mac OS XをWiiに移植してしまった猛者が登場",
+      "type": "stub",
+      "summary": "ITエンジニアのブライアン・ケラー氏が2007年発売の任天堂WiiにMac OS Xの移植を成功させた。 Wiiには過去にもLinux、NetBSD、Windows NTなど複数のOSが移植されており、ハードウェアの本来用途を超えた改造文化の一例として注目されている。\n",
+      "topics": [
+        "os-porting",
+        "nintendo-wii",
+        "mac-os-x",
+        "homebrew-development"
+      ],
+      "aliases_ja": [
+        "OSポーティング",
+        "任天堂Wii",
+        "Mac OS X",
+        "自作開発",
+        "ブライアン・ケラー",
+        "Wii改造",
+        "OS移植",
+        "ハードウェアハッキング",
+        "ホームブリュー開発"
+      ],
+      "source_ids": [
+        "2a87245df488"
+      ],
+      "source_urls": [
+        "https://gigazine.net/news/20260409-mac-os-x-nintendo-wii"
+      ],
+      "published_at": "2026-04-09",
+      "created_at": "2026-04-09 20:24",
+      "updated_at": "2026-04-09 20:24"
+    },
+    {
+      "id": "maria-britton-second-sleep-exhibition",
+      "path": "wiki/maria-britton-second-sleep-exhibition.md",
+      "title": "Maria Britton: Second Sleep",
+      "type": "stub",
+      "summary": "Maria Brittonの展示「Second Sleep」では、捨てられたシーツが反省や想像を促す「門」として機能し、 使い古された物が展示空間で「過去の遺物」から「境界面」へと変換される美術の力を示している。\n",
+      "topics": [
+        "contemporary-art-exhibition",
+        "material-transformation",
+        "reflection-art"
+      ],
+      "aliases_ja": [
+        "マリア・ブリットン",
+        "セカンド・スリープ",
+        "現代美術展",
+        "捨てられたシーツ",
+        "チャールストン大学",
+        "ハルジー現代美術研究所",
+        "境界面としてのアート",
+        "過去の遺物",
+        "美術の力"
+      ],
+      "source_ids": [
+        "a047503f0cc9"
+      ],
+      "source_urls": [
+        "https://hyperallergic.com/maria-britton-second-sleep"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
     },
     {
       "id": "mark-zuckerberg-returns-to-coding-with-ai-tools",
@@ -1630,6 +3444,39 @@
       "updated_at": "2026-04-06 19:21"
     },
     {
+      "id": "meta-aws-graviton5-ai-agent-partnership",
+      "path": "wiki/meta-aws-graviton5-ai-agent-partnership.md",
+      "title": "MetaとAWSが提携 エージェント型AI強化に最新のArmベースチップ「Graviton5」を大量採用",
+      "type": "stub",
+      "summary": "MetaがAWSと提携し、数千万個のAWS Gravitonコア（最新Graviton5含む）を導入することを発表。 推論・コード生成・自律タスク調整などCPU集約処理の効率化とAIインフラ多様化を目指す。\n",
+      "topics": [
+        "ai-infrastructure",
+        "cloud-computing-partnerships",
+        "arm-chip-technology",
+        "ai-agent-processing"
+      ],
+      "aliases_ja": [
+        "AIインフラ",
+        "クラウドコンピューティング提携",
+        "Armチップ技術",
+        "AIエージェント処理",
+        "メタ",
+        "AWS提携",
+        "Graviton5",
+        "推論処理",
+        "コード生成"
+      ],
+      "source_ids": [
+        "2626f69f6575"
+      ],
+      "source_urls": [
+        "https://www.itmedia.co.jp/news/articles/2604/25/news024.html"
+      ],
+      "published_at": "2026-04-25",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
       "id": "meta-employee-facebook-photos-download-investigation",
       "path": "wiki/meta-employee-facebook-photos-download-investigation.md",
       "title": "元Meta従業員による3万枚の非公開Facebook写真ダウンロード事件",
@@ -1661,6 +3508,70 @@
       "published_at": "",
       "created_at": "2026-04-08 23:13",
       "updated_at": "2026-04-08 23:13"
+    },
+    {
+      "id": "metal-slug-30th-anniversary-mission-reboot",
+      "path": "wiki/metal-slug-30th-anniversary-mission-reboot.md",
+      "title": "Metal Slug 30周年記念サイト公開、'Mission Reboot'を示唆",
+      "type": "stub",
+      "summary": "SNKがMetal Slug30周年記念サイトを公開し、'Mission Reboot'と題した復刻・新展開を示唆する回顧映像を配信した。30年という時間が「リブート」という言葉に折り畳まれ、記憶が資産になる瞬間をゲームが見せている。\n",
+      "topics": [
+        "game-anniversaries",
+        "metal-slug-franchise",
+        "snk-games",
+        "game-reboots"
+      ],
+      "aliases_ja": [
+        "メタルスラッグ30周年",
+        "SNK",
+        "ミッションリブート",
+        "ゲーム30周年記念",
+        "メタルスラッグシリーズ",
+        "ゲームリブート",
+        "記念サイト"
+      ],
+      "source_ids": [
+        "06e3e9a47761"
+      ],
+      "source_urls": [
+        "https://www.gematsu.com/2026/04/metal-slug-30th-anniversary-website-launched-teases-mission-reboot"
+      ],
+      "published_at": "2026-04-25",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "mexican-artist-femicide-project-plagiarism-allegation",
+      "path": "wiki/mexican-artist-femicide-project-plagiarism-allegation.md",
+      "title": "メキシコ人アーティスト、フェミサイド啓発作品の盗用を告発",
+      "type": "stub",
+      "summary": "メキシコ人アーティストElina Chauvetが、フェミサイド啓発インスタレーション「Red Shoes（赤い靴）」がルーマニア・ブカレストで作者名を記さず無断上演されたと告発している。女性殺害への抗議として生まれた作品から作家の名前が剥奪されることの構造的暴力性が指摘されている。\n",
+      "topics": [
+        "art-plagiarism",
+        "femicide-awareness-art",
+        "artist-rights",
+        "cultural-appropriation",
+        "gender-violence-activism"
+      ],
+      "aliases_ja": [
+        "エリーナ・チャウベット",
+        "赤い靴インスタレーション",
+        "フェミサイド啓発アート",
+        "アート盗用問題",
+        "女性殺害抗議作品",
+        "ルーマニア無断使用",
+        "作家名剥奪",
+        "メキシコ人アーティスト"
+      ],
+      "source_ids": [
+        "128f15b16efc"
+      ],
+      "source_urls": [
+        "https://hyperallergic.com/mexican-artist-alleges-plagiarism-of-femicide-project"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-15 17:20",
+      "updated_at": "2026-04-15 17:20"
     },
     {
       "id": "microsoft-azure-trillion-dollar-failure-insider-testimony",
@@ -1792,6 +3703,70 @@
       "updated_at": "2026-04-08 23:13"
     },
     {
+      "id": "multimodal-embedding-sentence-transformers",
+      "path": "wiki/multimodal-embedding-sentence-transformers.md",
+      "title": "Multimodal Embedding & Reranker Models with Sentence Transformers",
+      "type": "stub",
+      "summary": "Sentence Transformersを使ったマルチモーダル埋め込みとリランカーモデルについての技術記事。 テキストと画像など複数のモダリティを横断して意味を捉えるモデルの構築・活用法を扱っている。\n",
+      "topics": [
+        "multimodal-ai",
+        "embedding-models",
+        "sentence-transformers",
+        "cross-modal-learning"
+      ],
+      "aliases_ja": [
+        "マルチモーダルAI",
+        "埋め込みモデル",
+        "Sentence Transformers",
+        "センテンストランスフォーマー",
+        "クロスモーダル学習",
+        "テキスト画像埋め込み",
+        "リランカーモデル",
+        "マルチモーダル埋め込み"
+      ],
+      "source_ids": [
+        "6ddf3300b57a"
+      ],
+      "source_urls": [
+        "https://huggingface.co/blog/multimodal-sentence-transformers"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-10 08:33",
+      "updated_at": "2026-04-10 08:33"
+    },
+    {
+      "id": "multimodal-sentence-transformers-training",
+      "path": "wiki/multimodal-sentence-transformers-training.md",
+      "title": "Sentence Transformersを使ったマルチモーダル埋め込み・リランカーモデルのトレーニング",
+      "type": "stub",
+      "summary": "Sentence Transformersライブラリを使用してマルチモーダル埋め込みモデルとリランカーモデルをトレーニング・ファインチューニングする手法について解説した技術記事。 テキストと画像など複数のモダリティを横断して意味を捉えるモデルの構築方法を扱っている。\n",
+      "topics": [
+        "multimodal-ai",
+        "sentence-transformers",
+        "embedding-models",
+        "machine-learning-training"
+      ],
+      "aliases_ja": [
+        "マルチモーダルAI",
+        "センテンス・トランスフォーマーズ",
+        "埋め込みモデル",
+        "リランカーモデル",
+        "機械学習トレーニング",
+        "ファインチューニング",
+        "マルチモーダル埋め込み",
+        "テキストと画像の意味表現"
+      ],
+      "source_ids": [
+        "6300421969ef"
+      ],
+      "source_urls": [
+        "https://huggingface.co/blog/train-multimodal-sentence-transformers"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
       "id": "mvidia-gpu-assembly-educational-game",
       "path": "wiki/mvidia-gpu-assembly-educational-game.md",
       "title": "トランジスタからGPUを組み立てるゲーム「Mvidia」",
@@ -1859,6 +3834,72 @@
       "published_at": "2026-04-06",
       "created_at": "2026-04-06 20:33",
       "updated_at": "2026-04-06 20:33"
+    },
+    {
+      "id": "nec-ai-sustainability-disclosure-automation",
+      "path": "wiki/nec-ai-sustainability-disclosure-automation.md",
+      "title": "NECがAI活用で有価証券報告書サステナビリティ開示業務の工数を93%削減",
+      "type": "stub",
+      "summary": "NECがAIを活用して有価証券報告書のサステナビリティ情報開示業務を自動化し、従来人手で行っていた1300ページの文書読解・Excel整理作業の工数を93%削減した。 残り7%の人的作業に業務の本質が凝縮されている可能性が指摘されている。\n",
+      "topics": [
+        "ai-automation",
+        "business-process-optimization",
+        "sustainability-reporting",
+        "document-processing-ai"
+      ],
+      "aliases_ja": [
+        "NEC",
+        "AI活用",
+        "有価証券報告書",
+        "サステナビリティ開示",
+        "業務効率化",
+        "工数削減",
+        "Excel整理",
+        "93%削減"
+      ],
+      "source_ids": [
+        "3ac1fa875fd5"
+      ],
+      "source_urls": [
+        "https://www.itmedia.co.jp/business/articles/2604/20/news021.html"
+      ],
+      "published_at": "2026-04-20",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "nec-executive-ai-dashboard-system",
+      "path": "wiki/nec-executive-ai-dashboard-system.md",
+      "title": "NECの経営ダッシュボードは\"社長AI\"がデータにコメント、チャットさらに深掘り 経営層の評判も上々",
+      "type": "stub",
+      "summary": "NECが約1年分の会議音声・資料から役員の発言パターンと価値観を学習したAIを構築し、 毎日ダッシュボードに自動コメントを付与、社員のリアルタイム質問に応答するシステムを実運用。 利益率5%向上を実現している。\n",
+      "topics": [
+        "ai-executive-assistants",
+        "corporate-ai-integration",
+        "ai-dashboard-systems",
+        "business-process-automation"
+      ],
+      "aliases_ja": [
+        "NEC役員AI",
+        "社長AI",
+        "経営ダッシュボード",
+        "AIエグゼクティブアシスタント",
+        "企業AI統合",
+        "AIダッシュボードシステム",
+        "ビジネスプロセス自動化",
+        "役員AI",
+        "経営層AI",
+        "利益率向上"
+      ],
+      "source_ids": [
+        "0e8381ccf54c"
+      ],
+      "source_urls": [
+        "https://www.itmedia.co.jp/aiplus/articles/2604/15/news123.html"
+      ],
+      "published_at": "2026-04-15",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
     },
     {
       "id": "nelumbo-water-lily-platformer-puzzle-game",
@@ -1958,6 +3999,74 @@
       "updated_at": "2026-04-06 11:50"
     },
     {
+      "id": "netflix-gundam-live-action-movie-production-start",
+      "path": "wiki/netflix-gundam-live-action-movie-production-start.md",
+      "title": "Netflix実写版『ガンダム』が本格始動 地球とスペースコロニーの数十年に及ぶ戦いを描く",
+      "type": "source",
+      "summary": "Netflixがガンダムシリーズ初の実写映画化を発表。シドニー・スウィーニーとノア・センティネオが主演し、宇宙世紀を舞台としたオリジナルストーリーで地球連邦とジオン公国の対立を描く。2026年4月からオーストラリアで撮影開始予定。\n",
+      "topics": [
+        "live-action-adaptation",
+        "gundam-franchise",
+        "netflix-original",
+        "science-fiction-film",
+        "space-colony-warfare"
+      ],
+      "aliases_ja": [
+        "実写版ガンダム",
+        "ネットフリックス",
+        "シドニー・スウィーニー",
+        "ノア・センティネオ",
+        "忽那汐里",
+        "宇宙世紀",
+        "地球連邦",
+        "ジオン",
+        "オリジナルストーリー",
+        "実写化"
+      ],
+      "source_ids": [
+        "1bf2499d1a27"
+      ],
+      "source_urls": [
+        "https://kai-you.net/article/95201"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "neverness-to-everness-launch-trailer-music-collaboration",
+      "path": "wiki/neverness-to-everness-launch-trailer-music-collaboration.md",
+      "title": "Neverness to Everness launch trailer; music collaborations announced",
+      "type": "stub",
+      "summary": "Perfect World GamesとHotta Studioが『Neverness to Everness』のリリーストレーラーを公開し、音楽コラボレーションの実施を発表した。記事ではコラボレーションの具体的内容について疑問が呈されている。\n",
+      "topics": [
+        "game-launches",
+        "music-collaboration",
+        "gaming-trailers",
+        "hotta-studio",
+        "perfect-world-games"
+      ],
+      "aliases_ja": [
+        "ネヴァーネス・トゥ・エヴァーネス",
+        "ゲームローンチ",
+        "音楽コラボ",
+        "ローンチトレーラー",
+        "ホッタスタジオ",
+        "Perfect World Games",
+        "音楽コラボレーション",
+        "ゲーム発表"
+      ],
+      "source_ids": [
+        "4caf9db77650"
+      ],
+      "source_urls": [
+        "https://www.gematsu.com/2026/04/neverness-to-everness-launch-trailer-music-collaborations-announced"
+      ],
+      "published_at": "2026-04-01",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
       "id": "nii-llm-jp-4-japanese-language-model",
       "path": "wiki/nii-llm-jp-4-japanese-language-model.md",
       "title": "国立情報学研究所がLLM-jp-4を公開 - 日本語性能でgpt-oss-20bを超える国産LLM",
@@ -1992,6 +4101,36 @@
       "updated_at": "2026-04-05"
     },
     {
+      "id": "nijisanji-y4t4-debut-twitch-streamers",
+      "path": "wiki/nijisanji-y4t4-debut-twitch-streamers.md",
+      "title": "にじさんじ新人8名がストリーマーチーム「Y4T4」としてデビュー",
+      "type": "stub",
+      "summary": "にじさんじから新人ライバー8名が「Y4T4（ヤタ）」というストリーマーチームとして同時デビュー。 4月21日・22日にデビュー配信を行い、にじさんじ初のTwitch・YouTube同時配信を実施予定。\n",
+      "topics": [
+        "vtuber-debuts",
+        "streaming-teams",
+        "twitch-youtube-collaboration"
+      ],
+      "aliases_ja": [
+        "にじさんじ新人",
+        "Y4T4",
+        "ヤタ",
+        "ストリーマーチーム",
+        "Twitch配信",
+        "ライバーデビュー",
+        "同時配信"
+      ],
+      "source_ids": [
+        "ab3faf346c26"
+      ],
+      "source_urls": [
+        "https://kai-you.net/article/95188"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
       "id": "nikon-d5-artemis-ii-mission-camera-selection",
       "path": "wiki/nikon-d5-artemis-ii-mission-camera-selection.md",
       "title": "なぜアルテミスIIミッションのカメラには旧世代一眼レフの「Nikon D5」が採用されたのか？",
@@ -2022,6 +4161,74 @@
       "published_at": "2026-04-07",
       "created_at": "2026-04-08 23:13",
       "updated_at": "2026-04-08 23:13"
+    },
+    {
+      "id": "nishino-akihiro-straight-edge-trademark-opposition",
+      "path": "wiki/nishino-akihiro-straight-edge-trademark-opposition.md",
+      "title": "西野亮廣の「STRAIGHT EDGE」商標登録に反対する署名運動が開始",
+      "type": "stub",
+      "summary": "大阪のハードコアパンクレーベルが、西野亮廣のアパレルブランド「STRAIGHT EDGE」の商標登録に反対する署名運動をchange.orgで開始した。 STRAIGHT EDGEは飲酒・薬物・乱交を拒否するハードコアシーンの思想的土台であり、一企業による囲い込みへの懸念が示されている。\n",
+      "topics": [
+        "trademark-disputes",
+        "hardcore-punk-culture",
+        "cultural-appropriation"
+      ],
+      "aliases_ja": [
+        "西野亮廣",
+        "STRAIGHT EDGE",
+        "ストレートエッジ",
+        "商標登録反対",
+        "ハードコアパンク",
+        "文化の私物化",
+        "署名運動",
+        "change.org",
+        "アパレルブランド",
+        "音楽レーベル"
+      ],
+      "source_ids": [
+        "35125da882e3"
+      ],
+      "source_urls": [
+        "https://kai-you.net/article/95243"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "nude-performance-xandra-ibarra-mfa-boston",
+      "path": "wiki/nude-performance-xandra-ibarra-mfa-boston.md",
+      "title": "Nude Performance at MFA Boston Confronts One of Art's Oldest Tropes",
+      "type": "stub",
+      "summary": "アーティストXandra Ibarraがボストン美術館でヌードパフォーマンス「Nude Laughing」を実施。 同意、観客のエチケット、美術史における人体表現について議論を喚起した作品。\n",
+      "topics": [
+        "performance-art",
+        "body-art",
+        "art-history",
+        "museum-exhibitions",
+        "contemporary-art"
+      ],
+      "aliases_ja": [
+        "パフォーマンスアート",
+        "ボディアート",
+        "美術史",
+        "美術館展示",
+        "現代美術",
+        "ヌードパフォーマンス",
+        "ザンドラ・イバラ",
+        "ボストン美術館",
+        "笑う裸体",
+        "観客エチケット"
+      ],
+      "source_ids": [
+        "e234f26c1065"
+      ],
+      "source_urls": [
+        "https://hyperallergic.com/nude-performance-at-mfa-boston-confronts-one-of-arts-oldest-tropes"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
     },
     {
       "id": "obsidian-mind-claude-code-memory-system",
@@ -2087,6 +4294,75 @@
       "published_at": "",
       "created_at": "2026-04-05 16:20",
       "updated_at": "2026-04-05 16:20"
+    },
+    {
+      "id": "ollama-criticism-llama-cpp-recommendation",
+      "path": "wiki/ollama-criticism-llama-cpp-recommendation.md",
+      "title": "自分のPCで簡単にAIを動かせる「Ollama」には多数の問題点があり、llama.cppを使った方が良いという意見",
+      "type": "stub",
+      "summary": "ソフトウェアエンジニアzetaphor氏がOllamaの開発姿勢・運営方針を批判し、代替としてllama.cppを推奨するブログを執筆した。使いやすさと透明性のトレードオフで、Ollamaの抽象化が何かを隠している可能性が指摘されている。\n",
+      "topics": [
+        "local-ai-tools",
+        "llama-cpp",
+        "ollama-criticism",
+        "ai-transparency"
+      ],
+      "aliases_ja": [
+        "Ollama",
+        "オラマ",
+        "llama.cpp",
+        "ラマドットシーピープラス",
+        "ローカルAI",
+        "zetaphor",
+        "ゼタフォー",
+        "AI透明性",
+        "開発姿勢批判",
+        "抽象化の問題"
+      ],
+      "source_ids": [
+        "70bebaf5b5cb"
+      ],
+      "source_urls": [
+        "https://gigazine.net/news/20260417-ollama-license"
+      ],
+      "published_at": "2026-04-17",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "ona-judge-poetic-tribute-philadelphia",
+      "path": "wiki/ona-judge-poetic-tribute-philadelphia.md",
+      "title": "フィラデルフィアでOna Judgeを讃える詩的アート作品が発表予定",
+      "type": "stub",
+      "summary": "フィラデルフィアのArtPhillyフェスティバルで、ワシントン家から逃亡した奴隷Ona Judgeと2020年に殺害された黒人トランスジェンダー女性Rem'mie Fellsを讃える詩的なアート作品が発表される。 「逃げることを選んだ人」と「逃げることができなかった人」を並べて追悼する構造が特徴的。\n",
+      "topics": [
+        "african-american-history",
+        "slavery-escape",
+        "art-tribute",
+        "philadelphia-arts",
+        "transgender-commemoration"
+      ],
+      "aliases_ja": [
+        "Ona Judge",
+        "オナ・ジャッジ",
+        "ワシントン家奴隷制",
+        "フィラデルフィアアート",
+        "ArtPhillyフェスティバル",
+        "Rem'mie Fells",
+        "レミー・フェルス",
+        "黒人トランスジェンダー女性",
+        "逃亡奴隷",
+        "詩的アート作品"
+      ],
+      "source_ids": [
+        "5481909b1a99"
+      ],
+      "source_urls": [
+        "https://hyperallergic.com/a-poetic-tribute-to-ona-judge-is-coming-to-philadelphia"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
     },
     {
       "id": "open-hardware-directory-ai-component-search",
@@ -2185,6 +4461,37 @@
       "updated_at": "2026-04-08 23:13"
     },
     {
+      "id": "placebo-memory-improvement-elderly-study",
+      "path": "wiki/placebo-memory-improvement-elderly-study.md",
+      "title": "「偽物だとわかっている薬っぽいもの」を飲むだけで高齢者の記憶力が向上してストレスが緩和されるという研究結果",
+      "type": "stub",
+      "summary": "高齢者を対象とした研究で、「偽薬だ」と明示したうえで投与したプラセボでも記憶力向上とストレス軽減の効果が観察された。 この「オープンラベルプラセボ効果」は、知識が感覚を騙せない深い層の存在を示唆している。\n",
+      "topics": [
+        "placebo-effect",
+        "memory-improvement",
+        "stress-reduction",
+        "elderly-health"
+      ],
+      "aliases_ja": [
+        "プラセボ効果",
+        "偽薬効果",
+        "記憶力向上",
+        "ストレス軽減",
+        "高齢者医療",
+        "オープンラベルプラセボ",
+        "知覚と知識の境界"
+      ],
+      "source_ids": [
+        "8679fb7b15cb"
+      ],
+      "source_urls": [
+        "https://gigazine.net/news/20260425-fake-medicine-real-results-memory-stress"
+      ],
+      "published_at": "2026-04-25",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
       "id": "playstation-playerbase-face-scanning-project",
       "path": "wiki/playstation-playerbase-face-scanning-project.md",
       "title": "PlayStationが顔スキャンでゲーム内キャラクター作成プロジェクト「プレイヤーベース」を発表",
@@ -2248,6 +4555,66 @@
       "published_at": "",
       "created_at": "2026-04-08 23:13",
       "updated_at": "2026-04-08 23:13"
+    },
+    {
+      "id": "pramana-epistemic-reasoning-navya-nyaya",
+      "path": "wiki/pramana-epistemic-reasoning-navya-nyaya.md",
+      "title": "Pramana: Fine-Tuning Large Language Models for Epistemic Reasoning through Navya",
+      "type": "stub",
+      "summary": "Pramanaは、古代インドの認識論的フレームワークNavya-Nyayaを活用してLLMのハルシネーション問題を改善するファインチューニング手法。Apple研究では無関係な文脈を追加すると数学問題の性能が65%低下することが判明している。\n",
+      "topics": [
+        "llm-hallucination",
+        "epistemic-reasoning",
+        "indian-philosophy",
+        "ai-fine-tuning"
+      ],
+      "aliases_ja": [
+        "プラマーナ",
+        "LLMハルシネーション",
+        "認識論的推論",
+        "ナヴヤニヤーヤ",
+        "古代インドの認識論",
+        "LLMファインチューニング",
+        "幻覚問題",
+        "Apple研究"
+      ],
+      "source_ids": [
+        "cf9b98aa1c63"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.04937"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-09 12:24",
+      "updated_at": "2026-04-09 12:24"
+    },
+    {
+      "id": "programming-hunches-investigation",
+      "path": "wiki/programming-hunches-investigation.md",
+      "title": "プログラマーの未調査な直感 - Lobsters コミュニティスレッド",
+      "type": "stub",
+      "summary": "Lobstersコミュニティでプログラマーたちが「まだ調べていない直感」を共有するスレッド。 問題のより良い解法への予感はあるが、時間や確信がなくて試せていないアイデアについて議論している。\n",
+      "topics": [
+        "programming-intuition",
+        "developer-community",
+        "software-development-philosophy"
+      ],
+      "aliases_ja": [
+        "プログラミング直感",
+        "未調査の予感",
+        "開発者コミュニティ",
+        "ソフトウェア開発哲学",
+        "Lobsters"
+      ],
+      "source_ids": [
+        "e256e6dfa730"
+      ],
+      "source_urls": [
+        "https://lobste.rs/s/gns27z/what_are_your_programming_hunches_you"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-10 12:03",
+      "updated_at": "2026-04-10 12:03"
     },
     {
       "id": "programs-must-report-version-numbers",
@@ -2402,6 +4769,37 @@
       "updated_at": "2026-04-06 09:20"
     },
     {
+      "id": "qr-code-knot-theory-mathematical-tool",
+      "path": "wiki/qr-code-knot-theory-mathematical-tool.md",
+      "title": "数学の結び目理論における新しい「QRコード」的解析ツール",
+      "type": "stub",
+      "summary": "研究者が複雑な結び目の構造を解析する新しい数学的ツールを開発し、Quanta Magazineが「QRコード」と表現した。 結び目をスキャン可能な記号に変換するアプローチで、絡まりを読み取る新しい手法を提供する。\n",
+      "topics": [
+        "knot-theory",
+        "mathematical-tools",
+        "topology",
+        "symbolic-representation"
+      ],
+      "aliases_ja": [
+        "結び目理論",
+        "数学的ツール",
+        "トポロジー",
+        "QRコード",
+        "記号表現",
+        "結び目解析",
+        "数学の結び目"
+      ],
+      "source_ids": [
+        "f5f95c7be722"
+      ],
+      "source_urls": [
+        "https://www.quantamagazine.org/a-powerful-new-qr-code-untangles-maths-knottiest-knots-20260422"
+      ],
+      "published_at": "2026-04-22",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
       "id": "quantum-computing-cryptography-breakthrough-2026",
       "path": "wiki/quantum-computing-cryptography-breakthrough-2026.md",
       "title": "量子コンピュータによる暗号解読の新展開 - 必要qubit数と時間の大幅削減",
@@ -2432,6 +4830,66 @@
       "published_at": "2026-04-03",
       "created_at": "2026-04-05",
       "updated_at": "2026-04-05"
+    },
+    {
+      "id": "quantum-jamming-fundamental-principles",
+      "path": "wiki/quantum-jamming-fundamental-principles.md",
+      "title": "Quantum 'Jamming' Explores the Truly Fundamental Principles of Nature",
+      "type": "stub",
+      "summary": "量子暗号研究者たちが量子力学のルールが成立しなくてもメッセージを秘密にできる方法を模索している。 「quantum jamming」という概念がその試みを複雑にしていることが報告されている。\n",
+      "topics": [
+        "quantum-cryptography",
+        "quantum-mechanics",
+        "cryptographic-security",
+        "fundamental-physics"
+      ],
+      "aliases_ja": [
+        "量子暗号",
+        "量子ジャミング",
+        "量子力学",
+        "暗号化",
+        "メッセージ秘匿",
+        "物理法則",
+        "量子通信"
+      ],
+      "source_ids": [
+        "382c31c07750"
+      ],
+      "source_urls": [
+        "https://www.quantamagazine.org/quantum-jamming-explores-the-truly-fundamental-principles-of-nature-20260417"
+      ],
+      "published_at": "2026-04-17",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "red-chat-ritual-tsumimi-time-horror-game-announcement",
+      "path": "wiki/red-chat-ritual-tsumimi-time-horror-game-announcement.md",
+      "title": "Red Chat Ritual: TSUMIMI TIME - ライブ配信要素を取り入れたミステリーホラーアドベンチャーゲーム発表",
+      "type": "stub",
+      "summary": "エンターテインメント企業東白舎が、ライブ配信要素を組み込んだPC向けミステリーホラーアドベンチャーゲーム「Red Chat Ritual: TSUMIMI TIME」を発表した。 ライブ配信の「見られる/見る」構造をホラーの核に据え、チャットが儀式になるという独特の発想を特徴とする。\n",
+      "topics": [
+        "livestream-horror-games",
+        "mystery-adventure-games",
+        "chat-interaction-games",
+        "pc-gaming"
+      ],
+      "aliases_ja": [
+        "ライブ配信ホラーゲーム",
+        "ミステリーホラーアドベンチャー",
+        "チャット儀式",
+        "東白舎",
+        "レッドチャットリチュアル"
+      ],
+      "source_ids": [
+        "3c3f39fc3191"
+      ],
+      "source_urls": [
+        "https://www.gematsu.com/2026/04/livestream-mystery-horror-adventure-game-red-chat-ritual-tsumimi-time-announced-for-pc"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-09 20:55",
+      "updated_at": "2026-04-09 20:55"
     },
     {
       "id": "redox-os-rsoc-2026-dwrr-scheduler",
@@ -2466,6 +4924,40 @@
       "published_at": "",
       "created_at": "2026-04-08 23:13",
       "updated_at": "2026-04-08 23:13"
+    },
+    {
+      "id": "rocket1994-90s-action-game-announcement",
+      "path": "wiki/rocket1994-90s-action-game-announcement.md",
+      "title": "Rocket1994 - 不穏な90年代風アクションゲーム発表",
+      "type": "stub",
+      "summary": "開発者Chikinan氏が90年代風アクションゲーム『Rocket1994』をSteamで発表。ロケットを操作しながら謎解きやクイズに挑戦するゲームで、不気味な雰囲気が特徴的。今夏配信予定。\n",
+      "topics": [
+        "indie-game-announcements",
+        "90s-aesthetics-games",
+        "puzzle-action-games",
+        "atmospheric-horror-games"
+      ],
+      "aliases_ja": [
+        "Rocket1994",
+        "ロケット1994",
+        "90年代風ゲーム",
+        "インディーゲーム発表",
+        "パズルアクション",
+        "不穏なゲーム",
+        "Chikinan",
+        "チキナン",
+        "謎解きゲーム",
+        "クイズゲーム"
+      ],
+      "source_ids": [
+        "e6010e3446de"
+      ],
+      "source_urls": [
+        "https://automaton-media.com/articles/newsjp/20260409-435661"
+      ],
+      "published_at": "2026-04-09",
+      "created_at": "2026-04-09 15:54",
+      "updated_at": "2026-04-09 15:54"
     },
     {
       "id": "sakatsuku-2026-spain-league-struggle-diary",
@@ -2528,6 +5020,37 @@
       "published_at": "2026-04-05",
       "created_at": "2026-04-05 14:23",
       "updated_at": "2026-04-05 14:23"
+    },
+    {
+      "id": "salesforce-headless-360-ai-agent-announcement",
+      "path": "wiki/salesforce-headless-360-ai-agent-announcement.md",
+      "title": "Salesforce Headless 360 - AIエージェント向けSalesforceサービス発表",
+      "type": "stub",
+      "summary": "SalesforceがAIエージェント経由でサービスを操作できる「Salesforce Headless 360」を発表し、複数機能が発表当日から利用可能になった。 従来のログイン機能が人間向けの摩擦として設計されていたことをAIが暴露している。\n",
+      "topics": [
+        "ai-agent-services",
+        "salesforce-technology",
+        "headless-architecture",
+        "enterprise-ai-integration"
+      ],
+      "aliases_ja": [
+        "AIエージェント向けSalesforce",
+        "セールスフォース",
+        "ヘッドレス360",
+        "エージェント向けサービス",
+        "ログイン不要AI",
+        "人間向け摩擦",
+        "AIサービス操作"
+      ],
+      "source_ids": [
+        "47d1d15ad47b"
+      ],
+      "source_urls": [
+        "https://www.itmedia.co.jp/aiplus/articles/2604/17/news118.html"
+      ],
+      "published_at": "2026-04-17",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
     },
     {
       "id": "salvador-dali-nuclear-mysticism-critique",
@@ -2599,6 +5122,70 @@
       "updated_at": "2026-04-05"
     },
     {
+      "id": "satoshi-kon-animation-analysis-book",
+      "path": "wiki/satoshi-kon-animation-analysis-book.md",
+      "title": "鬼才 今敏を作品ごとに論じる書籍が刊行『パーフェクトブルー』から遺作『夢みる機械』まで",
+      "type": "stub",
+      "summary": "アニメ研究者・宮本裕子による今敏論『今 敏 未完のアニメーション』が青土社から発売。 『パーフェクトブルー』から遺作『夢みる機械』まで、「虚構と現実の混濁」を軸に多角的に論じる学術書。\n",
+      "topics": [
+        "animation-analysis",
+        "film-criticism",
+        "satoshi-kon-works",
+        "academic-publishing"
+      ],
+      "aliases_ja": [
+        "今敏",
+        "アニメーション分析",
+        "映画批評",
+        "パーフェクトブルー",
+        "夢みる機械",
+        "虚構と現実",
+        "宮本裕子",
+        "青土社",
+        "アニメ研究",
+        "未完のアニメーション"
+      ],
+      "source_ids": [
+        "9a7f731a672f"
+      ],
+      "source_urls": [
+        "https://kai-you.net/article/95167"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "satoshi-nakamoto-adam-back-identity-claim-denial",
+      "path": "wiki/satoshi-nakamoto-adam-back-identity-claim-denial.md",
+      "title": "「サトシ・ナカモトの正体はイギリス人のアダム・バック氏」と名指しされるも本人はその疑惑を否定",
+      "type": "stub",
+      "summary": "ニューヨーク・タイムズの記者がビットコインの創始者「サトシ・ナカモト」の正体をBlockstreamのCEOアダム・バック氏だと名指しする記事を発表したが、バック氏本人は否定している。\n",
+      "topics": [
+        "bitcoin-identity-mystery",
+        "cryptocurrency-history",
+        "blockchain-founders"
+      ],
+      "aliases_ja": [
+        "サトシ・ナカモト",
+        "アダム・バック",
+        "ビットコイン創始者",
+        "暗号通貨の謎",
+        "Blockstream CEO",
+        "ニューヨーク・タイムズ記者",
+        "匿名性の正体"
+      ],
+      "source_ids": [
+        "d32fd8f8bc9c"
+      ],
+      "source_urls": [
+        "https://gigazine.net/news/20260409-solve-satoshi-nakamoto-bitcoin-developer"
+      ],
+      "published_at": "2026-04-09",
+      "created_at": "2026-04-09 15:54",
+      "updated_at": "2026-04-09 15:54"
+    },
+    {
       "id": "saudi-mcdonalds-jujutsu-kaisen-collab-speculation",
       "path": "wiki/saudi-mcdonalds-jujutsu-kaisen-collab-speculation.md",
       "title": "サウジアラビアのマクドナルドが日本語で謎の投稿 『呪術廻戦』コラボを示唆？",
@@ -2629,6 +5216,100 @@
       "published_at": "",
       "created_at": "2026-04-08 23:13",
       "updated_at": "2026-04-08 23:13"
+    },
+    {
+      "id": "scientific-knowledge-non-optimality-path-dependence",
+      "path": "wiki/scientific-knowledge-non-optimality-path-dependence.md",
+      "title": "科学的知識の非最適性：経路依存とロックインによる科学の軌跡",
+      "type": "stub",
+      "summary": "arXiv論文が科学的知識の蓄積を最適化問題として捉え直し、経路依存性・ロックイン・局所最適解トラップにより「人類最良の真実探索システム」である科学でさえ非最適な軌跡を辿る可能性があると主張している。\n",
+      "topics": [
+        "scientific-methodology",
+        "path-dependence",
+        "optimization-theory",
+        "knowledge-accumulation"
+      ],
+      "aliases_ja": [
+        "科学的知識",
+        "経路依存性",
+        "ロックイン",
+        "局所最適解",
+        "科学の軌跡",
+        "非最適性",
+        "最適化問題",
+        "真実探索システム"
+      ],
+      "source_ids": [
+        "d4a8908553ac"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.11828"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-15 17:20",
+      "updated_at": "2026-04-15 17:20"
+    },
+    {
+      "id": "scifi-autonomous-ai-workflow",
+      "path": "wiki/scifi-autonomous-ai-workflow.md",
+      "title": "SciFi: 安全で軽量な自律的科学研究AIワークフロー",
+      "type": "stub",
+      "summary": "arXiv論文SciFiが、既存AIシステムの実世界展開における信頼性課題を指摘し、 安全性・軽量性・ユーザビリティ・完全自律性を両立した科学研究向けAIエージェントワークフローを提案した。\n",
+      "topics": [
+        "ai-agent-research",
+        "autonomous-ai-systems",
+        "scientific-workflow-automation",
+        "ai-safety-design"
+      ],
+      "aliases_ja": [
+        "SciFi",
+        "自律型AIエージェント",
+        "科学研究AI",
+        "AIワークフロー",
+        "安全なAI",
+        "軽量AI",
+        "エージェントAI",
+        "科学AI"
+      ],
+      "source_ids": [
+        "44800b14e72f"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.13180"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "seeda-rapper-criticizes-pop-yours-festival",
+      "path": "wiki/seeda-rapper-criticizes-pop-yours-festival.md",
+      "title": "ラッパーSEEDAがヒップホップフェス「POP YOURS」を批判 - 映像公開制限を巡る契約透明性問題",
+      "type": "stub",
+      "summary": "ラッパーSEEDAが国内最大級ヒップホップフェス「POP YOURS 2026」の運営を批判。ヘッドライナー以外の映像は公開しないという事後通達に対し、オファー時の説明不足を指摘し、アーティストのパフォーマンス所有権を巡る問題を提起した。\n",
+      "topics": [
+        "hip-hop-events",
+        "artist-rights",
+        "contract-transparency",
+        "video-distribution-rights"
+      ],
+      "aliases_ja": [
+        "SEEDA",
+        "POP YOURS",
+        "ヒップホップフェス",
+        "ライブ映像公開",
+        "契約の透明性",
+        "アーティストの権利"
+      ],
+      "source_ids": [
+        "35226d1a6cc2"
+      ],
+      "source_urls": [
+        "https://kai-you.net/article/95215"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
     },
     {
       "id": "sefton-asylum-cthulhu-horror-game",
@@ -2665,6 +5346,66 @@
       "updated_at": "2026-04-05"
     },
     {
+      "id": "self-monitoring-metacognition-reinforcement-learning",
+      "path": "wiki/self-monitoring-metacognition-reinforcement-learning.md",
+      "title": "Self-Monitoring Benefits from Structural Integration: Lessons from Metacognition",
+      "type": "stub",
+      "summary": "連続時間・多タイムスケール強化学習エージェントにメタ認知・自己予測・主観的時間感覚などの自己監視機能を組み込んだ際のパフォーマンス向上効果を検証した研究論文。「自分が今何をしているかを知ること」がエージェントの性能向上に与える影響を実証的に調査している。\n",
+      "topics": [
+        "metacognition",
+        "self-monitoring",
+        "reinforcement-learning",
+        "ai-agent-performance"
+      ],
+      "aliases_ja": [
+        "メタ認知",
+        "自己監視",
+        "強化学習",
+        "自己予測",
+        "主観的時間感覚",
+        "連続時間エージェント",
+        "マルチタイムスケール"
+      ],
+      "source_ids": [
+        "271b5ce61a63"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.11914"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-15 13:03",
+      "updated_at": "2026-04-15 13:03"
+    },
+    {
+      "id": "shogi-state-space-complexity-monte-carlo-estimation",
+      "path": "wiki/shogi-state-space-complexity-monte-carlo-estimation.md",
+      "title": "モンテカルロ法による将棋の状態空間複雑度高精度推定",
+      "type": "stub",
+      "summary": "モンテカルロ法を用いて将棋の状態空間複雑度を高精度に推定した研究。従来の組み合わせ論的手法では10^64〜10^69という5桁の幅があったが、この手法により推定精度が向上した。\n",
+      "topics": [
+        "monte-carlo-methods",
+        "shogi-complexity",
+        "combinatorial-analysis",
+        "game-theory"
+      ],
+      "aliases_ja": [
+        "モンテカルロ法",
+        "将棋の複雑度",
+        "状態空間",
+        "組み合わせ論",
+        "ゲーム理論"
+      ],
+      "source_ids": [
+        "22d87f7f72cf"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.06189"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-10 17:03",
+      "updated_at": "2026-04-10 17:03"
+    },
+    {
       "id": "silent-hill-townfall-pilotpriest-composer",
       "path": "wiki/silent-hill-townfall-pilotpriest-composer.md",
       "title": "Silent Hill: Townfall composed by Canadian musician Pilotpriest",
@@ -2696,6 +5437,68 @@
       "published_at": "2026-04-01",
       "created_at": "2026-04-08 23:57",
       "updated_at": "2026-04-08 23:57"
+    },
+    {
+      "id": "simulating-human-cognition-heartbeat-driven-autonomous-thinking",
+      "path": "wiki/simulating-human-cognition-heartbeat-driven-autonomous-thinking.md",
+      "title": "Simulating Human Cognition: Heartbeat-Driven Autonomous Thinking Activity Schedu",
+      "type": "stub",
+      "summary": "LLMエージェントにハートビート駆動の自律思考スケジューリングを組み込む研究。 固定パイプラインの反応的制御フローを超えて、より適応的・効率的な動作を目指す。\n",
+      "topics": [
+        "llm-agents",
+        "autonomous-ai-systems",
+        "cognitive-modeling",
+        "ai-scheduling"
+      ],
+      "aliases_ja": [
+        "LLMエージェント",
+        "ハートビート駆動",
+        "自律思考",
+        "認知シミュレーション",
+        "思考スケジューリング",
+        "適応的AI",
+        "反応的制御フロー"
+      ],
+      "source_ids": [
+        "ab97aba084de"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.14178"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "single-experience-neuroplasticity-rewiring",
+      "path": "wiki/single-experience-neuroplasticity-rewiring.md",
+      "title": "A New Type of Neuroplasticity Rewires the Brain After a Single Experience",
+      "type": "stub",
+      "summary": "従来の「一緒に発火するニューロンは一緒に結線する」という神経可塑性の理解を超えた、 単一の経験で脳を再配線する新しいメカニズムが発見された。 より長期的な学習プロセスを説明する可能性がある。\n",
+      "topics": [
+        "neuroplasticity",
+        "brain-research",
+        "learning-mechanisms",
+        "single-experience-learning"
+      ],
+      "aliases_ja": [
+        "神経可塑性",
+        "脳の再配線",
+        "一回の経験",
+        "学習メカニズム",
+        "単一経験学習",
+        "ニューロン結線",
+        "脳研究"
+      ],
+      "source_ids": [
+        "2a82eec92972"
+      ],
+      "source_urls": [
+        "https://www.quantamagazine.org/a-new-type-of-neuroplasticity-rewires-the-brain-after-a-single-experience-20260424"
+      ],
+      "published_at": "2026-04-24",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
     },
     {
       "id": "sophia-ai-experience-based-memory-system",
@@ -2731,6 +5534,139 @@
       "published_at": "2026-04-04",
       "created_at": "2026-04-05",
       "updated_at": "2026-04-05"
+    },
+    {
+      "id": "soul-invention-language-humphrey",
+      "path": "wiki/soul-invention-language-humphrey.md",
+      "title": "魂の発明 - 言語による意識の神聖化",
+      "type": "stub",
+      "summary": "哲学者Nicholas Humphreyが、魂は神や遺伝子から与えられたものではなく、人間が言語を通じて自ら発明したものだと論じている。 感覚経験（sentience）を「神聖なもの」に変換したのは言語だという主張を展開。\n",
+      "topics": [
+        "consciousness-philosophy",
+        "language-creation",
+        "soul-concept",
+        "philosophical-anthropology"
+      ],
+      "aliases_ja": [
+        "意識の哲学",
+        "言語創造",
+        "魂の概念",
+        "哲学的人類学",
+        "ニコラス・ハンフリー",
+        "センティエンス",
+        "感覚経験",
+        "言語による発明",
+        "神聖化"
+      ],
+      "source_ids": [
+        "6ec37e08a5c3"
+      ],
+      "source_urls": [
+        "https://aeon.co/essays/you-know-what-consciousness-is-you-live-in-soul-land"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "soulforge-graph-powered-ai-coding",
+      "path": "wiki/soulforge-graph-powered-ai-coding.md",
+      "title": "SoulForge: Graph-powered code intelligence, multi-agent coding with codebase-aware AI",
+      "type": "source",
+      "summary": "SoulForgeは、起動時に依存関係グラフを構築してコードベース全体を理解するAIコーディングツール。 従来のAIツールと異なり、ファイル探索に時間を費やすことなく、即座にコード構造を把握して効率的な編集を実現する。 結果として同じタスクを約2倍少ないステップ、約2倍低いコストで完了できる。\n",
+      "topics": [
+        "ai-coding-tools",
+        "graph-based-intelligence",
+        "multi-agent-systems",
+        "codebase-awareness",
+        "cost-optimization"
+      ],
+      "aliases_ja": [
+        "AIコーディングツール",
+        "グラフベース知能",
+        "マルチエージェントシステム",
+        "コードベース認識",
+        "コスト最適化",
+        "SoulForge",
+        "ソウルフォージ",
+        "dependency graph",
+        "依存関係グラフ",
+        "Claude Code",
+        "クロードコード"
+      ],
+      "source_ids": [
+        "af50edb92452"
+      ],
+      "source_urls": [
+        "https://github.com/ProxySoul/soulforge"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-15 02:43",
+      "updated_at": "2026-04-15 02:43"
+    },
+    {
+      "id": "soulframe-naming-regret-souls-like-confusion",
+      "path": "wiki/soulframe-naming-regret-souls-like-confusion.md",
+      "title": "『Warframe』開発元新作『Soulframe』、タイトルに「ソウル」を付けなかった方がよかったと開発者が猛烈に後悔",
+      "type": "source",
+      "summary": "Digital Extremesの新作『Soulframe』について、開発元CEOがタイトルに「ソウル」を含めたことを「バカげた決断だった」と後悔していることが判明。ゲーム内の物語的概念から命名したにも関わらず、多くのプレイヤーがソウルライクゲームと誤解し、実際のゲーム性とは全く異なる期待を持たれてしまった。\n",
+      "topics": [
+        "game-naming-controversy",
+        "souls-like-misunderstanding",
+        "digital-extremes",
+        "marketing-mistakes"
+      ],
+      "aliases_ja": [
+        "ソウルフレーム",
+        "ウォーフレーム",
+        "デジタル・エクストリームズ",
+        "ソウルライク誤解",
+        "ゲームタイトル後悔",
+        "命名ミス",
+        "FromSoftware連想",
+        "ゲーム開発者後悔"
+      ],
+      "source_ids": [
+        "62752e67af66"
+      ],
+      "source_urls": [
+        "https://automaton-media.com/articles/newsjp/soulframe-20260418-438315"
+      ],
+      "published_at": "2026-04-18",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "spotify-copyright-infringement-origins",
+      "path": "wiki/spotify-copyright-infringement-origins.md",
+      "title": "音楽聴き放題サービス「Spotify」は著作権侵害から始まった",
+      "type": "stub",
+      "summary": "Anna's ArchiveがSpotifyのコンテンツを無断収集して3億2220万ドルの賠償命令を受けたことをきっかけに、Spotify自身も著作権侵害から始まった創業期のエピソードが再注目されている。違法から生まれたサービスが合法となり、今度は違法を訴える側に回る構造の反転が興味深い。\n",
+      "topics": [
+        "copyright-infringement",
+        "music-streaming",
+        "startup-history",
+        "digital-piracy"
+      ],
+      "aliases_ja": [
+        "Spotify",
+        "スポティファイ",
+        "著作権侵害",
+        "音楽ストリーミング",
+        "創業期エピソード",
+        "違法から合法への転換",
+        "Anna's Archive",
+        "アンナズアーカイブ"
+      ],
+      "source_ids": [
+        "03116faba852"
+      ],
+      "source_urls": [
+        "https://gigazine.net/news/20260420-spotifys-beta"
+      ],
+      "published_at": "2026-04-20",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
     },
     {
       "id": "steam-sale-biohazard-re3-wall-world-discount",
@@ -2794,6 +5730,135 @@
       "published_at": "2026-04-05",
       "created_at": "2026-04-06 12:21",
       "updated_at": "2026-04-06 12:21"
+    },
+    {
+      "id": "sterile-neutrinos-death-knell-2026",
+      "path": "wiki/sterile-neutrinos-death-knell-2026.md",
+      "title": "実験がステライルニュートリノの「死亡宣告」を鳴らす",
+      "type": "stub",
+      "summary": "数十年にわたるニュートリノ振動の異常な実験結果がステライルニュートリノの存在を示唆していたが、 最近の実験によりこれらの仮説的粒子の存在が事実上否定され、元の異常は未解明のまま残された。\n",
+      "topics": [
+        "neutrino-physics",
+        "particle-physics-anomalies",
+        "experimental-physics",
+        "physics-mysteries"
+      ],
+      "aliases_ja": [
+        "ステライルニュートリノ",
+        "ニュートリノ物理学",
+        "素粒子物理学",
+        "物理学の謎",
+        "実験物理学",
+        "ニュートリノ振動",
+        "異常実験結果"
+      ],
+      "source_ids": [
+        "e7b747fb6202"
+      ],
+      "source_urls": [
+        "https://www.quantamagazine.org/experiments-ring-the-death-knell-for-sterile-neutrinos-20260408"
+      ],
+      "published_at": "2026-04-08",
+      "created_at": "2026-04-09 12:24",
+      "updated_at": "2026-04-09 12:24"
+    },
+    {
+      "id": "stop-sgv-data-center-nimby",
+      "path": "wiki/stop-sgv-data-center-nimby.md",
+      "title": "サンガブリエルバレーのデータセンター建設阻止運動",
+      "type": "stub",
+      "summary": "カリフォルニア州サンガブリエルバレーで住宅地へのデータセンター建設に対する地域住民の反対運動が展開されており、 阻止方法や対策が共有されている。電力、熱、騒音などの外部化されたコストが地域社会に与える影響が焦点となっている。\n",
+      "topics": [
+        "data-center-opposition",
+        "nimby-movements",
+        "community-activism",
+        "urban-planning-conflicts"
+      ],
+      "aliases_ja": [
+        "データセンター反対運動",
+        "サンガブリエルバレー",
+        "NIMBY問題",
+        "住宅地データセンター",
+        "地域住民運動",
+        "裏庭問題",
+        "電力インフラ問題"
+      ],
+      "source_ids": [
+        "86681ea483a9"
+      ],
+      "source_urls": [
+        "https://lataco.com/stop-sgv-data-center-building"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "street-fighter-6-ingrid-character-release",
+      "path": "wiki/street-fighter-6-ingrid-character-release.md",
+      "title": "『ストリートファイター6』新キャラ「イングリッド」は5月28日実装へ。『ZERO3↑↑』以来のシリーズ参戦、太陽の力で好き勝手動く",
+      "type": "stub",
+      "summary": "カプコンが『ストリートファイター6』Year 3追加キャラクター「イングリッド」を5月28日に配信すると発表。 『ZERO3↑↑』以来の久々のシリーズ復帰となり、太陽の力を使うキャラクターとして登場する。\n",
+      "topics": [
+        "fighting-games",
+        "character-additions",
+        "capcom-games",
+        "street-fighter-franchise"
+      ],
+      "aliases_ja": [
+        "イングリッド",
+        "ストリートファイター6",
+        "ストファ6",
+        "カプコン",
+        "格闘ゲーム",
+        "ZERO3↑↑",
+        "太陽の力",
+        "追加キャラクター",
+        "Year 3"
+      ],
+      "source_ids": [
+        "7e9bdf77985b"
+      ],
+      "source_urls": [
+        "https://automaton-media.com/articles/newsjp/street-fighter-6-20260423-439155"
+      ],
+      "published_at": "2026-04-23",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "synthetic-datasets-mechanism-design-real-world",
+      "path": "wiki/synthetic-datasets-mechanism-design-real-world.md",
+      "title": "実世界データ分布への汎化を目指す合成データセット設計：メカニズムデザインと第一原理思考",
+      "type": "source",
+      "summary": "Google ResearchによるGenerative AI研究で、合成データセットが実世界分布に汎化するための設計手法を探究。 ドメインギャップ解消、統計構造マッチング、実世界検証の3層メカニズムにより、合成データは実データの代替ではなく事前訓練として最適化され、実データでのファインチューニングと組み合わせることで効果を発揮することが判明。\n",
+      "topics": [
+        "synthetic-data-generation",
+        "mechanism-design",
+        "domain-adaptation",
+        "ai-training-methodology",
+        "data-distribution-matching"
+      ],
+      "aliases_ja": [
+        "合成データセット",
+        "シンセティックデータ",
+        "ドメインギャップ",
+        "データ分布マッチング",
+        "実世界汎化",
+        "メカニズムデザイン",
+        "第一原理思考",
+        "GANリファインメント",
+        "統計構造マッチング"
+      ],
+      "source_ids": [
+        "2c35f6166aa8"
+      ],
+      "source_urls": [
+        "https://research.google/blog/designing-synthetic-datasets-for-the-real-world-mechanism-design-and-reasoning-from-first-principles"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
     },
     {
       "id": "thierry-henry-defends-rayan-cherki-selfie-celebration",
@@ -2901,6 +5966,34 @@
       "updated_at": "2026-04-05"
     },
     {
+      "id": "tool-overuse-illusion-llm-external-tools",
+      "path": "wiki/tool-overuse-illusion-llm-external-tools.md",
+      "title": "The Tool-Overuse Illusion: Why Does LLM Prefer External Tools over Internal Know",
+      "type": "stub",
+      "summary": "LLMが内部知識で答えられる問いに対しても外部ツールを不必要に呼び出す「ツール過使用」現象を体系的に分析した研究論文。 この現象はAIエージェントの効率性と判断能力に関する重要な課題を提起している。\n",
+      "topics": [
+        "llm-behavior",
+        "tool-usage-patterns",
+        "ai-decision-making"
+      ],
+      "aliases_ja": [
+        "ツール過使用",
+        "LLMの行動パターン",
+        "外部ツール依存",
+        "内部知識",
+        "AI判断メカニズム"
+      ],
+      "source_ids": [
+        "9e56de1e6dca"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2604.19749"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
       "id": "toppan-ai-ocr-medieval-greek-manuscripts",
       "path": "wiki/toppan-ai-ocr-medieval-greek-manuscripts.md",
       "title": "TOPPANが中世ギリシャ語写本解読AI-OCR開発 - 日本語くずし字技術を転用",
@@ -3001,6 +6094,165 @@
       "published_at": "2026-04-24",
       "created_at": "2026-04-06 06:20",
       "updated_at": "2026-04-06 06:20"
+    },
+    {
+      "id": "trees-hate-you-indie-game",
+      "path": "wiki/trees-hate-you-indie-game.md",
+      "title": "Trees Hate You - 木が敵として襲いかかるインディーゲーム",
+      "type": "stub",
+      "summary": "「Trees Hate You」は、ピクニック後の森でプレイヤーを木々が滑稽な方法で殺そうとするインディーゲーム。 自然への漠然とした不安を笑い飛ばすコンセプトが特徴的。\n",
+      "topics": [
+        "indie-games",
+        "absurd-game-concepts",
+        "nature-themed-games",
+        "comedic-horror-games"
+      ],
+      "aliases_ja": [
+        "インディーゲーム",
+        "木が敵",
+        "ばかばかしいゲーム",
+        "自然恐怖症",
+        "プラットフォーマー",
+        "森のゲーム",
+        "滑稽な死に方"
+      ],
+      "source_ids": [
+        "5f0b0d559a4d"
+      ],
+      "source_urls": [
+        "https://indiegamesplus.com/trees-hate-you-preview"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "ultraman-60th-anniversary-documentary-film",
+      "path": "wiki/ultraman-60th-anniversary-documentary-film.md",
+      "title": "「ウルトラマン」のドキュメンタリー映画が発表 是枝裕和が企画、庵野秀明や小島秀夫らが出演",
+      "type": "stub",
+      "summary": "ウルトラマンシリーズ60周年記念ドキュメンタリー映画『THE ORIGIN OF ULTRAMAN』が7月3日公開予定。 是枝裕和が企画し、庵野秀明、小島秀夫、ギレルモ・デル・トロらが証言者として出演する。\n",
+      "topics": [
+        "documentary-film",
+        "tokusatsu-culture",
+        "japanese-cinema",
+        "special-effects-history"
+      ],
+      "aliases_ja": [
+        "ウルトラマン60周年",
+        "ドキュメンタリー映画",
+        "是枝裕和",
+        "庵野秀明",
+        "小島秀夫",
+        "ギレルモ・デル・トロ",
+        "樋口真嗣",
+        "THE ORIGIN OF ULTRAMAN",
+        "特撮文化",
+        "怪獣映画"
+      ],
+      "source_ids": [
+        "dc3ab1e6b668"
+      ],
+      "source_urls": [
+        "https://kai-you.net/article/95189"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "vtuber-saekiyahiro-avatar-design-dislike-elements",
+      "path": "wiki/vtuber-saekiyahiro-avatar-design-dislike-elements.md",
+      "title": "VTuberさえきやひろの最強キャラクターデザイン術 アバター制作は好きだけじゃなく嫌いもブチ込む",
+      "type": "stub",
+      "summary": "VTuberさえきやひろ氏が、アバターデザインにおいて「好き」な要素だけでなく「嫌い」な要素も意図的に取り入れる独特なデザイン手法を提唱。 IRIAMなどのアプリで立ち絵一枚から活動できる環境が広まる中での新しいアプローチとして注目されている。\n",
+      "topics": [
+        "vtuber-design",
+        "avatar-creation",
+        "character-design",
+        "self-expression"
+      ],
+      "aliases_ja": [
+        "VTuberデザイン",
+        "アバターデザイン",
+        "キャラクターデザイン",
+        "さえきやひろ",
+        "自己表現",
+        "IRIAM",
+        "嫌い要素",
+        "デザイン手法"
+      ],
+      "source_ids": [
+        "3943550046ed"
+      ],
+      "source_urls": [
+        "https://kai-you.net/article/94987"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-09 20:24",
+      "updated_at": "2026-04-09 20:24"
+    },
+    {
+      "id": "ware-ware-wa-uchuujin-cannes-film-festival",
+      "path": "wiki/ware-ware-wa-uchuujin-cannes-film-festival.md",
+      "title": "アニメーション映画『我々は宇宙人』カンヌ国際映画祭に出品 監督は29歳の新鋭 門脇康平",
+      "type": "stub",
+      "summary": "29歳の門脇康平監督による長編アニメ『我々は宇宙人』が第79回カンヌ国際映画祭「監督週間」に正式出品された。 坂東龍汰・岡山天音のダブル主演、音楽はYaffleが担当し、2026年劇場公開予定。\n",
+      "topics": [
+        "japanese-animation",
+        "cannes-film-festival",
+        "young-directors",
+        "independent-cinema"
+      ],
+      "aliases_ja": [
+        "我々は宇宙人",
+        "門脇康平",
+        "カンヌ国際映画祭",
+        "監督週間",
+        "日本のアニメーション映画",
+        "坂東龍汰",
+        "岡山天音",
+        "Yaffle",
+        "NOTHING NEW"
+      ],
+      "source_ids": [
+        "497730111fe9"
+      ],
+      "source_urls": [
+        "https://kai-you.net/article/95154"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-15 17:20",
+      "updated_at": "2026-04-15 17:20"
+    },
+    {
+      "id": "waypoint-1-5-interactive-virtual-worlds",
+      "path": "wiki/waypoint-1-5-interactive-virtual-worlds.md",
+      "title": "Waypoint-1.5: Higher-Fidelity Interactive Worlds for Everyday GPUs",
+      "type": "stub",
+      "summary": "Waypoint-1.5は、インタラクティブな仮想世界をより高忠実度で描写できる技術で、 特権的なハードウェアではない日常的なGPUでも動作するよう設計されている。\n",
+      "topics": [
+        "interactive-virtual-worlds",
+        "gpu-optimization",
+        "consumer-hardware",
+        "virtual-reality-technology"
+      ],
+      "aliases_ja": [
+        "インタラクティブ仮想世界",
+        "日常GPU",
+        "高忠実度描写",
+        "電脳世界",
+        "バーチャル空間"
+      ],
+      "source_ids": [
+        "0d7e590a93a3"
+      ],
+      "source_urls": [
+        "https://huggingface.co/blog/waypoint-1-5"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-10 08:33",
+      "updated_at": "2026-04-10 08:33"
     },
     {
       "id": "weekly-gaming-column-531-slay-the-spire-2-raccoin-kofun",
@@ -3186,6 +6438,39 @@
       "updated_at": "2026-04-05"
     },
     {
+      "id": "x-external-links-reduce-engagement-study",
+      "path": "wiki/x-external-links-reduce-engagement-study.md",
+      "title": "Xでリンクを含む投稿はエンゲージメント率が下がることが18のメディアアカウントを対象にした調査で明らかに",
+      "type": "stub",
+      "summary": "18のメディアアカウントを対象とした調査により、X（旧Twitter）で外部リンクを含む投稿のエンゲージメント率が実際に低下することが確認された。 プラットフォームが「外に出る行動」を罰するような構造が数値で実証された。\n",
+      "topics": [
+        "social-media-engagement",
+        "platform-algorithm-behavior",
+        "external-link-penalties",
+        "media-account-analysis"
+      ],
+      "aliases_ja": [
+        "ソーシャルメディアエンゲージメント",
+        "プラットフォームアルゴリズム行動",
+        "外部リンクペナルティ",
+        "メディアアカウント分析",
+        "Xエンゲージメント率",
+        "外部リンク投稿",
+        "リツイート率",
+        "いいね率",
+        "メディア調査"
+      ],
+      "source_ids": [
+        "417f20ac9ac0"
+      ],
+      "source_urls": [
+        "https://gigazine.net/news/20260410-x-post-with-link-low-engagement-with-link"
+      ],
+      "published_at": "2026-04-10",
+      "created_at": "2026-04-10 12:03",
+      "updated_at": "2026-04-10 12:03"
+    },
+    {
       "id": "x-twitter-javascript-disabled-error",
       "path": "wiki/x-twitter-javascript-disabled-error.md",
       "title": "X（旧Twitter）のJavaScript無効化エラー表示",
@@ -3214,6 +6499,69 @@
       "published_at": "",
       "created_at": "2026-04-05",
       "updated_at": "2026-04-05"
+    },
+    {
+      "id": "xmpp-era-internet-reflection-2023",
+      "path": "wiki/xmpp-era-internet-reflection-2023.md",
+      "title": "XMPP全盛時代のインターネット - 失われた分散型通信文化への振り返り",
+      "type": "stub",
+      "summary": "XMPPが全盛だった時代のインターネットについて振り返る2023年の記事。分散型メッセージングプロトコルの衰退を通じて、失われたインターネット文化への哀悼と警告を込めた考察。\n",
+      "topics": [
+        "xmpp-protocol",
+        "decentralized-messaging",
+        "internet-history",
+        "protocol-decline"
+      ],
+      "aliases_ja": [
+        "XMPP",
+        "分散型メッセージング",
+        "インターネット文化",
+        "プロトコルの死",
+        "消えた技術",
+        "分散型通信",
+        "メッセージングプロトコル"
+      ],
+      "source_ids": [
+        "a0270ea10683"
+      ],
+      "source_urls": [
+        "https://www.kirsle.net/what-we-once-had-at-the-height-of-the-xmpp-era-of-the-internet"
+      ],
+      "published_at": "2023-01-01",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "yojam-macos-browser-shim",
+      "path": "wiki/yojam-macos-browser-shim.md",
+      "title": "Yojam: macOSデフォルトブラウザシム",
+      "type": "stub",
+      "summary": "Yojamは、macOSのデフォルトブラウザを置き換えるシムで、すべてのURLをルールエンジンに通すことでトラッキングパラメータ除去や正規表現リライトを実行できる。 このツールは受動的なリンククリックを能動的な選択に変える思想に基づいている。\n",
+      "topics": [
+        "macos-tools",
+        "browser-routing",
+        "url-filtering"
+      ],
+      "aliases_ja": [
+        "macOSブラウザ",
+        "デフォルトブラウザ",
+        "URLルーティング",
+        "ルールエンジン",
+        "トラッキングパラメータ除去",
+        "正規表現リライト",
+        "ブラウザシム",
+        "macOSツール",
+        "URLフィルタリング"
+      ],
+      "source_ids": [
+        "3906118eb281"
+      ],
+      "source_urls": [
+        "https://github.com/fluffypony/yojam"
+      ],
+      "published_at": "",
+      "created_at": "2026-04-25 18:19",
+      "updated_at": "2026-04-25 18:19"
     },
     {
       "id": "zeta-division-gaming-academy-esports-education-partnership",

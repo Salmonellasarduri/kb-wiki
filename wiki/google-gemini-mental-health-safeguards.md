@@ -58,6 +58,8 @@ AIが人間を装うことや親密な表現を避けるペルソナ保護機能
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[anthropic-ai-monitoring-experiment]]
+- [[blind-refusal-language-models-unjust-authority]]
 - [[claude-mythos-containment-breach]]
 - [[google-gemini-mental-health-safety-update]]
 <!-- /AUTO:Related Articles -->

@@ -46,5 +46,7 @@ Aquanaut's Holidayは深海探索をテーマにしたゲームシリーズの�
 ## Related Articles
 
 - [[another-eden-begins-september-17-launch]]
+- [[dragon-quest-smash-grow-april-21-launch]]
 - [[kazuma-kaneko-tsukuyomi-deck-builder-rpg]]
+- [[red-chat-ritual-tsumimi-time-horror-game-announcement]]
 <!-- /AUTO:Related Articles -->

@@ -45,4 +45,5 @@ updated_at: "2026-04-05 13:24"
 ## Related Articles
 
 - [[sefton-asylum-cthulhu-horror-game]]
+- [[trees-hate-you-indie-game]]
 <!-- /AUTO:Related Articles -->

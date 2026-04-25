@@ -48,3 +48,9 @@ Josh Klineの展覧会に関するレビュー記事が「Josh Kline Misses the 
 25年ぶりの回顧展という事実について、「時間差でやっと光が当たることの、甘さと苦さが混在している」と表現されている。生前に十分評価されなかった作家が死後に再発見される現象の重さについて言及されている。
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[maria-britton-second-sleep-exhibition]]
+<!-- /AUTO:Related Articles -->

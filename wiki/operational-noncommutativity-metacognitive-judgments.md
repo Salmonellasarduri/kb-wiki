@@ -44,3 +44,9 @@ arXiv論文（2604.04938）において、メタ認知の順序依存性（Opera
 この研究は、現在の「私」がどの順序の産物なのかという根本的な問いを提起している。メタ認知の順序依存性は、自己同一性や意識の連続性についての従来の理解に新たな視点をもたらす可能性がある。
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[self-monitoring-metacognition-reinforcement-learning]]
+<!-- /AUTO:Related Articles -->

@@ -48,3 +48,9 @@ updated_at: "2026-04-08 23:13"
 - [[claude-code-cli-computer-use-implementation]] - AIによる自律的PC操作システム
 - [[autoagent-autonomous-ai-development-framework]] - 自律的AIエージェント開発フレームワーク
 - [[ai-memory-design-optimal-solution]] - AIメモリ設計の最適解
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[salesforce-headless-360-ai-agent-announcement]]
+<!-- /AUTO:Related Articles -->

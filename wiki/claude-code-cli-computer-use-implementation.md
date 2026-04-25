@@ -133,7 +133,10 @@ Claude CodeにおけるComputer Useの導入は、この知覚の壁を取り除
 - [[ai-development-8-years-3-months-syntaqlite]]
 - [[anthropic-claude-code-third-party-tools-additional-fees]]
 - [[anthropic-claude-code-third-party-tools-pricing-change]]
+- [[anthropic-claude-skill-creator-testing-enhancement]]
+- [[claude-advisor-strategy-opus-sonnet-cost-optimization]]
 - [[claude-code-computer-use-cli-implementation]]
 - [[claude-mythos-containment-breach]]
 - [[claude-openclaw-subscription-exclusion]]
+- [[nec-ai-sustainability-disclosure-automation]]
 <!-- /AUTO:Related Articles -->

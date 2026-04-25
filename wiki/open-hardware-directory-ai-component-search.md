@@ -52,5 +52,6 @@ updated_at: "2026-04-05 19:55"
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[diy-ai-autoprober-duct-tape-cnc]]
 - [[open-hardware-directory-ai-search]]
 <!-- /AUTO:Related Articles -->

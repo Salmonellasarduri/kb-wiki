@@ -42,3 +42,9 @@ AIデータセンター建設計画の約半数が、変圧器やバッテリー
 ## 影響と含意
 
 この供給制約は、AI産業の成長ペースに対する現実的な制約として機能している。変圧器のような基本的な電力インフラ部品の不足が、最先端のAI技術発展のボトルネックとなっているという皮肉な状況を示している。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[meta-aws-graviton5-ai-agent-partnership]]
+<!-- /AUTO:Related Articles -->

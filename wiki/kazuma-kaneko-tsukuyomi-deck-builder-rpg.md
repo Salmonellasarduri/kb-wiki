@@ -55,6 +55,7 @@ updated_at: "2026-04-08 23:13"
 - [[another-eden-begins-september-17-launch]]
 - [[artdink-aquanauts-holiday-april-2026-release]]
 - [[ascenders-beyond-the-peak-cthulhu-climbing-roguelike]]
+- [[dragon-quest-smash-grow-april-21-launch]]
 - [[gaming-weekly-column-531-slay-the-spire-2-raccoin-kofun-analysis]]
 - [[steam-sale-resident-evil-re3-wall-world-april-2026]]
 - [[weekly-gaming-column-531-slay-the-spire-2-raccoin-kofun]]

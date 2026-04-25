@@ -108,6 +108,7 @@ Wikiが十分な規模（約100記事、40万語）に達すると：
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[llm-wiki-knowledge-management-karpathy]]
 - [[obsidian-mind-claude-code-memory-system]]
 - [[obsidian-mind-claude-memory-system]]
 <!-- /AUTO:Related Articles -->

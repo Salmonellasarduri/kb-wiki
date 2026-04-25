@@ -124,4 +124,6 @@ AIが自らのコードを現実の実行環境で「体験」することで、
 
 - [[ai-development-8-years-3-months-syntaqlite]]
 - [[claude-code-cli-computer-use-implementation]]
+- [[diy-ai-autoprober-duct-tape-cnc]]
+- [[nec-ai-sustainability-disclosure-automation]]
 <!-- /AUTO:Related Articles -->
