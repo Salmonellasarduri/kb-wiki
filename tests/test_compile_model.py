@@ -83,3 +83,31 @@ def test_record_compile_failure_keeps_model_invalid_retryable(monkeypatch):
     kb._record_compile_failure(item, "404 not_found_error model: claude-x", "src2")
     assert item["status"] == "failed"  # model_invalid is never blocked
     assert item["fail_reason"] == "model_invalid"
+
+
+# --- A3: topic canonicalization (index hygiene) --------------------------------------
+
+
+def test_canonicalize_topic_formal():
+    kb = _load_kb()
+    assert kb._canonicalize_topic("AI Ethics") == "ai-ethics"
+    assert kb._canonicalize_topic("machine_learning") == "machine-learning"
+    assert kb._canonicalize_topic("  Multi--Agent  ") == "multi-agent"
+
+
+def test_canonicalize_topic_alias_fold():
+    kb = _load_kb()
+    assert kb._canonicalize_topic("Multi-Agent-Frameworks") == "multi-agent-framework"
+
+
+def test_canonicalize_topics_dedupes_and_drops_empty():
+    kb = _load_kb()
+    out = kb._canonicalize_topics(
+        ["AI Ethics", "ai-ethics", "", "   ", "Multi-Agent-Frameworks", 123])
+    assert out == ["ai-ethics", "multi-agent-framework"]
+
+
+def test_canonicalize_topics_non_list_is_safe():
+    kb = _load_kb()
+    assert kb._canonicalize_topics(None) == []
+    assert kb._canonicalize_topics("ai-ethics") == []  # str is not a topic list

@@ -1902,6 +1902,42 @@ def _split_into_chunks(body: str, article_id: str) -> list[dict]:
     return chunks
 
 
+# Topic hygiene: keep topics in one canonical kebab form so trivial variants (case,
+# separators, a few confirmed plural duplicates) don't fragment the index. The live data
+# has 0 formal collisions, so this is mainly a FORWARD guard against future drift;
+# aggressive semantic merging is deliberately avoided — it would destroy legitimate
+# granularity (llm-agents != llm-evaluation) and hurt search precision. TOPIC_ALIASES is
+# the curated extension point the KB curator (B1) can grow as it surfaces real duplicates.
+TOPIC_ALIASES = {
+    "multi-agent-frameworks": "multi-agent-framework",
+    "contemporary-art-exhibitions": "contemporary-art-exhibition",
+}
+
+
+def _canonicalize_topic(topic: str) -> str:
+    t = topic.strip().lower()
+    t = re.sub(r"[\s_]+", "-", t)
+    t = re.sub(r"-{2,}", "-", t)
+    t = t.strip("-")
+    return TOPIC_ALIASES.get(t, t)
+
+
+def _canonicalize_topics(topics: object) -> list[str]:
+    """Canonicalize + de-duplicate a topic list, preserving first-seen order.
+    Non-destructive: applied only when building _index.json, never to wiki frontmatter."""
+    out: list[str] = []
+    seen: set[str] = set()
+    if isinstance(topics, list):
+        for raw in topics:
+            if not isinstance(raw, str):
+                continue
+            c = _canonicalize_topic(raw)
+            if c and c not in seen:
+                seen.add(c)
+                out.append(c)
+    return out
+
+
 def cmd_index(_args: argparse.Namespace) -> int:
     """Rebuild _index.json from wiki/ and reconcile manifest status."""
     source_url_map = _build_source_url_map()
@@ -1971,7 +2007,7 @@ def cmd_index(_args: argparse.Namespace) -> int:
             "title": fm["title"],
             "type": fm.get("type", "source"),
             "summary": fm["summary"],
-            "topics": fm["topics"],
+            "topics": _canonicalize_topics(fm["topics"]),
             "aliases_ja": fm.get("aliases_ja", []),
             "source_ids": fm["source_ids"],
             "source_urls": _source_urls_set,
