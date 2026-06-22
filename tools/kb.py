@@ -67,6 +67,7 @@ MANIFEST_VERSION = 1
 INDEX_VERSION = 1
 CHUNKS_PATH = KB_ROOT / "_chunks.json"
 CHUNKING_VERSION = 1
+COMPILE_CANDIDATE_STATUSES = ("pending", "failed", "compiling")
 
 # Frontmatter: must start at very beginning of file
 FRONTMATTER_RE = re.compile(r"\A---[ \t]*\n(.*?)\n---[ \t]*\n", re.DOTALL)
@@ -88,7 +89,7 @@ FRONTMATTER_OPTIONAL = {
     "reduced_from": list, # [{id, updated_at}, ...] for synthesis provenance
 }
 
-COMPILE_MODEL = "claude-sonnet-4-20250514"
+COMPILE_MODEL = "claude-sonnet-4-6"
 WATCH_DEBOUNCE_SEC = 3.0
 MAX_SOURCE_BYTES = 200_000  # ~200KB, well within Claude's context window
 MIN_SOURCE_BODY_CHARS = 200  # reject sources with trivial body content
@@ -838,6 +839,195 @@ def _extract_source_topics(source_text: str) -> list[str]:
     return []
 
 
+def _canonical_source_url(url: object) -> str:
+    """Canonical URL key for article identity checks."""
+    if not isinstance(url, str):
+        return ""
+    raw = url.strip()
+    if not raw.startswith(("http://", "https://")):
+        return ""
+    normalized = normalize_url(raw)
+    parsed = urlparse(normalized)
+    path = parsed.path.rstrip("/") if parsed.path != "/" else parsed.path
+    return urlunparse((
+        parsed.scheme,
+        parsed.netloc,
+        path,
+        parsed.params,
+        parsed.query,
+        "",
+    ))
+
+
+def _append_unique_url(urls: list[str], url: object) -> None:
+    canon = _canonical_source_url(url)
+    if canon and canon not in urls:
+        urls.append(canon)
+
+
+def _extract_source_urls(source_text: str) -> list[str]:
+    """Extract canonical source URLs from source frontmatter or Source lines."""
+    urls: list[str] = []
+    fm = parse_frontmatter(source_text)
+    if fm:
+        _append_unique_url(urls, fm.get("source_url"))
+        raw_source_urls = fm.get("source_urls")
+        if isinstance(raw_source_urls, list):
+            for url in raw_source_urls:
+                _append_unique_url(urls, url)
+        else:
+            _append_unique_url(urls, raw_source_urls)
+
+    for line in source_text.split("\n")[:20]:
+        m = re.match(r"^Source:\s*(https?://\S+)", line.strip())
+        if m:
+            _append_unique_url(urls, m.group(1))
+    return urls
+
+
+def _find_article_by_exact_source_url(
+    source_urls: list[str],
+    existing_articles: list[dict],
+) -> tuple[dict | None, str]:
+    """Return an existing article with the same canonical source URL."""
+    if not source_urls:
+        return None, ""
+    by_url: dict[str, dict] = {}
+    for article in existing_articles:
+        if not isinstance(article, dict):
+            continue
+        raw_urls = article.get("source_urls") or []
+        if not isinstance(raw_urls, list):
+            continue
+        for raw_url in raw_urls:
+            canon = _canonical_source_url(raw_url)
+            if canon and canon not in by_url:
+                by_url[canon] = article
+
+    for source_url in source_urls:
+        target = by_url.get(source_url)
+        if target is not None:
+            return target, source_url
+    return None, ""
+
+
+def _force_frontmatter_article_id(article_text: str, article_id: str) -> str:
+    """Force update-mode output to keep the existing article identity."""
+    m = FRONTMATTER_RE.match(article_text)
+    if not m:
+        raise ValueError("No valid frontmatter to force article_id")
+    frontmatter = m.group(1)
+    frontmatter, replacements = re.subn(
+        r"(?m)^article_id\s*:.*$",
+        f"article_id: {article_id}",
+        frontmatter,
+        count=1,
+    )
+    if replacements != 1:
+        raise ValueError("No article_id field to force in frontmatter")
+    return f"---\n{frontmatter}\n---\n{article_text[m.end():]}"
+
+
+def _force_frontmatter_source_ids(article_text: str, source_ids: list[str]) -> str:
+    """Force update-mode output to keep deterministic merged source_ids."""
+    m = FRONTMATTER_RE.match(article_text)
+    if not m:
+        raise ValueError("No valid frontmatter to force source_ids")
+
+    lines = m.group(1).splitlines()
+    rewritten: list[str] = []
+    replaced = False
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if re.match(r"^source_ids\s*:", line):
+            rewritten.append("source_ids:")
+            rewritten.extend(f"  - {source_id}" for source_id in source_ids)
+            replaced = True
+            i += 1
+            while i < len(lines) and (
+                lines[i].startswith((" ", "\t")) or lines[i].lstrip().startswith("-")
+            ):
+                i += 1
+            continue
+        rewritten.append(line)
+        i += 1
+
+    if not replaced:
+        raise ValueError("No source_ids field to force in frontmatter")
+    frontmatter = "\n".join(rewritten)
+    return f"---\n{frontmatter}\n---\n{article_text[m.end():]}"
+
+
+def _runtime_article_from_frontmatter(
+    fm: dict,
+    article_id: str,
+    source_urls: list[str],
+) -> dict:
+    """Build an in-memory article entry for later sources in this compile run."""
+    runtime_urls: list[str] = []
+    for raw_url in fm.get("source_urls", []):
+        _append_unique_url(runtime_urls, raw_url)
+    for raw_url in source_urls:
+        _append_unique_url(runtime_urls, raw_url)
+    return {
+        "id": article_id,
+        "path": to_posix(WIKI_DIR / f"{article_id}.md", KB_ROOT),
+        "title": fm["title"],
+        "type": fm.get("type", "source"),
+        "summary": fm["summary"],
+        "topics": fm["topics"],
+        "aliases_ja": fm.get("aliases_ja", []),
+        "source_ids": fm["source_ids"],
+        "source_urls": runtime_urls,
+        "published_at": fm.get("published_at", ""),
+        "created_at": fm["created_at"],
+        "updated_at": fm["updated_at"],
+    }
+
+
+def _upsert_runtime_article(existing_articles: list[dict], article: dict) -> None:
+    """Keep compile-run article context aligned with the wiki files just written."""
+    article_id = article["id"]
+    for i, existing in enumerate(existing_articles):
+        if existing.get("id") == article_id:
+            existing_articles[i] = article
+            return
+    existing_articles.append(article)
+
+
+def _snapshot_compile_candidate_items(manifest: dict) -> dict[str, dict]:
+    """Capture items that compile must still process after a pre-index refresh."""
+    items = manifest.get("items", {})
+    if not isinstance(items, dict):
+        return {}
+    return {
+        sid: dict(item)
+        for sid, item in items.items()
+        if isinstance(item, dict)
+        and item.get("status") in COMPILE_CANDIDATE_STATUSES
+    }
+
+
+def _restore_compile_candidate_items(
+    manifest: dict,
+    snapshots: dict[str, dict],
+) -> int:
+    """Undo cmd_index manifest reconciliation for sources compile must process."""
+    items = manifest.get("items", {})
+    if not isinstance(items, dict):
+        return 0
+
+    restored = 0
+    for sid, snapshot in snapshots.items():
+        if sid not in items:
+            continue
+        if items[sid] != snapshot:
+            restored += 1
+        items[sid] = dict(snapshot)
+    return restored
+
+
 def _score_relevance(
     source_topics: list[str],
     source_title_tokens: set[str],
@@ -975,13 +1165,30 @@ def cmd_compile(_args: argparse.Namespace) -> int:
         print("No manifest found. Run 'kb ingest' first.")
         return 1
 
+    compile_candidate_snapshots = _snapshot_compile_candidate_items(manifest)
+
+    print("Refreshing index before compile...")
+    pre_index_rc = cmd_index(_args)
+    if pre_index_rc:
+        print("WARNING: pre-compile index refresh reported warnings; continuing.")
+    manifest = load_json(MANIFEST_PATH)
+    if not manifest or "items" not in manifest:
+        print("No manifest found after index refresh. Run 'kb ingest' first.")
+        return 1
+    restored_candidates = _restore_compile_candidate_items(
+        manifest,
+        compile_candidate_snapshots,
+    )
+    if restored_candidates:
+        atomic_write_json(MANIFEST_PATH, manifest)
+
     items = manifest["items"]
     index = load_json(INDEX_PATH)
 
     # Find pending or failed sources
     pending = {
         sid: item for sid, item in items.items()
-        if item.get("status") in ("pending", "failed", "compiling")
+        if item.get("status") in COMPILE_CANDIDATE_STATUSES
     }
 
     if not pending:
@@ -1104,10 +1311,26 @@ def cmd_compile(_args: argparse.Namespace) -> int:
             source_title = source_fm.get("title", source_title) or source_title
         source_title_tokens = _tokenize_simple(source_title)
         source_topics = _extract_source_topics(source_text)
+        source_urls = _extract_source_urls(source_text)
 
         # Stage 1: lightweight scoring against all existing articles
         update_target: dict | None = None
-        if existing_articles and source_topics:
+        matched_url = ""
+        if existing_articles and source_urls:
+            update_target, matched_url = _find_article_by_exact_source_url(
+                source_urls,
+                existing_articles,
+            )
+            if update_target:
+                print(
+                    f"  UPDATE MODE: exact source URL match -> {update_target['id']}"
+                )
+                _append_log(
+                    "compile:merge-check",
+                    f"{sid} -> {update_target['id']} (exact_url={matched_url[:120]})",
+                )
+
+        if update_target is None and existing_articles and source_topics:
             scored = []
             for ea in existing_articles:
                 s = _score_relevance(source_topics, source_title_tokens, ea)
@@ -1157,11 +1380,13 @@ def cmd_compile(_args: argparse.Namespace) -> int:
                         print(f"  Merge check failed ({e}), defaulting to create mode")
 
         # --- Build prompt ---
+        forced_source_ids: list[str] = []
         if update_target:
             # Update mode: merge new source into existing article
             existing_body = _read_wiki_body(update_target["id"])
             existing_source_ids = update_target.get("source_ids", [])
-            merged_source_ids = list(existing_source_ids) + [sid]
+            merged_source_ids = list(dict.fromkeys(list(existing_source_ids) + [sid]))
+            forced_source_ids = merged_source_ids
             source_ids_yaml = "\n".join(f"  - {s}" for s in merged_source_ids)
 
             print(f"UPDATING: {update_target['id']} with {item['original_name']} ({sid})...")
@@ -1304,6 +1529,19 @@ IMPORTANT — THIS IS A STUB CASE. The source contains limited content (headline
                     else:
                         raise ValueError("No valid frontmatter after retry")
 
+                if update_target:
+                    candidate = _force_frontmatter_article_id(
+                        candidate,
+                        update_target["id"],
+                    )
+                    candidate = _force_frontmatter_source_ids(
+                        candidate,
+                        forced_source_ids,
+                    )
+                    fm = parse_frontmatter(candidate)
+                    if fm is None:
+                        raise ValueError("No valid frontmatter after forcing update fields")
+
                 errors = validate_frontmatter(fm, Path(fm.get("article_id", "unknown")))
                 if errors:
                     if attempt == 0:
@@ -1387,7 +1625,20 @@ IMPORTANT — THIS IS A STUB CASE. The source contains limited content (headline
         _append_log("compile", f"{mode} {article_id} from {sid}")
 
         # Update existing context for next source
-        existing_ctx += f"\n- {fm['title']} (topics: {', '.join(fm.get('topics', []))}): {fm.get('summary', '')}"
+        runtime_source_urls: list[str] = []
+        if update_target:
+            for raw_url in update_target.get("source_urls", []):
+                _append_unique_url(runtime_source_urls, raw_url)
+        for raw_url in source_urls:
+            _append_unique_url(runtime_source_urls, raw_url)
+        _upsert_runtime_article(
+            existing_articles,
+            _runtime_article_from_frontmatter(fm, article_id, runtime_source_urls),
+        )
+        existing_ctx = "\n".join(
+            f"- {a['title']} (topics: {', '.join(a['topics'])}): {a['summary']}"
+            for a in existing_articles
+        ) or "(none yet)"
 
     atomic_write_json(MANIFEST_PATH, manifest)
 
@@ -1413,6 +1664,12 @@ IMPORTANT — THIS IS A STUB CASE. The source contains limited content (headline
                     })
         xref_count = _refresh_cross_references(ref_articles)
         print(f"  {xref_count} articles updated with cross-references")
+
+        print("\nRebuilding index...")
+        compile_index_rc = cmd_index(_args)
+        setattr(_args, "_compile_index_rc", compile_index_rc)
+        if compile_index_rc:
+            print("WARNING: post-compile index rebuild reported warnings.")
 
     print(f"\nDone: {compiled} compiled, {failed} failed")
     if compiled:
@@ -1621,12 +1878,10 @@ def cmd_index(_args: argparse.Namespace) -> int:
         for sid in fm["source_ids"]:
             if sid in source_url_map:
                 _u = source_url_map[sid]
-                if _u not in _source_urls_set:
-                    _source_urls_set.append(_u)
+                _append_unique_url(_source_urls_set, _u)
         # Also include LLM-extracted source_urls as fallback
         for _u in fm.get("source_urls", []):
-            if isinstance(_u, str) and _u.startswith("http") and _u not in _source_urls_set:
-                _source_urls_set.append(_u)
+            _append_unique_url(_source_urls_set, _u)
 
         # --- published_at validation ---
         _pub_at = fm.get("published_at", "")
@@ -1800,7 +2055,11 @@ def cmd_sync(_args: argparse.Namespace) -> int:
     rc_compile = cmd_compile(_args)
 
     print("\n=== INDEX ===")
-    rc_index = cmd_index(_args)
+    if hasattr(_args, "_compile_index_rc"):
+        rc_index = getattr(_args, "_compile_index_rc")
+        print("Index already refreshed by compile.")
+    else:
+        rc_index = cmd_index(_args)
 
     # Optional reduce step
     if getattr(_args, "reduce", False):
