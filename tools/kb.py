@@ -89,7 +89,9 @@ FRONTMATTER_OPTIONAL = {
     "reduced_from": list, # [{id, updated_at}, ...] for synthesis provenance
 }
 
-COMPILE_MODEL = "claude-sonnet-4-6"
+# Env-overridable so a retired/renamed model id can be fixed without a code edit.
+# (A hardcoded retired id silently froze compile for 8 days from 2026-06-15.)
+COMPILE_MODEL = os.environ.get("KB_COMPILE_MODEL", "claude-sonnet-4-6")
 WATCH_DEBOUNCE_SEC = 3.0
 MAX_SOURCE_BYTES = 200_000  # ~200KB, well within Claude's context window
 MIN_SOURCE_BODY_CHARS = 200  # reject sources with trivial body content
@@ -1152,6 +1154,31 @@ def _refresh_cross_references(articles: list[dict]) -> int:
     return updated
 
 
+_MODEL_INVALID_WARNED = False
+
+
+def _is_model_error(err: object) -> bool:
+    """True when an API failure means the configured COMPILE_MODEL is invalid/retired
+    (404 not_found on the model id), as opposed to a transient or content error.
+    Such errors recur every compile cycle until KB_COMPILE_MODEL is fixed, so they
+    must be surfaced loudly rather than buried in per-source 'failed' status.
+    'model' is required so fetch-side 'HTTP 404' errors are not misclassified."""
+    s = str(err).lower()
+    return "model" in s and ("not_found_error" in s or "404" in s)
+
+
+def _warn_model_invalid(err: object) -> None:
+    """Surface a model-invalid compile failure loudly: stderr every time, log.md once."""
+    global _MODEL_INVALID_WARNED
+    msg = (f"COMPILE_MODEL '{COMPILE_MODEL}' rejected by API as invalid/retired "
+           f"({str(err)[:160]}). Compile is HARD-DOWN until fixed; "
+           f"set env KB_COMPILE_MODEL to a current model id.")
+    print(f"\n*** KB COMPILE MODEL INVALID ***\n  {msg}\n", file=sys.stderr)
+    if not _MODEL_INVALID_WARNED:
+        _append_log("compile:MODEL_INVALID", msg)
+        _MODEL_INVALID_WARNED = True
+
+
 def cmd_compile(_args: argparse.Namespace) -> int:
     """Compile pending sources into wiki articles using Claude API."""
     try:
@@ -1560,6 +1587,8 @@ IMPORTANT — THIS IS A STUB CASE. The source contains limited content (headline
                 print(f"  ERROR: {e}")
                 item["status"] = "failed"
                 item["error"] = str(e)[:200]
+                if _is_model_error(e):
+                    _warn_model_invalid(e)
                 failed += 1
                 break
 
