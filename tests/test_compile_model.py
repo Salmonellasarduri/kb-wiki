@@ -40,3 +40,46 @@ def test_compile_model_env_override(monkeypatch):
     monkeypatch.setenv("KB_COMPILE_MODEL", "claude-test-override")
     kb = _load_kb()
     assert kb.COMPILE_MODEL == "claude-test-override"
+
+
+# --- A2: retry-cap / discard policy --------------------------------------------------
+
+
+def test_classify_fail_reason_buckets():
+    kb = _load_kb()
+    assert kb._classify_fail_reason("Error code: 404 not_found_error model: x") == "model_invalid"
+    assert kb._classify_fail_reason("Connection timeout") == "transient"
+    assert kb._classify_fail_reason("overloaded_error 529") == "transient"
+    assert kb._classify_fail_reason("No valid frontmatter after retry") == "content_invalid"
+    assert kb._classify_fail_reason("something unexpected") == "other"
+
+
+def test_status_after_failure_policy():
+    kb = _load_kb()
+    # model_invalid never blocks (recovers when KB_COMPILE_MODEL is fixed)
+    assert kb._status_after_failure(99, "model_invalid") == ("failed", None)
+    # under budget -> keep retrying
+    assert kb._status_after_failure(1, "transient") == ("failed", None)
+    # exhausted -> blocked with structured reason
+    assert kb._status_after_failure(kb.MAX_COMPILE_ATTEMPTS, "content_invalid") == (
+        "blocked", "retry_exhausted")
+
+
+def test_record_compile_failure_blocks_after_budget(monkeypatch):
+    kb = _load_kb()
+    monkeypatch.setattr(kb, "_append_log", lambda *a, **k: None)  # no log.md side effect
+    item = {"compile_attempts": kb.MAX_COMPILE_ATTEMPTS - 1}
+    kb._record_compile_failure(item, "No valid frontmatter after retry", "src1")
+    assert item["status"] == "blocked"
+    assert item["blocked_reason"] == "retry_exhausted"
+    assert item["fail_reason"] == "content_invalid"
+    assert item["compile_attempts"] == kb.MAX_COMPILE_ATTEMPTS
+
+
+def test_record_compile_failure_keeps_model_invalid_retryable(monkeypatch):
+    kb = _load_kb()
+    monkeypatch.setattr(kb, "_append_log", lambda *a, **k: None)
+    item = {"compile_attempts": 99}  # well over budget
+    kb._record_compile_failure(item, "404 not_found_error model: claude-x", "src2")
+    assert item["status"] == "failed"  # model_invalid is never blocked
+    assert item["fail_reason"] == "model_invalid"

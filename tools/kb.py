@@ -1179,6 +1179,56 @@ def _warn_model_invalid(err: object) -> None:
         _MODEL_INVALID_WARNED = True
 
 
+MAX_COMPILE_ATTEMPTS = 3
+
+
+def _classify_fail_reason(err: object) -> str:
+    """Bucket a compile failure for retry policy. 'model_invalid' is a global config
+    issue (recovers once KB_COMPILE_MODEL is fixed); 'transient' is worth retrying;
+    'content_invalid' (bad frontmatter/validation) will not improve on re-run."""
+    if _is_model_error(err):
+        return "model_invalid"
+    s = str(err).lower()
+    if any(t in s for t in ("timeout", "timed out", "503", "529", "overloaded",
+                            "429", "rate limit", "connection", "econnreset")):
+        return "transient"
+    if "frontmatter" in s or "validation" in s:
+        return "content_invalid"
+    return "other"
+
+
+def _status_after_failure(attempts: int, reason: str) -> tuple[str, str | None]:
+    """Decide a failed source's next status. model_invalid stays 'failed' so it recovers
+    once the model id is fixed (surfaced loudly elsewhere). Everything else is promoted to
+    'blocked' (not a compile candidate) after MAX_COMPILE_ATTEMPTS so a permanently broken
+    source stops being re-selected every cycle (defensive-depth #5/#6, silent-discard ban)."""
+    if reason == "model_invalid":
+        return ("failed", None)
+    if attempts >= MAX_COMPILE_ATTEMPTS:
+        return ("blocked", "retry_exhausted")
+    return ("failed", None)
+
+
+def _record_compile_failure(item: dict, err: object, sid: str) -> None:
+    """Single place to finalize a per-source compile failure: store error, count the
+    attempt, classify the reason, surface model errors loudly, and promote exhausted
+    retries to 'blocked' with a structured reason instead of re-selecting forever."""
+    item["status"] = "failed"
+    item["error"] = str(err)[:200]
+    item["compile_attempts"] = int(item.get("compile_attempts", 0) or 0) + 1
+    reason = _classify_fail_reason(err)
+    item["fail_reason"] = reason
+    if reason == "model_invalid":
+        _warn_model_invalid(err)
+    new_status, discard = _status_after_failure(item["compile_attempts"], reason)
+    if new_status == "blocked":
+        item["status"] = "blocked"
+        item["blocked_reason"] = discard
+        _append_log("compile:discard",
+                    f"{sid} reason={discard} fail_reason={reason} "
+                    f"attempts={item['compile_attempts']}")
+
+
 def cmd_compile(_args: argparse.Namespace) -> int:
     """Compile pending sources into wiki articles using Claude API."""
     try:
@@ -1585,17 +1635,13 @@ IMPORTANT — THIS IS A STUB CASE. The source contains limited content (headline
                 if attempt == 0 and "frontmatter" in str(e).lower():
                     continue
                 print(f"  ERROR: {e}")
-                item["status"] = "failed"
-                item["error"] = str(e)[:200]
-                if _is_model_error(e):
-                    _warn_model_invalid(e)
+                _record_compile_failure(item, e, sid)
                 failed += 1
                 break
 
         if article_text is None or fm is None:
-            if item["status"] != "failed":
-                item["status"] = "failed"
-                item["error"] = "compile failed after retries"
+            if item["status"] not in ("failed", "blocked"):
+                _record_compile_failure(item, "compile failed after retries", sid)
                 failed += 1
             # Restore backed-up articles if compile failed after dedup removal
             if old_articles_for_source:
