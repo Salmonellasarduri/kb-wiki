@@ -2114,6 +2114,42 @@ def _rebuild_viewer() -> None:
         print(f"Viewer build failed: {e}")
 
 
+# Durable consolidation OUTPUT versioned on each sync (explicit paths, never `git add -A`).
+# sources/ is excluded ON PURPOSE: it holds raw (often copyrighted) source copies that are
+# NOT rendered into docs/, and cmd_sync pushes to a public Pages repo — auto-committing them
+# would newly expose that text. wiki/_index/_manifest content is already public via docs/.
+# Large regenerable caches (_chunks.json, _search_hits.jsonl) are excluded to avoid bloat.
+DATA_COMMIT_PATHS = ["wiki", "_index.json", "_manifest.json", "index.md"]
+
+
+def _commit_data() -> None:
+    """Scoped local commit of compiled KB data so consolidation output stays versioned
+    (it sat 8 weeks uncommitted because only docs/ was ever staged). Explicit paths only;
+    no separate push — the docs/ push in _push_pages carries these commits to origin."""
+    import subprocess
+    try:
+        paths = [p for p in DATA_COMMIT_PATHS if (KB_ROOT / p).exists()]
+        if not paths:
+            return
+        subprocess.run(["git", "add", "--", *paths], cwd=KB_ROOT, check=True)
+        staged = subprocess.run(
+            ["git", "diff", "--cached", "--quiet", "--", *paths],
+            cwd=KB_ROOT, capture_output=True,
+        )
+        if staged.returncode == 0:
+            print("Data: no changes to commit")
+            return
+        subprocess.run(
+            ["git", "commit", "-m", "chore(kb): sync compiled data"],
+            cwd=KB_ROOT, check=True, capture_output=True,
+        )
+        print("Data: committed compiled KB data")
+    except subprocess.CalledProcessError as e:
+        print(f"Data commit failed: {e}")
+    except FileNotFoundError:
+        print("Data: git not found, skipping commit")
+
+
 def _push_pages() -> None:
     """Auto-commit docs/ changes and push to GitHub Pages."""
     import subprocess
@@ -2200,7 +2236,8 @@ def cmd_sync(_args: argparse.Namespace) -> int:
     index = load_json(INDEX_PATH)
     print(f"Articles: {index.get('article_count', 0)}")
 
-    # Auto-push to GitHub Pages
+    # Version compiled data locally, then auto-push to GitHub Pages (the push carries both)
+    _commit_data()
     _push_pages()
 
     if rc_compile == 2 or rc_index == 2:

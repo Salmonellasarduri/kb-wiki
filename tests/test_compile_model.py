@@ -111,3 +111,19 @@ def test_canonicalize_topics_non_list_is_safe():
     kb = _load_kb()
     assert kb._canonicalize_topics(None) == []
     assert kb._canonicalize_topics("ai-ethics") == []  # str is not a topic list
+
+
+# --- A5: scoped data versioning (never auto-push raw sources to the public Pages repo) ---
+
+
+def test_data_commit_paths_exclude_raw_sources_and_caches():
+    kb = _load_kb()
+    # sources/ = raw (often copyrighted) copies, not rendered into docs/. cmd_sync pushes
+    # to a public Pages repo, so it must never be in the auto-commit set.
+    assert "sources" not in kb.DATA_COMMIT_PATHS
+    assert "_chunks.json" not in kb.DATA_COMMIT_PATHS       # large / regenerable
+    assert "_search_hits.jsonl" not in kb.DATA_COMMIT_PATHS  # telemetry / churny
+    # the durable consolidation output IS versioned
+    assert "wiki" in kb.DATA_COMMIT_PATHS
+    assert "_index.json" in kb.DATA_COMMIT_PATHS
+    assert callable(kb._commit_data)
