@@ -47,3 +47,9 @@ updated_at: "2026-04-08 23:13"
 
 - [[anthropic-claude-subscription-changes]] - サードパーティツール統合における信頼関係の変化
 - [[ai-memory-systems-governance]] - データガバナンスとプライバシー保護
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[dutch-suicide-prevention-data-sharing-scandal]]
+<!-- /AUTO:Related Articles -->

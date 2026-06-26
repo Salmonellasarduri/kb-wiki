@@ -49,11 +49,15 @@ updated_at: "2026-04-06 09:20"
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[beyond-the-plastic-wall-post-apocalyptic-puzzle-adventure]]
 - [[dragon-quest-smash-grow-april-21-launch]]
+- [[everything-is-crab-roguelike-evolution-success]]
 - [[gaming-weekly-column-531-slay-the-spire-2-raccoin-kofun-analysis]]
+- [[into-the-wind-studio-ghibli-inspired-cozy-adventure]]
+- [[ira-roguelike-switch-2-summer-release]]
+- [[iron-bramble-momentum-metroidvania-announcement]]
 - [[kazuma-kaneko-tsukuyomi-deck-builder-rpg]]
 - [[rocket1994-90s-action-game-announcement]]
 - [[sefton-asylum-cthulhu-horror-game]]
 - [[steam-sale-resident-evil-re3-wall-world-april-2026]]
-- [[weekly-gaming-column-531-slay-the-spire-2-raccoin-kofun]]
 <!-- /AUTO:Related Articles -->

@@ -3,27 +3,33 @@ article_id: programs-must-report-version-numbers
 title: 全プログラムはバージョン番号を報告すべきという開発者文化論
 type: stub
 source_ids:
-  - 1b11023aa39b
+- 1b11023aa39b
 topics:
-  - software-development-culture
-  - version-reporting
-  - developer-philosophy
+- software-development-culture
+- version-reporting
+- developer-philosophy
+- version-management
+- developer-advocacy
 aliases_ja:
-  - バージョン報告
-  - プログラムバージョン
-  - ソフトウェア開発文化
-  - 開発者哲学
-  - 自己申告システム
-  - バージョン番号
-  - プログラム識別
-published_at: "2026-04-05"
+- バージョン報告
+- プログラムバージョン
+- ソフトウェア開発文化
+- 開発者哲学
+- 自己申告システム
+- バージョン番号
+- プログラム識別
+- プログラムのバージョン表示
+- バージョン管理
+- 開発者文化論
+- プログラムの自己申告
+published_at: '2026-04-05'
 source_urls:
-  - https://michael.stapelberg.ch/posts/2026-04-05-stamp-it-all-programs-must-report-their-version
-summary: >
-  全てのプログラムがバージョン番号を報告すべきという開発者文化に関する議論。
-  バージョンを名乗ることはプログラムの自己申告であり、アイデンティティの宣言として捉えられている。
-created_at: "2026-04-06 12:21"
-updated_at: "2026-04-06 12:21"
+- https://michael.stapelberg.ch/posts/2026-04-05-stamp-it-all-programs-must-report-their-version
+summary: '全てのプログラムがバージョン番号を報告すべきという開発者文化に関する議論。 バージョンを名乗ることはプログラムの自己申告であり、アイデンティティの宣言として捉えられている。
+
+  '
+created_at: 2026-04-06 12:21
+updated_at: 2026-06-07 05:52
 ---
 
 # 全プログラムはバージョン番号を報告すべきという開発者文化論
@@ -41,9 +47,3 @@ updated_at: "2026-04-06 12:21"
 この提案に対して、開発者コミュニティからは様々な意見やコメントが寄せられており、ソフトウェア開発文化における議論として発展している。
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
-
-<!-- AUTO:Related Articles -->
-## Related Articles
-
-- [[programs-version-reporting-developer-culture]]
-<!-- /AUTO:Related Articles -->

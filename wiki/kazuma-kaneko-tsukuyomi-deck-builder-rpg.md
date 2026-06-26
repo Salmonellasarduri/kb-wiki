@@ -56,7 +56,8 @@ updated_at: "2026-04-08 23:13"
 - [[artdink-aquanauts-holiday-april-2026-release]]
 - [[ascenders-beyond-the-peak-cthulhu-climbing-roguelike]]
 - [[dragon-quest-smash-grow-april-21-launch]]
+- [[everything-is-crab-roguelike-evolution-success]]
 - [[gaming-weekly-column-531-slay-the-spire-2-raccoin-kofun-analysis]]
+- [[ira-roguelike-switch-2-summer-release]]
 - [[steam-sale-resident-evil-re3-wall-world-april-2026]]
-- [[weekly-gaming-column-531-slay-the-spire-2-raccoin-kofun]]
 <!-- /AUTO:Related Articles -->

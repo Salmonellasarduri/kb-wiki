@@ -61,3 +61,9 @@ updated_at: "2026-04-25 18:19"
 [[ai-safety]]
 [[ai-human-interaction]]
 [[academic-discourse]]
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[ai-designer-agency-reversal]]
+<!-- /AUTO:Related Articles -->

@@ -3,31 +3,31 @@ article_id: claude-memo-github-integration-workflow
 title: Claudeを使った思いつき自動メモシステム：GitHubリポジトリ連携によるアイデア管理ワークフロー
 type: source
 source_ids:
-  - 79391f1124d3
+- 79391f1124d3
 topics:
-  - claude-integration
-  - github-automation
-  - idea-management
-  - ai-productivity
-  - markdown-workflows
+- claude-integration
+- github-automation
+- idea-management
+- ai-productivity
+- markdown-workflows
 aliases_ja:
-  - Claude連携
-  - GitHubメモ
-  - アイデア管理
-  - 思いつきメモ
-  - メモ自動化
-  - AI生産性
-  - Markdownワークフロー
-  - GitHub MCP
-  - クロード
-published_at: ""
+- Claude連携
+- GitHubメモ
+- アイデア管理
+- 思いつきメモ
+- メモ自動化
+- AI生産性
+- Markdownワークフロー
+- GitHub MCP
+- クロード
+published_at: ''
 source_urls:
-  - https://dev.classmethod.jp/articles/claudememo-20260403/
-summary: >
-  Claudeに「メモして」と発話するだけでGitHubプライベートリポジトリにアイデアが自動保存される統合ワークフローの構築手法。
-  GitHub MCP Connectorを使用してclaude.ai、Cowork、Claude Codeの全てから同一リポジトリへアクセス可能で、メモの入口から活用まで全てClaude起点で完結する。
-created_at: "2026-04-05"
-updated_at: "2026-04-05"
+- https://dev.classmethod.jp/articles/claudememo-20260403
+summary: 'Claudeに「メモして」と発話するだけでGitHubプライベートリポジトリにアイデアが自動保存される統合ワークフローの構築手法。 GitHub MCP Connectorを使用してclaude.ai、Cowork、Claude Codeの全てから同一リポジトリへアクセス可能で、メモの入口から活用まで全てClaude起点で完結する。
+
+  '
+created_at: '2026-04-05'
+updated_at: '2026-04-05'
 ---
 
 ## 概要
@@ -145,5 +145,5 @@ memos/YYYY-MM.md に日付・内容・タグ付きで追記。
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
-- [[ai-development-8-years-3-months-syntaqlite]]
+- [[ai-development-eight-years-three-months]]
 <!-- /AUTO:Related Articles -->

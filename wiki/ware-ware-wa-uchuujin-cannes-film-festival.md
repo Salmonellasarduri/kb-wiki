@@ -46,3 +46,10 @@ updated_at: "2026-04-15 17:20"
 門脇康平監督は「29歳が『監督週間』へ——そしてタイトルが『我々は宇宙人』。私もある種の宇宙人なのかもしれないと、少し可笑しくなった。」とコメントしている。
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[katsuhiro-otomo-oval-gear-studio]]
+- [[tatsuo-sato-anime-director-death]]
+<!-- /AUTO:Related Articles -->

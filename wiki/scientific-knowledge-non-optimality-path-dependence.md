@@ -50,3 +50,9 @@ arXiv論文(2604.11828)が、科学的知識の蓄積プロセスを最適化問
 ## Related Articles
 
 [[コンピュータサイエンス分野における過去30年間のベストペーパーアワード]]
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[earth-shape-measurement-scientific-progress]]
+<!-- /AUTO:Related Articles -->

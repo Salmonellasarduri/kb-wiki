@@ -64,3 +64,9 @@ Willisonは、トークン計量の体験について興味深い考察を行っ
 ## Related Articles
 
 [[anthropic-claude]], [[ai-cost-optimization]], [[prompt-engineering]]
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[corporate-america-ai-rationing-costs]]
+<!-- /AUTO:Related Articles -->

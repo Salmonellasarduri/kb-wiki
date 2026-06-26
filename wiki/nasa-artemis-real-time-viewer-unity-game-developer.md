@@ -3,32 +3,32 @@ article_id: nasa-artemis-real-time-viewer-unity-game-developer
 title: NASA「アルテミス計画」のリアルタイムビューワーはUnity製。"ゲームデザイン専攻"の元インターン生が作っていた
 type: source
 source_ids:
-  - 0a0c6152c752
+- 0a0c6152c752
 topics:
-  - nasa-artemis-mission
-  - unity-game-engine
-  - space-technology
-  - game-development-skills
-  - intern-success-story
+- nasa-artemis-mission
+- unity-game-engine
+- space-technology
+- game-development-skills
+- intern-success-story
 aliases_ja:
-  - NASAアルテミス計画
-  - Unityゲームエンジン
-  - 宇宙技術開発
-  - ゲーム開発スキル
-  - インターン成功事例
-  - セス・ランバート
-  - AROW
-  - アルテミスリアルタイム軌道ウェブサイト
-  - 有人月ミッション
-  - オライオン宇宙船
-published_at: "2026-04-06"
+- NASAアルテミス計画
+- Unityゲームエンジン
+- 宇宙技術開発
+- ゲーム開発スキル
+- インターン成功事例
+- セス・ランバート
+- AROW
+- アルテミスリアルタイム軌道ウェブサイト
+- 有人月ミッション
+- オライオン宇宙船
+published_at: '2026-04-06'
 source_urls:
-  - https://automaton-media.com/articles/newsjp/20260406-434920/
-summary: >
-  NASAのアルテミス計画で使用されているリアルタイム軌道追跡ツール「AROW」が、ゲームデザインを学んでいた元インターン生Seth Lambert氏によってUnityで開発されていたことが明らかになった。
-  100件以上のインターン不採用を経験した同氏がNASAで成功を収め、宇宙開発にゲーム開発技術が活用されている事例として注目されている。
-created_at: "2026-04-06 20:33"
-updated_at: "2026-04-06 20:33"
+- https://automaton-media.com/articles/newsjp/20260406-434920
+summary: 'NASAのアルテミス計画で使用されているリアルタイム軌道追跡ツール「AROW」が、ゲームデザインを学んでいた元インターン生Seth Lambert氏によってUnityで開発されていたことが明らかになった。 100件以上のインターン不採用を経験した同氏がNASAで成功を収め、宇宙開発にゲーム開発技術が活用されている事例として注目されている。
+
+  '
+created_at: 2026-04-06 20:33
+updated_at: 2026-04-06 20:33
 ---
 
 # NASA「アルテミス計画」のリアルタイムビューワーはUnity製。"ゲームデザイン専攻"の元インターン生が作っていた
@@ -64,5 +64,6 @@ NASAによれば、「アルテミスII」のミッション終了後には、AR
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[nasa-astrobiologist-biological-space-materials]]
 - [[nikon-d5-artemis-ii-mission-camera-selection]]
 <!-- /AUTO:Related Articles -->

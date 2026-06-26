@@ -41,4 +41,5 @@ updated_at: "2026-04-08 23:13"
 ## Related Articles
 
 - [[brave-group-arg-virtual-talent-tokyo-kasou]]
+- [[pragmata-diana-account-takeover]]
 <!-- /AUTO:Related Articles -->

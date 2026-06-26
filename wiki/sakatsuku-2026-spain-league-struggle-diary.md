@@ -3,28 +3,32 @@ article_id: sakatsuku-2026-spain-league-struggle-diary
 title: 『サカつく2026』スペインリーグ苦戦プレイ日記 - 久保建英に敗れて知る「負けないサッカー」の限界
 type: stub
 source_ids:
-  - f8501603dda4
+- f8501603dda4
 topics:
-  - football-management-games
-  - free-to-play-games
-  - japanese-gaming
-  - football-tactics
+- football-management-games
+- free-to-play-games
+- japanese-gaming
+- football-tactics
+- game-strategy
+- sports-simulation
 aliases_ja:
-  - サカつく2026
-  - 久保建英
-  - 負けないサッカー
-  - スペインリーグ
-  - サッカーゲーム
-  - 基本プレイ無料
-  - 魔境スペイン
-  - サカつくプレイ日記
-published_at: "2026-04-05"
+- サカつく2026
+- 久保建英
+- 負けないサッカー
+- スペインリーグ
+- サッカーゲーム
+- 基本プレイ無料
+- 魔境スペイン
+- サカつくプレイ日記
+- プレイ日記
+published_at: '2026-04-05'
 source_urls:
-  - https://automaton-media.com/articles/special-column/20260405-434725
-summary: >
-  基本プレイ無料ゲーム『サカつく2026』の連載プレイ日記第6回では、強豪クラブがひしめくスペインリーグでの苦戦と、久保建英（モデル）に敗れたことで「負けないサッカー」戦術の限界を実感する体験が描かれている。
-created_at: "2026-04-05 14:23"
-updated_at: "2026-04-05 14:23"
+- https://automaton-media.com/articles/special-column/20260405-434725
+summary: '基本プレイ無料ゲーム『サカつく2026』の連載プレイ日記第6回では、強豪クラブがひしめくスペインリーグでの苦戦と、久保建英（モデル）に敗れたことで「負けないサッカー」戦術の限界を実感する体験が描かれている。
+
+  '
+created_at: 2026-04-05 14:23
+updated_at: 2026-06-07 05:52
 ---
 
 # 『サカつく2026』スペインリーグ苦戦プレイ日記 - 久保建英に敗れて知る「負けないサッカー」の限界
@@ -46,9 +50,3 @@ updated_at: "2026-04-05 14:23"
 久保建英をモデルにした選手に敗れた体験を通じて、リスクを避ける「負けないサッカー」戦術の向こう側について考察されている。記事の反省部分では、「リスクを消していくと、最後に何が残るのか。勝利への渇望まで消えてしまうんじゃないかという不安」という深い洞察が示されている。
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
-
-<!-- AUTO:Related Articles -->
-## Related Articles
-
-- [[sakatsuku-2026-spain-league-struggle]]
-<!-- /AUTO:Related Articles -->

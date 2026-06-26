@@ -3,27 +3,31 @@ article_id: putorika-2nd-cut-dark-fantasy-novel-game
 title: プトリカ 2nd.cut - 残酷美ノベル続編が6月5日発売予定
 type: stub
 source_ids:
-  - 41f104627f63
+- 41f104627f63
 topics:
-  - dark-fantasy-games
-  - visual-novel-games
-  - japanese-indie-games
-  - narrative-games
+- dark-fantasy-games
+- visual-novel-games
+- japanese-indie-games
+- narrative-games
+- voice-acting-games
 aliases_ja:
-  - プトリカ
-  - ダークファンタジーノベル
-  - 残酷美ノベル
-  - 救いのない話
-  - フルボイス
-  - ビジュアルノベル
-  - インディーゲーム
-published_at: "2026-04-06"
+- プトリカ
+- ダークファンタジーノベル
+- 残酷美ノベル
+- 救いのない話
+- フルボイス
+- ビジュアルノベル
+- インディーゲーム
+- ノベルゲーム
+- 愛と復讐
+published_at: '2026-04-06'
 source_urls:
-  - https://automaton-media.com/articles/newsjp/20260406-434841
-summary: >
-  ダークファンタジーノベルゲーム『プトリカ 2nd.cut』が6月5日に発売予定。前作は「非常に好評」の評価を受け、「救いのない話が好きではまだ足りない人」向けと明記されたフルボイス作品として注目されている。
-created_at: "2026-04-06 09:20"
-updated_at: "2026-04-06 09:20"
+- https://automaton-media.com/articles/newsjp/20260406-434841
+summary: 'ダークファンタジーノベルゲーム『プトリカ 2nd.cut』が6月5日に発売予定。前作は「非常に好評」の評価を受け、「救いのない話が好きではまだ足りない人」向けと明記されたフルボイス作品として注目されている。
+
+  '
+created_at: 2026-04-06 09:20
+updated_at: 2026-06-07 05:52
 ---
 
 ダークファンタジーノベルゲーム『プトリカ 2nd.cut』が6月5日に発売される予定であることが発表された。
@@ -41,5 +45,6 @@ updated_at: "2026-04-06 09:20"
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
-- [[putorika-2nd-cut-dark-fantasy-novel-sequel]]
+- [[cook-for-love-indie-game-review]]
+- [[kagayama-shiori-death-note-horror-mystery]]
 <!-- /AUTO:Related Articles -->

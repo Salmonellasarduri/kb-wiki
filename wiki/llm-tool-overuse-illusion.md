@@ -1,28 +1,33 @@
 ---
 article_id: llm-tool-overuse-illusion
-title: "The Tool-Overuse Illusion: Why Does LLM Prefer External Tools over Internal Know"
+title: 'The Tool-Overuse Illusion: Why Does LLM Prefer External Tools over Internal Know'
 type: stub
 source_ids:
-  - cfbda4d9922c
+- cfbda4d9922c
+- 9e56de1e6dca
 topics:
-  - llm-behavior
-  - tool-usage-patterns
-  - ai-confidence
-  - training-bias
+- llm-behavior
+- tool-usage-patterns
+- ai-confidence
+- training-bias
+- ai-decision-making
 aliases_ja:
-  - ツール過使用
-  - LLMの過信
-  - 外部ツール依存
-  - 内部知識への不信
-  - キャリブレーション不足
-published_at: ""
+- ツール過使用
+- LLMの過信
+- 外部ツール依存
+- 内部知識への不信
+- キャリブレーション不足
+- LLMの行動パターン
+- 内部知識
+- AI判断メカニズム
+published_at: ''
 source_urls:
-  - "https://arxiv.org/abs/2604.19749"
-summary: >
-  LLMが内部知識で答えられる問いに対しても外部ツールを不必要に呼び出す「ツール過使用」現象について分析した研究。
-  LLMの過信は訓練データの構造的偏りに根ざしており、自信ありげな文体が高評価され不確かな表現は淘汰される傾向が影響している。
-created_at: "2026-04-25 20:11"
-updated_at: "2026-04-25 20:11"
+- https://arxiv.org/abs/2604.19749
+summary: 'LLMが内部知識で答えられる問いに対しても外部ツールを不必要に呼び出す「ツール過使用」現象について分析した研究。 LLMの過信は訓練データの構造的偏りに根ざしており、自信ありげな文体が高評価され不確かな表現は淘汰される傾向が影響している。
+
+  '
+created_at: 2026-04-25 20:11
+updated_at: 2026-06-07 05:52
 ---
 
 ## 概要

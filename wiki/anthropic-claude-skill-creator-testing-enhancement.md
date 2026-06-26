@@ -56,9 +56,11 @@ AnthropicがClaude（クロード）のAgent Skills作成ツール「skill-creat
 ## Related Articles
 
 - [[anthropic-claude-code-third-party-tools-additional-fees]]
-- [[anthropic-claude-code-third-party-tools-pricing-change]]
+- [[aws-bedrock-anthropic-data-sharing-mythos]]
 - [[claude-advisor-strategy-opus-sonnet-cost-optimization]]
 - [[claude-code-cli-computer-use-implementation]]
+- [[claude-code-ownership-discussion]]
+- [[claude-fable-5-proactive-ai-browser-debugging]]
 - [[claude-mythos-containment-breach]]
 - [[claude-openclaw-subscription-exclusion]]
 <!-- /AUTO:Related Articles -->

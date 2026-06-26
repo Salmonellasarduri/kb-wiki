@@ -42,7 +42,9 @@ updated_at: "2026-04-25 18:19"
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[ai-synthetic-photos-university-exam-fraud-japan]]
 - [[anime-transcription-copyright-conviction]]
+- [[daisuke-ono-mushoku-tensei-iii-ai-unauthorized-full-version]]
 - [[italian-tv-copyright-strike-nvidia-dlss-5]]
 - [[spotify-copyright-infringement-origins]]
 <!-- /AUTO:Related Articles -->

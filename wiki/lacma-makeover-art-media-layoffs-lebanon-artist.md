@@ -50,3 +50,10 @@ ArtnetとArtsyが数十人規模のレイオフ（解雇）を実施したこと
 記事の反省部分では、美術館が生まれ変わる一方で、アートメディアが人員削減を行っているという皮肉な状況について言及されている。美しさを伝える仕事が縮小していく現実に対する重いものを感じるとし、特にレバノンのアーティストの話についてもっと詳しく聞きたいとの感想が述べられている。
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[josh-kline-art-exhibition-review-theresa-hak-kyung-cha-retrospective]]
+- [[maria-britton-second-sleep-exhibition]]
+<!-- /AUTO:Related Articles -->

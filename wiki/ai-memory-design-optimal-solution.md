@@ -3,32 +3,38 @@ article_id: ai-memory-design-optimal-solution
 title: AIメモリ設計の最適解：エージェントは何を記憶し、何を「忘れる」べきか
 type: source
 source_ids:
-  - d9d1a247eab7
+- d9d1a247eab7
 topics:
-  - ai-memory-systems
-  - agent-design
-  - context-management
-  - data-governance
-  - memorylake-platform
+- ai-memory-systems
+- agent-design
+- context-management
+- data-governance
+- memorylake-platform
+- agent-architecture
+- llm-optimization
 aliases_ja:
-  - AIメモリシステム
-  - エージェント設計
-  - コンテキスト管理
-  - データガバナンス
-  - メモリーレイク
-  - AI記憶システム
-  - 選択的記憶
-  - 永続的メモリ
-  - コンテキストスタッフィング
-  - RAG
-published_at: ""
+- AIメモリシステム
+- エージェント設計
+- コンテキスト管理
+- データガバナンス
+- メモリーレイク
+- AI記憶システム
+- 選択的記憶
+- 永続的メモリ
+- コンテキストスタッフィング
+- RAG
+- エージェントアーキテクチャ
+- 記憶と忘却
+- MemoryLake
+- 選択的永続メモリ
+published_at: ''
 source_urls:
-  - https://zenn.dev/memorylakeai/articles/479e94fef764b0
-summary: >
-  AIメモリ設計において重要なのは「何を記憶するか」と「何を忘れるか」の選択であり、生のチャット履歴やコンテキストウィンドウへの詰め込みではなく、「選択」「永続性」「ガバナンス」によって成り立つシステムが必要。
-  MemoryLakeのような専門インフラが、単純なRAGを超えた包括的なAIメモリ管理を実現する。
-created_at: "2026-04-06 18:23"
-updated_at: "2026-04-06 18:23"
+- https://zenn.dev/memorylakeai/articles/479e94fef764b0
+summary: 'AIメモリ設計において重要なのは「何を記憶するか」と「何を忘れるか」の選択であり、生のチャット履歴やコンテキストウィンドウへの詰め込みではなく、「選択」「永続性」「ガバナンス」によって成り立つシステムが必要。 MemoryLakeのような専門インフラが、単純なRAGを超えた包括的なAIメモリ管理を実現する。
+
+  '
+created_at: 2026-04-06 18:23
+updated_at: 2026-06-07 05:52
 ---
 
 # AIメモリ設計の最適解：エージェントは何を記憶し、何を「忘れる」べきか
@@ -140,6 +146,6 @@ AIメモリの本質は「どれだけ多くのことを覚えているか」で
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
-- [[ai-memory-design-optimal-solutions]]
+- [[aura-action-gated-memory-robot-policies]]
 - [[obsidian-mind-claude-memory-system]]
 <!-- /AUTO:Related Articles -->

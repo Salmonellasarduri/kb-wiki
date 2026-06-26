@@ -49,5 +49,5 @@ LLM Wikiは、従来の情報検索手法であるRAG（Retrieval-Augmented Gene
 ## Related Articles
 
 - [[llm-knowledge-base-workflow-karpathy]]
-- [[obsidian-mind-claude-code-memory-system]]
+- [[obsidian-mind-claude-memory-system]]
 <!-- /AUTO:Related Articles -->

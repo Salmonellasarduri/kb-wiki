@@ -1,0 +1,621 @@
+{
+  "created_at": "2026-06-07T05:52:12.047435+09:00",
+  "groups": [
+    {
+      "source_url": "https://automaton-media.com/articles/columnjp/wwu-20260403-434345",
+      "keep": "wuthering-waves-unreal-engine-customization-analysis",
+      "archived": [
+        "wuthering-waves-unreal-engine-technical-analysis",
+        "wuthering-waves-unreal-engine-custom-implementation"
+      ],
+      "merged_source_ids": [
+        "2eab761a5fa5"
+      ]
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2604.19749",
+      "keep": "llm-tool-overuse-illusion",
+      "archived": [
+        "tool-overuse-illusion-llm-external-tools"
+      ],
+      "merged_source_ids": [
+        "cfbda4d9922c",
+        "9e56de1e6dca"
+      ]
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2606.02673",
+      "keep": "visual-graph-scaffolds-for-structural-reasoning-in-llm",
+      "archived": [
+        "visual-graph-scaffolds-llm-structural-reasoning"
+      ],
+      "merged_source_ids": [
+        "112418b21822",
+        "687276b585ca"
+      ]
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2606.05256",
+      "keep": "covert-llm-reddit-persuasion-experiment",
+      "archived": [
+        "zurich-reddit-ai-persuasion-experiment"
+      ],
+      "merged_source_ids": [
+        "877c01f09c19",
+        "ffc7d7ec4f46"
+      ]
+    },
+    {
+      "source_url": "https://automaton-media.com/articles/newsjp/20260406-434841",
+      "keep": "putorika-2nd-cut-dark-fantasy-novel-game",
+      "archived": [
+        "putorika-2nd-cut-dark-fantasy-novel-sequel"
+      ],
+      "merged_source_ids": [
+        "41f104627f63"
+      ]
+    },
+    {
+      "source_url": "https://automaton-media.com/articles/newsjp/phonopolis-20260503-441143",
+      "keep": "phonopolis-amanita-design-cardboard-puzzle",
+      "archived": [
+        "phonopolis-cardboard-city-puzzle-adventure"
+      ],
+      "merged_source_ids": [
+        "e4f59a9c3020",
+        "745e7225dc46"
+      ]
+    },
+    {
+      "source_url": "https://automaton-media.com/articles/newsjp/steam-sale-20260405-434742",
+      "keep": "steam-sale-resident-evil-re3-wall-world-april-2026",
+      "archived": [
+        "steam-sale-biohazard-re3-wall-world-discount"
+      ],
+      "merged_source_ids": [
+        "4b14509b6556"
+      ]
+    },
+    {
+      "source_url": "https://automaton-media.com/articles/now-gaming/20260405-434767",
+      "keep": "gaming-weekly-column-531-slay-the-spire-2-raccoin-kofun-analysis",
+      "archived": [
+        "weekly-gaming-column-531-slay-the-spire-2-raccoin-kofun"
+      ],
+      "merged_source_ids": [
+        "0e34c725f361"
+      ]
+    },
+    {
+      "source_url": "https://automaton-media.com/articles/special-column/20260405-434725",
+      "keep": "sakatsuku-2026-spain-league-struggle-diary",
+      "archived": [
+        "sakatsuku-2026-spain-league-struggle"
+      ],
+      "merged_source_ids": [
+        "f8501603dda4"
+      ]
+    },
+    {
+      "source_url": "https://electrek.co/2026/05/02/this-tesla-owner-won-10k-in-court-for-teslas-fsd-lies-tesla-is-still-fighting-him",
+      "keep": "tesla-fsd-lawsuit-victory-10k-tesla-appeals",
+      "archived": [
+        "tesla-fsd-litigation-10k-court-victory"
+      ],
+      "merged_source_ids": [
+        "f0bb103ea7c7",
+        "9247ce73845f"
+      ]
+    },
+    {
+      "source_url": "https://gigazine.net/news/20260405-anthropic-claude-code-need-pay-extra-openclaw",
+      "keep": "anthropic-claude-code-third-party-tools-additional-fees",
+      "archived": [
+        "anthropic-claude-code-third-party-tools-pricing-change"
+      ],
+      "merged_source_ids": [
+        "f0f0da658da7"
+      ]
+    },
+    {
+      "source_url": "https://gigazine.net/news/20260405-human-adaptation-to-arsenic-rich-environments",
+      "keep": "andean-population-arsenic-adaptation-evolution",
+      "archived": [
+        "andean-populations-arsenic-adaptation-evolution"
+      ],
+      "merged_source_ids": [
+        "4277e7dab70c"
+      ]
+    },
+    {
+      "source_url": "https://gigazine.net/news/20260405-open-hardware-directory-diy",
+      "keep": "open-hardware-directory-ai-component-search",
+      "archived": [
+        "open-hardware-directory-ai-search"
+      ],
+      "merged_source_ids": [
+        "09f1f75acc11"
+      ]
+    },
+    {
+      "source_url": "https://gigazine.net/news/20260406-mark-zuckerberg-return-coding",
+      "keep": "mark-zuckerberg-returns-to-coding-with-ai-tools",
+      "archived": [
+        "zuckerberg-returns-to-coding-ai-tools"
+      ],
+      "merged_source_ids": [
+        "1bbfdbe88ed3"
+      ]
+    },
+    {
+      "source_url": "https://gigazine.net/news/20260406-microsoft-azure-failure",
+      "keep": "microsoft-azure-trillion-dollar-failure-insider-testimony",
+      "archived": [
+        "microsoft-azure-trillion-dollar-failure-whistleblower"
+      ],
+      "merged_source_ids": [
+        "6fc503e1733a"
+      ]
+    },
+    {
+      "source_url": "https://gigazine.net/news/20260406-nepal-fake-rescue",
+      "keep": "nepal-mountain-rescue-fraud-network",
+      "archived": [
+        "nepal-fake-mountain-rescue-fraud-scheme"
+      ],
+      "merged_source_ids": [
+        "63f096f23b16"
+      ]
+    },
+    {
+      "source_url": "https://gigazine.net/news/20260602-anthropic-thinks-building-god",
+      "keep": "anthropic-god-creation-speculation",
+      "archived": [
+        "anthropic-god-creation-concerns"
+      ],
+      "merged_source_ids": [
+        "35ac87e1a6fa",
+        "9da27d02d46a"
+      ]
+    },
+    {
+      "source_url": "https://gigazine.net/news/20260602-openai-codex-aws",
+      "keep": "openai-codex-aws-availability",
+      "archived": [
+        "openai-aws-bedrock-integration"
+      ],
+      "merged_source_ids": [
+        "d1cd2ae48943",
+        "a2d5fc8e8b26"
+      ]
+    },
+    {
+      "source_url": "https://github.com/breferrari/obsidian-mind",
+      "keep": "obsidian-mind-claude-memory-system",
+      "archived": [
+        "obsidian-mind-claude-code-memory-system"
+      ],
+      "merged_source_ids": [
+        "bf61ae9e64ad"
+      ]
+    },
+    {
+      "source_url": "https://github.com/kevinrgu/autoagent",
+      "keep": "autoagent-autonomous-agent-harness-engineering",
+      "archived": [
+        "autoagent-autonomous-ai-agent-engineering-framework"
+      ],
+      "merged_source_ids": [
+        "72483ef1d96b"
+      ]
+    },
+    {
+      "source_url": "https://huggingface.co/blog/JetBrains/mellum2-launch",
+      "keep": "jetbrains-mellum2-12b-moe-model",
+      "archived": [
+        "mellum2-jetbrains-12b-mixture-experts-model"
+      ],
+      "merged_source_ids": [
+        "57f20050e0b0",
+        "0bafb95dd1a7"
+      ]
+    },
+    {
+      "source_url": "https://huggingface.co/blog/ibm-research/agent-logic-and-scalable-ai-adoption",
+      "keep": "enterprise-ai-adoption-agent-logic",
+      "archived": [
+        "enterprise-ai-agent-logic-design"
+      ],
+      "merged_source_ids": [
+        "3ba71ca42941",
+        "b2335f986be1"
+      ]
+    },
+    {
+      "source_url": "https://jeffhuang.com/best_paper_awards",
+      "keep": "best-paper-awards-computer-science-30-years",
+      "archived": [
+        "computer-science-best-paper-awards-30-years"
+      ],
+      "merged_source_ids": [
+        "c21bf387b73d"
+      ]
+    },
+    {
+      "source_url": "https://kai-you.net/article/94937",
+      "keep": "zeta-division-gaming-academy-esports-education-partnership",
+      "archived": [
+        "zeta-division-gaming-academy-vantan-partnership"
+      ],
+      "merged_source_ids": [
+        "d975e7d348f8"
+      ]
+    },
+    {
+      "source_url": "https://kai-you.net/article/95229",
+      "keep": "kuramochi-meruto-okayuojiya-viral-song",
+      "archived": [
+        "nijisanji-kuramochi-meruto-rice-song-viral"
+      ],
+      "merged_source_ids": [
+        "a417d494d8e2",
+        "05173ed892cb"
+      ]
+    },
+    {
+      "source_url": "https://kai-you.net/article/95242",
+      "keep": "sushiboys-ogose-town-hip-hop-origins",
+      "archived": [
+        "sushi-boys-ogose-town-hip-hop-origins"
+      ],
+      "merged_source_ids": [
+        "16112e35336c",
+        "d414dba2a5f1"
+      ]
+    },
+    {
+      "source_url": "https://kai-you.net/article/95274",
+      "keep": "hokuhokusei-ni-kumo-to-ike-anime-adaptation",
+      "archived": [
+        "hokuhokusei-ni-kumo-to-yuke-tv-anime"
+      ],
+      "merged_source_ids": [
+        "029c2a1d8300",
+        "cb21834b4ad6"
+      ]
+    },
+    {
+      "source_url": "https://kai-you.net/article/95298",
+      "keep": "theburntpeanut-vtuber-world-record",
+      "archived": [
+        "theburntpeanut-vtuber-world-rank-first"
+      ],
+      "merged_source_ids": [
+        "77c4ba47bd4d",
+        "84ba619c1ea7"
+      ]
+    },
+    {
+      "source_url": "https://kai-you.net/article/95308",
+      "keep": "nijisanji-takamiya-rion-shoten-collaboration",
+      "archived": [
+        "nijisanji-takamiya-rion-shoten-60th-anniversary-collaboration"
+      ],
+      "merged_source_ids": [
+        "eac6cba40b9b",
+        "dde37c8a4904"
+      ]
+    },
+    {
+      "source_url": "https://kai-you.net/article/95394",
+      "keep": "movie-nanashi-sato-jiro-novel-core-interview",
+      "archived": [
+        "nameless-film-sato-jiro-novel-core-dialogue"
+      ],
+      "merged_source_ids": [
+        "f1abdd554506",
+        "d30375e83cd8"
+      ]
+    },
+    {
+      "source_url": "https://lalitm.com/post/building-syntaqlite-ai",
+      "keep": "ai-development-eight-years-three-months",
+      "archived": [
+        "ai-development-8-years-3-months-syntaqlite"
+      ],
+      "merged_source_ids": [
+        "269016f10af3"
+      ]
+    },
+    {
+      "source_url": "https://michael.stapelberg.ch/posts/2026-04-05-stamp-it-all-programs-must-report-their-version",
+      "keep": "programs-must-report-version-numbers",
+      "archived": [
+        "programs-version-reporting-developer-culture"
+      ],
+      "merged_source_ids": [
+        "1b11023aa39b"
+      ]
+    },
+    {
+      "source_url": "https://research.google/blog/four-ways-google-research-scientists-have-been-using-empirical-research-assistance",
+      "keep": "google-empirical-research-assistance-era",
+      "archived": [
+        "google-research-empirical-research-assistance-four-ways"
+      ],
+      "merged_source_ids": [
+        "7017f3098f24",
+        "e6011d24f998"
+      ]
+    },
+    {
+      "source_url": "https://trifectatech.org/blog/announcing-zstandard-in-rust",
+      "keep": "rust-zstandard-implementation",
+      "archived": [
+        "zstandard-rust-implementation"
+      ],
+      "merged_source_ids": [
+        "903ab976f0a9",
+        "66c480a5821f"
+      ]
+    },
+    {
+      "source_url": "https://twitter.com/NikTek/status/2040898312262324362",
+      "keep": "italian-tv-copyright-strike-nvidia-dlss-5",
+      "archived": [
+        "italian-tv-copyright-strikes-nvidia-dlss-footage"
+      ],
+      "merged_source_ids": [
+        "74b3b6f13632"
+      ]
+    },
+    {
+      "source_url": "https://www.gematsu.com/2026/04/genesis-rpg-traysia-coming-to-ps5-xbox-series-ps4-xbox-one-switch-and-pc-on-april-24",
+      "keep": "traysia-genesis-rpg-multiplatform-remaster-2026",
+      "archived": [
+        "traysia-genesis-rpg-remaster-2026"
+      ],
+      "merged_source_ids": [
+        "ab2625f99d34"
+      ]
+    },
+    {
+      "source_url": "https://www.itmedia.co.jp/aiplus/articles/2604/06/news090.html",
+      "keep": "matsutoya-yumi-ai-voice-hibitori-performance",
+      "archived": [
+        "matsutoya-yumi-ai-voice-hinotori-performance"
+      ],
+      "merged_source_ids": [
+        "19849bc6324a"
+      ]
+    },
+    {
+      "source_url": "https://www.itmedia.co.jp/aiplus/articles/2604/26/news023.html",
+      "keep": "project-deal-anthropic-ai-economic-inequality",
+      "archived": [
+        "anthropic-project-deal-ai-market-experiment"
+      ],
+      "merged_source_ids": [
+        "cd50587c7d9a",
+        "1926ede886a6"
+      ]
+    },
+    {
+      "source_url": "https://www.itmedia.co.jp/enterprise/articles/2606/05/news037.html",
+      "keep": "ai-thinking-ability-decline-warning",
+      "archived": [
+        "mit-ai-cognitive-debt-research"
+      ],
+      "merged_source_ids": [
+        "a8121c1004cc",
+        "881446cb43fb"
+      ]
+    },
+    {
+      "source_url": "https://www.itmedia.co.jp/news/articles/2605/30/news031.html",
+      "keep": "openai-gpt-rosalind-biodefense-dual-use",
+      "archived": [
+        "openai-gpt-rosalind-biodefense"
+      ],
+      "merged_source_ids": [
+        "feddbabbcb0f",
+        "48fe6ae05f4d"
+      ]
+    },
+    {
+      "source_url": "https://www.ugr.es/en/about/news/bacteria-found-human-intestine-capable-improving-muscle-strength",
+      "keep": "gut-bacteria-muscle-strength-enhancement-granada-university",
+      "archived": [
+        "gut-bacteria-muscle-strength-granada-university"
+      ],
+      "merged_source_ids": [
+        "96c1c258aef6"
+      ]
+    },
+    {
+      "source_url": "https://x.com/i/status/2039843234760073341",
+      "keep": "x-com-javascript-disabled-error-page",
+      "archived": [
+        "x-twitter-javascript-disabled-error"
+      ],
+      "merged_source_ids": [
+        "7e99a783ca4d"
+      ]
+    },
+    {
+      "source_url": "https://xenospectrum.com/claude-code-cli-computer-use-macos",
+      "keep": "claude-code-cli-computer-use-implementation",
+      "archived": [
+        "claude-code-computer-use-cli-implementation"
+      ],
+      "merged_source_ids": [
+        "69777a9795e3"
+      ]
+    },
+    {
+      "source_url": "https://zenn.dev/maniizu3110/articles/010-claude-code-simplify-auto-refactor",
+      "keep": "claude-simplify-code-refactoring-experiment",
+      "archived": [
+        "claude-code-simplify-refactoring-experiment"
+      ],
+      "merged_source_ids": [
+        "cfd7fba73ec2"
+      ]
+    },
+    {
+      "source_url": "https://zenn.dev/memorylakeai/articles/479e94fef764b0",
+      "keep": "ai-memory-design-optimal-solution",
+      "archived": [
+        "ai-memory-design-optimal-solutions"
+      ],
+      "merged_source_ids": [
+        "d9d1a247eab7"
+      ]
+    }
+  ],
+  "old_to_canonical": {
+    "wuthering-waves-unreal-engine-technical-analysis": "wuthering-waves-unreal-engine-customization-analysis",
+    "wuthering-waves-unreal-engine-custom-implementation": "wuthering-waves-unreal-engine-customization-analysis",
+    "tool-overuse-illusion-llm-external-tools": "llm-tool-overuse-illusion",
+    "visual-graph-scaffolds-llm-structural-reasoning": "visual-graph-scaffolds-for-structural-reasoning-in-llm",
+    "zurich-reddit-ai-persuasion-experiment": "covert-llm-reddit-persuasion-experiment",
+    "putorika-2nd-cut-dark-fantasy-novel-sequel": "putorika-2nd-cut-dark-fantasy-novel-game",
+    "phonopolis-cardboard-city-puzzle-adventure": "phonopolis-amanita-design-cardboard-puzzle",
+    "steam-sale-biohazard-re3-wall-world-discount": "steam-sale-resident-evil-re3-wall-world-april-2026",
+    "weekly-gaming-column-531-slay-the-spire-2-raccoin-kofun": "gaming-weekly-column-531-slay-the-spire-2-raccoin-kofun-analysis",
+    "sakatsuku-2026-spain-league-struggle": "sakatsuku-2026-spain-league-struggle-diary",
+    "tesla-fsd-litigation-10k-court-victory": "tesla-fsd-lawsuit-victory-10k-tesla-appeals",
+    "anthropic-claude-code-third-party-tools-pricing-change": "anthropic-claude-code-third-party-tools-additional-fees",
+    "andean-populations-arsenic-adaptation-evolution": "andean-population-arsenic-adaptation-evolution",
+    "open-hardware-directory-ai-search": "open-hardware-directory-ai-component-search",
+    "zuckerberg-returns-to-coding-ai-tools": "mark-zuckerberg-returns-to-coding-with-ai-tools",
+    "microsoft-azure-trillion-dollar-failure-whistleblower": "microsoft-azure-trillion-dollar-failure-insider-testimony",
+    "nepal-fake-mountain-rescue-fraud-scheme": "nepal-mountain-rescue-fraud-network",
+    "anthropic-god-creation-concerns": "anthropic-god-creation-speculation",
+    "openai-aws-bedrock-integration": "openai-codex-aws-availability",
+    "obsidian-mind-claude-code-memory-system": "obsidian-mind-claude-memory-system",
+    "autoagent-autonomous-ai-agent-engineering-framework": "autoagent-autonomous-agent-harness-engineering",
+    "mellum2-jetbrains-12b-mixture-experts-model": "jetbrains-mellum2-12b-moe-model",
+    "enterprise-ai-agent-logic-design": "enterprise-ai-adoption-agent-logic",
+    "computer-science-best-paper-awards-30-years": "best-paper-awards-computer-science-30-years",
+    "zeta-division-gaming-academy-vantan-partnership": "zeta-division-gaming-academy-esports-education-partnership",
+    "nijisanji-kuramochi-meruto-rice-song-viral": "kuramochi-meruto-okayuojiya-viral-song",
+    "sushi-boys-ogose-town-hip-hop-origins": "sushiboys-ogose-town-hip-hop-origins",
+    "hokuhokusei-ni-kumo-to-yuke-tv-anime": "hokuhokusei-ni-kumo-to-ike-anime-adaptation",
+    "theburntpeanut-vtuber-world-rank-first": "theburntpeanut-vtuber-world-record",
+    "nijisanji-takamiya-rion-shoten-60th-anniversary-collaboration": "nijisanji-takamiya-rion-shoten-collaboration",
+    "nameless-film-sato-jiro-novel-core-dialogue": "movie-nanashi-sato-jiro-novel-core-interview",
+    "ai-development-8-years-3-months-syntaqlite": "ai-development-eight-years-three-months",
+    "programs-version-reporting-developer-culture": "programs-must-report-version-numbers",
+    "google-research-empirical-research-assistance-four-ways": "google-empirical-research-assistance-era",
+    "zstandard-rust-implementation": "rust-zstandard-implementation",
+    "italian-tv-copyright-strikes-nvidia-dlss-footage": "italian-tv-copyright-strike-nvidia-dlss-5",
+    "traysia-genesis-rpg-remaster-2026": "traysia-genesis-rpg-multiplatform-remaster-2026",
+    "matsutoya-yumi-ai-voice-hinotori-performance": "matsutoya-yumi-ai-voice-hibitori-performance",
+    "anthropic-project-deal-ai-market-experiment": "project-deal-anthropic-ai-economic-inequality",
+    "mit-ai-cognitive-debt-research": "ai-thinking-ability-decline-warning",
+    "openai-gpt-rosalind-biodefense": "openai-gpt-rosalind-biodefense-dual-use",
+    "gut-bacteria-muscle-strength-granada-university": "gut-bacteria-muscle-strength-enhancement-granada-university",
+    "x-twitter-javascript-disabled-error": "x-com-javascript-disabled-error-page",
+    "claude-code-computer-use-cli-implementation": "claude-code-cli-computer-use-implementation",
+    "claude-code-simplify-refactoring-experiment": "claude-simplify-code-refactoring-experiment",
+    "ai-memory-design-optimal-solutions": "ai-memory-design-optimal-solution"
+  },
+  "updated_keep_files": [
+    "wiki\\wuthering-waves-unreal-engine-customization-analysis.md",
+    "wiki\\llm-tool-overuse-illusion.md",
+    "wiki\\visual-graph-scaffolds-for-structural-reasoning-in-llm.md",
+    "wiki\\covert-llm-reddit-persuasion-experiment.md",
+    "wiki\\putorika-2nd-cut-dark-fantasy-novel-game.md",
+    "wiki\\phonopolis-amanita-design-cardboard-puzzle.md",
+    "wiki\\steam-sale-resident-evil-re3-wall-world-april-2026.md",
+    "wiki\\gaming-weekly-column-531-slay-the-spire-2-raccoin-kofun-analysis.md",
+    "wiki\\sakatsuku-2026-spain-league-struggle-diary.md",
+    "wiki\\tesla-fsd-lawsuit-victory-10k-tesla-appeals.md",
+    "wiki\\anthropic-claude-code-third-party-tools-additional-fees.md",
+    "wiki\\andean-population-arsenic-adaptation-evolution.md",
+    "wiki\\open-hardware-directory-ai-component-search.md",
+    "wiki\\mark-zuckerberg-returns-to-coding-with-ai-tools.md",
+    "wiki\\microsoft-azure-trillion-dollar-failure-insider-testimony.md",
+    "wiki\\nepal-mountain-rescue-fraud-network.md",
+    "wiki\\anthropic-god-creation-speculation.md",
+    "wiki\\openai-codex-aws-availability.md",
+    "wiki\\obsidian-mind-claude-memory-system.md",
+    "wiki\\autoagent-autonomous-agent-harness-engineering.md",
+    "wiki\\jetbrains-mellum2-12b-moe-model.md",
+    "wiki\\enterprise-ai-adoption-agent-logic.md",
+    "wiki\\best-paper-awards-computer-science-30-years.md",
+    "wiki\\zeta-division-gaming-academy-esports-education-partnership.md",
+    "wiki\\kuramochi-meruto-okayuojiya-viral-song.md",
+    "wiki\\sushiboys-ogose-town-hip-hop-origins.md",
+    "wiki\\hokuhokusei-ni-kumo-to-ike-anime-adaptation.md",
+    "wiki\\theburntpeanut-vtuber-world-record.md",
+    "wiki\\nijisanji-takamiya-rion-shoten-collaboration.md",
+    "wiki\\movie-nanashi-sato-jiro-novel-core-interview.md",
+    "wiki\\ai-development-eight-years-three-months.md",
+    "wiki\\programs-must-report-version-numbers.md",
+    "wiki\\google-empirical-research-assistance-era.md",
+    "wiki\\rust-zstandard-implementation.md",
+    "wiki\\italian-tv-copyright-strike-nvidia-dlss-5.md",
+    "wiki\\traysia-genesis-rpg-multiplatform-remaster-2026.md",
+    "wiki\\matsutoya-yumi-ai-voice-hibitori-performance.md",
+    "wiki\\project-deal-anthropic-ai-economic-inequality.md",
+    "wiki\\ai-thinking-ability-decline-warning.md",
+    "wiki\\openai-gpt-rosalind-biodefense-dual-use.md",
+    "wiki\\gut-bacteria-muscle-strength-enhancement-granada-university.md",
+    "wiki\\x-com-javascript-disabled-error-page.md",
+    "wiki\\claude-code-cli-computer-use-implementation.md",
+    "wiki\\claude-simplify-code-refactoring-experiment.md",
+    "wiki\\ai-memory-design-optimal-solution.md"
+  ],
+  "archived_files": [
+    "wiki\\_archive\\duplicates\\20260607_055211\\wuthering-waves-unreal-engine-technical-analysis.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\wuthering-waves-unreal-engine-custom-implementation.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\tool-overuse-illusion-llm-external-tools.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\visual-graph-scaffolds-llm-structural-reasoning.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\zurich-reddit-ai-persuasion-experiment.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\putorika-2nd-cut-dark-fantasy-novel-sequel.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\phonopolis-cardboard-city-puzzle-adventure.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\steam-sale-biohazard-re3-wall-world-discount.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\weekly-gaming-column-531-slay-the-spire-2-raccoin-kofun.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\sakatsuku-2026-spain-league-struggle.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\tesla-fsd-litigation-10k-court-victory.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\anthropic-claude-code-third-party-tools-pricing-change.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\andean-populations-arsenic-adaptation-evolution.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\open-hardware-directory-ai-search.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\zuckerberg-returns-to-coding-ai-tools.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\microsoft-azure-trillion-dollar-failure-whistleblower.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\nepal-fake-mountain-rescue-fraud-scheme.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\anthropic-god-creation-concerns.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\openai-aws-bedrock-integration.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\obsidian-mind-claude-code-memory-system.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\autoagent-autonomous-ai-agent-engineering-framework.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\mellum2-jetbrains-12b-mixture-experts-model.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\enterprise-ai-agent-logic-design.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\computer-science-best-paper-awards-30-years.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\zeta-division-gaming-academy-vantan-partnership.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\nijisanji-kuramochi-meruto-rice-song-viral.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\sushi-boys-ogose-town-hip-hop-origins.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\hokuhokusei-ni-kumo-to-yuke-tv-anime.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\theburntpeanut-vtuber-world-rank-first.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\nijisanji-takamiya-rion-shoten-60th-anniversary-collaboration.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\nameless-film-sato-jiro-novel-core-dialogue.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\ai-development-8-years-3-months-syntaqlite.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\programs-version-reporting-developer-culture.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\google-research-empirical-research-assistance-four-ways.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\zstandard-rust-implementation.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\italian-tv-copyright-strikes-nvidia-dlss-footage.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\traysia-genesis-rpg-remaster-2026.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\matsutoya-yumi-ai-voice-hinotori-performance.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\anthropic-project-deal-ai-market-experiment.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\mit-ai-cognitive-debt-research.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\openai-gpt-rosalind-biodefense.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\gut-bacteria-muscle-strength-granada-university.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\x-twitter-javascript-disabled-error.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\claude-code-computer-use-cli-implementation.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\claude-code-simplify-refactoring-experiment.md",
+    "wiki\\_archive\\duplicates\\20260607_055211\\ai-memory-design-optimal-solutions.md"
+  ],
+  "link_rewrite_file_count": 83,
+  "search_hit_lines_rewritten": 418
+}

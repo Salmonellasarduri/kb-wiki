@@ -49,4 +49,7 @@ updated_at: "2026-04-09 15:54"
 ## Related Articles
 
 - [[ascenders-beyond-the-peak-cthulhu-climbing-roguelike]]
+- [[beyond-the-plastic-wall-post-apocalyptic-puzzle-adventure]]
+- [[into-the-wind-studio-ghibli-inspired-cozy-adventure]]
+- [[iron-bramble-momentum-metroidvania-announcement]]
 <!-- /AUTO:Related Articles -->

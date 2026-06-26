@@ -50,3 +50,9 @@ updated_at: "2026-04-08 23:13"
 [[anthropic-claude-subscription-changes]] - AIサブスクリプションモデルの変化
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[apple-siri-ai-settlement-390-billion-yen]]
+<!-- /AUTO:Related Articles -->

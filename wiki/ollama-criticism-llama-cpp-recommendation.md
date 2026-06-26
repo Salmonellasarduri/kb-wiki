@@ -46,5 +46,6 @@ zetaphor氏は、Ollamaの問題点への対策として、より直接的で透
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[ai-generated-text-authorship-ethics]]
 - [[deeper-med-medical-ai-system]]
 <!-- /AUTO:Related Articles -->

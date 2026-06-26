@@ -42,3 +42,9 @@ updated_at: "2026-04-25 18:19"
 [[Another Eden Begins が9月17日に発売決定]]
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[alabaster-dawn-crosscode-sequel-early-access]]
+<!-- /AUTO:Related Articles -->

@@ -3,28 +3,32 @@ article_id: x-com-javascript-disabled-error-page
 title: X.com（Twitter）のJavaScript無効化エラーページ
 type: source
 source_ids:
-  - 7e99a783ca4d
+- 7e99a783ca4d
 topics:
-  - web-accessibility
-  - javascript-dependency
-  - social-media-platform
-  - browser-compatibility
+- web-accessibility
+- javascript-dependency
+- social-media-platform
+- browser-compatibility
 aliases_ja:
-  - JavaScript無効化
-  - エックス・ドット・コム
-  - ツイッター
-  - ブラウザ互換性
-  - ウェブアクセシビリティ
-  - JavaScriptエラー
-  - 対応ブラウザ
-published_at: ""
+- JavaScript無効化
+- エックス・ドット・コム
+- ツイッター
+- ブラウザ互換性
+- ウェブアクセシビリティ
+- JavaScriptエラー
+- 対応ブラウザ
+- X Corp
+- ブラウザサポート
+- JavaScript依存
+- SNSプラットフォーム
+published_at: ''
 source_urls:
-  - https://x.com/i/status/2039843234760073341
-summary: >
-  X.com（旧Twitter）でJavaScriptが無効化されているブラウザからアクセスした際に表示されるエラーページ。
-  プラットフォームの完全なJavaScript依存とウェブアクセシビリティの課題を示している。
-created_at: "2026-04-05"
-updated_at: "2026-04-05"
+- https://x.com/i/status/2039843234760073341
+summary: 'X.com（旧Twitter）でJavaScriptが無効化されているブラウザからアクセスした際に表示されるエラーページ。 プラットフォームの完全なJavaScript依存とウェブアクセシビリティの課題を示している。
+
+  '
+created_at: '2026-04-05'
+updated_at: 2026-06-07 05:52
 ---
 
 X.com（旧Twitter）でJavaScriptが無効化されたブラウザからアクセスした際に表示されるエラーページの内容。このページは、現代のソーシャルメディアプラットフォームがJavaScriptに完全に依存している実態を示している。
@@ -75,9 +79,3 @@ X.comのこのアプローチは、現代のウェブプラットフォームが
 
 - [[llm-api-prompt-caching]] - ウェブアプリケーションのパフォーマンス最適化手法
 - [[claude-github-automation-memo-system]] - JavaScript依存のワークフロー自動化
-
-<!-- AUTO:Related Articles -->
-## Related Articles
-
-- [[x-twitter-javascript-disabled-error]]
-<!-- /AUTO:Related Articles -->

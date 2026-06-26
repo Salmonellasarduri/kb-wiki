@@ -3,28 +3,34 @@ article_id: andean-population-arsenic-adaptation-evolution
 title: アンデス山脈住民のヒ素耐性進化
 type: stub
 source_ids:
-  - 4277e7dab70c
+- 4277e7dab70c
 topics:
-  - human-evolution
-  - environmental-adaptation
-  - genetic-mutation
-  - toxic-substance-tolerance
-  - andean-populations
+- human-evolution
+- environmental-adaptation
+- genetic-mutation
+- toxic-substance-tolerance
+- andean-populations
+- arsenic-toxicity
 aliases_ja:
-  - ヒ素耐性
-  - アンデス高地住民
-  - 人類進化
-  - 環境適応
-  - 遺伝的能力
-  - 毒への適応
-  - WHO推奨限度
-published_at: "2026-04-05"
+- ヒ素耐性
+- アンデス高地住民
+- 人類進化
+- 環境適応
+- 遺伝的能力
+- 毒への適応
+- WHO推奨限度
+- アンデス山脈
+- アルゼンチン高地住民
+- 遺伝的適応
+- 毒性物質適応
+published_at: '2026-04-05'
 source_urls:
-  - https://gigazine.net/news/20260405-human-adaptation-to-arsenic-rich-environments
-summary: >
-  アルゼンチンのアンデス高地住民が、WHO推奨限度の約20倍のヒ素を含む水を数千年にわたって飲み続け、致死量のヒ素に適応する独自の遺伝的能力を進化させてきたことが判明した。
-created_at: "2026-04-05 15:53"
-updated_at: "2026-04-05 15:53"
+- https://gigazine.net/news/20260405-human-adaptation-to-arsenic-rich-environments
+summary: 'アルゼンチンのアンデス高地住民が、WHO推奨限度の約20倍のヒ素を含む水を数千年にわたって飲み続け、致死量のヒ素に適応する独自の遺伝的能力を進化させてきたことが判明した。
+
+  '
+created_at: 2026-04-05 15:53
+updated_at: 2026-06-07 05:52
 ---
 
 アルゼンチンのアンデス高地に住む人々が、世界保健機関（WHO）の推奨限度である10μg/Lの約20倍にあたる200μg/Lのヒ素を含む水を数千年にわたって飲み続けてきたことが明らかになった。
@@ -42,5 +48,5 @@ updated_at: "2026-04-05 15:53"
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
-- [[andean-populations-arsenic-adaptation-evolution]]
+- [[man-the-hunter-theory-death-return-cycles]]
 <!-- /AUTO:Related Articles -->

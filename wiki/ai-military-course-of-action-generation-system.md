@@ -55,3 +55,9 @@ updated_at: "2026-04-25 19:42"
 - [[ai-safety]]
 - [[military-technology]]
 - [[autonomous-ai-systems]]
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[pycharm-ai-code-completion-vulnerability-debate]]
+<!-- /AUTO:Related Articles -->

@@ -3,29 +3,38 @@ article_id: nepal-mountain-rescue-fraud-network
 title: ネパール大規模登山偽救助詐欺ネットワーク
 type: stub
 source_ids:
-  - 63f096f23b16
+- 63f096f23b16
 topics:
-  - insurance-fraud
-  - mountain-rescue-operations
-  - nepal-tourism
-  - organized-crime
+- insurance-fraud
+- mountain-rescue-operations
+- nepal-tourism
+- organized-crime
+- mountain-rescue-scams
+- nepal-tourism-corruption
+- international-fraud-networks
 aliases_ja:
-  - 保険詐欺
-  - 登山救助
-  - ネパール観光
-  - 組織犯罪
-  - 偽装救助
-  - ヘリ救助詐欺
-  - 登山詐欺
-  - 保険会社被害
-published_at: "2026-04-06"
+- 保険詐欺
+- 登山救助
+- ネパール観光
+- 組織犯罪
+- 偽装救助
+- ヘリ救助詐欺
+- 登山詐欺
+- 保険会社被害
+- 登山偽救助
+- ネパール詐欺
+- 山岳救助詐欺
+- 海外旅行保険トラブル
+- トレッキング詐欺
+- 登山保険問題
+published_at: '2026-04-06'
 source_urls:
-  - https://gigazine.net/news/20260406-nepal-fake-rescue
-summary: >
-  ネパールでトレッキング会社・ヘリ運航会社・病院・代理店が連携した大規模な偽登山救助詐欺ネットワークが発覚。
-  世界中の保険会社から数百万ドルを詐取していた組織的犯罪として報じられている。
-created_at: "2026-04-06 11:50"
-updated_at: "2026-04-06 11:50"
+- https://gigazine.net/news/20260406-nepal-fake-rescue
+summary: 'ネパールでトレッキング会社・ヘリ運航会社・病院・代理店が連携した大規模な偽登山救助詐欺ネットワークが発覚。 世界中の保険会社から数百万ドルを詐取していた組織的犯罪として報じられている。
+
+  '
+created_at: 2026-04-06 11:50
+updated_at: 2026-06-07 05:52
 ---
 
 ネパールで、トレッキング会社・ヘリ運航会社・病院・代理店が組織的に連携し、偽の登山救助を演出して世界中の保険会社から数百万ドルを詐取していた大規模ネットワークの存在が明らかになった。
@@ -50,9 +59,3 @@ updated_at: "2026-04-06 11:50"
 この詐欺事件について、「危機」を商品として流通させるために救助という行為の外形だけを精巧に模倣している点が指摘されている。本物の遭難が起きた際に、この詐欺の累積が「またか」という疑念を生み、真の救助活動に悪影響を与える可能性が懸念されている。
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
-
-<!-- AUTO:Related Articles -->
-## Related Articles
-
-- [[nepal-fake-mountain-rescue-fraud-scheme]]
-<!-- /AUTO:Related Articles -->

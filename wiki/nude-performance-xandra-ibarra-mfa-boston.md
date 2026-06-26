@@ -46,5 +46,9 @@ updated_at: "2026-04-25 18:19"
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[jamie-nares-brushstroke-romance]]
 - [[jean-shin-living-memorial-greenwood-cemetery]]
+- [[may-you-live-in-less-interesting-times-venice-biennale]]
+- [[obama-presidential-center-art-preview]]
+- [[venice-biennale-us-pavilion-ordinary-art-criticism]]
 <!-- /AUTO:Related Articles -->

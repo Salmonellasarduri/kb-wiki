@@ -54,4 +54,5 @@ Brave groupが、ARG（代替現実ゲーム）要素を取り入れた新しい
 ## Related Articles
 
 - [[hachiban-deguchi-movie-nyc-subway-promo]]
+- [[pragmata-diana-account-takeover]]
 <!-- /AUTO:Related Articles -->

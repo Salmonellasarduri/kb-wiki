@@ -57,5 +57,6 @@ updated_at: "2026-04-05"
 ## Related Articles
 
 - [[dolores-huerta-art-exhibition-goat]]
+- [[khaled-sabsabi-louvre-heist-film-minor-keys]]
 - [[salvador-dali-nuclear-mysticism-critique]]
 <!-- /AUTO:Related Articles -->

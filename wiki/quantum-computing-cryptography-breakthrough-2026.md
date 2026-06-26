@@ -68,4 +68,5 @@ updated_at: "2026-04-05"
 ## Related Articles
 
 - [[bitcoin-quantum-computing-cryptography-threat]]
+- [[quantum-computer-chemistry-classical-solution]]
 <!-- /AUTO:Related Articles -->

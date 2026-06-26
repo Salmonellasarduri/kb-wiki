@@ -3,37 +3,48 @@ article_id: claude-code-cli-computer-use-implementation
 title: Claude Code CLIに「Computer Use」機能実装 - ターミナルからのAI自律PC操作が可能に
 type: source
 source_ids:
-  - 69777a9795e3
+- 69777a9795e3
 topics:
-  - ai-automation
-  - cli-tools
-  - computer-vision-ai
-  - software-development
-  - anthropic-claude
+- ai-automation
+- cli-tools
+- computer-vision-ai
+- software-development
+- anthropic-claude
+- computer-vision
+- ai-agents
+- security-controls
 aliases_ja:
-  - AI自動化
-  - CLIツール
-  - コンピュータビジョンAI
-  - ソフトウェア開発
-  - アンソロピック
-  - クロード
-  - Computer Use
-  - コンピュータユース
-  - ターミナル操作
-  - GUI自動化
-  - AIエージェント
-  - 自律型AI
-  - スクリーンショット
-  - マウス操作
-published_at: ""
+- AI自動化
+- CLIツール
+- コンピュータビジョンAI
+- ソフトウェア開発
+- アンソロピック
+- クロード
+- Computer Use
+- コンピュータユース
+- ターミナル操作
+- GUI自動化
+- AIエージェント
+- 自律型AI
+- スクリーンショット
+- マウス操作
+- Claude Code
+- CLI操作
+- PC操作
+- ソフトウェア開発自動化
+- Anthropic
+- デスクトップ自動化
+- 画面操作
+- MCP
+- Model Context Protocol
+published_at: ''
 source_urls:
-  - https://xenospectrum.com/claude-code-cli-computer-use-macos/
-summary: >
-  Anthropicが提供するClaude Code CLIにComputer Use機能が実装され、macOS環境でAIがターミナルから直接PC画面を操作可能になった。
-  AIはスクリーンショット取得とマウス操作により、ネイティブアプリの自動構築・起動・検証を単一セッションで完結できる。
-  多層的セキュリティ機構により権限制御を行いつつ、従来のAPI依存テストを超えた視覚的実行エージェントとしての役割を果たす。
-created_at: "2026-04-05 09:42"
-updated_at: "2026-04-05 09:42"
+- https://xenospectrum.com/claude-code-cli-computer-use-macos
+summary: 'Anthropicが提供するClaude Code CLIにComputer Use機能が実装され、macOS環境でAIがターミナルから直接PC画面を操作可能になった。 AIはスクリーンショット取得とマウス操作により、ネイティブアプリの自動構築・起動・検証を単一セッションで完結できる。 多層的セキュリティ機構により権限制御を行いつつ、従来のAPI依存テストを超えた視覚的実行エージェントとしての役割を果たす。
+
+  '
+created_at: 2026-04-05 09:42
+updated_at: 2026-06-07 05:52
 ---
 
 ## 概要
@@ -130,13 +141,17 @@ Claude CodeにおけるComputer Useの導入は、この知覚の壁を取り除
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
-- [[ai-development-8-years-3-months-syntaqlite]]
+- [[ai-development-eight-years-three-months]]
 - [[anthropic-claude-code-third-party-tools-additional-fees]]
-- [[anthropic-claude-code-third-party-tools-pricing-change]]
 - [[anthropic-claude-skill-creator-testing-enhancement]]
+- [[aws-bedrock-anthropic-data-sharing-mythos]]
 - [[claude-advisor-strategy-opus-sonnet-cost-optimization]]
-- [[claude-code-computer-use-cli-implementation]]
+- [[claude-code-ownership-discussion]]
+- [[claude-fable-5-proactive-ai-browser-debugging]]
 - [[claude-mythos-containment-breach]]
 - [[claude-openclaw-subscription-exclusion]]
+- [[diy-ai-autoprober-duct-tape-cnc]]
+- [[ghostty-leaving-github-chronic-outages]]
 - [[nec-ai-sustainability-disclosure-automation]]
+- [[open-source-does-not-imply-open-community]]
 <!-- /AUTO:Related Articles -->

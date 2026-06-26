@@ -45,6 +45,7 @@ updated_at: "2026-04-15 17:20"
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[artist-corporation-a-corp-legal-structure]]
 - [[nishino-akihiro-straight-edge-trademark-opposition]]
 - [[seeda-rapper-criticizes-pop-yours-festival]]
 <!-- /AUTO:Related Articles -->

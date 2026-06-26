@@ -47,4 +47,4 @@ updated_at: "2026-04-08 23:13"
 ## Related Articles
 
 [[claude-code-cli-computer-use-implementation]] - AIによるコンピューター操作技術
-[[open-hardware-directory-ai-search]] - オープンソースハードウェア検索サービス
+[[open-hardware-directory-ai-component-search]] - オープンソースハードウェア検索サービス

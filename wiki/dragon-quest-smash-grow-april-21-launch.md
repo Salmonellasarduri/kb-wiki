@@ -53,8 +53,9 @@ Dragon Quest Smash/Growのコアとなるゲームプレイは、まさにタイ
 
 - [[artdink-aquanauts-holiday-april-2026-release]]
 - [[ascenders-beyond-the-peak-cthulhu-climbing-roguelike]]
+- [[everything-is-crab-roguelike-evolution-success]]
 - [[gaming-weekly-column-531-slay-the-spire-2-raccoin-kofun-analysis]]
+- [[ira-roguelike-switch-2-summer-release]]
 - [[kazuma-kaneko-tsukuyomi-deck-builder-rpg]]
 - [[steam-sale-resident-evil-re3-wall-world-april-2026]]
-- [[weekly-gaming-column-531-slay-the-spire-2-raccoin-kofun]]
 <!-- /AUTO:Related Articles -->

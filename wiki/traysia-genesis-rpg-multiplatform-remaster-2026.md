@@ -3,30 +3,44 @@ article_id: traysia-genesis-rpg-multiplatform-remaster-2026
 title: セガGenesis RPG『Traysia』が全機種で2026年4月24日にリマスター配信決定
 type: stub
 source_ids:
-  - ab2625f99d34
+- ab2625f99d34
 topics:
-  - retro-gaming-remasters
-  - genesis-rpg
-  - multiplatform-release
-  - telenet-japan
+- retro-gaming-remasters
+- genesis-rpg
+- multiplatform-release
+- telenet-japan
+- retro-game-remasters
+- sega-genesis-rpgs
+- telenet-japan-games
+- multi-platform-releases
 aliases_ja:
-  - レトロゲームリマスター
-  - ジェネシスRPG
-  - マルチプラットフォーム配信
-  - テレネットジャパン
-  - トレイジア
-  - セガGenesis
-  - ラタライカゲームズ
-  - シンユウデン
-  - 1992年発売
-published_at: "2026-04-06"
+- レトロゲームリマスター
+- ジェネシスRPG
+- マルチプラットフォーム配信
+- テレネットジャパン
+- トレイジア
+- セガGenesis
+- ラタライカゲームズ
+- シンユウデン
+- 1992年発売
+- セガジェネシスRPG
+- テレネットジャパンゲーム
+- マルチプラットフォームリリース
+- Traysia
+- トレイシア
+- Ratalaika Games
+- シンユーデン
+- Shinyuden
+- 30年以上前の作品
+- 現代ハードウェア復活
+published_at: '2026-04-06'
 source_urls:
-  - "https://www.gematsu.com/2026/04/genesis-rpg-traysia-coming-to-ps5-xbox-series-ps4-xbox-one-switch-and-pc-on-april-24"
-summary: >
-  1992年発売のセガGenesis RPG『Traysia』がRatalaika GamesとShinyudenにより現代機種で復刻。
-  PS5、Xbox Series、PS4、Xbox One、Switch、PCで2026年4月24日配信予定。
-created_at: "2026-04-06 06:20"
-updated_at: "2026-04-06 06:20"
+- https://www.gematsu.com/2026/04/genesis-rpg-traysia-coming-to-ps5-xbox-series-ps4-xbox-one-switch-and-pc-on-april-24
+summary: '1992年発売のセガGenesis RPG『Traysia』がRatalaika GamesとShinyudenにより現代機種で復刻。 PS5、Xbox Series、PS4、Xbox One、Switch、PCで2026年4月24日配信予定。
+
+  '
+created_at: 2026-04-06 06:20
+updated_at: 2026-06-07 05:52
 ---
 
 ## 概要
@@ -47,3 +61,9 @@ updated_at: "2026-04-06 06:20"
 - [[weekly-game-column-531-slay-spire-2-reviews]]: レトロゲーム要素を含むゲームレビュー
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[karma-exorcist-metroidvania-announcement]]
+<!-- /AUTO:Related Articles -->

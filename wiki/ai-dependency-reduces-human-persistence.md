@@ -50,3 +50,10 @@ updated_at: "2026-04-08 23:13"
 [[claude-code-cli-computer-use-implementation]] - AI自動化ツールの実装例
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[ai-interview-confusion-survey-2026]]
+- [[ai-thinking-ability-decline-warning]]
+<!-- /AUTO:Related Articles -->

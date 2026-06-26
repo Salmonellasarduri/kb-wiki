@@ -37,3 +37,10 @@ Lobstersコミュニティで開始されたディスカッションスレッド
 このような問いの形式は、プログラミングコミュニティにおいて未開拓のアイデアや仮説を共有する場を提供している。参加者の不完全な思考プロセスを可視化することで、新たな研究や開発の方向性を示唆する可能性がある。
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[meaningful-code-comments-north-star]]
+- [[programming-as-theory-building-recommendation]]
+<!-- /AUTO:Related Articles -->

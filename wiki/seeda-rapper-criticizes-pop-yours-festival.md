@@ -46,5 +46,6 @@ updated_at: "2026-04-25 18:19"
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[artist-corporation-a-corp-legal-structure]]
 - [[mexican-artist-femicide-project-plagiarism-allegation]]
 <!-- /AUTO:Related Articles -->

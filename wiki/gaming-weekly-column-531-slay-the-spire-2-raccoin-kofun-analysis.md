@@ -3,30 +3,35 @@ article_id: gaming-weekly-column-531-slay-the-spire-2-raccoin-kofun-analysis
 title: 週次ゲームコラム第531回：『Slay the Spire 2』『RACCOIN』『こふんは生きている』レビュー
 type: stub
 source_ids:
-  - 0e34c725f361
+- 0e34c725f361
 topics:
-  - gaming-review
-  - roguelike-games
-  - indie-games
-  - cultural-games
+- gaming-review
+- roguelike-games
+- indie-games
+- cultural-games
+- gaming-column
+- archaeological-games
+- game-review
 aliases_ja:
-  - ゲームレビュー
-  - スレイザスパイア2
-  - ラクコイン
-  - こふんは生きている
-  - ローグライク
-  - コイン落としゲーム
-  - 古墳ゲーム
-  - 週次コラム
-  - ゲームコラム
-published_at: "2026-04-05"
+- ゲームレビュー
+- スレイザスパイア2
+- ラクコイン
+- こふんは生きている
+- ローグライク
+- コイン落としゲーム
+- 古墳ゲーム
+- 週次コラム
+- ゲームコラム
+- ラックコイン
+- ローグライクゲーム
+published_at: '2026-04-05'
 source_urls:
-  - https://automaton-media.com/articles/now-gaming/20260405-434767
-summary: >
-  週次ゲームコラム第531回では『Slay the Spire 2』のプレイ外の楽しさ、中毒性の高いコイン落とし系ローグライク『RACCOIN』、
-  時間の見方を問い直す古墳テーマの『こふんは生きている』について言及されている。
-created_at: "2026-04-05 14:23"
-updated_at: "2026-04-05 14:23"
+- https://automaton-media.com/articles/now-gaming/20260405-434767
+summary: '週次ゲームコラム第531回では『Slay the Spire 2』のプレイ外の楽しさ、中毒性の高いコイン落とし系ローグライク『RACCOIN』、 時間の見方を問い直す古墳テーマの『こふんは生きている』について言及されている。
+
+  '
+created_at: 2026-04-05 14:23
+updated_at: 2026-06-07 05:52
 ---
 
 週次ゲームコラム第531回では、3つの注目すべきゲームが取り上げられている。
@@ -55,8 +60,9 @@ updated_at: "2026-04-05 14:23"
 
 - [[ascenders-beyond-the-peak-cthulhu-climbing-roguelike]]
 - [[dragon-quest-smash-grow-april-21-launch]]
+- [[everything-is-crab-roguelike-evolution-success]]
+- [[ira-roguelike-switch-2-summer-release]]
 - [[kazuma-kaneko-tsukuyomi-deck-builder-rpg]]
 - [[steam-sale-resident-evil-re3-wall-world-april-2026]]
 - [[trees-hate-you-indie-game]]
-- [[weekly-gaming-column-531-slay-the-spire-2-raccoin-kofun]]
 <!-- /AUTO:Related Articles -->

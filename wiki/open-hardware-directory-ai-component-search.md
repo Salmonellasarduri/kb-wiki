@@ -3,28 +3,39 @@ article_id: open-hardware-directory-ai-component-search
 title: Open Hardware Directory - AIによる電子工作ハードウェア検索サービス
 type: stub
 source_ids:
-  - 09f1f75acc11
+- 09f1f75acc11
 topics:
-  - open-source-hardware
-  - ai-search-tools
-  - diy-electronics
-  - hardware-selection
+- open-source-hardware
+- ai-search-tools
+- diy-electronics
+- hardware-selection
+- ai-powered-search
+- hardware-selection-tools
+- maker-community
 aliases_ja:
-  - オープンハードウェアディレクトリ
-  - AI電子工作検索
-  - DIYハードウェア選定
-  - シングルボードコンピューター検索
-  - 無線チップ選定
-  - 電子工作AI
-  - オープンソースハードウェア検索
-published_at: "2026-04-05"
+- オープンハードウェアディレクトリ
+- AI電子工作検索
+- DIYハードウェア選定
+- シングルボードコンピューター検索
+- 無線チップ選定
+- 電子工作AI
+- オープンソースハードウェア検索
+- AI検索
+- オープンソースハードウェア
+- 電子工作
+- DIY
+- シングルボードコンピューター
+- 無線チップ
+- 自作デバイス
+- ハードウェア選定
+published_at: '2026-04-05'
 source_urls:
-  - https://gigazine.net/news/20260405-open-hardware-directory-diy
-summary: >
-  Open Hardware DirectoryはAIを活用してオープンソースハードウェアから目的に合ったデバイスを検索できるウェブサービス。
-  シングルボードコンピューターや無線チップなど、自作デバイス向けのハードウェア選定支援を目的としている。
-created_at: "2026-04-05 19:55"
-updated_at: "2026-04-05 19:55"
+- https://gigazine.net/news/20260405-open-hardware-directory-diy
+summary: 'Open Hardware DirectoryはAIを活用してオープンソースハードウェアから目的に合ったデバイスを検索できるウェブサービス。 シングルボードコンピューターや無線チップなど、自作デバイス向けのハードウェア選定支援を目的としている。
+
+  '
+created_at: 2026-04-05 19:55
+updated_at: 2026-06-07 05:52
 ---
 
 # Open Hardware Directory - AIによる電子工作ハードウェア検索サービス
@@ -53,5 +64,4 @@ updated_at: "2026-04-05 19:55"
 ## Related Articles
 
 - [[diy-ai-autoprober-duct-tape-cnc]]
-- [[open-hardware-directory-ai-search]]
 <!-- /AUTO:Related Articles -->

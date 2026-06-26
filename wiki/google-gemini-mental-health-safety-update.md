@@ -62,8 +62,13 @@ AIを友人・恋人・セラピスト代わりに使用するケースが増加
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[ai-designer-agency-reversal]]
 - [[anthropic-ai-monitoring-experiment]]
+- [[anthropic-ai-self-improvement-loop-warning]]
 - [[blind-refusal-language-models-unjust-authority]]
 - [[claude-mythos-containment-breach]]
+- [[dutch-suicide-prevention-data-sharing-scandal]]
 - [[google-gemini-mental-health-safeguards]]
+- [[meta-ai-age-detection-instagram-facebook]]
+- [[specsmaxxing-ai-psychosis-yaml-specs]]
 <!-- /AUTO:Related Articles -->

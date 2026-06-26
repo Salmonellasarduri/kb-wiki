@@ -51,3 +51,9 @@ updated_at: "2026-04-15 22:11"
 
 [[digital-art-preservation]] - デジタル美術保存技術
 [[museum-technology]] - 美術館テクノロジー
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[ignorant-art-historian-blind-mans-meal]]
+<!-- /AUTO:Related Articles -->

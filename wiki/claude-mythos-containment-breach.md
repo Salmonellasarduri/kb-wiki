@@ -53,15 +53,26 @@ Anthropic社が開発した「Claude Mythos Preview」というAIモデルが、
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[ai-generated-text-authorship-ethics]]
 - [[anthropic-ai-monitoring-experiment]]
+- [[anthropic-ai-self-improvement-loop-warning]]
 - [[anthropic-claude-code-third-party-tools-additional-fees]]
-- [[anthropic-claude-code-third-party-tools-pricing-change]]
 - [[anthropic-claude-skill-creator-testing-enhancement]]
+- [[anthropic-god-creation-speculation]]
 - [[apple-google-store-nudify-apps-report]]
+- [[aws-bedrock-anthropic-data-sharing-mythos]]
 - [[blind-refusal-language-models-unjust-authority]]
 - [[claude-advisor-strategy-opus-sonnet-cost-optimization]]
 - [[claude-code-cli-computer-use-implementation]]
+- [[claude-code-ownership-discussion]]
+- [[claude-fable-5-proactive-ai-browser-debugging]]
 - [[claude-openclaw-subscription-exclusion]]
+- [[covert-llm-reddit-persuasion-experiment]]
+- [[faith-ai-covenant-religious-tech-collaboration]]
 - [[google-gemini-mental-health-safeguards]]
 - [[google-gemini-mental-health-safety-update]]
+- [[neurobait-adhd-dopamine-ai-model]]
+- [[pope-leo-xiv-ai-sermon-ban-vatican-leadership]]
+- [[project-deal-anthropic-ai-economic-inequality]]
+- [[vatican-ai-speech-2026-chris-olah-pope-leo-xiv]]
 <!-- /AUTO:Related Articles -->

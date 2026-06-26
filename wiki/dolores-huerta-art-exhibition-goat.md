@@ -45,5 +45,6 @@ updated_at: "2026-04-08 23:13"
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[khaled-sabsabi-louvre-heist-film-minor-keys]]
 - [[salvador-dali-sublime-faith-metropolitan-exhibition]]
 <!-- /AUTO:Related Articles -->

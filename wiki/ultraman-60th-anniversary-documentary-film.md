@@ -56,3 +56,12 @@ updated_at: "2026-04-25 18:19"
 - [[tokusatsu-culture-analysis]] - 特撮文化の分析
 - [[japanese-cinema-history]] - 日本映画史
 - [[monster-hero-narrative]] - 怪獣・英雄ナラティブ
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[idle-warriors-nyc-vehicle-ban-enforcement]]
+- [[movie-nanashi-sato-jiro-novel-core-interview]]
+- [[osun-osogbo-sacred-grove-yoruba-spirituality]]
+- [[ultraman-documentary-film-origin]]
+<!-- /AUTO:Related Articles -->

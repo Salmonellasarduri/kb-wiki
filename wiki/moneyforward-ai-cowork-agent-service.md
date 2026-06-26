@@ -52,5 +52,6 @@ updated_at: "2026-04-08 23:13"
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[gemini-intelligence-android-ai-agent]]
 - [[salesforce-headless-360-ai-agent-announcement]]
 <!-- /AUTO:Related Articles -->

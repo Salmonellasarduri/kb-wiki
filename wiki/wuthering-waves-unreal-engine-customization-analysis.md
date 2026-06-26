@@ -3,38 +3,48 @@ article_id: wuthering-waves-unreal-engine-customization-analysis
 title: 『鳴潮』のUnreal Engine技術分析 - UE4での"変態的"実装とモバイル対応の挑戦
 type: source
 source_ids:
-  - 2eab761a5fa5
+- 2eab761a5fa5
 topics:
-  - game-engine-technology
-  - mobile-game-development
-  - unreal-engine-customization
-  - graphics-optimization
-  - technical-implementation
+- game-engine-technology
+- mobile-game-development
+- unreal-engine-customization
+- graphics-optimization
+- technical-implementation
+- mobile-game-optimization
+- anime-style-graphics
+- game-engine-porting
+- chinese-game-development
+- chinese-game-industry
 aliases_ja:
-  - 鳴潮
-  - ウーザリングウェーブ
-  - Unreal Engine
-  - UE4
-  - UE5
-  - ゲームエンジン技術
-  - モバイルゲーム開発
-  - グラフィック最適化
-  - 中村匡彦
-  - Indie-us Games
-  - KURO GAMES
-  - クロゲームズ
-  - 変態的実装
-  - Lumen
-  - レイトレーシング
-  - トゥーンシェーディング
-published_at: "2026-04-03"
+- 鳴潮
+- ウーザリングウェーブ
+- Unreal Engine
+- UE4
+- UE5
+- ゲームエンジン技術
+- モバイルゲーム開発
+- グラフィック最適化
+- 中村匡彦
+- Indie-us Games
+- KURO GAMES
+- クロゲームズ
+- 変態的実装
+- Lumen
+- レイトレーシング
+- トゥーンシェーディング
+- アンリアルエンジン
+- モバイルゲーム最適化
+- アニメ調グラフィック
+- ゲームエンジンカスタマイズ
+- ウェザリングウェイブス
+published_at: '2026-04-03'
 source_urls:
-  - https://automaton-media.com/articles/columnjp/wwu-20260403-434345/
-summary: >
-  KURO GAMESの『鳴潮』は、UE4でありながらUE5のLumen技術を移植実装し、モバイル対応とリッチなグラフィックを両立させた技術的挑戦作。
-  専門家は独自カスタマイズにより実質的に独自エンジン化していると分析し、Epic Gamesのサポートなしでの開発・運営を行っている。
-created_at: "2026-04-05 12:52"
-updated_at: "2026-04-05 12:52"
+- https://automaton-media.com/articles/columnjp/wwu-20260403-434345
+summary: 'KURO GAMESの『鳴潮』は、UE4でありながらUE5のLumen技術を移植実装し、モバイル対応とリッチなグラフィックを両立させた技術的挑戦作。 専門家は独自カスタマイズにより実質的に独自エンジン化していると分析し、Epic Gamesのサポートなしでの開発・運営を行っている。
+
+  '
+created_at: 2026-04-05 12:52
+updated_at: 2026-06-07 05:52
 ---
 
 ## 概要
@@ -108,10 +118,3 @@ Unityがモバイル向けゲーム制作で主流とされる理由は：
 
 [[llm-api-prompt-caching]] - LLM APIの最適化技術
 [[claude-computer-use-cli-implementation]] - AI技術の実装事例
-
-<!-- AUTO:Related Articles -->
-## Related Articles
-
-- [[wuthering-waves-unreal-engine-custom-implementation]]
-- [[wuthering-waves-unreal-engine-technical-analysis]]
-<!-- /AUTO:Related Articles -->

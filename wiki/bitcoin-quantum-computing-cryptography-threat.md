@@ -48,5 +48,6 @@ updated_at: "2026-04-08 23:13"
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[quantum-computer-chemistry-classical-solution]]
 - [[quantum-computing-cryptography-breakthrough-2026]]
 <!-- /AUTO:Related Articles -->

@@ -3,32 +3,43 @@ article_id: claude-simplify-code-refactoring-experiment
 title: Claude Code /simplifyコマンドによる自動リファクタリング実験 - 汚いコードが半分以下に
 type: source
 source_ids:
-  - cfd7fba73ec2
+- cfd7fba73ec2
 topics:
-  - claude-code-tools
-  - automatic-refactoring
-  - code-quality-improvement
-  - typescript-optimization
-  - ai-code-review
+- claude-code-tools
+- automatic-refactoring
+- code-quality-improvement
+- typescript-optimization
+- ai-code-review
+- ai-code-refactoring
+- claude-code-features
+- automated-code-review
+- software-development-automation
 aliases_ja:
-  - クロードコード
-  - 自動リファクタリング
-  - コード品質改善
-  - TypeScript最適化
-  - AIコードレビュー
-  - simplifyコマンド
-  - 重複コード削除
-  - バブルソート最適化
-  - useMemo最適化
-  - 型安全性向上
-published_at: ""
+- クロードコード
+- 自動リファクタリング
+- コード品質改善
+- TypeScript最適化
+- AIコードレビュー
+- simplifyコマンド
+- 重複コード削除
+- バブルソート最適化
+- useMemo最適化
+- 型安全性向上
+- Claude Code
+- simplify
+- コードリファクタリング
+- 自動コード改善
+- TypeScript
+- Next.js
+- パフォーマンス最適化
+published_at: ''
 source_urls:
-  - https://zenn.dev/maniizu3110/articles/010-claude-code-simplify-auto-refactor
-summary: >
-  Claude Code の /simplify コマンドを使った実験で、意図的に汚く書いたNext.jsコード（467行）が208行まで削減され、重複コード排除・型安全性向上・パフォーマンス最適化が自動実行された。
-  3つの専門エージェント（Code Reuse・Code Quality・Efficiency）が並列動作し、バブルソートからArray.sort()への変更やuseMemoによるメモ化などの改善を実施。
-created_at: "2026-04-05 13:06"
-updated_at: "2026-04-05 13:06"
+- https://zenn.dev/maniizu3110/articles/010-claude-code-simplify-auto-refactor
+summary: 'Claude Code の /simplify コマンドを使った実験で、意図的に汚く書いたNext.jsコード（467行）が208行まで削減され、重複コード排除・型安全性向上・パフォーマンス最適化が自動実行された。 3つの専門エージェント（Code Reuse・Code Quality・Efficiency）が並列動作し、バブルソートからArray.sort()への変更やuseMemoによるメモ化などの改善を実施。
+
+  '
+created_at: 2026-04-05 13:06
+updated_at: 2026-06-07 05:52
 ---
 
 # Claude Code /simplifyコマンドによる自動リファクタリング実験 - 汚いコードが半分以下に
@@ -328,6 +339,6 @@ O(n²) → O(n log n) に改善され、さらに `any[]` → `Task[]` に型も
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
-- [[claude-code-simplify-refactoring-experiment]]
+- [[comfyui-four-rival-ai-review-system]]
 - [[obsidian-mind-claude-memory-system]]
 <!-- /AUTO:Related Articles -->

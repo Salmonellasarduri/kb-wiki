@@ -126,5 +126,7 @@ Project Glasswing は、AI技術の進歩がもたらすサイバーセキュリ
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[anthropic-nec-financial-consortium-ai-collaboration]]
 - [[japan-project-glasswing-claude-mythos-ai-defense]]
+- [[mythos-finds-curl-vulnerability]]
 <!-- /AUTO:Related Articles -->

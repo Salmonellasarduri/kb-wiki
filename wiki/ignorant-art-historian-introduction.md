@@ -34,3 +34,9 @@ updated_at: "2026-04-25 18:19"
 著者が「もともとそれほど強くない」と自己言及している学術的超自我からの解放という表現は、謙遜と同時に既存の学術権威への距離感を示唆している。
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[ignorant-art-historian-ice-floes]]
+<!-- /AUTO:Related Articles -->

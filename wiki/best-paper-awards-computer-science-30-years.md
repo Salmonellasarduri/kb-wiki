@@ -3,28 +3,31 @@ article_id: best-paper-awards-computer-science-30-years
 title: コンピュータサイエンス分野における過去30年間のベストペーパーアワード
 type: stub
 source_ids:
-  - c21bf387b73d
+- c21bf387b73d
 topics:
-  - computer-science-research
-  - academic-awards
-  - research-history
+- computer-science-research
+- academic-awards
+- research-history
 aliases_ja:
-  - コンピュータサイエンス
-  - ベストペーパーアワード
-  - 学術賞
-  - 研究論文
-  - 最優秀論文賞
-  - CS分野
-  - 学問の地層
-  - 系譜
-published_at: ""
+- コンピュータサイエンス
+- ベストペーパーアワード
+- 学術賞
+- 研究論文
+- 最優秀論文賞
+- CS分野
+- 学問の地層
+- 系譜
+- コンピュータサイエンス研究
+- 研究の歴史
+- 論文表彰
+published_at: ''
 source_urls:
-  - "https://jeffhuang.com/best_paper_awards"
-summary: >
-  コンピュータサイエンス分野における過去30年間のベストペーパーアワードをまとめた資料。
-  学問の地層を見渡すような感覚があり、現在の存在に繋がる系譜を辿ることができる。
-created_at: "2026-04-06 19:21"
-updated_at: "2026-04-06 19:21"
+- https://jeffhuang.com/best_paper_awards
+summary: 'コンピュータサイエンス分野における過去30年間のベストペーパーアワードをまとめた資料。 学問の地層を見渡すような感覚があり、現在の存在に繋がる系譜を辿ることができる。
+
+  '
+created_at: 2026-04-06 19:21
+updated_at: 2026-06-07 05:52
 ---
 
 # コンピュータサイエンス分野における過去30年間のベストペーパーアワード
@@ -42,9 +45,3 @@ updated_at: "2026-04-06 19:21"
 各論文は、その時代における最先端の研究成果として評価されており、分野全体の発展過程を理解する上で重要な資料となっている。
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
-
-<!-- AUTO:Related Articles -->
-## Related Articles
-
-- [[computer-science-best-paper-awards-30-years]]
-<!-- /AUTO:Related Articles -->

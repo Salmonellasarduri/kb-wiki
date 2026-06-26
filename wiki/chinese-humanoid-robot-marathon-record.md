@@ -43,3 +43,11 @@ updated_at: "2026-04-25 18:19"
 記事では「人間に似た形で走る」という選択に対する興味深い考察が示されている。速さを求めるなら別の形態の方が効率的であるにも関わらず、なぜ人型に固執するのかという問いが提起され、それが「誇示のため」であるとすれば、ロボットではなく人間の欲望の表れであるという洞察が述べられている。
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[humanoidturk-vr-driving-haptics]]
+- [[jin-ki-ittai-humanoid-robot-ichitan-momen]]
+- [[sr-01-transforming-robot-4.7m-50seconds]]
+<!-- /AUTO:Related Articles -->

@@ -3,33 +3,45 @@ article_id: autoagent-autonomous-agent-harness-engineering
 title: AutoAgent - AIエージェントハーネス自律開発システム
 type: source
 source_ids:
-  - 72483ef1d96b
+- 72483ef1d96b
 topics:
-  - autonomous-ai-agents
-  - agent-engineering
-  - meta-learning-systems
-  - docker-automation
-  - benchmark-optimization
+- autonomous-ai-agents
+- agent-engineering
+- meta-learning-systems
+- docker-automation
+- benchmark-optimization
+- ai-agent-development
+- autonomous-programming
+- meta-agent-engineering
+- docker-containerization
+- benchmark-automation
 aliases_ja:
-  - 自律AIエージェント
-  - エージェントエンジニアリング
-  - メタ学習システム
-  - Docker自動化
-  - ベンチマーク最適化
-  - autoagent
-  - ケビン・グ
-  - サードレイヤー
-  - harbor
-  - エージェントハーネス
-published_at: ""
+- 自律AIエージェント
+- エージェントエンジニアリング
+- メタ学習システム
+- Docker自動化
+- ベンチマーク最適化
+- autoagent
+- ケビン・グ
+- サードレイヤー
+- harbor
+- エージェントハーネス
+- オートエージェント
+- 自律的エージェント開発
+- メタエージェント
+- エージェント工学
+- AIエージェント自動構築
+- プログラムMD
+- ハーバー互換タスク
+- ベンチマーク自動実行
+published_at: ''
 source_urls:
-  - https://github.com/kevinrgu/autoagent
-summary: >
-  AutoAgentは、AIエージェントに課題を与えて一晩で自律的にエージェントハーネスを構築・最適化させる開発システム。
-  AIエージェントがシステムプロンプト、ツール、設定、オーケストレーションを自動修正し、ベンチマークスコアで評価して改善を繰り返す。
-  人間はharness Pythonファイルではなくprogram.mdでメタエージェントに指示を与える新しい開発手法を提案している。
-created_at: "2026-04-05 18:34"
-updated_at: "2026-04-05 18:34"
+- https://github.com/kevinrgu/autoagent
+summary: 'AutoAgentは、AIエージェントに課題を与えて一晩で自律的にエージェントハーネスを構築・最適化させる開発システム。 AIエージェントがシステムプロンプト、ツール、設定、オーケストレーションを自動修正し、ベンチマークスコアで評価して改善を繰り返す。 人間はharness Pythonファイルではなくprogram.mdでメタエージェントに指示を与える新しい開発手法を提案している。
+
+  '
+created_at: 2026-04-05 18:34
+updated_at: 2026-06-07 05:52
 ---
 
 ## 概要
@@ -155,5 +167,5 @@ AutoAgentは、パフォーマンス向上のためにAgent Skills for Context E
 ## Related Articles
 
 [[claude-code-cli-computer-use-implementation]] - AIによる自律的PC操作システム
-[[obsidian-mind-claude-code-memory-system]] - Claude Codeの記憶システム強化
+[[obsidian-mind-claude-memory-system]] - Claude Codeの記憶システム強化
 [[llm-personal-knowledge-base-workflow-karpathy]] - LLMを活用した知識ベース構築手法

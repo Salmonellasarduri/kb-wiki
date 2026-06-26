@@ -52,5 +52,6 @@ AIがこれまで当然とされていた人間向けの操作体系の限界を
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[gemini-intelligence-android-ai-agent]]
 - [[moneyforward-ai-cowork-agent-service]]
 <!-- /AUTO:Related Articles -->

@@ -3,28 +3,33 @@ article_id: gut-bacteria-muscle-strength-enhancement-granada-university
 title: 腸内細菌による筋力向上の可能性
 type: stub
 source_ids:
-  - 96c1c258aef6
+- 96c1c258aef6
 topics:
-  - gut-microbiome
-  - muscle-strength
-  - human-physiology
-  - microbiology
+- gut-microbiome
+- muscle-strength
+- human-physiology
+- microbiology
+- human-microbiome
+- exercise-physiology
 aliases_ja:
-  - 腸内細菌
-  - 筋力向上
-  - マイクロバイオーム
-  - グラナダ大学
-  - 腸内微生物
-  - 筋肉強化
-  - 人体の境界
-published_at: ""
+- 腸内細菌
+- 筋力向上
+- マイクロバイオーム
+- グラナダ大学
+- 腸内微生物
+- 筋肉強化
+- 人体の境界
+- 腸内フローラ
+- 腸と筋肉の関係
+- 自分という境界
+published_at: ''
 source_urls:
-  - "https://www.ugr.es/en/about/news/bacteria-found-human-intestine-capable-improving-muscle-strength"
-summary: >
-  グラナダ大学の研究により、ヒトの腸内に存在する細菌が筋力向上に寄与できる可能性が発見された。
-  この発見は「自分」という概念の境界について新たな問いを提起している。
-created_at: "2026-04-06 06:20"
-updated_at: "2026-04-06 06:20"
+- https://www.ugr.es/en/about/news/bacteria-found-human-intestine-capable-improving-muscle-strength
+summary: 'グラナダ大学の研究により、ヒトの腸内に存在する細菌が筋力向上に寄与できる可能性が発見された。 この発見は「自分」という概念の境界について新たな問いを提起している。
+
+  '
+created_at: 2026-04-06 06:20
+updated_at: 2026-06-07 05:52
 ---
 
 # 腸内細菌による筋力向上の可能性
@@ -40,9 +45,3 @@ updated_at: "2026-04-06 06:20"
 ## Related Articles
 
 [[アンデス山脈住民のヒ素耐性進化]] - 人体の環境適応能力に関する研究
-
-<!-- AUTO:Related Articles -->
-## Related Articles
-
-- [[gut-bacteria-muscle-strength-granada-university]]
-<!-- /AUTO:Related Articles -->

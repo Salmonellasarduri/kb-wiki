@@ -52,5 +52,10 @@ Josh Klineの展覧会に関するレビュー記事が「Josh Kline Misses the 
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[idiots-munch-von-trier-art-criticism]]
+- [[idiots-on-munch-and-von-trier]]
+- [[lacma-makeover-art-media-layoffs-lebanon-artist]]
 - [[maria-britton-second-sleep-exhibition]]
+- [[may-you-live-in-less-interesting-times-venice-biennale]]
+- [[venice-biennale-us-pavilion-ordinary-art-criticism]]
 <!-- /AUTO:Related Articles -->
