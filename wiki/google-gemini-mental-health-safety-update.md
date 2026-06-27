@@ -66,6 +66,7 @@ AIを友人・恋人・セラピスト代わりに使用するケースが増加
 - [[anthropic-ai-monitoring-experiment]]
 - [[anthropic-ai-self-improvement-loop-warning]]
 - [[blind-refusal-language-models-unjust-authority]]
+- [[civbench-ai-civilization-nuclear-weapon]]
 - [[claude-mythos-containment-breach]]
 - [[dutch-suicide-prevention-data-sharing-scandal]]
 - [[google-gemini-mental-health-safeguards]]

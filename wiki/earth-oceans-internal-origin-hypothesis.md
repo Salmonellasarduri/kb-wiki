@@ -58,3 +58,9 @@ updated_at: "2026-06-26 23:04"
 - [[光合成初期進化の手がかりを示すシアノバクテリア系統]] — 生命と地球環境の相互作用
 - [[地球の真の形状測定と科学的進歩の価値]] — 地球科学における継続的な問いの重要性
 - [[The Joy of Why シーズン5 - Quanta Magazineの科学ポッドキャスト新シーズン]] — 同じQuanta Magazineによる基礎科学コンテンツ
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[nasa-astrobiologist-biological-space-materials]]
+<!-- /AUTO:Related Articles -->

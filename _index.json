@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-06-26T14:25:50.974200+00:00",
-  "article_count": 457,
+  "generated_at": "2026-06-27T20:43:37.679294+00:00",
+  "article_count": 459,
   "articles": [
     {
       "id": "a-shell-iphone-terminal-app",
@@ -4350,6 +4350,49 @@
       "published_at": "2026-04-21",
       "created_at": "2026-04-25 18:19",
       "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "dust-origins-airship-syndicate-sci-fi-action",
+      "path": "wiki/dust-origins-airship-syndicate-sci-fi-action.md",
+      "title": "DUST: Origins - Airship Syndicateが発表したSFアクションゲーム",
+      "type": "source",
+      "summary": "Airship Syndicateが2026年6月27日に新作サイエンスフィクションアクションゲーム『DUST: Origins』を発表した。 崩壊しつつある軌道上の宇宙刑務所を舞台に、クライオ冷凍から目覚めた主人公が脱出を目指す等角視点のアクション。 Dead Spaceの影響を受けたホラー的閉所感と道徳的選択システムを特徴とし、2026年7月28日にKickstarterキャンペーンを開始予定。 同スタジオはDarksiders Genesis、Battle Chasers: Nightwar、Ruined Kingなどの実績を持つ。\n",
+      "topics": [
+        "sci-fi-action-games",
+        "indie-game-announcements",
+        "airship-syndicate",
+        "game-development",
+        "kickstarter",
+        "horror-games",
+        "space-games"
+      ],
+      "aliases_ja": [
+        "ダスト オリジンズ",
+        "エアシップ・シンジケート",
+        "SFアクションゲーム",
+        "宇宙刑務所アクション",
+        "ダークサイダーズ・ジェネシス",
+        "バトルチェイサーズ",
+        "ルインドキング",
+        "インディーアクション新作",
+        "オリジンズ新作ゲーム",
+        "デッドスペース系インディー",
+        "キックスターター2026",
+        "等角視点SFアクション",
+        "クライオ冷凍SF",
+        "ホラーSFアクション",
+        "道徳的選択ゲーム"
+      ],
+      "source_ids": [
+        "d478d18311b9",
+        "f0d405f7042b"
+      ],
+      "source_urls": [
+        "https://www.gematsu.com/2026/06/airship-syndicate-announces-sci-fi-action-game-dust-origins"
+      ],
+      "published_at": "",
+      "created_at": "2026-06-28 05:42",
+      "updated_at": "2026-06-28 05:42"
     },
     {
       "id": "dutch-suicide-prevention-data-sharing-scandal",
@@ -11875,6 +11918,41 @@
       "published_at": "",
       "created_at": "2026-06-01 07:19",
       "updated_at": "2026-06-01 07:19"
+    },
+    {
+      "id": "reset-hat-documentary-jesper-wachtmeister",
+      "path": "wiki/reset-hat-documentary-jesper-wachtmeister.md",
+      "title": "Reset: Hat - アメリカ西部の僻地で生きる男を追う短編ドキュメンタリー",
+      "type": "stub",
+      "summary": "スウェーデン人監督Jesper Wachtmeisterによる短編ドキュメンタリー『Reset: Hat』は、「Hat」と名乗る男性がアメリカ西部の僻地に自ら小屋を建て、公式グリッドの外で生きる姿を追う。アイデンティティ・幸福・同調と自由のバランスをテーマとし、より大きなシリーズ「Reset: The Art of Disappearing and the Consequences of Starting Over」の一編として2026年6月25日にAeon Videoが公開した。\n",
+      "topics": [
+        "documentary-film",
+        "off-grid-living",
+        "identity-philosophy",
+        "aeon-video",
+        "self-reinvention"
+      ],
+      "aliases_ja": [
+        "リセット・ハット",
+        "オフグリッド生活",
+        "アメリカ西部ドキュメンタリー",
+        "消えることを選ぶ",
+        "イェスパー・ワハトマイスター",
+        "自給自足生活",
+        "アイデンティティの再定義",
+        "Aeon Video短編",
+        "名前を選ぶ行為",
+        "同調と自由"
+      ],
+      "source_ids": [
+        "d88782671a43"
+      ],
+      "source_urls": [
+        "https://aeon.co/videos/in-the-american-west-a-man-named-hat-sets-out-to-leave-no-trace"
+      ],
+      "published_at": "2026-06-25",
+      "created_at": "2026-06-28 05:42",
+      "updated_at": "2026-06-28 05:42"
     },
     {
       "id": "ridgewood-art-scene-emerging-bushwick-shadow",

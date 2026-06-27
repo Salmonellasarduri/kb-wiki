@@ -43,3 +43,9 @@ updated_at: "2026-06-01 07:19"
 ソースドキュメントの「Reflection」セクションでは、「AIを武器として使いながら、同時にAIの侵食から人を守る盾も作る」という矛盾について言及されており、この矛盾を矛盾と思わずに取り組める企業の姿勢に対する評価が示されている。
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[generative-ai-real-estate-photo-manipulation]]
+<!-- /AUTO:Related Articles -->

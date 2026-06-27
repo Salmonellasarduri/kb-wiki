@@ -48,6 +48,7 @@ Pace galleryにおいてCelia Paul（セリア・ポール）、Edward Hopper（
 - [[fulu-foundation-orcaslicer-bambulab-tool-republishing]]
 - [[israeli-pavilion-legal-threats-venice-biennale]]
 - [[may-you-live-in-less-interesting-times-venice-biennale]]
+- [[obama-center-obamalith-saic-imagination]]
 - [[venice-biennale-2026-artist-boycott-legal-action]]
 - [[venice-biennale-strike-israeli-pavilion-protest]]
 - [[venice-biennale-us-pavilion-ordinary-art-criticism]]

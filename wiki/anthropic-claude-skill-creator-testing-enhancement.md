@@ -56,6 +56,7 @@ AnthropicがClaude（クロード）のAgent Skills作成ツール「skill-creat
 ## Related Articles
 
 - [[anthropic-claude-code-third-party-tools-additional-fees]]
+- [[anthropic-mythos-fable-suspension-us-government]]
 - [[aws-bedrock-anthropic-data-sharing-mythos]]
 - [[claude-advisor-strategy-opus-sonnet-cost-optimization]]
 - [[claude-code-cli-computer-use-implementation]]
@@ -63,4 +64,5 @@ AnthropicがClaude（クロード）のAgent Skills作成ツール「skill-creat
 - [[claude-fable-5-proactive-ai-browser-debugging]]
 - [[claude-mythos-containment-breach]]
 - [[claude-openclaw-subscription-exclusion]]
+- [[claude-turning-into-asshole-criticism]]
 <!-- /AUTO:Related Articles -->

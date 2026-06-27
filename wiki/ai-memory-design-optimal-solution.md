@@ -148,4 +148,5 @@ AIメモリの本質は「どれだけ多くのことを覚えているか」で
 
 - [[aura-action-gated-memory-robot-policies]]
 - [[obsidian-mind-claude-memory-system]]
+- [[token-compression-illusion-rtk-skepticism]]
 <!-- /AUTO:Related Articles -->

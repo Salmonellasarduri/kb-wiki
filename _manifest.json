@@ -643,7 +643,11 @@
     "d696418676596a2b4ab6009cd79a9a3c2d851d307afd07c93c7134afaaf331f9": "d69641867659",
     "07c2548749a8e3076dede81fb1e27b79884afc5fef4cfb0f44f3b1b0548bfaac": "07c2548749a8",
     "b1ae13b5918c66b3d17431077e8a60aed860c5073bc3d03ba10f5381b2cf48fd": "b1ae13b5918c",
-    "9396d11b09d3d2669f0bd32be15e6c26fd870484e7984ff7a00a60e9c8bbb950": "9396d11b09d3"
+    "9396d11b09d3d2669f0bd32be15e6c26fd870484e7984ff7a00a60e9c8bbb950": "9396d11b09d3",
+    "d478d18311b91c3a01eabb4d4f6241e905387ba92ce93000d551e9e40c06dca7": "d478d18311b9",
+    "987936414474597dc73748b7d23c93b4c8514bdea521c6fd19de51a256b7cc36": "987936414474",
+    "f0d405f7042b44fe03040b249d649403c89f83849e9deae5a20d33688987c537": "f0d405f7042b",
+    "d88782671a4333d5e85ff6f527aa7a4986a783d5d2f257ee663845b784b1c048": "d88782671a43"
   },
   "items": {
     "16c0425f47df": {
@@ -8622,6 +8626,56 @@
       "compiled_at": null,
       "article_ids": [],
       "error": "repair failed: no fetchable URL found"
+    },
+    "d478d18311b9": {
+      "hash": "d478d18311b91c3a01eabb4d4f6241e905387ba92ce93000d551e9e40c06dca7",
+      "original_name": "Airship Syndicate announces sci-fi action game DUST_ Origins.md",
+      "source_path": "sources/d478d18311b9_Airship Syndicate announces sci-fi action game DUST_ Origins.md",
+      "meta_path": "sources/d478d18311b9_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-06-27T01:28:54.892208+00:00",
+      "compiled_at": "2026-06-28T05:42:51.149758+09:00",
+      "article_ids": [
+        "dust-origins-airship-syndicate-sci-fi-action"
+      ],
+      "error": null
+    },
+    "987936414474": {
+      "hash": "987936414474597dc73748b7d23c93b4c8514bdea521c6fd19de51a256b7cc36",
+      "original_name": "Reset_ Hat.md",
+      "source_path": "sources/987936414474_Reset_ Hat.md",
+      "meta_path": "sources/987936414474_meta.json",
+      "status": "blocked",
+      "ingested_at": "2026-06-27T01:28:54.892208+00:00",
+      "compiled_at": null,
+      "article_ids": [],
+      "error": "repair failed: no fetchable URL found"
+    },
+    "f0d405f7042b": {
+      "hash": "f0d405f7042b44fe03040b249d649403c89f83849e9deae5a20d33688987c537",
+      "original_name": "Airship Syndicate announces sci-fi action game DUST_ Origins.md",
+      "source_path": "sources/f0d405f7042b_Airship Syndicate announces sci-fi action game DUST_ Origins.md",
+      "meta_path": "sources/f0d405f7042b_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-06-27T20:42:26.065249+00:00",
+      "compiled_at": "2026-06-28T05:43:12.329921+09:00",
+      "article_ids": [
+        "dust-origins-airship-syndicate-sci-fi-action"
+      ],
+      "error": null
+    },
+    "d88782671a43": {
+      "hash": "d88782671a4333d5e85ff6f527aa7a4986a783d5d2f257ee663845b784b1c048",
+      "original_name": "Reset_ Hat.md",
+      "source_path": "sources/d88782671a43_Reset_ Hat.md",
+      "meta_path": "sources/d88782671a43_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-06-27T20:42:26.065249+00:00",
+      "compiled_at": "2026-06-28T05:43:36.654545+09:00",
+      "article_ids": [
+        "reset-hat-documentary-jesper-wachtmeister"
+      ],
+      "error": null
     }
   }
 }

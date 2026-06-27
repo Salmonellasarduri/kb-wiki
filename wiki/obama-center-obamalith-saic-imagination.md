@@ -47,3 +47,11 @@ updated_at: "2026-06-26 23:04"
 
 - [[obama-presidential-center-art-preview]] - Obama Presidential Centerの新アート展示プレビュー
 - [[may-you-live-in-less-interesting-times]] - May You Live in Less Interesting Times（ヴェネツィア・ビエンナーレと美術学校の衰退）
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[celia-paul-edward-hopper-saif-azzuz-pace-gallery-exhibition]]
+- [[obama-presidential-center-art-preview]]
+- [[venice-biennale-2026-artist-boycott-legal-action]]
+<!-- /AUTO:Related Articles -->

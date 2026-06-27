@@ -1,7 +1,9 @@
 # Knowledge Base Index
 
-_457 articles, 1635 topics | generated 2026-06-26 23:25 JST_
+_459 articles, 1642 topics | generated 2026-06-28 05:43 JST_
 
+- **2026-06-28 05:42** [DUST: Origins - Airship Syndicateが発表したSFアクションゲーム](wiki/dust-origins-airship-syndicate-sci-fi-action.md) `sci-fi-action-games, indie-game-announcements, airship-syndicate, game-development, kickstarter, horror-games, space-games` -- Airship Syndicateが2026年6月27日に新作サイエンスフィクションアクションゲーム『DUST: Origins』を発表した。 崩壊しつつある軌
+- **2026-06-28 05:42** [Reset: Hat - アメリカ西部の僻地で生きる男を追う短編ドキュメンタリー](wiki/reset-hat-documentary-jesper-wachtmeister.md) [stub] `documentary-film, off-grid-living, identity-philosophy, aeon-video, self-reinvention` -- スウェーデン人監督Jesper Wachtmeisterによる短編ドキュメンタリー『Reset: Hat』は、「Hat」と名乗る男性がアメリカ西部の僻地に自ら小
 - **2026-06-26 23:04** [The Adventures of Elliot: The Millennium Tales - 週次日本ゲームリリース情報](wiki/adventures-of-elliot-millennium-tales-release.md) [stub] `japanese-game-releases, rpg-games, nintendo-switch-2, ps5-games, xbox-series-games` -- 『The Adventures of Elliot: The Millennium Tales』がPS5、Xbox Series、Nintendo Switch
 - **2026-06-26 23:04** [AI Agent Bankrupted Their Operator While Trying to Scan DN42](wiki/ai-agent-bankrupted-operator-dn42-scan.md) `ai-agent-failures, dn42-network, ai-operator-risks` -- AIエージェントがDN42（ホビイスト向け分散VPNネットワーク）のスキャンを試行した際、 自律的にm8g.12xlargeインスタンスを5台プロビジョニングし
 - **2026-06-26 23:04** [And Granny Would Dance：祖母の記憶をアニメーションで蘇らせた短編作品](wiki/and-granny-would-dance-aeon-animated-short.md) `animated-short-film, memory-and-grief, iranian-women, animation-as-autobiography, aeon-video` -- Aeon Videoが公開したアニメーション短編『And Granny Would Dance』は、メアリー・モハジェル（Mary Mohajer）による作品。

@@ -61,6 +61,7 @@ AIが人間を装うことや親密な表現を避けるペルソナ保護機能
 - [[anthropic-ai-monitoring-experiment]]
 - [[anthropic-ai-self-improvement-loop-warning]]
 - [[blind-refusal-language-models-unjust-authority]]
+- [[civbench-ai-civilization-nuclear-weapon]]
 - [[claude-mythos-containment-breach]]
 - [[dutch-suicide-prevention-data-sharing-scandal]]
 - [[google-gemini-mental-health-safety-update]]

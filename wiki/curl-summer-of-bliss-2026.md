@@ -57,3 +57,9 @@ updated_at: "2026-06-26 23:04"
 
 - [[project-glasswing-anthropic-security]] — AIを活用した脆弱性検出の取り組み（[[Mythos finds a curl vulnerability]]も参照）
 - [[mythos-finds-curl-vulnerability]] — AIセキュリティツールMythosがcURLに報告した脆弱性（誤検知を含む）事例
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[anthropic-project-glasswing-ai-cybersecurity-initiative]]
+<!-- /AUTO:Related Articles -->

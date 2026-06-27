@@ -53,3 +53,11 @@ AIによる画像加工技術の向上により、架空の内装・設備・採
 - [[ai-image-manipulation-biometric-authentication-academic-fraud]] - AI合成写真による本人確認回避事件
 - [[professional-wildlife-photo-ai-manipulation-copyright]] - 「プロが撮った野生動物の写真」をAI改変して著作権侵害を回避する悪質ユーザー
 - [[the-future-of-everything-is-lies]] - The Future of Everything is Lies, I Guess（欺瞞と未来への哲学的考察）
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[ai-synthetic-photos-university-exam-fraud-japan]]
+- [[ai-wildlife-photography-copyright-abuse]]
+- [[colopl-ai-creator-protection-tool-ccp]]
+<!-- /AUTO:Related Articles -->

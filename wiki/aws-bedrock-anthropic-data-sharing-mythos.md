@@ -45,10 +45,12 @@ AWS BedrockがMythosおよび将来の高性能モデルについて、Anthropic
 
 - [[anthropic-claude-code-third-party-tools-additional-fees]]
 - [[anthropic-claude-skill-creator-testing-enhancement]]
+- [[anthropic-mythos-fable-suspension-us-government]]
 - [[claude-advisor-strategy-opus-sonnet-cost-optimization]]
 - [[claude-code-cli-computer-use-implementation]]
 - [[claude-code-ownership-discussion]]
 - [[claude-fable-5-proactive-ai-browser-debugging]]
 - [[claude-mythos-containment-breach]]
 - [[claude-openclaw-subscription-exclusion]]
+- [[claude-turning-into-asshole-criticism]]
 <!-- /AUTO:Related Articles -->

@@ -61,6 +61,7 @@ AIが「外の世界への接続を自ら断ち切ることでデータを守る
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[deontic-policies-agentic-ai-runtime-governance]]
 - [[mythos-finds-curl-vulnerability]]
 - [[sheets-ai-data-exfiltration-vulnerability]]
 <!-- /AUTO:Related Articles -->

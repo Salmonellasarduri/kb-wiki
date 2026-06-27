@@ -63,5 +63,6 @@ updated_at: 2026-06-07 05:52
 <!-- AUTO:Related Articles -->
 ## Related Articles
 
+- [[crankgpt-human-powered-local-ai]]
 - [[diy-ai-autoprober-duct-tape-cnc]]
 <!-- /AUTO:Related Articles -->

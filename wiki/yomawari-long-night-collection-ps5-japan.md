@@ -40,3 +40,10 @@ updated_at: "2026-06-01 07:19"
 今回のPS5版はPlayStation Store経由でのデジタル配信となっており、日本のプレイヤーがアクセス可能となっている。
 
 > [!note] ソースが限定的です。記事は不完全な可能性があります。
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[adventures-of-elliot-millennium-tales-release]]
+- [[horses-horror-game-steam-banned-japanese]]
+<!-- /AUTO:Related Articles -->

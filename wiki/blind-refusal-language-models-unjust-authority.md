@@ -60,6 +60,7 @@ arXiv:2604.06233として公開された論文「Blind Refusal: Language Models 
 - [[anthropic-ai-self-improvement-loop-warning]]
 - [[anthropic-god-creation-speculation]]
 - [[apple-google-store-nudify-apps-report]]
+- [[civbench-ai-civilization-nuclear-weapon]]
 - [[claude-mythos-containment-breach]]
 - [[covert-llm-reddit-persuasion-experiment]]
 - [[faith-ai-covenant-religious-tech-collaboration]]

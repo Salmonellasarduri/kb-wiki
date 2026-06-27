@@ -50,3 +50,11 @@ updated_at: "2026-06-26 23:04"
 
 - [[another-eden-begins-release-date]] - 同じく今週の日本ゲームリリース情報に関連するターン制RPG
 - [[ira-coming-to-switch-2-this-summer]] - Nintendo Switch 2向けの新作リリース情報
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[ira-roguelike-switch-2-summer-release]]
+- [[nintendo-switch-2-price-increase-2026]]
+- [[yomawari-long-night-collection-ps5-japan]]
+<!-- /AUTO:Related Articles -->
