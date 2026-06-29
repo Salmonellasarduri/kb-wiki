@@ -1,7 +1,8 @@
 # Knowledge Base Index
 
-_459 articles, 1642 topics | generated 2026-06-28 05:43 JST_
+_460 articles, 1647 topics | generated 2026-06-29 11:17 JST_
 
+- **2026-06-29 11:17** [正のグラスマン多様体：あらゆる場所に現れる数学的対象](wiki/positive-grassmannian-lauren-williams.md) [stub] `algebraic-combinatorics, positive-grassmannian, mathematics-research, mathematical-physics, interdisciplinary-mathematics` -- 数学者Lauren Williamsが「正のグラスマン多様体（Positive Grassmannian）」という代数的組合せ論の対象を研究するキャリアについて
 - **2026-06-28 05:42** [DUST: Origins - Airship Syndicateが発表したSFアクションゲーム](wiki/dust-origins-airship-syndicate-sci-fi-action.md) `sci-fi-action-games, indie-game-announcements, airship-syndicate, game-development, kickstarter, horror-games, space-games` -- Airship Syndicateが2026年6月27日に新作サイエンスフィクションアクションゲーム『DUST: Origins』を発表した。 崩壊しつつある軌
 - **2026-06-28 05:42** [Reset: Hat - アメリカ西部の僻地で生きる男を追う短編ドキュメンタリー](wiki/reset-hat-documentary-jesper-wachtmeister.md) [stub] `documentary-film, off-grid-living, identity-philosophy, aeon-video, self-reinvention` -- スウェーデン人監督Jesper Wachtmeisterによる短編ドキュメンタリー『Reset: Hat』は、「Hat」と名乗る男性がアメリカ西部の僻地に自ら小
 - **2026-06-26 23:04** [The Adventures of Elliot: The Millennium Tales - 週次日本ゲームリリース情報](wiki/adventures-of-elliot-millennium-tales-release.md) [stub] `japanese-game-releases, rpg-games, nintendo-switch-2, ps5-games, xbox-series-games` -- 『The Adventures of Elliot: The Millennium Tales』がPS5、Xbox Series、Nintendo Switch

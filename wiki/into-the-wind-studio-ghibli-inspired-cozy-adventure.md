@@ -45,6 +45,7 @@ Three FriendsとBloom & Gloomが、PC向けのスタジオジブリ風cozyアド
 
 - [[ascenders-beyond-the-peak-cthulhu-climbing-roguelike]]
 - [[beyond-the-plastic-wall-post-apocalyptic-puzzle-adventure]]
+- [[dust-origins-airship-syndicate-sci-fi-action]]
 - [[iron-bramble-momentum-metroidvania-announcement]]
 - [[rocket1994-90s-action-game-announcement]]
 <!-- /AUTO:Related Articles -->

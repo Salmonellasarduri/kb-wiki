@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-06-27T20:43:37.679294+00:00",
-  "article_count": 459,
+  "generated_at": "2026-06-29T02:17:34.111401+00:00",
+  "article_count": 460,
   "articles": [
     {
       "id": "a-shell-iphone-terminal-app",
@@ -11246,6 +11246,38 @@
       "published_at": "2026-04-27",
       "created_at": "2026-04-27 14:30",
       "updated_at": "2026-04-27 14:30"
+    },
+    {
+      "id": "positive-grassmannian-lauren-williams",
+      "path": "wiki/positive-grassmannian-lauren-williams.md",
+      "title": "正のグラスマン多様体：あらゆる場所に現れる数学的対象",
+      "type": "stub",
+      "summary": "数学者Lauren Williamsが「正のグラスマン多様体（Positive Grassmannian）」という代数的組合せ論の対象を研究するキャリアについて語ったインタビュー記事。 この数学的構造が物理学・生物学など予期しない領域に繰り返し現れることを発見してきた経緯が紹介されている。 「あらゆる場所に現れる根本的な対象」としての抽象数学の普遍性が主題となっている。\n",
+      "topics": [
+        "algebraic-combinatorics",
+        "positive-grassmannian",
+        "mathematics-research",
+        "mathematical-physics",
+        "interdisciplinary-mathematics"
+      ],
+      "aliases_ja": [
+        "正のグラスマン多様体",
+        "グラスマン多様体",
+        "ローレン・ウィリアムズ",
+        "代数的組合せ論",
+        "数学と物理の接点",
+        "抽象数学の応用",
+        "Quanta Magazine数学"
+      ],
+      "source_ids": [
+        "a79e827653c1"
+      ],
+      "source_urls": [
+        "https://www.quantamagazine.org/what-is-the-positive-grassmannian-and-why-does-it-show-up-everywhere-20260625"
+      ],
+      "published_at": "2026-06-25",
+      "created_at": "2026-06-29 11:17",
+      "updated_at": "2026-06-29 11:17"
     },
     {
       "id": "pragmata-diana-account-takeover",

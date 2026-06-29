@@ -50,6 +50,7 @@ ARTE FranceとMotvind Studiosが終末世界を舞台にしたパズルアドベ
 
 - [[arie-tsukuyomi-seamless-exploration-game]]
 - [[ascenders-beyond-the-peak-cthulhu-climbing-roguelike]]
+- [[dust-origins-airship-syndicate-sci-fi-action]]
 - [[into-the-wind-studio-ghibli-inspired-cozy-adventure]]
 - [[iron-bramble-momentum-metroidvania-announcement]]
 - [[phonopolis-amanita-design-cardboard-puzzle]]

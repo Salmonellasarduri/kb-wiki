@@ -70,3 +70,9 @@ updated_at: "2026-06-26 23:04"
 
 - [[idle-warriors-aeon-citizen-enforcement-documentary]] — Aeon Videoによる別のドキュメンタリー短編作品
 - [[アフリカの葬儀費用が家計に与える経済的負担]] — 死者を送る行為への文化的・感情的投資を扱うテーマとの関連
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[reset-hat-documentary-jesper-wachtmeister]]
+<!-- /AUTO:Related Articles -->

@@ -647,7 +647,9 @@
     "d478d18311b91c3a01eabb4d4f6241e905387ba92ce93000d551e9e40c06dca7": "d478d18311b9",
     "987936414474597dc73748b7d23c93b4c8514bdea521c6fd19de51a256b7cc36": "987936414474",
     "f0d405f7042b44fe03040b249d649403c89f83849e9deae5a20d33688987c537": "f0d405f7042b",
-    "d88782671a4333d5e85ff6f527aa7a4986a783d5d2f257ee663845b784b1c048": "d88782671a43"
+    "d88782671a4333d5e85ff6f527aa7a4986a783d5d2f257ee663845b784b1c048": "d88782671a43",
+    "8234f9b37fa6ce778f0f5795dc93c1da9812a80002bd84934d89f356e1b67256": "8234f9b37fa6",
+    "a79e827653c1a0a989038ce3a8090fe14ef44b96045529b206ef83b26a49b313": "a79e827653c1"
   },
   "items": {
     "16c0425f47df": {
@@ -8674,6 +8676,30 @@
       "compiled_at": "2026-06-28T05:43:36.654545+09:00",
       "article_ids": [
         "reset-hat-documentary-jesper-wachtmeister"
+      ],
+      "error": null
+    },
+    "8234f9b37fa6": {
+      "hash": "8234f9b37fa6ce778f0f5795dc93c1da9812a80002bd84934d89f356e1b67256",
+      "original_name": "Ed Woodham in All the Odd Places.md",
+      "source_path": "sources/8234f9b37fa6_Ed Woodham in All the Odd Places.md",
+      "meta_path": "sources/8234f9b37fa6_meta.json",
+      "status": "blocked",
+      "ingested_at": "2026-06-29T02:16:58.396136+00:00",
+      "compiled_at": null,
+      "article_ids": [],
+      "error": "repair failed: no fetchable URL found"
+    },
+    "a79e827653c1": {
+      "hash": "a79e827653c1a0a989038ce3a8090fe14ef44b96045529b206ef83b26a49b313",
+      "original_name": "What Is the Positive Grassmannian and Why Does It Show Up Everywhere_.md",
+      "source_path": "sources/a79e827653c1_What Is the Positive Grassmannian and Why Does It Show Up Everywhere_.md",
+      "meta_path": "sources/a79e827653c1_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-06-29T02:16:58.396136+00:00",
+      "compiled_at": "2026-06-29T11:17:32.259927+09:00",
+      "article_ids": [
+        "positive-grassmannian-lauren-williams"
       ],
       "error": null
     }

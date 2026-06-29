@@ -50,6 +50,7 @@ updated_at: "2026-04-09 15:54"
 
 - [[ascenders-beyond-the-peak-cthulhu-climbing-roguelike]]
 - [[beyond-the-plastic-wall-post-apocalyptic-puzzle-adventure]]
+- [[dust-origins-airship-syndicate-sci-fi-action]]
 - [[into-the-wind-studio-ghibli-inspired-cozy-adventure]]
 - [[iron-bramble-momentum-metroidvania-announcement]]
 <!-- /AUTO:Related Articles -->

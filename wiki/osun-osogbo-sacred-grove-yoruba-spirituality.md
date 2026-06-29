@@ -51,6 +51,7 @@ updated_at: "2026-04-27 21:32"
 ## Related Articles
 
 - [[idle-warriors-nyc-vehicle-ban-enforcement]]
+- [[reset-hat-documentary-jesper-wachtmeister]]
 - [[ultraman-60th-anniversary-documentary-film]]
 - [[ultraman-documentary-film-origin]]
 <!-- /AUTO:Related Articles -->

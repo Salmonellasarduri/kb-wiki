@@ -89,3 +89,16 @@ Airship Syndicateは、これまでに以下の作品を手掛けた実績を持
 - [[alabaster-dawn-crosscode-developer-early-access]] - CrossCode開発元の8年ぶり新作（インディーアクションRPG）
 - [[everything-is-crab-roguelike-viral-success]] - 発売3日で20万本を突破したインディーローグライト
 - [[iron-bramble-momentum-metroidvania-announcement]] - PLAYISMとRusted Moss開発元による物理ベースメトロイドヴァニア発表
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[ascenders-beyond-the-peak-cthulhu-climbing-roguelike]]
+- [[beyond-the-plastic-wall-post-apocalyptic-puzzle-adventure]]
+- [[cygames-lost-order-trademark-2026]]
+- [[horses-horror-game-steam-banned-japanese]]
+- [[into-the-wind-studio-ghibli-inspired-cozy-adventure]]
+- [[iron-bramble-momentum-metroidvania-announcement]]
+- [[rocket1994-90s-action-game-announcement]]
+- [[yomawari-long-night-collection-ps5-japan]]
+<!-- /AUTO:Related Articles -->

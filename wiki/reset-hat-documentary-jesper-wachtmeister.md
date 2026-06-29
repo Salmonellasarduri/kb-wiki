@@ -63,3 +63,13 @@ updated_at: "2026-06-28 05:42"
 - [[and-granny-would-dance-animated-short-film]] - 同じくAeon Videoが公開した短編作品
 - [[aeon-video-light-speed-thought-experiment]] - Aeon Videoの映像作品
 - [[idle-warriors-documentary]] - 市民活動を追ったAeonビデオドキュメンタリー
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[and-granny-would-dance-aeon-animated-short]]
+- [[idle-warriors-nyc-vehicle-ban-enforcement]]
+- [[osun-osogbo-sacred-grove-yoruba-spirituality]]
+- [[ultraman-60th-anniversary-documentary-film]]
+- [[ultraman-documentary-film-origin]]
+<!-- /AUTO:Related Articles -->
