@@ -1,6 +1,6 @@
 # Knowledge Base Index
 
-_460 articles, 1647 topics | generated 2026-06-29 11:17 JST_
+_460 articles, 1647 topics | generated 2026-06-30 11:34 JST_
 
 - **2026-06-29 11:17** [正のグラスマン多様体：あらゆる場所に現れる数学的対象](wiki/positive-grassmannian-lauren-williams.md) [stub] `algebraic-combinatorics, positive-grassmannian, mathematics-research, mathematical-physics, interdisciplinary-mathematics` -- 数学者Lauren Williamsが「正のグラスマン多様体（Positive Grassmannian）」という代数的組合せ論の対象を研究するキャリアについて
 - **2026-06-28 05:42** [DUST: Origins - Airship Syndicateが発表したSFアクションゲーム](wiki/dust-origins-airship-syndicate-sci-fi-action.md) `sci-fi-action-games, indie-game-announcements, airship-syndicate, game-development, kickstarter, horror-games, space-games` -- Airship Syndicateが2026年6月27日に新作サイエンスフィクションアクションゲーム『DUST: Origins』を発表した。 崩壊しつつある軌

@@ -649,7 +649,9 @@
     "f0d405f7042b44fe03040b249d649403c89f83849e9deae5a20d33688987c537": "f0d405f7042b",
     "d88782671a4333d5e85ff6f527aa7a4986a783d5d2f257ee663845b784b1c048": "d88782671a43",
     "8234f9b37fa6ce778f0f5795dc93c1da9812a80002bd84934d89f356e1b67256": "8234f9b37fa6",
-    "a79e827653c1a0a989038ce3a8090fe14ef44b96045529b206ef83b26a49b313": "a79e827653c1"
+    "a79e827653c1a0a989038ce3a8090fe14ef44b96045529b206ef83b26a49b313": "a79e827653c1",
+    "06460a72900bdffa5a04e2ad6d6b801367eea9b757bf5bbfab0abd930429314b": "06460a72900b",
+    "28a4898f6eca520939efa4df112ecf93f790337d795a7b09ca0cf5dc442d416f": "28a4898f6eca"
   },
   "items": {
     "16c0425f47df": {
@@ -832,7 +834,7 @@
       "article_ids": [
         "thierry-henry-defends-rayan-cherki-selfie-celebration"
       ],
-      "error": "repair failed: fetch failed: HTTP 404"
+      "error": "repair failed: fetch failed: HTTP request failed: HTTPSConnectionPool(host='www.goal.com', port=443): Max retries exceeded with url: /jp/%E3%83%AA%E3%82%B9%E3%83%88/%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%9F%E3%82%99%E3%81%91%E8%87%AA%E6%92%AE%E3%82%8A%E3%82%92%E3%81%99%E3%82%8C%E3%81%AF%E3%82%99%E3%81%84%E3%81%84-%E3%83%86%E3%82%A3%E3%82%A8%E3%83%AA-%E3%82%A2%E3%83%B3%E3%83%AA-%E3%83%9E%E3%83%B3%E3%83%81%E3%82%A7%E3%82%B9%E3%82%BF%E3%83%BC-%E3%82%B7%E3%83%86%E3%82%A3%E3%81%AE%E3%82%AB%E3%83%A9%E3%83%8F%E3%82%99%E3%82%AA- (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)')))"
     },
     "7e99a783ca4d": {
       "hash": "7e99a783ca4d353cc2265bce63740f075a44712e0f56e06915cccd110f27d052",
@@ -895,7 +897,7 @@
       "ingested_at": "2026-04-05T04:16:25.232713+00:00",
       "compiled_at": null,
       "article_ids": [],
-      "error": "repair failed: fetch failed: HTTP request failed: Exceeded 0 redirects."
+      "error": "repair failed: fetch failed: HTTP request failed: HTTPSConnectionPool(host='t.co', port=443): Max retries exceeded with url: /KyJgx0rTct (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)')))"
     },
     "c5c298c99cdb": {
       "hash": "c5c298c99cdb655bd517bf74db9c1e3865fbec509dcc85cfea56f67995c6aab7",
@@ -8702,6 +8704,30 @@
         "positive-grassmannian-lauren-williams"
       ],
       "error": null
+    },
+    "06460a72900b": {
+      "hash": "06460a72900bdffa5a04e2ad6d6b801367eea9b757bf5bbfab0abd930429314b",
+      "original_name": "Timelapse of the Universe.md",
+      "source_path": "sources/06460a72900b_Timelapse of the Universe.md",
+      "meta_path": "sources/06460a72900b_meta.json",
+      "status": "blocked",
+      "ingested_at": "2026-06-30T02:34:10.264681+00:00",
+      "compiled_at": null,
+      "article_ids": [],
+      "error": "repair failed: no fetchable URL found"
+    },
+    "28a4898f6eca": {
+      "hash": "28a4898f6eca520939efa4df112ecf93f790337d795a7b09ca0cf5dc442d416f",
+      "original_name": "タスクの難易度でローカルAIとクラウドAIを自動切り替えする「Wayfinder」、切り替え判断にAIを使わずコストを削減.md",
+      "source_path": "sources/28a4898f6eca_タスクの難易度でローカルAIとクラウドAIを自動切り替えする「Wayfinder」、切り替え判断にAIを使わずコストを削減.md",
+      "meta_path": "sources/28a4898f6eca_meta.json",
+      "status": "failed",
+      "ingested_at": "2026-06-30T02:34:10.264681+00:00",
+      "compiled_at": null,
+      "article_ids": [],
+      "error": "Connection error.",
+      "compile_attempts": 1,
+      "fail_reason": "transient"
     }
   }
 }
