@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-06-30T02:34:15.167822+00:00",
-  "article_count": 460,
+  "generated_at": "2026-06-30T21:08:10.736837+00:00",
+  "article_count": 461,
   "articles": [
     {
       "id": "a-shell-iphone-terminal-app",
@@ -11251,8 +11251,8 @@
       "id": "positive-grassmannian-lauren-williams",
       "path": "wiki/positive-grassmannian-lauren-williams.md",
       "title": "正のグラスマン多様体：あらゆる場所に現れる数学的対象",
-      "type": "stub",
-      "summary": "数学者Lauren Williamsが「正のグラスマン多様体（Positive Grassmannian）」という代数的組合せ論の対象を研究するキャリアについて語ったインタビュー記事。 この数学的構造が物理学・生物学など予期しない領域に繰り返し現れることを発見してきた経緯が紹介されている。 「あらゆる場所に現れる根本的な対象」としての抽象数学の普遍性が主題となっている。\n",
+      "type": "source",
+      "summary": "数学者Lauren Williamsが「正のグラスマン多様体（Positive Grassmannian）Gr(k,n)」という代数的組合せ論の対象を研究するキャリアについて語ったインタビュー記事。 この数学的構造はN=4超対称ヤン・ミルズ理論における散乱振幅のオンシェル図と一対一対応し、アンプリチュヘドロンの体積として振幅そのものを与える。 またKP方程式の浅水波ソリトン正則解の分類構造としても現れ、平面電気回路網・交通流モデルなど全非負行列の文脈で工学・応用分野にも接続する。 純粋数学として発展した抽象構造が物理・応用の横断的な場面に繰り返し出現するという普遍性が主題であり、2026年6月にQuanta Magazineで広く紹介された。\n",
       "topics": [
         "algebraic-combinatorics",
         "positive-grassmannian",
@@ -11267,17 +11267,26 @@
         "代数的組合せ論",
         "数学と物理の接点",
         "抽象数学の応用",
-        "Quanta Magazine数学"
+        "Quanta Magazine数学",
+        "アンプリチュヘドロン",
+        "散乱振幅",
+        "ソリトン解",
+        "全非負行列",
+        "超対称ヤン・ミルズ理論",
+        "KP方程式",
+        "浅水波ソリトン",
+        "グラスマン多様体ってなに"
       ],
       "source_ids": [
-        "a79e827653c1"
+        "a79e827653c1",
+        "8d485437c59c"
       ],
       "source_urls": [
         "https://www.quantamagazine.org/what-is-the-positive-grassmannian-and-why-does-it-show-up-everywhere-20260625"
       ],
       "published_at": "2026-06-25",
       "created_at": "2026-06-29 11:17",
-      "updated_at": "2026-06-29 11:17"
+      "updated_at": "2026-07-01 06:07"
     },
     {
       "id": "pragmata-diana-account-takeover",
@@ -14702,6 +14711,39 @@
       "published_at": "",
       "created_at": "2026-04-15 17:20",
       "updated_at": "2026-04-15 17:20"
+    },
+    {
+      "id": "wayfinder-router-local-cloud-ai-switching",
+      "path": "wiki/wayfinder-router-local-cloud-ai-switching.md",
+      "title": "Wayfinder Router：タスク難易度でローカルAIとクラウドAIを自動切り替えるオープンソースツール",
+      "type": "stub",
+      "summary": "「Wayfinder Router」はGitHubで公開されたオープンソースツールで、タスクの難易度に応じてローカルAIとクラウドAIを自動的に振り分ける。短い要約や誤字修正はローカルAIに、複雑な推論やコード解析はクラウドAIに割り当てる設計で、切り替え判断自体にはAIを使わないことでコストを削減する点が特徴的。\n",
+      "topics": [
+        "local-ai-tools",
+        "cloud-ai-routing",
+        "ai-cost-optimization",
+        "open-source-ai",
+        "ai-infrastructure"
+      ],
+      "aliases_ja": [
+        "Wayfinder",
+        "ウェイファインダー",
+        "ローカルAIとクラウドAIの切り替え",
+        "AIルーター",
+        "タスク難易度による振り分け",
+        "ローカルAI自動切り替え",
+        "クラウドAIコスト削減",
+        "オープンソースAIルーティング"
+      ],
+      "source_ids": [
+        "28a4898f6eca"
+      ],
+      "source_urls": [
+        "https://gigazine.net/news/20260630-wayfinder"
+      ],
+      "published_at": "2026-06-30",
+      "created_at": "2026-07-01 06:07",
+      "updated_at": "2026-07-01 06:07"
     },
     {
       "id": "waypoint-1-5-interactive-virtual-worlds",
