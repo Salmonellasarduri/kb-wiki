@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-07-01T00:36:54.312022+00:00",
-  "article_count": 462,
+  "generated_at": "2026-07-01T02:08:47.714028+00:00",
+  "article_count": 466,
   "articles": [
     {
       "id": "a-shell-iphone-terminal-app",
@@ -5183,6 +5183,37 @@
       "updated_at": "2026-06-11 11:35"
     },
     {
+      "id": "forestiere-underground-gardens",
+      "path": "wiki/forestiere-underground-gardens.md",
+      "title": "Forestiere Underground Gardens",
+      "type": "stub",
+      "summary": "Forestiere Underground Gardensは、地面を下に向かって掘り進めることで作られた庭園・住居の事例。 地上ではなく地下という逆方向への建築という発想が特徴で、Hacker Newsで話題となったWikipedia記事として共有された。\n",
+      "topics": [
+        "underground-architecture",
+        "landscape-gardens",
+        "alternative-living-spaces",
+        "historical-landmarks"
+      ],
+      "aliases_ja": [
+        "フォレスティエーレ地下庭園",
+        "地下庭園",
+        "地面の下を掘って作った庭",
+        "地下住居",
+        "フォレスティエーレ",
+        "地下を掘り進む建築",
+        "カリフォルニア地下庭園"
+      ],
+      "source_ids": [
+        "84a78ce367df"
+      ],
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Forestiere_Underground_Gardens"
+      ],
+      "published_at": "",
+      "created_at": "2026-07-01 11:07",
+      "updated_at": "2026-07-01 11:07"
+    },
+    {
       "id": "france-encrypted-messaging-backdoor",
       "path": "wiki/france-encrypted-messaging-backdoor.md",
       "title": "France Moves to Break Encrypted Messaging",
@@ -7449,6 +7480,40 @@
       "updated_at": "2026-04-08 23:13"
     },
     {
+      "id": "joshi-kenkyuu-daigaku-vtuber-unit",
+      "path": "wiki/joshi-kenkyuu-daigaku-vtuber-unit.md",
+      "title": "「女子研究大学」ニキ&しろせんせーが語るVTuberの最適解",
+      "type": "stub",
+      "summary": "「女子研究大学」はニキ・しろせんせー・りぃちょ・18号・キャメロンの5人組VTuberユニット。 彼らはVTuberコンテンツの核心として「非日常」ではなく「イカレた奴の日常」こそが視聴者に届くと語っており、 歌やリアルイベントにも活動の幅を持つ。\n",
+      "topics": [
+        "vtuber-culture",
+        "vtuber-content-philosophy",
+        "virtual-entertainment",
+        "japanese-internet-culture"
+      ],
+      "aliases_ja": [
+        "女子研究大学",
+        "ニキ",
+        "しろせんせー",
+        "VTuberの最適解",
+        "イカレた奴の日常",
+        "りぃちょ",
+        "18号",
+        "キャメロン",
+        "VTuberユニット",
+        "非日常より日常"
+      ],
+      "source_ids": [
+        "4aeeb92b7a6f"
+      ],
+      "source_urls": [
+        "https://kai-you.net/article/95706"
+      ],
+      "published_at": "",
+      "created_at": "2026-07-01 11:07",
+      "updated_at": "2026-07-01 11:07"
+    },
+    {
       "id": "joy-of-why-season-5-quanta-magazine-podcast",
       "path": "wiki/joy-of-why-season-5-quanta-magazine-podcast.md",
       "title": "The Joy of Why シーズン5 - Quanta Magazineの科学ポッドキャスト新シーズン",
@@ -8852,6 +8917,40 @@
       "published_at": "",
       "created_at": "2026-04-15 17:20",
       "updated_at": "2026-04-15 17:20"
+    },
+    {
+      "id": "microsoft-arkane-studios-closure-marvels-blade-cancelation",
+      "path": "wiki/microsoft-arkane-studios-closure-marvels-blade-cancelation.md",
+      "title": "Microsoft、Arkane Studios閉鎖とMarvel's Bladeキャンセルを検討中との報道",
+      "type": "stub",
+      "summary": "The Vergeの報道によると、MicrosoftがArkane Studiosの閉鎖とMarvel's Bladeのキャンセルを検討中。 Xboxは大規模なレイオフ、スタジオ閉鎖、スピンオフ、合併の波を発表予定とされている。 Arkaneは『Dishonored』や『Prey』などの独創的な作品で知られるスタジオ。\n",
+      "topics": [
+        "game-studio-closures",
+        "microsoft-xbox-strategy",
+        "arkane-studios",
+        "game-cancelations",
+        "gaming-industry-layoffs"
+      ],
+      "aliases_ja": [
+        "アーケインスタジオ閉鎖",
+        "マーベルズブレードキャンセル",
+        "Xboxスタジオ閉鎖",
+        "マイクロソフトゲーム事業",
+        "ディスオナード開発元",
+        "Prey開発元",
+        "ゲームスタジオ閉鎖",
+        "Xbox大規模レイオフ",
+        "アーケインスタジオ"
+      ],
+      "source_ids": [
+        "4448fc2c1db9"
+      ],
+      "source_urls": [
+        "https://www.gematsu.com/2026/06/the-verge-microsoft-weighing-arkane-studios-closure-marvels-blade-cancelation"
+      ],
+      "published_at": "2026-06-01",
+      "created_at": "2026-07-01 11:07",
+      "updated_at": "2026-07-01 11:07"
     },
     {
       "id": "microsoft-azure-trillion-dollar-failure-insider-testimony",
@@ -14806,6 +14905,37 @@
       "published_at": "",
       "created_at": "2026-04-10 08:33",
       "updated_at": "2026-04-10 08:33"
+    },
+    {
+      "id": "what-happened-to-the-fight-for-the-internet",
+      "path": "wiki/what-happened-to-the-fight-for-the-internet.md",
+      "title": "What happened to the fight for the internet?",
+      "type": "stub",
+      "summary": "dustycloud.orgに掲載された記事で、かつて存在したインターネットの自由をめぐる運動や議論の行方を問い直す内容。 「戦い」という言葉が問われること自体が、その運動が終息・忘却・敗北のいずれかの状態にあることを示唆しており、 静かな敗北の匂いを持つ問いとして提起されている。\n",
+      "topics": [
+        "internet-freedom",
+        "digital-rights",
+        "online-activism",
+        "tech-culture-reflection"
+      ],
+      "aliases_ja": [
+        "インターネットの自由",
+        "ネット自由化運動",
+        "デジタル権利",
+        "インターネットのための戦い",
+        "ネット中立性",
+        "オンライン活動主義",
+        "インターネット政策"
+      ],
+      "source_ids": [
+        "627d705afbdb"
+      ],
+      "source_urls": [
+        "https://dustycloud.org/blog/what-happened-to-the-fight-for-the-internet"
+      ],
+      "published_at": "",
+      "created_at": "2026-07-01 11:07",
+      "updated_at": "2026-07-01 11:07"
     },
     {
       "id": "windows-xp-portfolio-gameboy-ipod-emulation",

@@ -653,7 +653,11 @@
     "06460a72900bdffa5a04e2ad6d6b801367eea9b757bf5bbfab0abd930429314b": "06460a72900b",
     "28a4898f6eca520939efa4df112ecf93f790337d795a7b09ca0cf5dc442d416f": "28a4898f6eca",
     "8d485437c59ca06664451f241235b8dae986536bbb6f6c03fd5423bdde7df68b": "8d485437c59c",
-    "5a35eed61e44b3e88b85ed3c5be56abddd20f1522910ca52fffa2b35bd0d1b9a": "5a35eed61e44"
+    "5a35eed61e44b3e88b85ed3c5be56abddd20f1522910ca52fffa2b35bd0d1b9a": "5a35eed61e44",
+    "84a78ce367dfdc109a8ca11f8f13a4261e721564d4bff3932fb0a3ba4684d3a0": "84a78ce367df",
+    "4448fc2c1db9fc4c8bd7a29cb72de3ea666dcebd61c8e9c7b36f1e417b349820": "4448fc2c1db9",
+    "627d705afbdb3e494680fbc989ffa6a9e1a6e5680deebf61b6df398795867659": "627d705afbdb",
+    "4aeeb92b7a6fa4ac3f18d812c30c5bb53bab7ee1c94d93b4453e734bad8eedd4": "4aeeb92b7a6f"
   },
   "items": {
     "16c0425f47df": {
@@ -8756,6 +8760,58 @@
       "compiled_at": "2026-07-01T09:36:53.258926+09:00",
       "article_ids": [
         "ed-woodham-art-in-odd-places"
+      ],
+      "error": null
+    },
+    "84a78ce367df": {
+      "hash": "84a78ce367dfdc109a8ca11f8f13a4261e721564d4bff3932fb0a3ba4684d3a0",
+      "original_name": "Forestiere Underground Gardens.md",
+      "source_path": "sources/84a78ce367df_Forestiere Underground Gardens.md",
+      "meta_path": "sources/84a78ce367df_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-07-01T02:07:25.236528+00:00",
+      "compiled_at": "2026-07-01T11:07:44.211454+09:00",
+      "article_ids": [
+        "forestiere-underground-gardens"
+      ],
+      "error": null
+    },
+    "4448fc2c1db9": {
+      "hash": "4448fc2c1db9fc4c8bd7a29cb72de3ea666dcebd61c8e9c7b36f1e417b349820",
+      "original_name": "The Verge_ Microsoft weighing Arkane Studios closure, Marvel’s Blade cancelation.md",
+      "source_path": "sources/4448fc2c1db9_The Verge_ Microsoft weighing Arkane Studios closure, Marvel’s Blade cancelation.md",
+      "meta_path": "sources/4448fc2c1db9_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-07-01T02:07:25.236528+00:00",
+      "compiled_at": "2026-07-01T11:08:06.663866+09:00",
+      "article_ids": [
+        "microsoft-arkane-studios-closure-marvels-blade-cancelation"
+      ],
+      "error": null
+    },
+    "627d705afbdb": {
+      "hash": "627d705afbdb3e494680fbc989ffa6a9e1a6e5680deebf61b6df398795867659",
+      "original_name": "What happened to the fight for the internet_.md",
+      "source_path": "sources/627d705afbdb_What happened to the fight for the internet_.md",
+      "meta_path": "sources/627d705afbdb_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-07-01T02:07:25.236528+00:00",
+      "compiled_at": "2026-07-01T11:08:24.909482+09:00",
+      "article_ids": [
+        "what-happened-to-the-fight-for-the-internet"
+      ],
+      "error": null
+    },
+    "4aeeb92b7a6f": {
+      "hash": "4aeeb92b7a6fa4ac3f18d812c30c5bb53bab7ee1c94d93b4453e734bad8eedd4",
+      "original_name": "「女子研究大学」ニキ＆しろせんせーが語るVTuberの最適解 必要なのは非日常より“イカレた奴”の日常.md",
+      "source_path": "sources/4aeeb92b7a6f_「女子研究大学」ニキ＆しろせんせーが語るVTuberの最適解 必要なのは非日常より“イカレた奴”の日常.md",
+      "meta_path": "sources/4aeeb92b7a6f_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-07-01T02:07:25.236528+00:00",
+      "compiled_at": "2026-07-01T11:08:46.622867+09:00",
+      "article_ids": [
+        "joshi-kenkyuu-daigaku-vtuber-unit"
       ],
       "error": null
     }

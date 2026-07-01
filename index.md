@@ -1,7 +1,11 @@
 # Knowledge Base Index
 
-_462 articles, 1653 topics | generated 2026-07-01 09:36 JST_
+_466 articles, 1668 topics | generated 2026-07-01 11:08 JST_
 
+- **2026-07-01 11:07** [Forestiere Underground Gardens](wiki/forestiere-underground-gardens.md) [stub] `underground-architecture, landscape-gardens, alternative-living-spaces, historical-landmarks` -- Forestiere Underground Gardensは、地面を下に向かって掘り進めることで作られた庭園・住居の事例。 地上ではなく地下という逆方向への建
+- **2026-07-01 11:07** [「女子研究大学」ニキ&しろせんせーが語るVTuberの最適解](wiki/joshi-kenkyuu-daigaku-vtuber-unit.md) [stub] `vtuber-culture, vtuber-content-philosophy, virtual-entertainment, japanese-internet-culture` -- 「女子研究大学」はニキ・しろせんせー・りぃちょ・18号・キャメロンの5人組VTuberユニット。 彼らはVTuberコンテンツの核心として「非日常」ではなく「イ
+- **2026-07-01 11:07** [Microsoft、Arkane Studios閉鎖とMarvel's Bladeキャンセルを検討中との報道](wiki/microsoft-arkane-studios-closure-marvels-blade-cancelation.md) [stub] `game-studio-closures, microsoft-xbox-strategy, arkane-studios, game-cancelations, gaming-industry-layoffs` -- The Vergeの報道によると、MicrosoftがArkane Studiosの閉鎖とMarvel's Bladeのキャンセルを検討中。 Xboxは大規模な
+- **2026-07-01 11:07** [What happened to the fight for the internet?](wiki/what-happened-to-the-fight-for-the-internet.md) [stub] `internet-freedom, digital-rights, online-activism, tech-culture-reflection` -- dustycloud.orgに掲載された記事で、かつて存在したインターネットの自由をめぐる運動や議論の行方を問い直す内容。 「戦い」という言葉が問われること自体
 - **2026-07-01 09:36** [Ed Woodham in All the Odd Places](wiki/ed-woodham-art-in-odd-places.md) [stub] `public-art-activism, queer-art-history, street-art-performance, art-institution-critique, civic-space-art` -- Ed Woodham（1957年生）は1996年から「Art in Odd Places」を主導し、ギャラリーや制度的空間ではなく日常の歩道・路上にアートを出現
 - **2026-07-01 06:07** [正のグラスマン多様体：あらゆる場所に現れる数学的対象](wiki/positive-grassmannian-lauren-williams.md) `algebraic-combinatorics, positive-grassmannian, mathematics-research, mathematical-physics, interdisciplinary-mathematics` -- 数学者Lauren Williamsが「正のグラスマン多様体（Positive Grassmannian）Gr(k,n)」という代数的組合せ論の対象を研究するキ
 - **2026-07-01 06:07** [Wayfinder Router：タスク難易度でローカルAIとクラウドAIを自動切り替えるオープンソースツール](wiki/wayfinder-router-local-cloud-ai-switching.md) [stub] `local-ai-tools, cloud-ai-routing, ai-cost-optimization, open-source-ai, ai-infrastructure` -- 「Wayfinder Router」はGitHubで公開されたオープンソースツールで、タスクの難易度に応じてローカルAIとクラウドAIを自動的に振り分ける。短い
