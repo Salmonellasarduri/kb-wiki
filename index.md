@@ -1,7 +1,8 @@
 # Knowledge Base Index
 
-_461 articles, 1648 topics | generated 2026-07-01 06:08 JST_
+_462 articles, 1653 topics | generated 2026-07-01 09:36 JST_
 
+- **2026-07-01 09:36** [Ed Woodham in All the Odd Places](wiki/ed-woodham-art-in-odd-places.md) [stub] `public-art-activism, queer-art-history, street-art-performance, art-institution-critique, civic-space-art` -- Ed Woodham（1957年生）は1996年から「Art in Odd Places」を主導し、ギャラリーや制度的空間ではなく日常の歩道・路上にアートを出現
 - **2026-07-01 06:07** [正のグラスマン多様体：あらゆる場所に現れる数学的対象](wiki/positive-grassmannian-lauren-williams.md) `algebraic-combinatorics, positive-grassmannian, mathematics-research, mathematical-physics, interdisciplinary-mathematics` -- 数学者Lauren Williamsが「正のグラスマン多様体（Positive Grassmannian）Gr(k,n)」という代数的組合せ論の対象を研究するキ
 - **2026-07-01 06:07** [Wayfinder Router：タスク難易度でローカルAIとクラウドAIを自動切り替えるオープンソースツール](wiki/wayfinder-router-local-cloud-ai-switching.md) [stub] `local-ai-tools, cloud-ai-routing, ai-cost-optimization, open-source-ai, ai-infrastructure` -- 「Wayfinder Router」はGitHubで公開されたオープンソースツールで、タスクの難易度に応じてローカルAIとクラウドAIを自動的に振り分ける。短い
 - **2026-06-28 05:42** [DUST: Origins - Airship Syndicateが発表したSFアクションゲーム](wiki/dust-origins-airship-syndicate-sci-fi-action.md) `sci-fi-action-games, indie-game-announcements, airship-syndicate, game-development, kickstarter, horror-games, space-games` -- Airship Syndicateが2026年6月27日に新作サイエンスフィクションアクションゲーム『DUST: Origins』を発表した。 崩壊しつつある軌

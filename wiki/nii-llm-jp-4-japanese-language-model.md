@@ -72,4 +72,5 @@ LLM-jp-4は2つのバリエーションで提供される：
 ## Related Articles
 
 - [[lfm25-8b-a1b-japanese-mobile-ai]]
+- [[wayfinder-router-local-cloud-ai-switching]]
 <!-- /AUTO:Related Articles -->

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-06-30T21:08:10.736837+00:00",
-  "article_count": 461,
+  "generated_at": "2026-07-01T00:36:54.312022+00:00",
+  "article_count": 462,
   "articles": [
     {
       "id": "a-shell-iphone-terminal-app",
@@ -4593,6 +4593,39 @@
       "published_at": "",
       "created_at": "2026-04-25 18:19",
       "updated_at": "2026-04-25 18:19"
+    },
+    {
+      "id": "ed-woodham-art-in-odd-places",
+      "path": "wiki/ed-woodham-art-in-odd-places.md",
+      "title": "Ed Woodham in All the Odd Places",
+      "type": "stub",
+      "summary": "Ed Woodham（1957年生）は1996年から「Art in Odd Places」を主導し、ギャラリーや制度的空間ではなく日常の歩道・路上にアートを出現させてきたアーティスト。空間の選択そのものをクィアな批評行為として構築しており、「NORMAL」「CARE」「VOICE」などのテーマのもと公共空間の縮小と市民的自由への応答として活動を続けている。2026年にHyperallergicの「Queer Elders」シリーズで特集され、プライド月間に限定されない称賛の必要性が明言された。\n",
+      "topics": [
+        "public-art-activism",
+        "queer-art-history",
+        "street-art-performance",
+        "art-institution-critique",
+        "civic-space-art"
+      ],
+      "aliases_ja": [
+        "エド・ウッドハム",
+        "アート・イン・オッド・プレイシーズ",
+        "公共空間のアート",
+        "クィアアーティスト",
+        "歩道のアート",
+        "制度外の芸術実践",
+        "TABOO（アーティスト集団）",
+        "Hyperallergic クィア・エルダーズ"
+      ],
+      "source_ids": [
+        "5a35eed61e44"
+      ],
+      "source_urls": [
+        "https://hyperallergic.com/ed-woodham-in-all-the-odd-places"
+      ],
+      "published_at": "2026-01-01",
+      "created_at": "2026-07-01 09:36",
+      "updated_at": "2026-07-01 09:36"
     },
     {
       "id": "egypt-mummy-homer-iliad-papyrus",

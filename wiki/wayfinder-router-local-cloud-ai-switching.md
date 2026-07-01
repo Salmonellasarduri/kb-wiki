@@ -54,3 +54,13 @@ updated_at: "2026-07-01 06:07"
 - [[apfel-mac-foundation-models]] — MacのFoundation Modelsをローカルで直接利用できるツール
 - [[corporate-america-ai-cost-rationing]] — 企業がAI利用コスト上昇を受けて使用を制限し始めている動向
 - [[llm-api-prompt-caching]] — LLM APIのプロンプトキャッシュ機能によるコスト削減手法
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[ai-datacenter-construction-delays-transformer-battery-shortage]]
+- [[meta-aws-graviton5-ai-agent-partnership]]
+- [[nii-llm-jp-4-japanese-language-model]]
+- [[ollama-criticism-llama-cpp-recommendation]]
+- [[tokenomics-agentic-software-engineering]]
+<!-- /AUTO:Related Articles -->

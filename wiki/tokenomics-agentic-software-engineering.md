@@ -81,3 +81,9 @@ AIエージェントがソフトウェア開発プロセスに参与する際、
 - [[claude-advisor-strategy-opus-sonnet-cost-optimization]]
 - [[gemini-enterprise-agent-platform-agentic-rag]]
 - [[anthropic-claude-code-cli-computer-use]]
+
+<!-- AUTO:Related Articles -->
+## Related Articles
+
+- [[wayfinder-router-local-cloud-ai-switching]]
+<!-- /AUTO:Related Articles -->

@@ -652,7 +652,8 @@
     "a79e827653c1a0a989038ce3a8090fe14ef44b96045529b206ef83b26a49b313": "a79e827653c1",
     "06460a72900bdffa5a04e2ad6d6b801367eea9b757bf5bbfab0abd930429314b": "06460a72900b",
     "28a4898f6eca520939efa4df112ecf93f790337d795a7b09ca0cf5dc442d416f": "28a4898f6eca",
-    "8d485437c59ca06664451f241235b8dae986536bbb6f6c03fd5423bdde7df68b": "8d485437c59c"
+    "8d485437c59ca06664451f241235b8dae986536bbb6f6c03fd5423bdde7df68b": "8d485437c59c",
+    "5a35eed61e44b3e88b85ed3c5be56abddd20f1522910ca52fffa2b35bd0d1b9a": "5a35eed61e44"
   },
   "items": {
     "16c0425f47df": {
@@ -8742,6 +8743,19 @@
       "compiled_at": "2026-07-01T06:08:09.516697+09:00",
       "article_ids": [
         "positive-grassmannian-lauren-williams"
+      ],
+      "error": null
+    },
+    "5a35eed61e44": {
+      "hash": "5a35eed61e44b3e88b85ed3c5be56abddd20f1522910ca52fffa2b35bd0d1b9a",
+      "original_name": "Ed Woodham in All the Odd Places.md",
+      "source_path": "sources/5a35eed61e44_Ed Woodham in All the Odd Places.md",
+      "meta_path": "sources/5a35eed61e44_meta.json",
+      "status": "compiled",
+      "ingested_at": "2026-07-01T00:36:23.351879+00:00",
+      "compiled_at": "2026-07-01T09:36:53.258926+09:00",
+      "article_ids": [
+        "ed-woodham-art-in-odd-places"
       ],
       "error": null
     }

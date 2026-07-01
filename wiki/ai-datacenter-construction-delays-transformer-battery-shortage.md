@@ -47,4 +47,5 @@ AIデータセンター建設計画の約半数が、変圧器やバッテリー
 ## Related Articles
 
 - [[meta-aws-graviton5-ai-agent-partnership]]
+- [[wayfinder-router-local-cloud-ai-switching]]
 <!-- /AUTO:Related Articles -->
